@@ -1,0 +1,175 @@
+## BANDIT RANDOM SPAWNS #
+#
+#
+#Randomspawn_Bandit_Swordsman:
+## Tier 1. Spawns only if outside and during dusk.
+#  MobType: Bandit_Swordsman
+#  Worlds: "Biome Bundle"
+#  Chance: 0.2
+#  Priority: 2
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#
+#
+#Randomspawn_Bandit_Bowman:
+## Tier 1. Spawns only if outside and during dusk.
+#  MobType: Bandit_Bowman
+#  Worlds: "Biome Bundle"
+#  Chance: 0.2
+#  Priority: 1
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#  
+#
+#Randomspawn_Bandit_Leader:
+## Tier 1. Spawns only if outside and during dusk.
+#  MobType: Bandit_Leader
+#  Worlds: "Biome Bundle"
+#  Chance: 0.1
+#  Priority: 5
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#
+#
+#Randomspawn_Bandit_Rogue:
+## Tier 2. Spawns only if outside and during dusk.
+#  MobType: Bandit_Rogue
+#  Worlds: "Biome Bundle"
+#  Chance: 0.15
+#  Priority: 2
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#
+#
+#Randomspawn_Bandit_Fighter:
+## Tier 2. Spawns only if outside and during dusk.
+#  MobType: Bandit_Fighter
+#  Worlds: "Biome Bundle"
+#  Chance: 0.15
+#  Priority: 3
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#
+#
+#Randomspawn_Bandit_Lieutenant:
+## Tier 2. Spawns only if outside and during dusk.
+#  MobType: Bandit_Lieutenant
+#  Worlds: "Biome Bundle"
+#  Chance: 0.08
+#  Priority: 10
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#
+#
+#Randomspawn_Bandit_Kingpin:
+## WB. Spawns only if outside, during dusk and if >500 blocks away from spawn.
+#  MobType: Bandit_Kingpin
+#  Worlds: "Biome Bundle"
+#  Chance: 0.005
+#  Priority: 30
+#  Action: ADD
+#  Conditions:
+#  - outside{} true
+#  - dusk{} true
+#  - distancefromspawn{d=500} true
+#
+#
+## HIVEFOLK RANDOM SPAWNS #
+#
+#
+#Randomspawn_Hivefolk_Drone:
+## Tier 1. Spawns only during day and if below y 120.
+#  MobType: Hivefolk_Drone
+#  Worlds: "Biome Bundle"
+#  Chance: 0.2
+#  Priority: 2
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#
+#
+#Randomspawn_Hivefolk_Buzzard:
+## Tier 1. Spawns only during day and if below y 120.
+#  MobType: Hivefolk_Buzzard
+#  Worlds: "Biome Bundle"
+#  Chance: 0.2
+#  Priority: 1
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#
+#
+#Randomspawn_Hivefolk_Spawner:
+## Tier 1. Spawns only during day and if below y 120.
+#  MobType: Hivefolk_Spawner
+#  Worlds: "Biome Bundle"
+#  Chance: 0.13
+#  Priority: 5
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#
+#
+#Randomspawn_Hivefolk_Hopper:
+## Tier 2. Spawns only during day and if below y 120.
+#  MobType: Hivefolk_Hopper
+#  Worlds: "Biome Bundle"
+#  Chance: 0.16
+#  Priority: 3
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#
+#
+#Randomspawn_Hivefolk_Spitter:
+## Tier 2. Spawns only during day and if below y 120.
+#  MobType: Hivefolk_Spitter
+#  Worlds: "Biome Bundle"
+#  Chance: 0.16
+#  Priority: 2
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#
+#
+#Randomspawn_Hivefolk_Juggernaut:
+## Tier 2. Spawns only during day and if below y 120.
+#  MobType: Hivefolk_Juggernaut
+#  Worlds: "Biome Bundle"
+#  Chance: 0.08
+#  Priority: 10
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#
+#
+#Randomspawn_Hivefolk_Matriarch:
+## WB. Spawns only during day, if below y 120 and >500 blocks away from spawn.
+#  MobType: Hivefolk_Matriarch
+#  Worlds: "Biome Bundle"
+#  Chance: 0.005
+#  Priority: 30
+#  Action: ADD
+#  Conditions:
+#  - day{} true
+#  - heightbelow{h=120} true
+#  - distancefromspawn{d=500} true
+#

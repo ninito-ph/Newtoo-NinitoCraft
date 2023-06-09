@@ -1,0 +1,426 @@
+# Craft Prime Mob Rarity Guide
+# &a (Green) - Uncommon, may spawn very frequently and are often canon fodder.
+# &9 (Blue) - Rare, may spawn somewhat frequently, and are often stronger canon fodder.
+# &5&l (Pink) - Epic, spawn unfrequently, and are often foes that challenge and command the player's attention.
+# &4&l (Red) - Legendary, spawn very unfrequently, and are often world bosses. Usually meant to be taken on by multiple players.
+
+# &6 (Orange) - Mythical, spawn very rarely and only on elite servers. Usually a highly challenging version of Rare or Uncommon mobs.
+# &b&l (Cyan) - Greater Mythical, spawn very rarely and only on elite servers. Usually a highly challenging version of Epic or Rare mobs.
+
+Deep_Miner:
+  # Tanky meelee mob. Hits hard, and can throw projectiles that slow down its target.
+  Type: ZOMBIE
+  Health: 20
+  Damage: 4
+  Armor: 12
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_pickaxe:0
+  KillMessages:
+    - "<target.name> was crushed by a &aDuergar Miner!"
+  Display: "&aDuergar Miner - Level 7"
+  Disguise: player <inherit> setSkin deep_t1.png setDynamicName
+  Skills:
+    - skill{s=Deep_Slow} ~onTimer:140 @target
+
+Deep_Stonebomber:
+  # Ranged mob. Hassles the player by imprisoning them in stone and throwing out shockwaves to repel them.
+  Type: SKELETON
+  Health: 15
+  Damage: 4
+  Armor: 7
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 bowshoot
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - bow:0
+  KillMessages:
+    - "<target.name> was petrified by a &aDuergar Stonebomber!"
+  Display: "&aDuergar Stonebomber - Level 9"
+  Disguise: player <inherit> setSkin deep_t1.png setDynamicName
+  Skills:
+    - skill{s=Deep_Prison} ~onAttack >0 0.15 @target
+    - skill{s=Deep_Repulsion} ~onDamaged @target
+
+Deep_Captain:
+  # Stronger Miner. Becomes a mage at half health. Can repel the player and imprison them in stone. 
+  Type: SKELETON
+  Health: 60
+  Damage: 9
+  Armor: 15
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.33
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier2
+    - exp 40 1
+  Equipment:
+    - stone_axe:0
+    - stone_axe:5
+  KillMessages:
+    - "<target.name> was transformed into a ridiculous stone effigy by a &9Duergar Captain!"
+    - "<target.name><&sq>s life was mined away by a &9Duergar Captain!"
+    - "<target.name><&sq>s was excavated to death by a &9Duergar Captain!"
+  Display: "&9Duergar Captain - Level 12"
+  Disguise: player <inherit> setSkin deep_tl1.png setDynamicName
+  Skills:
+    - message{m="&9Duergar Captain&f<&co> You<&sq>ve delved too deep, <&sq>!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Deep_Captain_Followers} ~onSpawn 1
+    - skill{s=Deep_Captain_Repel} ~onDamaged >50% 0.5
+    # Enables mage phase of captain
+    - skill{s=Deep_Captain_Phase_2} =50% 1
+    - skill{s=Deep_Repulsion} ~onDamaged <50%
+    - skill{s=Deep_Captain_Levitate_Casting} ~onTimer:120 <50% @target
+
+Deep_Shadowblade:
+  # Fast melee mob that can hit the player, blind them, and quickly back away.
+  Type: ZOMBIE
+  Health: 20
+  Damage: 4
+  Armor: 9
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 30 1
+  Equipment:
+    - iron_sword:0
+  KillMessages:
+    - "<target.name> was pushed into the dark by a &9Drow Shadowblade!"
+  Display: "&9Drow Shadowblade - Level 10"
+  Disguise: player <inherit> setSkin deep_t2.png setDynamicName
+  Skills:
+    - skill{s=Shadowblade_Rush} ~onTimer:140 @target
+    - skill{s=Shadowblade_Darken} ~onAttack >0 0.75
+
+Deep_Warlock:
+  # Denfenseless ranged mob. Has difficult-to-evade skills, debuffs and summon abilities. Priority target.
+  Type: ZOMBIE
+  Health: 16
+  Damage: 4
+  Armor: 9
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.19
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 30 1
+  Equipment:
+    - iron_hoe:0
+  KillMessages:
+    - "<target.name> was never seen again after an encounter with a &9Drow Warlock!"
+  Display: "&9Drow Warlock - Level 10"
+  Disguise: player <inherit> setSkin deep_t2.png setDynamicName
+  Skills:
+    - skill{s=Warlock_Summon_Spiders} ~onTimer:1000
+    - skill{s=Magic_Missile} ~onTimer:270 @target
+    - skill{s=Warlock_Enfeeble_Cast} ~onTimer:600 @target
+    - skill{s=Deep_Captain_Repel} ~onDamaged <50% 0.75
+
+Deep_Ranger:
+  # High-damage, mobile ranged mob. Has a wide disposal of debuffs and high damage output. Extremely aggressive.
+  Type: SKELETON
+  Health: 35
+  Damage: 1
+  Armor: 13
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.4
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 bowshoot
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 55 1
+  Equipment:
+    - bow:0
+  KillMessages:
+    - "<target.name> was no match for a &5&lDrow Ranger<&sq>s dexterity!"
+    - "<target.name> was swept away by a &5&lDrow Ranger<&sq>s volley of arrows!"
+    - "<target.name> was quickly disposed of by a &5&lDrow Ranger!"
+  Display: "&5&lDrow Ranger - Level 16"
+  Disguise: player <inherit> setSkin deep_tl2.png setDynamicName
+  Skills:
+    - message{m="&5Drow Ranger&f<&co> These arrows may make you feel a little drowsy..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{skills=Ranger_Followers_1,Ranger_Followers_2} ~onSpawn
+    - skill{s=Ranger_Poison_Arrow} ~onAttack >50% 0.4
+    - skill{s=Ranger_Multi_Shot} ~onShoot >50% 1
+    - message{m="&5Drow Ranger&f<&co> I can sense you<&sq>re weakening... Shadows, engulf us!"} @PlayersInRadius{r=30} =50% 1
+    - skill{s=Ranger_Phase_2} =50% 1
+    - message{m="&5Drow Ranger&f<&co> DIE! DIE! DIE!"} @PlayersInRadius{r=30} =20% 1
+    - skill{s=Ranger_Phase_3} =20% 1
+
+Deep_Mastermind:
+  # Powerful ranged caster mob. Wide range of defensive and offensive abilities at his disposal. Must be fought in a group or in a highly organized manner.
+  Type: ZOMBIE
+  Health: 45
+  DamageModifiers:
+    - PROJECTILE 0.3
+  Damage: 0
+  Armor: 13
+  BossBar:
+    Enabled: true
+    Title: "&5&lMind Flayer"
+    Range: 50
+    Color: PINK
+    Style: SEGMENTED_6
+    Faction: Deep
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 125 1
+  Equipment:
+  KillMessages:
+    - "<target.name><&sq>s brains were devoured by a &5&lMind Flayer!"
+    - "<target.name> mind<&sq> was shattered by a &5&lMind Flayer"
+    - "<target.name> was easy work for the psionic muscles of a &5&lMind Flayer!"
+  Display: "&5&lMind Flayer - Level 30"
+  Disguise: player <inherit> setSkin deep_tsa.png setDynamicName
+  Skills:
+    # Initial skills
+    - message{m="&5Mind Flayer&f<&co> Ae mg<&sq>yng<&sq>ct<&sq>. Fhr<&sq>lehshht<&sq>. Tag<&sq>ht<&sq>aeng<&sq>c yeh<&sq>liui fhlir<&sq>l vr<&sq>lyng<&sq>gl ytag<&sq> tag<&sq>li mg<&sq>eh...."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Mastermind_Phase_1} ~onSpawn >0 1
+    # Constant skills
+    - skill{s=Mastermind_Fly} ~onTimer:55 >0 0.65
+    - randomskill{skills=Mastermind_Armor,Mastermind_Repel,Mastermind_Cloak} ~onDamaged >0 0.35
+    - randomskill{s=Mastermind_Bombard_Cast,Mastermind_Missile_Cast,Mastermind_Necrosis_Missile_Cast,Mastermind_Incinerate} ~onTimer:200 >0 1
+    # Regen Skills
+    - skill{s=Mastermind_Regenerate} ~onTimer:200 <60% 1
+    - skill{s=Mastermind_Interrupt_Regeneration} ~onDamaged 1
+    # Summon Skills
+    - skill{s=Mastermind_Summon_Polyps} =35% 1
+
+Deep_Polyp:
+  # Minion mob summoned by the Deep Mastermind. Can damage the player and summon further minions.
+  Type: ZOMBIE
+  Health: 10
+  DamageModifiers:
+    - PROJECTILE 0.3
+  Damage: 0
+  Armor: 13
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 30 1
+  Equipment:
+  KillMessages:
+    - "<target.name><&sq>s was warped out of existence by a &9Flying Polyp"
+  Display: "&9Flying Polyp - Level 10"
+  Disguise: glow_squid
+  Skills:
+    # Initial skills
+    - skill{s=Polyp_Initialize} ~onSpawn >0 1
+    # Constant skills
+    - skill{s=Mastermind_Fly} ~onTimer:55 >0 0.65
+    - randomskill{s=Polyp_Laser_Cast,Polyp_Smite} @target ~onTimer:300 >0 1
+    - skill{s=Polyp_Summon_Projectile} @target ~onTimer:120 >0 1
+
+Deep_Interdimensional_Invader:
+  # Summoned by polyps. Easily killed, explodes on death. Comes in large swarms.
+  Type: ZOMBIE
+  Health: 4
+  KillMessages:
+    - "<target.name><&sq>s matter was consumed by an &9Interdimensional Invader"
+  Display: "&9Interdimensional Invader - Level 3"
+  Disguise: player <inherit> setSkin deep_tsa2.png setDynamicName
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+  Skills:
+    - skill{s=Interdimensional_Invader_Explode} ~onDeath
+
+Deep_Cleric:
+  # Deep World boss
+  Type: ZOMBIE
+  Health: 110
+  DamageModifiers:
+    - FIRE 0
+  Damage: 0
+  Armor: 14
+  BossBar:
+    Enabled: true
+    Title: "&4&lAbyssal Cleric"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 1550 1
+  Equipment:
+  KillMessages:
+    - "<target.name> was eaten alive by the darkness of an &4&lAbyssal Cleric!"
+    - "<target.name> was overshadowed by an &4&lAbyssal Cleric!"
+    - "<target.name><&sq>s life was put out like a flame in the dark by an &4&lAbyssal Cleric"
+  Display: "&4&lAbyssal Cleric - Level 50"
+  Disguise: player <inherit> setSkin deep_wba.png setDynamicName
+  Skills:
+    # Spawning message
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - randomskill{s=Cleric_Followers_1,Cleric_Followers_2,Cleric_Followers_3} ~onSpawn
+    # Initial skills
+    - message{m="&4&lAbyssal Cleric&f<&co> A misguided soul has wandered onto us, my followers. Let us feast."} @PlayersInRadius{r=50} ~onEnterCombat >0 1
+    - skill{s=Bandit_Kingpin_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Constant Skills
+    - skill{s=Cleric_Relocate} ~onDamaged >70% 1
+    - skill{s=Cleric_Relocate_Decoy} ~onDamaged =30-50% 1
+    - skill{s=Cleric_Relocate_Decoy_Caster} ~onDamaged <30% 1
+    - skill{s=Cleric_Darkstrike} ~onAttack >0 1
+    - randomskill{s=Cleric_Doom_Missile_Cast,Cleric_Bombard_Cast,Cleric_Shadowbolt_Cast,Cleric_Healing_Prison_Cast} ~onTimer:450 >0 1
+    # Shadow Phase
+    - skill{s=Cleric_Cloak} =50% 1
+    - message{m="&4&lAbyssal Cleric&f<&co> Be careful, <target.name>. The darkness hides many hideous things."} @PlayersInRadius{r=50} =50% 1
+    - skill{s=Cleric_Death_Touch} ~onAttack >0 1
+    # Summon Phase
+    - skill{s=Cleric_Summon_Mastermind_Cast} =30% 1
+    - skill{s=Cleric_Interrupt_Summon} ~onDamaged <15% 1
+
+Deep_Cleric_Decoy:
+  # Decoy for Deep Cleric.
+  Type: ZOMBIE
+  Health: 5
+  Damage: 0
+  Armor: 14
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Display: "&4&lAbyssal Cleric - Level 50"
+  Disguise: player <inherit> setSkin deep_wba.png setDynamicName
+  Skills:
+    - skill{s=Cleric_Decoy_Spawn} ~onSpawn >0 1
+
+Deep_Cleric_Decoy_Caster:
+  # Decoy for Deep Cleric capable of casting spells.
+  Type: ZOMBIE
+  Health: 5
+  Damage: 0
+  Armor: 14
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Display: "&4&lAbyssal Cleric - Level 50"
+  Disguise: player <inherit> setSkin deep_wba.png setDynamicName
+  Skills:
+    - randomskill{s=Cleric_Decoy_Explode,Cleric_Decoy_Shadowbolt} ~onSpawn >0 1

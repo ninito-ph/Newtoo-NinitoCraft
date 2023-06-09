@@ -1,0 +1,38 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 177.27.196.68
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1652310968947
+  login: 1652310805175
+money: '0'
+last-account-name: Anti_Nub_PvP
+lastlocation:
+  world: ffe724ac-30e2-400e-9221-514a76dcd06a
+  world-name: world
+  x: -568.6743204604066
+  y: 152.0
+  z: -651.9039253580787
+  yaw: 27.900861740112305
+  pitch: 70.95039367675781
+logoutlocation:
+  world: ffe724ac-30e2-400e-9221-514a76dcd06a
+  world-name: world
+  x: -395.30000001192093
+  y: 80.0
+  z: -786.4184652051697
+  yaw: 24.897180557250977
+  pitch: 19.199878692626953

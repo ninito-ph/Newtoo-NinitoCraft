@@ -1,0 +1,298 @@
+# RPGCraft Item Rarity Guide
+# &a (Green) - Uncommon, may drop from canon fodder foes
+# &9 (Blue) - Rare, may drop from weak group leader foes and stronger canon fodder foes
+# &5&l (Pink) - Epic, may drop from strong group leader foes and particularly tricky foes
+# &c&l (Red) - Legendary, may drop from world bosses and extremely tough foes
+# &b&l (Cyan) - Mythical, may drop from raid bosses and world bosses
+
+
+# BANDIT DROPS #
+
+
+Bandit_Cap:
+# Simple leather cap with projectile protection.
+  Id: LEATHER_HELMET
+  Enchantments:
+  - PROTECTION_PROJECTILE:2
+  Display: '&aBandit Cap'
+  Lore:
+  - '&aUncommon'
+  - '&6A leather cap taken from'
+  - '&6the corpse of a bandit.'
+  - '&6Good protection against'
+  - '&6arrows.'
+  Options:
+
+
+Bandit_Sword:
+# Simple iron sword with looting.
+  Id: IRON_SWORD
+  Enchantments:
+  - LOOT_BONUS_MOBS:1
+  Display: '&aCut n<&sq> Run'
+  Lore:
+  - '&aUncommon'
+  - '&6A sword used by a bandit'
+  - '&6to rob and slay countless'
+  - '&6victims.'
+  Options:
+
+
+Bandit_Longbow:
+# Simple bow with arrow knockback.
+  Id: BOW
+  Enchantments:
+  - ARROW_KNOCKBACK:1
+  Display: '&aBandit Longbow'
+  Lore:
+  - '&aUncommon'
+  - '&6A longbow used by a veteran'
+  - '&6bandit to fire arrows'
+  - '&6particularly hard.'
+
+
+Tough_Blade:
+# Simple iron sword with sharpness 2 and knockback 1
+  Id: IRON_SWORD
+  Enchantments:
+  - DAMAGE_ALL:2
+  - KNOCKBACK:1
+  Display: '&9Tough Blade'
+  Lore:
+  - '&9Rare'
+  - '&6A sword made out of steel,'
+  - '&6sharpened and used by a'
+  - '&6worthy fighter.'
+  Options:
+
+
+Bandit_Shield:
+# NOT FOR PLAYER USE
+  Id: SHIELD
+  Display: 'Bandit Shield'
+  Options:
+    Color: BLACK
+  BannerLayers:
+  - RED STRIPE_DOWNRIGHT
+  - WHITE SKULL
+
+
+Bandit_Banner:
+# NOT FOR PLAYER USE
+  Id: BANNER
+  Display: 'Bandit Banner'
+  Options:
+    Color: BLACK
+  BannerLayers:
+  - RED STRIPE_DOWNRIGHT
+  - WHITE SKULL
+
+
+Reinforced_Shield:
+# Simple shield with unbreaking 1.
+  Id: SHIELD
+  Enchantments:
+  - DURABILITY:1
+  Display: '&aReinforced Buckler'
+  Lore:
+  - '&aUncommon'
+  - '&6A shield used by warriors'
+  - '&6to protect against mighty'
+  - '&6blows.'
+  Options:
+
+
+Rogue_Runners:
+# EPIC BOOTS, DROPPED BY BANDIT LIEUTENANTS
+# Leather boots which turn player invisible and speedy on hit.
+  Id: LEATHER_BOOTS
+  Display: '&5&lRogue Runners'
+  Lore:
+  - '&7Stalk I'
+  - '&5&lEpic'  
+  - '&6A pair of magical boots used'
+  - '&6by veteran rogues to stalk and'
+  - '&6assassinate their foes, all'
+  - '&6undetected.'
+  Skills:
+  - skill{s=Rogue_Runners} ~onDamaged
+
+
+
+Manslasher_Bow:
+# LEGENDARY BOW, DROPPED BY BANDIT KINGPIN
+  Id: BOW
+  Enchantments:
+  - ARROW_DAMAGE:2
+  - KNOCKBACK:1
+  - DURABILITY:3
+  Display: '&c&lManslasher Bow'
+  Lore:
+  - '&7Bleeding I'  
+  - '&c&lLegendary'
+  - '&6A cruel barbarian bow crafted'
+  - '&6by skilled bowyers. It has'
+  - '&6serrated blades attached to'
+  - '&6its upper limb, which serve as.'
+  - '&6a good melee alternative.'
+  Skills:
+  # APPLIES BLEEDING ON TARGET
+  - skill{s=Manslasher_Bow_Bleeding} @target ~onAttack
+
+
+Spinesplitter_Axe:
+# LEGENDARY AXE, DROPPED BY BANDIT KINGPIN
+  Id: IRON_AXE
+  Enchantments:
+  - DAMAGE_ALL:1
+  - DURABILITY:1
+  Display: '&c&lSpinesplitter'
+  Lore:
+  - '&7Lunge II'
+  - '&c&lLegendary'
+  - '&6An axe used by a barbarian'
+  - '&6warlord to torture and kill his'
+  - '&6captured foes, namely sever their'
+  - '&6spines. It imbues its user with'
+  - '&6great fury.'
+  Skills:
+# LUNGES AND EXPLODES
+  - skill{s=Spinesplitter_Axe_Lunge} @target ~onSwing
+
+
+# HIVEFOLK DROPS #
+
+
+Chitin_Cap:
+# Uncommon leather helmet with protection 2.
+  Id: LEATHER_HELMET
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:2
+  Display: '&aChitin Cap'
+  Lore:
+  - '&aUncommon'
+  - '&6A slimy and hard chitin cap,'
+  - '&6fashioned out of a hivefolk<&sq>s'
+  - '&6corpse. Surprisingly resilient.'
+  Options:
+    Color: 153,204,0
+
+
+Chitin_Chestplate:
+# Uncommon leather chestplate with protection 2.
+  Id: LEATHER_CHESTPLATE
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:2
+  Display: '&aChitin Chestplate'
+  Lore:
+  - '&aUncommon'
+  - '&6A reinforced chitin chestplate,'
+  - '&6fashioned out of a hivefolk<&sq>s'
+  - '&6corpse. Surprisingly resilient.'
+  Options:
+    Color: 153,204,0
+
+
+Exoskeleton_Slasher:
+# Rare iron sword with bane of arthropods 2 and knockback 1.
+  Id: IRON_SWORD
+  Enchantments:
+  - DAMAGE_ARTHROPODS:2
+  - KNOCKBACK:1
+  Display: '&9Exoskeleton Slasher'
+  Lore:
+  - '&9Rare'
+  - '&6A corroded iron sword,'
+  - '&6used by a now deceased'
+  - '&6adventurer to fight and'
+  - '&6raid hivefolk hives.'
+  Options:
+
+
+Insectus_Helm:
+# Epic iron helm which sometimes stenghtens and hastens wearer upon being hit.
+  Id: IRON_HELMET
+  Enchantments:
+  - PROTECTION_ENVIRONMENTAL:2
+  Display: '&5&lInsectus Helm'
+  Lore:
+  - '&7Enrage I'
+  - '&5&lEpic'
+  - '&6An incredibly tough chitin helmet,'
+  - '&6crafted using a hivefolk juggernaut<&sq>s'
+  - '&6thick amor plates. The juggernaut<&sq>s'
+  - '&6fury can still be felt in it.'
+  Skills:
+  # Throws nearby mobs away, makes wearer resilient, strong and speedy for a short while.
+  - skill{s=Insectus_Helm_Enrage} ~onDamaged >0 0.3
+
+
+Venomboom_Elytra:
+# Legendary elytra which sometimes creates a venomous explosion upon being hit.
+  Id: ELYTRA
+  Display: '&c&lVenomboom Elytra'
+  Lore:
+  - '&7Venomboom III'
+  - '&c&lLegendary'
+  - '&6The half-tattered remains of a hivefolk'
+  - '&6matriarch<&sq>s elytra. It contains'
+  - '&6various venom sacks and is extremely'
+  - '&6light.'
+  Skills:
+  # Throws nearby mobs away, makes wearer resilient, strong and speedy for a short while.
+  - skill{s=Venomboom_Elytra_Repulsion} ~onDamaged >0 1
+
+
+Venomsack_Shooter:
+# Legendary bow which has a chance of poisoning foe on attacks.
+  Id: BOW
+  Enchantments:
+  - DURABILITY:2
+  Display: '&c&lVenomsack Shooter'
+  Lore:
+  - '&7Venom I'  
+  - '&c&lLegendary'
+  - '&6A venomous bow crafted with'
+  - '&6the chitin and venomsacks of'
+  - '&6a hivefolk matriarch. It is'
+  - '&6incredibly durable and light.'
+  Skills:
+  # APPLIES BLEEDING ON TARGET
+  - skill{s=Venomsack_Shooter_Venom} ~onBowHit >0 0.4
+
+
+# OTHER SHIELDS #
+
+
+Amargons_Shield:
+# WIP shield, unbreaking 5
+  Id: SHIELD
+  Enchantments:
+  - DURABILITY:5
+  Display: '&b&lAmargon<&sq>s Eternal Ward'
+  Lore:
+  - '&b&lMythical'
+  - '&6The shield used by Amargon,'
+  - '&6the ancient titan, to protect the'
+  - '&6world during the primordial'
+  - '&6Dragonchaos.'
+  Options:
+    Color: WHITE
+  BannerLayers:
+  - YELLOW FLOWER
+  - YELLOW TRIANGLES_BOTTOM
+  - YELLOW TRIANGLES_TOP
+
+
+Sword_Of_Testing:
+  Id: DIAMOND_SWORD
+  Enchantments:
+  - DAMAGE_ALL:5
+  - DAMAGE_ARTHROPODS:5
+  - DAMAGE_UNDEAD:5
+  - SWEEPING_EDGE:3
+  Display: 'Sword of Testing'
+  Lore:
+  - '&b&lMythical'
+  - '&6What happens when you mix'
+  - '&6a rainbow with a chainsaw'

@@ -1,0 +1,38 @@
+[
+  {
+    "uuid": "3df1996b-0850-442a-8696-b25560bafa9c",
+    "name": "Vasuas",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "476197b2-05a1-30f5-97ba-6032c4fc98a3",
+    "name": "Farbico",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "507213ac-438d-3589-8cb6-07b90caa7fb1",
+    "name": "Infobros2000",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "9d8ee1e1-c2a0-458b-ad4f-e00f25ffb92c",
+    "name": "Jubabibou",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "e3ab24d5-3af8-3c7a-8821-905ed8ce7a7c",
+    "name": "Encephalithid",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "2e2edd0b-22ce-490b-931c-8dfa7ed8fb1c",
+    "name": "Encephalithid",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]

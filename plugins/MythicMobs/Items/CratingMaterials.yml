@@ -1,0 +1,59 @@
+Bloodstone:
+# Rare crafting material dropped by world bosses and epic mobs.
+  Id: REDSTONE_BLOCK
+  Display: '&5&lBloodstone'
+  Enchantments:
+  - DURABILITY:1
+  Lore:
+  - '&f&lEpic'  
+  - '&6A very rare rock formed out of'
+  - '&6the crystalized blood of powerful'
+  - '&6beings. Used as a crafting material'
+  - '&6for powerful weapons and armor.'
+  Options:
+    HideFlags: true
+
+Aetherite_Shard:
+# Rare crafting material dropped by mythical encounters
+  Id: AMETHYST_SHARD
+  Display: '&b&lAetherite Shard'
+  Enchantments:
+  - DURABILITY:1
+  Lore:
+  - '&f&lMythical'  
+  - '&6A shard of a rare metal found only'
+  - '&6in the moonlit depths of the Aether.'
+  - '&6Can be used to cast powerful'
+  - '&6enchantments on weapons and armor.'
+  Options:
+    HideFlags: true
+
+Core_Fragment:
+# Rare crafting material dropped by world boss encounters
+  Id: FIRE_CHARGE
+  Display: '&4&lCore Fragment'
+  Enchantments:
+  - DURABILITY:1
+  Lore:
+  - '&f&lLegendary'  
+  - '&6A fragment of the very core of the'
+  - '&6world, found beneath the ancient'
+  - '&6layer of bedrock. Can be forged into'
+  - '&6legendary equipment.'
+  Options:
+    HideFlags: true
+
+Living_Metal:
+# Rare crafting material dropped by world boss encounters
+  Id: LIGHT_GRAY_DYE
+  Display: '&4&lLiving Metal'
+  Enchantments:
+  - DURABILITY:1
+  Lore:
+  - '&f&lLegendary'  
+  - '&6A handful of the purest metal known.'
+  - '&6It moves and reforms into odd shapes'
+  - '&6when left alone. Can be forged into'
+  - '&6legendary equipment.'
+  Options:
+    HideFlags: true

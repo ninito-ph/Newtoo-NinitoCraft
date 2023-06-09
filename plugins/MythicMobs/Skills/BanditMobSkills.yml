@@ -1,0 +1,309 @@
+Bandit_Leader_Followers:
+    # Spawns bandits to follow Bandit Leader
+    Skills:
+        - summon{type=Bandit_Swordsman;amount=2;radius=5} @SelfLocation
+        - summon{type=Bandit_Bowman;amount=1;radius=5} @SelfLocation
+
+Bandit_Leader_Repulsion:
+    # Single use. Telegraphs use to player, throws player away.
+    Conditions:
+        - stance{s=Skill_Spent} false
+    Skills:
+        - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+        - effect:sound{s=entity.villager.death} @self
+        - message{m="&aBandit Leader&f<&co> I<&sq>ve had enough of this!"} @PlayersInRadius{r=30}
+        - throw{velocity=4;velocityY=3} @PIR{r=5}
+        - setstance{s=Skill_Spent} @Self
+
+Bandit_Leader_Phase_2:
+    # Changes AI to be archer and gives bow.
+    Skills:
+        - equip{item=bow:0}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=randomstroll}
+
+Bandit_Rogue_Attack_Mode:
+    # Sets Rogue to attack mode and gives it a bow.
+    Skills:
+        - setstance{s=Attack_Mode} @self
+        - equip{item=Bandit_Longbow:0}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - RunAITargetSelector{target=attacker}
+        - RunAITargetSelector{target=players}
+
+Bandit_Rogue_Reposition:
+    # Makes Rogue invisible and makes it run from player for 1.5 seconds, then sets it to attack mode.
+    Conditions:
+        - stance{s=Reposition_Mode} false
+    Skills:
+        - effect:smoke @self
+        - potion{type=INVISIBILITY;duration=30} @self
+        - potion{type=SPEED;duration=30} @self
+        - setstance{s=Reposition_Mode} @self
+        - equip{item=air:0}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=fleeplayers}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - delay 30
+        - effect:smoke @self
+        - delay 5
+        - skill{s=Bandit_Rogue_Attack_Mode} ~onTimer:35
+
+Bandit_Fighter_Stomp:
+    # Makes fighter leap at target and explode the ground, dealing damage.
+    Conditions:
+        - incombat true
+    Cooldown: 7
+    Skills:
+        - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+        - effect:sound{s=entity.villager.death} @self
+        - delay 12
+        - leap{v=130} @target
+        - delay 5
+        - effect:particles{particle=largeexplosion;amount=5} @self
+        - effect:sound{s=entity.generic.explode} @self
+        - throw{v=3;vy=3} @PIR{r=4}
+
+Bandit_Lieutenant_Followers_1:
+    # Spawns bandits to follow Bandit Lieutenant. Variant with two fighters.
+    Skills:
+        - summon{type=Bandit_Fighter;amount=2;radius=5} @SelfLocation
+        - summon{type=Bandit_Rogue;amount=1;radius=5} @SelfLocation
+
+Bandit_Lieutenant_Followers_2:
+    # Spawns bandits to follow Bandit Lieutenant. Variant with two rogues.
+    Skills:
+        - summon{type=Bandit_Fighter;amount=1;radius=5} @SelfLocation
+        - summon{type=Bandit_Rogue;amount=2;radius=5} @SelfLocation
+
+Bandit_Lieutenant_Call_Failure:
+    Conditions:
+        - stance{s=Calling_Reinforcements} true
+    # Cancels reinforcement call
+    Skills:
+        - setstance{s=Call_Failed} @self ~onDamaged
+        # Returns ai to combat mode
+        - message{m="The reinforcements call has been stopped!"} @PIR{r=30} ~onEnterCombat >0 1
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - RunAITargetSelector{target=attacker}
+        - RunAITargetSelector{target=players}
+
+Bandit_Lieutenant_Call_Start:
+    # Makes mob stand still and telegraphs the reinforcement call.
+    Skills:
+        # Clears invisibility and speed, if he had any.
+        - potion{type=INVISIBILITY;duration=1} @Self
+        - potion{type=SPEED;duration=1} @self
+        - setstance{s=Calling_Reinforcements} @Self
+        - actionmessage{m="The &5&lBandit Lieutenant&f is attempting to call reinforcements! Stop him!"} @PlayersInRadius{r=30}
+        - RunAIGoalSelector{goal=clear}
+        - RunAITargetSelector{target=clear}
+        - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+        - effect:sound{s=block.note.harp} @self
+        - delay 17
+        - skill{s=Bandit_Lieutenant_Call_Step2}
+
+Bandit_Lieutenant_Call_Step2:
+    # Makes mob continue calling for reinforcement, if he has not been damaged.
+    Conditions:
+        - stance{s=Call_Failed} false
+    Skills:
+        - RunAIGoalSelector{goal=clear}
+        - RunAITargetSelector{target=clear}
+        - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+        - effect:sound{s=block.note.harp} @self
+        - delay 17
+        - skill{s=Bandit_Lieutenant_Call_Finalize}
+
+Bandit_Lieutenant_Call_Finalize:
+    # Makes mob continue calling for reinforcement, if he has not been damaged.
+    Conditions:
+        - stance{s=Call_Failed} false
+    Skills:
+        # If channeling completes, summons two minions
+        - summon{type=Bandit_Fighter;amount=1;radius=5} @SelfLocation
+        - summon{type=Bandit_Rogue;amount=1;radius=5} @SelfLocation
+        # Returns ai to combat mode
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - RunAITargetSelector{target=attacker}
+        - RunAITargetSelector{target=players}
+        - setstance{s=Attack_Mode} @self
+
+Bandit_Lieutenant_Phase_2:
+    # Changes AI to be archer and gives bow.
+    Skills:
+        - message{m="&5&lBandit Lieutenant&f<&co> Now you pissed me off!"} @PIR{r=30} ~onEnterCombat >0 1
+        - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+        - effect:sound{s=entity.villager.death} @self
+        - equip{item=Bandit_Longbow:0}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=randomstroll}
+
+Bandit_Lieutenant_Reposition:
+    # Makes Rogue invisible and makes it run from player for 1.5 seconds, then sets it to attack mode.
+    Conditions:
+        - stance{s=Calling_Reinforcements} false
+        - stance{s=Call_Failed} false
+        - stance{s=Reposition_Mode} false
+    Skills:
+        - effect:smoke @self
+        - potion{type=INVISIBILITY;duration=30} @Self
+        - potion{type=SPEED;duration=30} @self
+        - setstance{s=Reposition_Mode} @self
+        - equip{item=air:0}
+        - equip{item=air:5}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=fleeplayers}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - delay 30
+        - effect:smoke @self
+        - delay 5
+        - skill{s=Bandit_Lieutenant_Attack_Mode} ~onTimer:35
+
+Bandit_Lieutenant_Attack_Mode:
+    # Sets Rogue to attack mode and gives it a bow.
+    Skills:
+        - setstance{s=Attack_Mode} @self
+        - equip{item=Bandit_Longbow:0}
+        - equip{item=Bandit_Shield:5}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - RunAITargetSelector{target=attacker}
+        - RunAITargetSelector{target=players}
+
+Bandit_Kingpin_Followers:
+    # Spawns two bandit lieutenants and three bandit horsemen to follow the Bandit Kingpin.
+    Skills:
+        - summon{type=Bandit_Lieutenant;amount=2;radius=5} @SelfLocation
+        - summon{type=Bandit_Horseman;amount=3;radius=5} @SelfLocation
+
+Bandit_Kingpin_Upgraded_Stomp:
+    # Makes fighter leap at target and explode the ground, dealing damage.
+    Conditions:
+        - incombat true
+    Cooldown: 7
+    Skills:
+        - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+        - effect:sound{s=entity.villager.death} @self
+        - delay 12
+        - leap{v=200} @target
+        - delay 5
+        - effect:particles{particle=largeexplosion;amount=10} @self
+        - effect:sound{s=entity.generic.explode} @self
+        - throw{v=4;vy=4} @PIR{r=4}
+        - damage{amount=4;pkb=true} @PIR{r=4}
+
+Bandit_Kingpin_Cripple_Aura:
+    # Creates large slow and weakness aura.
+    Skills:
+        - aura{AuraName=Cripple_Aura;oT=Bandit_Kingpin_Cripple;i=100} @PIR{r=15}
+
+Bandit_Kingpin_Cripple:
+    # Slows and weakens the target.
+    Skills:
+        - potion{t=SLOW;l=1;d=200}
+        - potion{t=WEAKNESS;l=1;d=200}
+
+Bandit_Kingpin_Phase_4:
+    # Summons two lieutenants and three bandit horsemen to follow the bandit kingpin. Gives the bandit kingpin an enchanted bow.
+    Skills:
+        # Telegraphs summon and makes bandit kingpin stay still.
+        - actionmessage{m="The &4&lBandit Kingpin&f is calling reinforcements!"} @PlayersInRadius{r=30}
+        - RunAIGoalSelector{goal=clear}
+        - RunAITargetSelector{target=clear}
+        - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+        - effect:sound{s=block.note.harp} @self
+        - delay 30
+        # Telegraphs summon.
+        - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+        - effect:sound{s=block.note.harp} @self
+        - delay 30
+        # Telegraphs summon.
+        - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+        - effect:sound{s=block.note.harp} @self
+        # Summons two bandit lieutenants and three bandit horsemen.
+        - summon{type=Bandit_Lieutenant;amount=2;radius=5} @SelfLocation
+        - summon{type=Bandit_Horseman;amount=3;radius=5} @SelfLocation
+        # Equips legendary bow and sets ai to combat mode.
+        - equip{item=Manslasher_Bow:0}
+        - equip{item=air:5}
+        - RunAIGoalSelector{goal=clear}
+        - RunAIGoalSelector{goal=bowshoot}
+        - RunAIGoalSelector{goal=gotoparent}
+        - RunAIGoalSelector{goal=randomstroll}
+        - RunAITargetSelector{target=clear}
+        - RunAITargetSelector{target=attacker}
+        - RunAITargetSelector{target=players}
+
+Bandit_Kingpin_Kick:
+    # Kicks any melee attacking player away.
+    Cooldown: 7
+    Skills:
+        - throw{velocity=5;velocityY=3} @target ~onDamaged
+        - damage{amount=4;pkb=true} @target ~onDamaged
+        - potion{t=SLOW;l=2;d=5} @self ~onDamaged
+
+Bandit_Kingpin_Bleeding_Arrow:
+    # Fires a bleeding(poisoned) arrow.
+    Cooldown: 10
+    Skills:
+        - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+        - effect:sound{s=entity.villager.death} @self
+        - delay 15
+        - effect:sound{s=entity.arrow.shoot} @self
+        - shoot{type=ARROW;velocity=5;damage=6;onhit=Bandit_Kingpin_Bleeding} @target
+
+Bandit_Kingpin_Bleeding:
+    # Causes a sweep effect and poisons target.
+    Skills:
+        - potion{t=POISON;l=1} @target
+        - effect:particles{p=sweepAttack;a=1} @target
+
+Bandit_Kingpin_Phase_6:
+    # Grants speed and resistance.
+    Skills:
+        - potion{t=SPEED;l=1;d=-1} @self
+        - potion{t=DAMAGE_RESISTANCE;l=1;d=-1} @self
+
+Bandit_Kingpin_WB_Despawn_Timer:
+    # Times the world boss encounter and despawns the world boss should the time exceed limit.
+    Skills:
+        - message{m="&lCombat with a &4&lWorld Boss&f&l has started!"} @EIW
+        - actionmessage{m="&l&c4<&co>30&f minutes remain!"} @PlayersInRadius{r=30}
+        - delay 2700
+        - actionmessage{m="&l&c2<&co>15&f minutes remain!"} @PlayersInRadius{r=30}
+        - delay 1200
+        - actionmessage{m="&l&c60&f seconds remain!"} @PlayersInRadius{r=30}
+        - delay 600
+        - actionmessage{m="&l&c30&f seconds remain!"} @PlayersInRadius{r=30}
+        - delay 400
+        - actionmessage{m="&l&c10&f seconds remain!"} @PlayersInRadius{r=30}
+        - delay 200
+        - actionmessage{m="&4&lWorld Boss&f&l encounter over!"} @PlayersInRadius{r=30}
+        - remove @self
+
+Prevent_Sunburn:
+    # Makes a mob immune to sunlight burning. Excessive usage may lead to lag. Try using a stone button as a helmet first.
+    Skills:
+        - ignite{ticks=1} @self ~onTimer:1

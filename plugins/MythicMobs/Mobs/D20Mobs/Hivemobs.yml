@@ -1,0 +1,542 @@
+Hivefolk_Drone:
+  # Standard melee mob, can be dangerous when buffed by a spawner. Cannon Fodder.
+  Type: ZOMBIE
+  Health: 7.5
+  Damage: 4
+  Armor: 5
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    # PLACEHOLDER DROPS
+    # - Bandit_Drops_Tier1
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body was consumed by a hungry &aHivefolk Drone&f!"
+    - "<target.name><&sq>s carrion is being eaten by a &aHivefolk Drone&f!"
+    - "<target.name> was ripped apart to death by a &aHivefolk Drone&f!"
+  Display: "&aHivefolk Drone - Level 2"
+  Disguise: player <inherit> setSkin hiveman_t1.png setDynamicName
+
+Hivefolk_Buzzard:
+  # Melee mob with ranged capabilities. Cannon Fodder.
+  Type: ZOMBIE
+  Health: 5
+  Damage: 4
+  DamageModifiers:
+    - FALL 0
+  Armor: 5
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name><&sq>s body was consumed by a hungry &aHivefolk Buzzard&f!"
+    - "<target.name><&sq>s carrion is being eaten by a &aHivefolk Buzzard&f!"
+    - "<target.name><&sq>s body is getting flown back to the hive by &aHivefolk Buzzard&f!"
+  Display: "&aHivefolk Buzzard - Level 3"
+  Disguise: player <inherit> setSkin hiveman_t1.png setDynamicName
+  Skills:
+    - skill{s=Hivefolk_Buzzard_Fly} ~onDamaged >0 1
+
+Hivefolk_Spawner:
+  # T1 Leader mob. Can spawn larvae to swarm the player. Can also boost allies in range, increasing speed significantly.
+  Type: ZOMBIE
+  Health: 11
+  Damage: 4
+  Armor: 6.5
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    # PLACEHOLDER DROPS
+    # - Bandit_Drops_Tier1
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &aHivefolk Spawner<&sq>s&f Larva!"
+    - "<target.name><&sq>s efforts could not pierce a &aHivefolk Spawner<&sq>&f exoskeleton!"
+    - "<target.name> was devoured voraciously by a &aHivefolk Spawner&f!"
+  Display: "&9Hivefolk Spawner - Level 8"
+  Disguise: player <inherit> setSkin hiveman_tl1.png setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Spawner_Followers_1,Hivefolk_Spawner_Followers_2} ~onSpawn
+    - message{m="&aHivefolk Drone&f<&co> Hsssschk! Hsschk! Hschk!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Hivefolk_Spawner_Warcry} ~onDamaged <75% 0.33
+    - skill{s=Hivefolk_Spawner_Spawn_Larva} ~onTimer:120 <50%
+
+Hivefolk_Larva:
+  # Low-health, low-damage mob that can become a buzzard or drone when attacking. Priority target.
+  Type: SILVERFISH
+  Health: 6
+  Damage: 1
+  Armor: 2
+  Faction: Hivefolk
+  Options:
+    MovementSpeed: 0.37
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &aHivefolk Larva&f!"
+    - "<target.name><&sq>s body will serve as shelter for a &aHivefolk Larva&f!"
+    - "A &aHivefolk Larva&f has consumed <target.name>!"
+  Display: "&aHivefolk Larva - Level 1"
+  Disguise: silverfish setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Larva_Evolve_Drone,Hivefolk_Larva_Evolve_Buzzard} ~onAttack >0 0.25
+    - skill{s=Hivefolk_Larva_Evolve_Praetorian} ~onKillPlayer >0 1
+
+Hivefolk_Royal_Larva:
+  # Upgraded version of a regular Larva. Evolves into hoppers or spitters instead. Priority target.
+  Type: SILVERFISH
+  Health: 6
+  Damage: 1
+  Armor: 4
+  Faction: Hivefolk
+  Options:
+    MovementSpeed: 0.37
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &9Hivefolk Royal Larva&f!"
+    - "<target.name><&sq>s body will serve as shelter for a &9Hivefolk Royal Larva&f!"
+    - "A &9Hivefolk Larva&f has consumed <target.name>!"
+  Display: "&9Hivefolk Royal Larva - Level 1"
+  Disguise: silverfish setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Royal_Larva_Evolve_Hopper,Hivefolk_Royal_Larva_Evolve_Spitter} ~onAttack >0 0.25
+    - skill{s=Hivefolk_Royal_Larva_Evolve_Spawner} ~onKillPlayer >0 1
+    - skill{s=Hivefolk_Royal_Larva_Leap} ~onTimer:120 >0 1
+
+Hivefolk_Praetorian:
+  # Strong drone-buzzard hybrid. High damage and speed. Dangerous even alone. Spawns if a Larva kills a player.
+  Type: ZOMBIE
+  Health: 11
+  Damage: 5.5
+  Armor: 6.5
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    # PLACEHOLDER DROPS
+    # - Bandit_Drops_Tier1
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> was brutalized by a bloodthirsty &aHivefolk Praetorian&f!"
+    - "<target.name><&sq>s throat was ripped apart by a &aHivefolk Praetorian&f!"
+    - "<target.name> was no match for a &aHivefolk Praetorian<&sq>s&f ferocity!"
+  Display: "&9Hivefolk Praetorian - Level 7"
+  Disguise: player <inherit> setSkin hiveman_ts.png setDynamicName
+  Skills:
+    - skill{s=Hivefolk_Praetorian_Enrage} =50% 1
+    - skill{s=Hivefolk_Praetorian_Fly} ~onDamaged <50% 1
+    # Spawns Larva on death
+    - summon{type=Hivefolk_Larva;amount=1;radius=1} ~onDeath @SelfLocation
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#ccff66} ~onDeath @self
+
+Hivefolk_Hopper:
+  # Drone with upgraded offensive and defensive abilities. Can leap at the player and poison on hit. Can also leap backwards and slow the player for respite.
+  Type: ZOMBIE
+  Health: 7
+  Damage: 4
+  Armor: 4.5
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> could not resist a &9Hivefolk Hopper<&sq>&f poison!"
+    - "<target.name><&sq>s skull was split by a &9Hivefolk Hopper&f!"
+    - "<target.name> was ripped apart to death by a &9Hivefolk Hopper&f!"
+  Display: "&9Hivefolk Hopper - Level 8"
+  Disguise: player <inherit> setSkin hiveman_t2.png setDynamicName
+  Skills:
+    - skill{s=Hivefolk_Hopper_Leap} ~onTimer:100 >0 1
+    - skill{s=Hivefolk_Hopper_Dodge} ~onDamaged >0 0.2
+
+Hivefolk_Spitter:
+  # Buzzard with greater damage and defensive capabilities. Can leap backwards on being damaged, and poison on a hit.
+  Type: ZOMBIE
+  Health: 12
+  Damage: 4
+  Armor: 5
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name> could not resist a &9Hivefolk Spitter<&sq>&f poison!"
+    - "<target.name> was chewed to death by a &9Hivefolk Spitter&f!"
+    - "<target.name> was dissolved down to a nutritious puddle by a &9Hivefolk Spitter&f!"
+  Display: "&9Hivefolk Spitter - Level 8"
+  Disguise: player <inherit> setSkin hiveman_t2.png setDynamicName
+  Skills:
+    - skill{s=Hivefolk_Spitter_Fly} ~onDamaged >0 1
+
+Hivefolk_Juggernaut:
+  # T2 Leader mob. Slow and tanky, deals a lot of melee damage. Enraged on low health, spawns larvae periodically and on death.
+  Type: ZOMBIE
+  Health: 18
+  Damage: 4.5
+  Armor: 7
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    KnockbackResistance: 0.35
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 35 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> was stomped to death by a &5&lHivefolk Juggernaut&f!"
+    - "<target.name> was smashed down to a fine paste by a &5&lHivefolk Juggernaut&f!"
+    - "<target.name> was no match for a &5&lHivefolk Juggernaut<&sq>s&f unstoppable strenght!"
+  Display: "&5&lHivefolk Juggernaut - Level 15"
+  Disguise: player <inherit> setSkin skin13 setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Juggernaut_Followers_1,Hivefolk_Juggernaut_Followers_2} ~onSpawn
+    - message{m="&5&lHivefolk Juggernaut&f<&co> Hwwwrrrlll!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Hivefolk_Juggernaut_Enrage} ~onDamaged >0 0.33
+    - skill{s=Hivefolk_Juggernaut_Stomp} ~onTimer:280 >0 1
+    - skill{s=Hivefolk_Juggernaut_Warcry} ~onDamaged <33% 0.33
+    - skill{s=Hivefolk_Juggernaut_Summon_Larva} ~onTimer:300 >0 1
+    # Summon wave of Larva on death
+    - summon{type=Hivefolk_Larva;amount=5;radius=1.5} ~onDeath @SelfLocation
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#ccff66} ~onDeath @self
+
+Hivefolk_Matriarch:
+  # Hivefolk World Boss.
+  Type: SKELETON
+  Health: 85
+  Damage: 6
+  Armor: 14
+  DamageModifiers:
+    - FALL 0
+    - SUFFOCATION 0
+  BossBar:
+    Enabled: true
+    Title: "&4&lHivefolk Matriarch"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+    KnockbackResistance: 0.5
+    FollowRange: 40
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - World_Boss_Common_Drops
+    - exp 675 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> disturbed a &4&lHivefolk Matriarch&f and regreted it deeply!"
+    - "<target.name> was feasted upon by a &4&lHivefolk Matriarch&f!"
+    - "<target.name><&sq>s combat skills could not outmatch a &4&lHivefolk Matriarch&f and its spawn!"
+  Display: "&4&lHivefolk Matriarch - Level 30"
+  Disguise: player <inherit> setSkin hiveman_wb.png setDynamicName
+  Skills:
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - skill{s=Bandit_Kingpin_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Phase 1 - Two Hivefolk juggernauts and three praetorians assisting
+    - message{m="&4&lHivefolk Matriarch&f<&co> Xwwwwssskch... Xwwwwwwsssssssskch!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Hivefolk_Matriarch_Summon_Larva} ~onTimer:300 =50%-100%
+    - potion{type=POISON;duration=50;level=1} @target ~onAttack >0 1
+    - skill{s=Hivefolk_Matriarch_Followers} ~onSpawn >0 1
+    # Phase 2 - Venomous attacks
+    - skill{s=Hivefolk_Matriarch_Spit} @target ~onTimer:120 <83% 1
+    - skill{s=Hivefolk_Matriarch_Repulsion} @self ~onDamaged =50%-83% 1
+    # Phase 3 - Venomous attacks 2
+    - skill{s=Hivefolk_Matriarch_Chain_Leap} ~onTimer:400 =50%-67%
+    # Phase 4 - Reinforcements and royal larvae
+    - skill{s=Hivefolk_Matriarch_Followers} =50% 1
+    - skill{s=Hivefolk_Matriarch_Summon_Royal_Larva} ~onTimer:300 <50% 1
+    # Phase 5 - Fly attack
+    - equip{item=elytra:3} =34% 1
+    - skill{s=Hivefolk_Matriarch_Fly_Dive} ~onDamaged <34% 1
+    # Phase 6 - Poison Cloud Spit
+    - skill{s=Hivefolk_Matriarch_Poison_Cloud_Spit} @target ~onTimer:340 <17% 1
+
+Hivefolk_Fire_Drone:
+  # Upgraded drone with significantly higher damage and defensive capabilities. Deals fire damage on hits. Explodes on death. Mythic Encounter mob.
+  Type: ZOMBIE
+  Health: 15
+  Damage: 7
+  Armor: 7
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.35
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body was burned to a crisp by an &6Elemental Firedrone&f!"
+    - "<target.name><&sq>s carrion is being barbecued by an &6Elemental Firedrone&f!"
+  Display: "&6Elemental Firedrone - Level 14"
+  Disguise: player <inherit> setSkin hiveman_tm.png setDynamicName
+  Skills:
+    - ignite{duration=100} @target ~onAttack >0 1
+    - skill{s=Elemental_Fire_Drone_Torch} ~onDamaged >0 0.5
+    - skill{s=Elemental_Fire_Drone_Explode} ~onDeath
+
+Hivefolk_Fire_Buzzard:
+  # Upgraded buzzard with significantly higher damage. Deals fire damage on spit. Explodes on death. Mythic Encounter mob.
+  Type: ZOMBIE
+  Health: 12
+  Damage: 4
+  Armor: 7
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name><&sq>s body is getting flown back to the sun by &6Elemental Firefly&f!"
+  Display: "&6Elemental Firefly - Level 14"
+  Disguise: player <inherit> setSkin hiveman_tm.png setDynamicName
+  Skills:
+    - skill{s=Elemental_Firefly_Fly} ~onDamaged >0 1
+    - skill{s=Elemental_Firefly_Fly} ~onTimer:100 >0 1
+    - skill{s=Elemental_Firefly_Explode} ~onDeath
+
+Hivefolk_Ice_Spawner:
+  # Upgraded spawner with higher versatility. Can fly and spit debuffing ice at the player. Spawns larvae frequently. Mythic Encounter mob.
+  Type: ZOMBIE
+  Health: 20
+  Damage: 4
+  Armor: 9
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &b&lElemental Snowspawner<&sq>s&f Larva!"
+    - "<target.name><&sq>s efforts could not pierce a &b&lElemental Snowspawner<&sq>&f exoskeleton!"
+    - "<target.name> was devoured voraciously by a &b&lElemental Snowspawner&f!"
+  Display: "&b&lElemental Snowspawner - Level 21"
+  Disguise: player <inherit> setSkin hiveman_tlm.png setDynamicName
+  Skills:
+    - randomskill{skills=Elemental_Spawner_Followers_1,Elemental_Spawner_Followers_2} ~onSpawn
+    - skill{s=Elemental_Spawner_Fly} ~onTimer:120 >0 1
+    - skill{s=Elemental_Spawner_Snow_Touch} ~onAttack >0 1
+    - skill{s=Hivefolk_Spawner_Warcry} ~onDamaged <75% 0.33
+    - skill{s=Elemental_Spawner_Spawn_Larva} ~onTimer:120 >0 1
+
+Hivefolk_Elemental_Larva:
+  # Faster, tankier larva. Can become a Firefly or Firedrone on a hit. Becomes a Snowspawner on killing a player. Mythic Encounter mob.
+  Type: SILVERFISH
+  Health: 10
+  Damage: 1
+  Armor: 2
+  Faction: Hivefolk
+  Options:
+    MovementSpeed: 0.37
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for an &6Elemental Larva&f!"
+    - "<target.name><&sq>s body will serve as shelter for an &6Elemental Larva&f!"
+    - "An &6Elemental Larva&f has consumed <target.name>!"
+  Display: "&6Elemental Larva - Level 4"
+  Disguise: silverfish setDynamicName
+  Skills:
+    - randomskill{skills=Elemental_Larva_Evolve_Drone, Elemental_Larva_Evolve_Buzzard} ~onAttack >0 0.33
+    - skill{s=Elemental_Larva_Evolve_Spawner} ~onKillPlayer >0 1

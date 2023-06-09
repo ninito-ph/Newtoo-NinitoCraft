@@ -1,0 +1,41 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+muted: false
+jailed: false
+ip-address: 200.97.241.249
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1659764021668
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1659767153660
+  login: 1659761324464
+  kits:
+    diamondknight: 1659763817899
+    ironknight: 1652376687364
+money: '0'
+last-account-name: Encephalithid
+lastlocation:
+  world: 13b3af3b-592f-4226-8042-8058d81dee4f
+  world-name: arena-big
+  x: 120.24571967098257
+  y: 26.0
+  z: -243.7495978964981
+  yaw: -24.74853515625
+  pitch: 10.199989318847656
+logoutlocation:
+  world: 56d300a8-4916-490f-b833-4ef7680c1c95
+  world-name: arena-small
+  x: 341.7888501878249
+  y: 23.0
+  z: -735.7352791504948
+  yaw: -173.70001220703125
+  pitch: 10.800003051757812
