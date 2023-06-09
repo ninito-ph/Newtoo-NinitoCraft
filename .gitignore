@@ -5,3 +5,8 @@ logs
 .console_history
 arena-*
 world*
+server.properties
+usercache.json
+plugins/SkinsRestorer/
+plugins/Essentials/userdata/
+plugins/Essentials/usermap.csv
