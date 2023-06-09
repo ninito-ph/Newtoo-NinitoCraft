@@ -1,0 +1,7 @@
+cache
+crash-reports
+logs
+.idea
+.console_history
+arena-*
+world*
