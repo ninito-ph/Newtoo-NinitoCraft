@@ -26,3 +26,6 @@ plugins/MythicMobs/stats.yml
 
 # JARs
 *.jar
+
+# Other
+libraries
