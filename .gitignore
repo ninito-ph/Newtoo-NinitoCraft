@@ -1,26 +1,25 @@
-cache
-crash-reports
-logs
+# IDE files
 .idea
-.console_history
+.vscode
+
+# World data
 arena-*
 world*
+
+# Server configs and logs
 server.properties
 usercache.json
+logs
+crash-reports
+cache
+.console_history
+
+# Plugins
 plugins/SkinsRestorer/
-plugins/Essentials/userdata/
-plugins/Essentials/usermap.csv
-
 plugins/Essentials/
-
 plugins/ReviveMe/
-
 plugins/LibsDisguises/
-
 plugins/ProtocolLib/
-
 plugins/MythicMobs/SavedData/
-
 plugins/MythicMobs/packs.yml
-
 plugins/MythicMobs/stats.yml
