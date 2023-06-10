@@ -27,7 +27,7 @@ Water_Barbarian:
     - iron_axe:0
   KillMessages:
     - "<target.name> was viciously ravaged by a &aMerfolk Barbarian!"
-  Display: "&aMerfolk Barbarian - Level 12"
+  Display: "&aMerfolk Barbarian"
   Disguise: player <inherit> setSkin water_t1.png setDynamicName
   Skills:
     - skill{s=Barbarian_Splash} =50% 0.55s
@@ -61,7 +61,7 @@ Water_Stormcaller:
     - iron_hoe:0
   KillMessages:
     - "<target.name> was sacrificed to the rain god by a &aMerfolk Stormcaller!"
-  Display: "&aMerfolk Stormcaller - Level 12"
+  Display: "&aMerfolk Stormcaller"
   Disguise: player <inherit> setSkin water_t1.png setDynamicName
   Skills:
     - randomskill{s=Stormcaller_Enhance_Projectile, Stormcaller_Heal_Projectile} @EIR{r=10;limit=1;sort=LOWEST_HEALTH} ~onTimer:180 >0 0.6
@@ -95,7 +95,7 @@ Water_Tidemaster:
     - trident:0
   KillMessages:
     - "<target.name> was sacrificed to the rain god by a &9Merfolk Tidemaster!"
-  Display: "&9Merfolk Tidemaster - Level 17"
+  Display: "&9Merfolk Tidemaster"
   Disguise: player <inherit> setSkin water_tl1.png setDynamicName
   Skills:
     - message{m="&9Merfolk Tidemaster&f<&co> The deep ones ordain your death, <target.name>!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -132,7 +132,7 @@ Water_Swashbuckler:
     - iron_sword:0
   KillMessages:
     - "<target.name> was shot and slashed by a &9Sunken Swashbuckler!"
-  Display: "&9Sunken Swashbuckler - Level 16"
+  Display: "&9Sunken Swashbuckler"
   Disguise: player <inherit> setSkin water_t2.png setDynamicName
   Skills:
     - skill{s=Pirate_Hype} ~onAttack >0 0.7
@@ -169,7 +169,7 @@ Water_Cannoneer:
     - coal_block:5
   KillMessages:
     - "<target.name> was blown up to pieces by a &9Sunken Cannoneer!"
-  Display: "&9Sunken Cannoneer - Level 15"
+  Display: "&9Sunken Cannoneer"
   Disguise: player <inherit> setSkin water_t2.png setDynamicName
   Skills:
     - skill{s=Cannon_Shot} ~onTimer:60 >0 1
@@ -204,7 +204,7 @@ Water_Captain:
     - iron_sword:0
   KillMessages:
     - "<target.name> was unable to steal a &5&lSunken Captain&f's treasure!"
-  Display: "&5&lSunken Captain - Level 22"
+  Display: "&5&lSunken Captain"
   Disguise: player <inherit> setSkin water_tl2.png setDynamicName
   Skills:
     - message{m="&5&lSunken Captain&f<&co> Ya hear that, crew? Some salty dog wants to dance on the plank!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -252,7 +252,7 @@ Water_Elemental:
     - "<target.name><&sq>s body was broken by the waves of a &5&lWater Elemental!"
     - "<target.name> drowned in the innards of a &5&lWater Elemental"
     - "<target.name> couldn't stay dry against a &5&lWater Elemental!"
-  Display: "&5&lWater Elemental - Level 30"
+  Display: "&5&lWater Elemental"
   Disguise: player <inherit> setSkin water_ts.png setDynamicName
   Skills:
     - message{m="&5Water Elemental&f<&co> Grlgrlgrl..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -305,7 +305,7 @@ Water_Siren:
     - "<target.name> was sung to death by a &4&lNaga Siren!"
     - "<target.name> was seduced and drowned by a &4&lNaga Siren!"
     - "<target.name><&sq>s eardrums (and the rest of his body) were defiled by a &4&lNaga Siren"
-  Display: "&4&lNaga Siren - Level 65"
+  Display: "&4&lNaga Siren"
   Disguise: player <inherit> setSkin water_wb.png setDynamicName
   Skills:
     # Spawning message
@@ -354,7 +354,7 @@ Water_Corsair:
     - gold_sword:0
   KillMessages:
     - "<target.name> was haunted to death by a &6Ghost Corsair!"
-  Display: "&6Ghost Corsair - Level 22"
+  Display: "&6Ghost Corsair"
   Disguise: player <inherit> setSkin water_tm.png setDynamicName
   Skills:
     - skill{s=Pirate_Hype} ~onAttack >0 0.7
@@ -391,7 +391,7 @@ Water_Dragoon:
     - coal_block:5
   KillMessages:
     - "<target.name> very soul was blasted by a &6Ghost Dragoon!"
-  Display: "&6Ghost Dragoon - Level 22"
+  Display: "&6Ghost Dragoon"
   Disguise: player <inherit> setSkin water_tm.png setDynamicName
   Skills:
     - skill{s=Dragoon_Shot} ~onTimer:60 >0 1
@@ -426,7 +426,7 @@ Water_Admiral:
     - gold_sword:0
   KillMessages:
     - "<target.name> was bested by a &b&lSunken Captain&f and his ghost ship!"
-  Display: "&b&lGhost Admiral - Level 36"
+  Display: "&b&lGhost Admiral"
   Disguise: player <inherit> setSkin water_tml.png setDynamicName
   Skills:
     - message{m="&b&lGhost Admiral&f<&co> So, ye wants t' challenge us, blast ye? I shall warn ye, we've been sailin' these seas fer a good while..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1

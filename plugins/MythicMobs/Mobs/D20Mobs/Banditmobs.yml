@@ -30,7 +30,7 @@ Bandit_Swordsman:
     - "<target.name><&sq>s life was stolen by a &aBandit Swordsman!"
     - "<target.name> was robbed and slain by a &aBandit Swordsman!"
     - "<target.name> was slashed to death by a &aBandit Swordsman!"
-  Display: "&aBandit Swordsman - Level 3"
+  Display: "&aBandit Swordsman"
   Disguise: player <inherit> setSkin bandit_t1.png setDynamicName
 
 Bandit_Bowman:
@@ -65,7 +65,7 @@ Bandit_Bowman:
     - "<target.name><&sq>s life was stolen by a &aBandit Bowman!"
     - "<target.name> was robbed and slain by a &aBandit Bowman!"
     - "<target.name> was shot to death by a &aBandit Bowman!"
-  Display: "&aBandit Bowman - Level 4"
+  Display: "&aBandit Bowman"
   Disguise: player <inherit> setSkin bandit_t1.png setDynamicName
 
 Bandit_Leader:
@@ -98,7 +98,7 @@ Bandit_Leader:
   KillMessages:
     - "<target.name><&sq>s life was stolen by a &9Bandit Leader!"
     - "<target.name> was robbed and slain by a &9Bandit Leader!"
-  Display: "&9Bandit Leader - Level 6"
+  Display: "&9Bandit Leader"
   Disguise: player <inherit> setSkin bandit_t1.png setDynamicName
   Skills:
     - message{m="&9Bandit Leader&f<&co> Let<&sq>s get him boys!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -157,7 +157,7 @@ Bandit_Horseman:
     - "<target.name><&sq>s life was stolen by a &aBandit Horseman!"
     - "<target.name> was robbed and slain by a &aBandit Horseman!"
     - "<target.name> was slashed to death by a &aBandit Horseman!"
-  Display: "&aBandit Horseman - Level 5"
+  Display: "&aBandit Horseman"
   Disguise: player <inherit> setSkin bandit_t1.png setDynamicName
   Skills:
     - remove @Mount ~onDeath
@@ -193,7 +193,7 @@ Bandit_Rogue:
     - "<target.name> was outmaneuvered by a &9Bandit Rogue!"
     - "<target.name> was too slow to fight a &9Bandit Rogue!"
     - "<target.name> was shot to death by a &9Bandit Rogue!"
-  Display: "&9Bandit Rogue - Level 7"
+  Display: "&9Bandit Rogue"
   Disguise: player <inherit> setSkin bandit_t2.png setDynamicName
   Skills:
     - skill{s=Bandit_Rogue_Reposition} ~onDamaged
@@ -232,7 +232,7 @@ Bandit_Fighter:
     - "<target.name> was bashed and slashed to death by a &9Bandit Fighter!"
     - "<target.name> was outfought by a &9Bandit Fighter!"
     - "<target.name> was beaten to a pulp by a &9Bandit Fighter!"
-  Display: "&9Bandit Fighter - Level 8"
+  Display: "&9Bandit Fighter"
   Disguise: player <inherit> setSkin bandit_t2.png setDynamicName
   Skills:
     - message{m="&9Bandit Fighter&f<&co> You ain<&sq>t walking away from this one!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -270,7 +270,7 @@ Bandit_Lieutenant:
     - "<target.name> couldn<&sq>t match a &5&lBandit Lieutenant<&sq>s power!"
     - "<target.name> was slain mercilessly by a &5&lBandit Lieutenant!"
     - "<target.name> was gruesomely outfought by a &5&lBandit Lieutenant!"
-  Display: "&5&lBandit Lieutenant - Level 12"
+  Display: "&5&lBandit Lieutenant"
   Disguise: player <inherit> setSkin bandit_t2.png setDynamicName
   Skills:
     - message{m="&5Bandit Lieutenant&f<&co> You ain<&sq>t walking away from this one!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -324,7 +324,7 @@ Bandit_Kingpin:
     - "<target.name> was no match for a &4&lBandit Kingpin!"
     - "<target.name> was broken in combat by a &4&lBandit Kingpin!"
     - "<target.name><&sq>s attempts to kill a &4&lBandit Kingpin&f have failed miserably!"
-  Display: "&4&lBandit Kingpin - Level 20"
+  Display: "&4&lBandit Kingpin"
   Disguise: player <inherit> setSkin bandit_wb.png setDynamicName
   Skills:
     - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn

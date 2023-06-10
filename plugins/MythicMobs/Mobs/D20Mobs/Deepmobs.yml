@@ -35,7 +35,7 @@ Deep_Miner:
     - stone_pickaxe:0
   KillMessages:
     - "<target.name> was crushed by a &aDuergar Miner!"
-  Display: "&aDuergar Miner - Level 7"
+  Display: "&aDuergar Miner"
   Disguise: player <inherit> setSkin deep_t1.png setDynamicName
   Skills:
     - skill{s=Deep_Slow} ~onTimer:140 @target
@@ -68,7 +68,7 @@ Deep_Stonebomber:
     - bow:0
   KillMessages:
     - "<target.name> was petrified by a &aDuergar Stonebomber!"
-  Display: "&aDuergar Stonebomber - Level 9"
+  Display: "&aDuergar Stonebomber"
   Disguise: player <inherit> setSkin deep_t1.png setDynamicName
   Skills:
     - skill{s=Deep_Prison} ~onAttack >0 0.15 @target
@@ -105,7 +105,7 @@ Deep_Captain:
     - "<target.name> was transformed into a ridiculous stone effigy by a &9Duergar Captain!"
     - "<target.name><&sq>s life was mined away by a &9Duergar Captain!"
     - "<target.name><&sq>s was excavated to death by a &9Duergar Captain!"
-  Display: "&9Duergar Captain - Level 12"
+  Display: "&9Duergar Captain"
   Disguise: player <inherit> setSkin deep_tl1.png setDynamicName
   Skills:
     - message{m="&9Duergar Captain&f<&co> You<&sq>ve delved too deep, <&sq>!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -144,7 +144,7 @@ Deep_Shadowblade:
     - iron_sword:0
   KillMessages:
     - "<target.name> was pushed into the dark by a &9Drow Shadowblade!"
-  Display: "&9Drow Shadowblade - Level 10"
+  Display: "&9Drow Shadowblade"
   Disguise: player <inherit> setSkin deep_t2.png setDynamicName
   Skills:
     - skill{s=Shadowblade_Rush} ~onTimer:140 @target
@@ -178,7 +178,7 @@ Deep_Warlock:
     - iron_hoe:0
   KillMessages:
     - "<target.name> was never seen again after an encounter with a &9Drow Warlock!"
-  Display: "&9Drow Warlock - Level 10"
+  Display: "&9Drow Warlock"
   Disguise: player <inherit> setSkin deep_t2.png setDynamicName
   Skills:
     - skill{s=Warlock_Summon_Spiders} ~onTimer:1000
@@ -216,7 +216,7 @@ Deep_Ranger:
     - "<target.name> was no match for a &5&lDrow Ranger<&sq>s dexterity!"
     - "<target.name> was swept away by a &5&lDrow Ranger<&sq>s volley of arrows!"
     - "<target.name> was quickly disposed of by a &5&lDrow Ranger!"
-  Display: "&5&lDrow Ranger - Level 16"
+  Display: "&5&lDrow Ranger"
   Disguise: player <inherit> setSkin deep_tl2.png setDynamicName
   Skills:
     - message{m="&5Drow Ranger&f<&co> These arrows may make you feel a little drowsy..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
@@ -266,7 +266,7 @@ Deep_Mastermind:
     - "<target.name><&sq>s brains were devoured by a &5&lMind Flayer!"
     - "<target.name> mind<&sq> was shattered by a &5&lMind Flayer"
     - "<target.name> was easy work for the psionic muscles of a &5&lMind Flayer!"
-  Display: "&5&lMind Flayer - Level 30"
+  Display: "&5&lMind Flayer"
   Disguise: player <inherit> setSkin deep_tsa.png setDynamicName
   Skills:
     # Initial skills
@@ -311,7 +311,7 @@ Deep_Polyp:
   Equipment:
   KillMessages:
     - "<target.name><&sq>s was warped out of existence by a &9Flying Polyp"
-  Display: "&9Flying Polyp - Level 10"
+  Display: "&9Flying Polyp"
   Disguise: glow_squid
   Skills:
     # Initial skills
@@ -327,7 +327,7 @@ Deep_Interdimensional_Invader:
   Health: 4
   KillMessages:
     - "<target.name><&sq>s matter was consumed by an &9Interdimensional Invader"
-  Display: "&9Interdimensional Invader - Level 3"
+  Display: "&9Interdimensional Invader"
   Disguise: player <inherit> setSkin deep_tsa2.png setDynamicName
   Options:
     PreventOtherDrops: true
@@ -372,7 +372,7 @@ Deep_Cleric:
     - "<target.name> was eaten alive by the darkness of an &4&lAbyssal Cleric!"
     - "<target.name> was overshadowed by an &4&lAbyssal Cleric!"
     - "<target.name><&sq>s life was put out like a flame in the dark by an &4&lAbyssal Cleric"
-  Display: "&4&lAbyssal Cleric - Level 50"
+  Display: "&4&lAbyssal Cleric"
   Disguise: player <inherit> setSkin deep_wba.png setDynamicName
   Skills:
     # Spawning message
@@ -405,7 +405,7 @@ Deep_Cleric_Decoy:
     PreventOtherDrops: true
     PreventRandomEquipment: true
     MovementSpeed: 0.2
-  Display: "&4&lAbyssal Cleric - Level 50"
+  Display: "&4&lAbyssal Cleric"
   Disguise: player <inherit> setSkin deep_wba.png setDynamicName
   Skills:
     - skill{s=Cleric_Decoy_Spawn} ~onSpawn >0 1
@@ -420,7 +420,7 @@ Deep_Cleric_Decoy_Caster:
     PreventOtherDrops: true
     PreventRandomEquipment: true
     MovementSpeed: 0.2
-  Display: "&4&lAbyssal Cleric - Level 50"
+  Display: "&4&lAbyssal Cleric"
   Disguise: player <inherit> setSkin deep_wba.png setDynamicName
   Skills:
     - randomskill{s=Cleric_Decoy_Explode,Cleric_Decoy_Shadowbolt} ~onSpawn >0 1

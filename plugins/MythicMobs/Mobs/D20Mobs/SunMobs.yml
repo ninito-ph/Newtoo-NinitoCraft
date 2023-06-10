@@ -27,6 +27,6 @@ Sun_Ravager:
     - iron_axe:0
   KillMessages:
     - "<target.name> was viciously mauled by a &aWeretiger Ravager!"
-  Display: "&aWeretiger Barbarian - Level 16"
+  Display: "&aWeretiger Barbarian"
   Disguise: player <inherit> setSkin egypt_t1.png setDynamicName
   Skills:
