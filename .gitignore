@@ -1,6 +1,10 @@
 # IDE files
 .idea
 .vscode
+*.iml
+.classpath
+.project
+.settings/
 
 # World data
 arena-*
@@ -29,3 +33,15 @@ plugins/MythicMobs/stats.yml
 
 # Other
 libraries
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# Backup files
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
