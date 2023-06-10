@@ -23,3 +23,6 @@ plugins/ProtocolLib/
 plugins/MythicMobs/SavedData/
 plugins/MythicMobs/packs.yml
 plugins/MythicMobs/stats.yml
+
+# JARs
+*.jar
