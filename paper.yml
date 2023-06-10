@@ -14,6 +14,8 @@ verbose: false
 use-display-name-in-quit-message: false
 config-version: 27
 settings:
+  resolve-selectors-in-books: false
+  proxy-protocol: false
   use-dimension-type-for-custom-spawners: false
   fix-target-selector-tag-completion: true
   time-command-affects-all-worlds: false
@@ -127,6 +129,9 @@ timings:
   server-name: Unknown Server
 world-settings:
   default:
+    treasure-maps-find-already-discovered:
+      villager-trade: false
+      loot-tables: default
     slime-spawn-height:
       swamp-biome:
         maximum: 70.0
@@ -148,7 +153,6 @@ world-settings:
     allow-player-cramming-damage: false
     max-leash-distance: 10.0
     enable-treasure-maps: false
-    treasure-maps-return-already-discovered: true
     mob-spawner-tick-rate: 2
     fixed-chunk-inhabited-time: -1
     should-remove-dragon: false
