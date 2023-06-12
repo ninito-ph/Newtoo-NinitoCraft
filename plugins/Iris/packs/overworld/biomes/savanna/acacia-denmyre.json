@@ -1,8 +1,8 @@
 {
     "name": "Savanna Acacia Denmyre",
-    "derivative": "DESERT",
-    "rarity": 1,
     "color": "#DC913D",
+    "rarity": 1,
+    "derivative": "DESERT",
     "vanillaDerivative": "SAVANNA",
     "customDerivitives": [{
         "category": "savanna",
@@ -17,6 +17,14 @@
         "max": 7,
         "generator": "plain"
     }],
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "FLAT"},
@@ -39,16 +47,38 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
+
+    "objects": [{
+        "chance": 0.5,
+        "density": 2,
+        "edit": [{
+            "find": [{"block": "minecraft:acacia_planks"}],
+            "replace": {"palette": [{"block": "minecraft:stripped_acacia_wood"}]}
+        }],
+        "rotation": {
+            "yAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 90,
+                "enabled": true
+            },
+            "enabled": true
         },
-        {
-            "structure": "village-savanna",
-            "rarity": 1500
+        "place": [
+            "trees/acacia/denmyre1",
+            "trees/acacia/denmyre2",
+            "trees/acacia/denmyre3",
+            "trees/acacia/denmyre4",
+            "trees/acacia/denmyre5",
+            "trees/acacia/denmyre6",
+            "trees/acacia/denmyre7"
+        ],
+        "translate": {
+            "x": 0,
+            "y": -1,
+            "z": 0
         }
-    ],
+    }],
     "decorators": [
         {
             "chance": 0.1,
@@ -109,44 +139,5 @@
             "palette": [{"block": "minecraft:tall_grass"}],
             "style": {"style": "STATIC"}
         }
-    ],
-    "objects": [{
-        "chance": 0.5,
-        "density": 2,
-        "edit": [{
-            "find": [{"block": "minecraft:acacia_planks"}],
-            "replace": {"palette": [{"block": "minecraft:stripped_acacia_wood"}]}
-        }],
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "place": [
-            "trees/acacia/denmyre1",
-            "trees/acacia/denmyre2",
-            "trees/acacia/denmyre3",
-            "trees/acacia/denmyre4",
-            "trees/acacia/denmyre5",
-            "trees/acacia/denmyre6",
-            "trees/acacia/denmyre7"
-        ],
-        "translate": {
-            "x": 0,
-            "y": -1,
-            "z": 0
-        }
-    }],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    }
+    ]
 }

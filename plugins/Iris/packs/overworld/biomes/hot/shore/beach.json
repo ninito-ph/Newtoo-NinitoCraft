@@ -1,7 +1,7 @@
 {
     "name": "Hot Beach",
-    "rarity": 1,
     "color": "#E6DD70",
+    "rarity": 1,
     "derivative": "WARM_OCEAN",
     "vanillaDerivative": "DESERT",
     "customDerivitives": [{
@@ -12,6 +12,19 @@
         "temperature": 0.95,
         "id": "hot_beach"
     }],
+    "generators": [{
+        "min": 0,
+        "max": 1,
+        "generator": "plain"
+    }],
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:smooth_sandstone"},
+            {"block": "minecraft:sand"},
+            {"block": "minecraft:smooth_sandstone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -24,10 +37,18 @@
             "palette": [{"block": "minecraft:dirt"}]
         }
     ],
-    "generators": [{
-        "min": 0,
-        "max": 1,
-        "generator": "plain"
+    "objects": [{
+        "density": 3,
+        "mode": "MIN_STILT",
+        "chance": 1,
+        "place": [
+            "trees/jungle/palm1",
+            "trees/jungle/palm2",
+            "trees/jungle/palm3",
+            "trees/jungle/palm4",
+            "trees/jungle/palm6",
+            "trees/jungle/palm7"
+        ]
     }],
     "decorators": [
         {
@@ -83,30 +104,10 @@
             "stackMax": 4,
             "palette": [{"block": "minecraft:sugar_cane"}],
             "style": {
-                "style": "IRIS",
+                "style": "NOWHERE",
                 "zoom": 0.65
             },
             "heightVariance": {"style": "STATIC"}
         }
-    ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:smooth_sandstone"},
-            {"block": "minecraft:sand"},
-            {"block": "minecraft:smooth_sandstone"}
-        ]
-    },
-    "objects": [{
-        "density": 3,
-        "chance": 1,
-        "place": [
-            "trees/jungle/palm1",
-            "trees/jungle/palm2",
-            "trees/jungle/palm3",
-            "trees/jungle/palm4",
-            "trees/jungle/palm6",
-            "trees/jungle/palm7"
-        ]
-    }]
+    ]
 }

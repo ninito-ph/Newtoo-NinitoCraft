@@ -1,7 +1,7 @@
 {
     "name": "Mesa Cliffs",
-    "rarity": 1,
     "color": "#EE8658",
+    "rarity": 1,
     "derivative": "WINDSWEPT_SAVANNA",
     "vanillaDerivative": "ERODED_BADLANDS",
     "generators": [
@@ -11,11 +11,20 @@
             "generator": "mountain"
         },
         {
-            "min": 15,
-            "max": 60,
+            "min": 41,
+            "max": 110,
             "generator": "plain-cliffs"
         }
     ],
+    "wall": {
+        "style": {"style": "NOWHERE"},
+        "zoom": 0.25,
+        "palette": [
+            {"block": "minecraft:brown_terracotta"},
+            {"block": "minecraft:gray_terracotta"},
+            {"block": "minecraft:black_terracotta"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 4,
@@ -87,14 +96,5 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "lockLayers": true,
-    "wall": {
-        "style": {"style": "IRIS"},
-        "zoom": 0.25,
-        "palette": [
-            {"block": "minecraft:brown_terracotta"},
-            {"block": "minecraft:gray_terracotta"},
-            {"block": "minecraft:black_terracotta"}
-        ]
-    }
+    "lockLayers": true
 }

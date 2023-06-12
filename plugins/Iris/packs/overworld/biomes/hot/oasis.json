@@ -1,8 +1,8 @@
 {
     "name": "Hot Oasis",
-    "derivative": "DESERT",
-    "rarity": 1,
     "color": "#B99620",
+    "rarity": 1,
+    "derivative": "DESERT",
     "vanillaDerivative": "DESERT",
     "generators": [{
         "generator": "plain",
@@ -12,7 +12,7 @@
     "layers": [{
         "minHeight": 5,
         "maxHeight": 5,
-        "style": {"style": "FRACTAL_WATER"},
+        "style": {"style": "NOWHERE"},
         "zoom": 0.7,
         "palette": [
             {
@@ -33,7 +33,7 @@
             "stackMax": 5,
             "style": {"style": "STATIC"},
             "palette": [{"block": "minecraft:cactus"}],
-            "heightVariance": {"style": "IRIS"},
+            "heightVariance": {"style": "NOWHERE"},
             "stackMin": 1
         },
         {

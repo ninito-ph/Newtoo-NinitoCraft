@@ -1,15 +1,10 @@
 {
     "name": "Tropical Wilds",
+    "color": "#207553",
+    "rarity": 1,
     "derivative": "JUNGLE",
     "vanillaDerivative": "JUNGLE",
-    "rarity": 1,
-    "color": "#207553",
-    "children": ["tropical/highlands"],
-    "generators": [{
-        "min": 10,
-        "max": 20,
-        "generator": "mountain"
-    }],
+    "biomeScatter": ["JUNGLE"],
     "customDerivitives": [{
         "id": "tropical_wilds",
         "foliageColor": "#2C8806",
@@ -18,6 +13,22 @@
         "waterFogColor": "#11BA89",
         "category": "jungle"
     }],
+    "children": ["tropical/highlands"],
+    "generators": [{
+        "min": 10,
+        "max": 20,
+        "generator": "mountain"
+    }],
+    "biomeZoom": 40,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {"palette": [{"block": "minecraft:grass_block"}]},
         {"palette": [{"block": "minecraft:dirt"}]},
@@ -40,87 +51,7 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        },
-        {
-            "rarity": 1200,
-            "structure": "jungle-pyramid"
-        }
-    ],
-    "decorators": [
-        {
-            "chance": 0.22,
-            "palette": [{"block": "minecraft:tall_grass"}]
-        },
-        {
-            "chance": 0.42,
-            "palette": [
-                {"block": "minecraft:grass"},
-                {"block": "minecraft:fern"}
-            ]
-        },
-        {
-            "chance": 0.003,
-            "palette": [
-                {"block": "minecraft:oxeye_daisy"},
-                {"block": "minecraft:pink_tulip"},
-                {"block": "minecraft:lily_of_the_valley"}
-            ]
-        },
-        {
-            "chance": 0.02,
-            "palette": [
-                {"block": "minecraft:dandelion"},
-                {"block": "minecraft:poppy"},
-                {"block": "minecraft:rose_bush"}
-            ]
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "IRIS"},
-            "zoom": 0.5,
-            "palette": [{
-                "data": {"age": 7},
-                "block": "minecraft:potatoes"
-            }],
-            "style": {"style": "IRIS"}
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "IRIS"},
-            "zoom": 0.5,
-            "palette": [{
-                "data": {"age": 7},
-                "block": "minecraft:carrots"
-            }],
-            "style": {"style": "IRIS"}
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "IRIS"},
-            "zoom": 0.5,
-            "palette": [{
-                "data": {"age": 7},
-                "block": "minecraft:beetroots"
-            }],
-            "style": {"style": "IRIS"}
-        }
-    ],
-    "effects": [{
-        "interval": 250,
-        "chance": 5,
-        "particleEffect": "TOTEM",
-        "particleOffset": 2,
-        "particleAltY": 0.2,
-        "particleCount": 5
-    }],
+
     "objects": [
         {
             "chance": 0.125,
@@ -277,7 +208,7 @@
         },
         {
             "chance": 0.01,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "rotation": {
                 "yAxis": {
@@ -295,6 +226,20 @@
                 "trees/jungle/largegeneric4",
                 "trees/jungle/largegeneric5"
             ],
+                        "edit": [
+                {
+                    "find": [
+                        {
+                            "block": "minecraft:vine"
+                        }
+                    ],
+                    "replace":{
+                        "palette": [
+                            {"block": "minecraft:air"}
+                        ]
+                    }
+                }
+            ],
             "translate": {
                 "x": 0,
                 "y": -12,
@@ -302,15 +247,71 @@
             }
         }
     ],
-    "biomeZoom": 40,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": ["JUNGLE"]
+    "decorators": [
+        {
+            "chance": 0.22,
+            "palette": [{"block": "minecraft:tall_grass"}]
+        },
+        {
+            "chance": 0.42,
+            "palette": [
+                {"block": "minecraft:grass"},
+                {"block": "minecraft:fern"}
+            ]
+        },
+        {
+            "chance": 0.003,
+            "palette": [
+                {"block": "minecraft:oxeye_daisy"},
+                {"block": "minecraft:pink_tulip"},
+                {"block": "minecraft:lily_of_the_valley"}
+            ]
+        },
+        {
+            "chance": 0.02,
+            "palette": [
+                {"block": "minecraft:dandelion"},
+                {"block": "minecraft:poppy"},
+                {"block": "minecraft:rose_bush"}
+            ]
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "NOWHERE"},
+            "zoom": 0.5,
+            "palette": [{
+                "data": {"age": 7},
+                "block": "minecraft:potatoes"
+            }],
+            "style": {"style": "NOWHERE"}
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "NOWHERE"},
+            "zoom": 0.5,
+            "palette": [{
+                "data": {"age": 7},
+                "block": "minecraft:carrots"
+            }],
+            "style": {"style": "NOWHERE"}
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "NOWHERE"},
+            "zoom": 0.5,
+            "palette": [{
+                "data": {"age": 7},
+                "block": "minecraft:beetroots"
+            }],
+            "style": {"style": "NOWHERE"}
+        }
+    ],
+    "effects": [{
+        "interval": 250,
+        "chance": 5,
+        "particleEffect": "TOTEM",
+        "particleOffset": 2,
+        "particleAltY": 0.2,
+        "particleCount": 5
+    }]
 }

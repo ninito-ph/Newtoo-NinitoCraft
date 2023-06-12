@@ -1,14 +1,9 @@
 {
     "name": "Mushroom Beach",
-    "derivative": "MUSHROOM_FIELDS",
-    "rarity": 1,
     "color": "#D4A7EE",
-    "vanillaDerivative": "MUSHROOM_FIELD_SHORE",
-    "generators": [{
-        "min": -5,
-        "max": 1,
-        "generator": "plain"
-    }],
+    "rarity": 1,
+    "derivative": "MUSHROOM_FIELDS",
+    "vanillaDerivative": "MUSHROOM_FIELDS",
     "customDerivitives": [{
         "id": "mushroom_beach",
         "waterColor": "#B4B2FF",
@@ -16,6 +11,11 @@
         "waterFogColor": "#BD94DF",
         "grassColor": "#A2A2FF",
         "fogColor": "#CACDFF"
+    }],
+    "generators": [{
+        "min": -5,
+        "max": 1,
+        "generator": "plain"
     }],
     "layers": [
         {
@@ -36,21 +36,15 @@
         "name": "standard-surface-portals",
         "chance": 0.00505,
         "place": [
-            "clutter/swordnp2",
-            "clutter/swordnp1",
+            "structures/swordnp2",
+            "structures/swordnp1",
+            "structures/swordnpstr2",
+            "structures/swordnpstr1",
             "structures/giantportal1",
             "structures/giantportal2",
             "structures/giantportal3",
-            "structures/portal1",
-            "structures/portal2",
-            "structures/portal3",
-            "structures/portal4",
-            "structures/portal5",
-            "structures/portal6",
-            "structures/portal7",
-            "structures/portal8",
-            "structures/portal9",
-            "structures/portal10"
+            "structures/megaportal1",
+            "structures/megaportal2"
         ],
         "edit": [
             {
@@ -74,7 +68,7 @@
                 "chance": 0.2
             }
         ],
-        "mode": "FAST_MIN_HEIGHT",
+        "mode": "PAINT",
         "carvingSupport": "SURFACE_ONLY"
     }],
     "slab": {

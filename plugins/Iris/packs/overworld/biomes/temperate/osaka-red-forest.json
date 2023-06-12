@@ -1,25 +1,15 @@
 {
     "name": "Temperate Osaka Red Forest",
-    "derivative": "FLOWER_FOREST",
-    "rarity": 4,
     "color": "#4CBB1B",
+    "rarity": 4,
+    "derivative": "FLOWER_FOREST",
     "vanillaDerivative": "FOREST",
-    "effects": [{
-        "particleAltX": 0.301,
-        "particleAltY": -0.33885,
-        "particleAltZ": 0.301,
-        "chance": 1,
-        "particleEffect": "SOUL",
-        "particleOffset": 12,
-        "interval": 550,
-        "particleCount": 0
-    }],
+    "biomeScatter": ["FOREST"],
     "customDerivitives": [
         {
             "id": "osaka_red",
             "foliageColor": "#D42828",
-            "downfallType": "snow",
-            "temperature": -3,
+            "downfallType": "rain",
             "waterColor": "#A5FFED",
             "grassColor": "#64A522",
             "category": "forest"
@@ -27,8 +17,7 @@
         {
             "id": "osaka_red_child_forest",
             "foliageColor": "#AA2323",
-            "downfallType": "snow",
-            "temperature": -3,
+            "downfallType": "rain",
             "waterColor": "#A5FFED",
             "grassColor": "#64A522",
             "category": "forest"
@@ -39,6 +28,16 @@
         "max": 7,
         "generator": "plain"
     }],
+    "biomeZoom": 60,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -134,7 +133,7 @@
         },
         {
             "chance": 0.8,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 1,
             "rotation": {
                 "yAxis": {
@@ -237,8 +236,6 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeZoom": 60,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.6,
@@ -282,13 +279,14 @@
             "palette": [{"block": "minecraft:blackstone_slab"}]
         }
     ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": ["FOREST"]
+    "effects": [{
+        "particleAltX": 0.301,
+        "particleAltY": -0.33885,
+        "particleAltZ": 0.301,
+        "chance": 1,
+        "particleEffect": "SOUL",
+        "particleOffset": 12,
+        "interval": 550,
+        "particleCount": 0
+    }]
 }

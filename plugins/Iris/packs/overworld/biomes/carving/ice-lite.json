@@ -43,21 +43,6 @@
             }]
         }
     ],
-    "caveCeilingLayers": [
-        {
-            "maxHeight": 2,
-            "minHeight": 1,
-            "palette": [{"block": "minecraft:ice"}]
-        },
-        {
-            "maxHeight": 1,
-            "minHeight": 1,
-            "palette": [
-                {"block": "minecraft:blackstone"},
-                {"block": "minecraft:blue_ice"}
-            ]
-        }
-    ],
     "decorators": [
         {
             "chance": 0.001,
@@ -96,6 +81,21 @@
                     "block": "minecraft:packed_ice",
                     "weight": 1
                 }
+            ]
+        }
+    ],
+    "caveCeilingLayers": [
+        {
+            "maxHeight": 2,
+            "minHeight": 1,
+            "palette": [{"block": "minecraft:ice"}]
+        },
+        {
+            "maxHeight": 1,
+            "minHeight": 1,
+            "palette": [
+                {"block": "minecraft:blackstone"},
+                {"block": "minecraft:blue_ice"}
             ]
         }
     ]

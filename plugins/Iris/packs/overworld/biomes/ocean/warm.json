@@ -1,13 +1,13 @@
 {
     "name": "Ocean Warm",
+    "color": "#382CAA",
     "derivative": "WARM_OCEAN",
     "vanillaDerivative": "WARM_OCEAN",
-    "color": "#382CAA",
     "children": ["ocean/warm-bottom"],
     "generators": [{
-        "generator": "plain",
+        "min": -32,
         "max": -10,
-        "min": -19
+        "generator": "mountain"
     }],
     "layers": [{
         "minHeight": 2,
@@ -27,42 +27,6 @@
             }
         ]
     }],
-    "childStyle": {
-        "style": "GLOB",
-        "zoom": 1,
-        "exponent": 1.3
-    },
-    "childShrinkFactor": 1,
-    "decorators": [
-        {
-            "chance": 0.02,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "stackMin": 2,
-            "stackMax": 6,
-            "partOf": "SEA_FLOOR"
-        },
-        {
-            "chance": 0.05,
-            "palette": [{"block": "minecraft:seagrass"}]
-        },
-        {
-            "chance": 0.05,
-            "palette": [{
-                "block": "minecraft:tall_seagrass",
-                "data": {"half": "lower"}
-            }],
-            "topPalette": [{
-                "block": "minecraft:tall_seagrass",
-                "data": {"half": "upper"}
-            }],
-            "partOf": "SEA_FLOOR"
-        }
-    ],
-    "loot": {
-        "mode": "ADD",
-        "multiplier": 1,
-        "tables": ["tropical-dungeon"]
-    },
     "objects": [
         {
             "place": [
@@ -143,7 +107,7 @@
                 "structures/landstone5"
             ],
             "chance": 1,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "underwater": true,
             "waterloggable": true,
             "edit": [
@@ -169,11 +133,21 @@
                 "structures/shipgenericc",
                 "structures/shipgenericr",
                 "structures/shipgenericu",
-                "structures/shipgenericc"
+                "structures/shipgenericc",
+                "structures/BShip1",
+                "structures/BShip2",
+                "structures/BShip3",
+                "structures/BShip4",
+                "structures/BShip5",
+                "structures/BShip6",
+                "structures/kship1",
+                "structures/kship2",
+                "structures/kship3",
+                "structures/kship4"
             ],
             "markers": [{
                 "mark": [{"block": "minecraft:spruce_planks"}],
-                "maximumMarkers": 5,
+                "maximumMarkers": 4,
                 "marker": "skelepirate"
             }],
             "chance": 0.005,
@@ -181,30 +155,57 @@
             "translate": {"y": -1},
             "waterloggable": true
         },
-    {
-        "chance": 0.035,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
+        {
+            "chance": 0.0035,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
                 "enabled": true
             },
-            "enabled": true
+            "underwater": true,
+            "place": [
+                "structures/oruins1",
+                "structures/oruins2",
+                "structures/oruins3"
+            ],
+            "mode": "PAINT",
+            "loot": [{"name": "structures/ocean-ruins"}],
+            "overrideGlobalLoot": true
+        }
+    ],
+    "decorators": [
+        {
+            "chance": 0.02,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "stackMin": 2,
+            "stackMax": 6,
+            "partOf": "SEA_FLOOR"
         },
-        "underwater": true,
-        "place": [
-            "structures/oruins1",
-            "structures/oruins2",
-            "structures/oruins3"
-        ],
-        "mode": "PAINT",
-        "loot": [
-            {
-                "name": "tropical-dungeon"
-            }
-        ]
-
-    }
-    ]
+        {
+            "chance": 0.05,
+            "palette": [{"block": "minecraft:seagrass"}]
+        },
+        {
+            "chance": 0.05,
+            "palette": [{
+                "block": "minecraft:tall_seagrass",
+                "data": {"half": "lower"}
+            }],
+            "topPalette": [{
+                "block": "minecraft:tall_seagrass",
+                "data": {"half": "upper"}
+            }],
+            "partOf": "SEA_FLOOR"
+        }
+    ],
+    "childStyle": {
+        "style": "GLOB",
+        "zoom": 1,
+        "exponent": 1.3
+    },
+    "childShrinkFactor": 1
 }

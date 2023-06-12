@@ -1,24 +1,29 @@
 {
     "name": "Lush Plains Yellow",
-    "derivative": "FLOWER_FOREST",
-    "vanillaDerivative": "FLOWER_FOREST",
     "color": "#67CB3C",
     "rarity": 3,
+    "derivative": "FLOWER_FOREST",
+    "vanillaDerivative": "FLOWER_FOREST",
     "generators": [{
         "min": 4,
         "max": 7,
         "generator": "plain"
     }],
-    "jigsawStructures": [
+     "jigsawStructures": [
         {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
+            "structure": "pillager-outpost",
+            "rarity": 800
         },
         {
-            "rarity": 1500,
-            "structure": "village-temperate"
+            "structure": "village-plains",
+            "rarity": 1200
         }
     ],
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {"palette": [
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:andesite"}
+    ]},
     "layers": [
         {"palette": [{"block": "minecraft:grass_block"}]},
         {
@@ -44,49 +49,10 @@
             ]
         }
     ],
-    "decorators": [
-        {
-            "chance": 0.05,
-            "style": {"style": "STATIC"},
-            "palette": [
-                {
-                    "block": "minecraft:dandelion",
-                    "weight": 8
-                },
-                {
-                    "block": "minecraft:sunflower",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "chance": 0.01,
-            "palette": [{"block": "minecraft:tall_grass"}]
-        },
-        {
-            "chance": 0.5,
-            "palette": [
-                {
-                    "block": "minecraft:grass",
-                    "weight": 15
-                },
-                {
-                    "block": "minecraft:fern",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "chance": 0.08,
-            "palette": [{
-                "block": "minecraft:oak_leaves",
-                "data": {"persistent": true}
-            }]
-        }
-    ],
+
     "objects": [
         {
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "chance": 0.009,
             "rotation": {
                 "yAxis": {
@@ -142,20 +108,7 @@
                 "trees/oak/generic6"
             ]
         },
-        {
-            "chance": 1.0E-4,
-            "mode": "FAST_MIN_HEIGHT",
-            "rotation": {
-                "yAxis": {
-                    "min": 0,
-                    "max": 360,
-                    "interval": 90,
-                    "enabled": true
-                },
-                "enabled": true
-            },
-            "place": ["structures/ruin1"]
-        },
+
         {
             "chance": 0.004,
             "rotation": {
@@ -217,9 +170,44 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {"palette": [
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:andesite"}
-    ]}
+    "decorators": [
+        {
+            "chance": 0.05,
+            "style": {"style": "STATIC"},
+            "palette": [
+                {
+                    "block": "minecraft:dandelion",
+                    "weight": 8
+                },
+                {
+                    "block": "minecraft:sunflower",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "chance": 0.01,
+            "palette": [{"block": "minecraft:tall_grass"}]
+        },
+        {
+            "chance": 0.5,
+            "palette": [
+                {
+                    "block": "minecraft:grass",
+                    "weight": 15
+                },
+                {
+                    "block": "minecraft:fern",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "chance": 0.08,
+            "palette": [{
+                "block": "minecraft:oak_leaves",
+                "data": {"persistent": true}
+            }]
+        }
+    ]
 }

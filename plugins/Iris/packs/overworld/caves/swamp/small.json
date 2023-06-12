@@ -1,12 +1,12 @@
 {
     "fill": {"block": "minecraft:cave_air"},
     "verticalRange": {
-        "max": 65,
-        "min": 5
+        "max": 400,
+        "min": 15
     },
     "customBiome": "carving/swamp",
     "fork": {"elipsoids": [{
-        "customBiome": "carving/amethyst",
+        "customBiome": "carving/rocky",
         "fill": {"block": "minecraft:cave_air"},
         "rarity": 250,
         "baseWidth": {
@@ -19,7 +19,7 @@
         "girth": {
             "max": 4,
             "min": 2,
-            "style": {"style": "VASCULAR"}
+            "style": {"style": "NOWHERE"}
         },
         "maxDistance": 75,
         "yStyle": {
@@ -27,7 +27,7 @@
             "max": 1,
             "generator": {
                 "zoom": 3,
-                "style": "IRIS"
+                "style": "NOWHERE"
             }
         },
         "xStyle": {

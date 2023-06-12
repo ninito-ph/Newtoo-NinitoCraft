@@ -1,15 +1,16 @@
 {
     "name": "Mesa Plateau Dirt",
-    "rarity": 1,
     "color": "#BD5122",
+    "rarity": 1,
     "derivative": "BADLANDS",
     "vanillaDerivative": "BADLANDS",
     "biomeScatter": ["BADLANDS"],
     "generators": [{
-        "min": 33,
-        "max": 41,
+        "min": 73,
+        "max": 98,
         "generator": "cracked-cliffs"
     }],
+    "biomeStyle": {"style": "SIMPLEX"},
     "layers": [
         {
             "minHeight": 5,
@@ -54,31 +55,8 @@
             "palette": [{"block": "minecraft:brown_terracotta"}]
         }
     ],
-    "decorators": [{
-        "chance": 0.05,
-        "palette": [{"block": "minecraft:tall_grass"}]
-    }],
-    "lockLayers": true,
-    "biomeStyle": {"style": "SIMPLEX"},
     "objects": [
-        {
-            "place": [
-                "structures/tower",
-                "structures/tower-twin"
-            ],
-            "chance": 5.0E-4,
-            "density": 2,
-            "mode": "FAST_STILT",
-            "rotation": {
-                "enabled": true,
-                "yAxis": {
-                    "enabled": true,
-                    "interval": 90,
-                    "min": -360,
-                    "max": 360
-                }
-            }
-        },
+
         {
             "place": [
                 "trees/acacia/vexed1",
@@ -94,5 +72,10 @@
                 }]}
             }]
         }
-    ]
+    ],
+    "decorators": [{
+        "chance": 0.05,
+        "palette": [{"block": "minecraft:tall_grass"}]
+    }],
+    "lockLayers": true
 }

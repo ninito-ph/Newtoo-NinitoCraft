@@ -1,14 +1,15 @@
 {
     "name": "Frozen Redwood Forest",
-    "derivative": "SNOWY_TAIGA",
     "color": "#0F5575",
     "rarity": 1,
+    "derivative": "SNOWY_TAIGA",
     "vanillaDerivative": "SNOWY_TAIGA",
-    "generators": [{
-        "min": 82,
-        "max": 93,
-        "generator": "highplains"
-    }],
+    "biomeScatter": [
+        "SNOWY_TAIGA",
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS",
+        "ICE_SPIKES"
+    ],
     "customDerivitives": [{
         "category": "icy",
         "id": "frozen_redwood_forest",
@@ -20,6 +21,22 @@
         "foliageColor": "#B8D0E1",
         "grassColor": "#D0E1FF"
     }],
+    "children": ["frozen/redwood-forest-extended"],
+    "generators": [{
+        "min": 82,
+        "max": 93,
+        "generator": "highplains"
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "maxHeight": 3,
@@ -46,20 +63,7 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
+
     "objects": [
         {
             "chance": 0.02,
@@ -100,7 +104,7 @@
         },
         {
             "chance": 0.4,
-            "density": 2,
+            "density": 1,
             "edit": [
                 {
                     "find": [{"block": "minecraft:birch_leaves"}],
@@ -167,12 +171,10 @@
             ]
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [{
         "chance": 1,
         "variance": {
-            "style": "IRIS",
+            "style": "NOWHERE",
             "zoom": 0.23
         },
         "palette": [
@@ -182,19 +184,5 @@
             },
             {"block": "minecraft:air"}
         ]
-    }],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "SNOWY_TAIGA",
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS",
-        "ICE_SPIKES"
-    ]
+    }]
 }

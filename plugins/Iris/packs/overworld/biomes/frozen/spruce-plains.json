@@ -1,10 +1,29 @@
 {
     "name": "Frozen Spruce Plains",
-    "derivative": "SNOWY_TAIGA",
     "color": "#06405B",
     "rarity": 1,
+    "derivative": "SNOWY_TAIGA",
     "vanillaDerivative": "SNOWY_TAIGA",
+    "customDerivitives": [{
+        "category": "icy",
+        "id": "frozen_spruce_plains",
+        "waterFogColor": "#216FC4",
+        "foliageColor": "#B8D0E1",
+        "downfallType": "snow",
+        "temperature": -3,
+        "fogColor": "#A6D1FF",
+        "grassColor": "#D0E1FF"
+    }],
     "children": ["frozen/spruce-hills"],
+    "generators": [{
+        "generator": "smooth-dunes",
+        "max": 10,
+        "min": 4
+    }],
+    "wall": {"palette": [
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:andesite"}
+    ]},
     "layers": [
         {
             "minHeight": 0,
@@ -32,57 +51,7 @@
             ]
         }
     ],
-    "customDerivitives": [{
-        "category": "icy",
-        "id": "frozen_spruce_plains",
-        "waterFogColor": "#216FC4",
-        "foliageColor": "#B8D0E1",
-        "downfallType": "snow",
-        "temperature": -3,
-        "fogColor": "#A6D1FF",
-        "grassColor": "#D0E1FF"
-    }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "generators": [{
-        "generator": "smooth-dunes",
-        "max": 10,
-        "min": 4
-    }],
-    "decorators": [{
-        "chance": 1,
-        "variance": {
-            "style": "IRIS",
-            "zoom": 0.5
-        },
-        "palette": [
-            {
-                "data": {"layers": 1},
-                "block": "minecraft:snow"
-            },
-            {"block": "minecraft:air"},
-            {
-                "data": {"layers": 2},
-                "block": "minecraft:snow"
-            },
-            {
-                "data": {"layers": 3},
-                "block": "minecraft:snow"
-            }
-        ]
-    }],
+
     "objects": [{
         "chance": 0.8,
         "snow": 1,
@@ -121,8 +90,26 @@
             "z": 0
         }
     }],
-    "wall": {"palette": [
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:andesite"}
-    ]}
+    "decorators": [{
+        "chance": 1,
+        "variance": {
+            "style": "NOWHERE",
+            "zoom": 0.5
+        },
+        "palette": [
+            {
+                "data": {"layers": 1},
+                "block": "minecraft:snow"
+            },
+            {"block": "minecraft:air"},
+            {
+                "data": {"layers": 2},
+                "block": "minecraft:snow"
+            },
+            {
+                "data": {"layers": 3},
+                "block": "minecraft:snow"
+            }
+        ]
+    }]
 }
