@@ -22,7 +22,6 @@ cache
 plugins/SkinsRestorer/
 plugins/Essentials/
 plugins/ReviveMe/
-plugins/LibsDisguises/
 plugins/ProtocolLib/
 plugins/MythicMobs/SavedData/
 plugins/MythicMobs/packs.yml
