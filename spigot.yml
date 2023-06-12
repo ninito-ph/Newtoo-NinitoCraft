@@ -63,6 +63,10 @@ commands:
   - /skill
 world-settings:
   default:
+    hopper-can-load-chunks: false
+    seed-ancientcity: 20083232
+    seed-buriedtreasure: 10387320
+    seed-mineshaft: default
     below-zero-generation-in-existing-chunks: true
     seed-nether: 30084232
     seed-stronghold: default
@@ -104,6 +108,7 @@ world-settings:
       exp: 4.0
       item: 3.5
     growth:
+      torchflower-modifier: 100
       twistingvines-modifier: 100
       weepingvines-modifier: 100
       cavevines-modifier: 100
@@ -167,6 +172,7 @@ world-settings:
     squid-spawn-range:
       min: 45.0
     entity-tracking-range:
+      display: 128
       players: 48
       animals: 48
       monsters: 60
