@@ -1,0 +1,15 @@
+Hivefolk_Juggernaut_Stomp:
+  # Jumps high towards the player, and lands dealing damage and knocking back.
+  Conditions:
+    - incombat true
+  Cooldown: 14
+  Skills:
+    # Telegraphs skill
+    - effect:particles{particle=happyVillager;amount=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.4} @self
+    - delay 20
+    - leap{v=90;noise=10} @target
+    - delay 10
+    - effect:explosion @self
+    - throw{velocity=2;velocityY=4} @PIR{r=3}
+    - damage{amount=6;pkb=true} @PIR{r=3}
