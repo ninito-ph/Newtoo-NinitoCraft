@@ -1,7 +1,7 @@
 Deep_Mastermind:
   # Powerful ranged caster mob. Wide range of defensive and offensive abilities at his disposal. Must be fought in a group or in a highly organized manner.
   Type: ZOMBIE
-  Health: 45
+  Health: 90
   DamageModifiers:
     - PROJECTILE 0.3
   Damage: 0
@@ -42,6 +42,7 @@ Deep_Mastermind:
     # Initial skills
     - message{m="&5Mind Flayer&f<&co> Ae mg<&sq>yng<&sq>ct<&sq>. Fhr<&sq>lehshht<&sq>. Tag<&sq>ht<&sq>aeng<&sq>c yeh<&sq>liui fhlir<&sq>l vr<&sq>lyng<&sq>gl ytag<&sq> tag<&sq>li mg<&sq>eh...."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
     - skill{s=Mastermind_Phase_1} ~onSpawn >0 1
+    - skill{Prevent_Sunburn} ~onSpawn >0 1
     # Constant skills
     - skill{s=Mastermind_Fly} ~onTimer:55 >0 0.65
     - randomskill{skills=Mastermind_Armor,Mastermind_Repel,Mastermind_Cloak} ~onDamaged >0 0.35
