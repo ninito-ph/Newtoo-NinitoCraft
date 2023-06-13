@@ -1,9 +1,9 @@
 Hivefolk_Hopper:
   # Drone with upgraded offensive and defensive abilities. Can leap at the player and poison on hit. Can also leap backwards and slow the player for respite.
   Type: ZOMBIE
-  Health: 7
+  Health: 35
   Damage: 4
-  Armor: 0.5
+  Armor: 0
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true
@@ -31,5 +31,5 @@ Hivefolk_Hopper:
   Display: "&9Hivefolk Hopper"
   Disguise: player <inherit> setSkin hiveman_t2.png setDynamicName
   Skills:
-    - skill{s=Hivefolk_Hopper_Leap} ~onTimer:100 >0 1
-    - skill{s=Hivefolk_Hopper_Dodge} ~onDamaged >0 0.2
+    - skill{s=Hivefolk_Hopper_Leap} ~onTimer:70 >0 1
+    - skill{s=Hivefolk_Hopper_Dodge} ~onDamaged >0 0.5

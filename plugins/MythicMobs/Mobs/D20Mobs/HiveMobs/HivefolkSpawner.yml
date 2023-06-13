@@ -1,9 +1,9 @@
 Hivefolk_Spawner:
   # T1 Leader mob. Can spawn larvae to swarm the player. Can also boost allies in range, increasing speed significantly.
   Type: ZOMBIE
-  Health: 11
-  Damage: 4
-  Armor: 0.5
+  Health: 40
+  Damage: 3
+  Armor: 0
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true
@@ -21,8 +21,6 @@ Hivefolk_Spawner:
     - 1 attacker
     - 2 players
   Drops:
-    # PLACEHOLDER DROPS
-    # - Bandit_Drops_Tier1
     - exp 20 1
   Equipment:
     - stone_button:4
@@ -33,7 +31,7 @@ Hivefolk_Spawner:
   Display: "&9Hivefolk Spawner"
   Disguise: player <inherit> setSkin hiveman_tl1.png setDynamicName
   Skills:
-    - randomskill{skills=Hivefolk_Spawner_Followers_1,Hivefolk_Spawner_Followers_2} ~onSpawn
+    # - randomskill{skills=Hivefolk_Spawner_Followers_1,Hivefolk_Spawner_Followers_2} ~onSpawn
     - message{m="&aHivefolk Drone&f<&co> Hsssschk! Hsschk! Hschk!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
-    - skill{s=Hivefolk_Spawner_Warcry} ~onDamaged <75% 0.33
-    - skill{s=Hivefolk_Spawner_Spawn_Larva} ~onTimer:120 <50%
+    - skill{s=Hivefolk_Spawner_Spawn_Larva} ~onTimer:80
+    - skill{s=Hivefolk_Spawner_Warcry} ~onDamaged <50% 1

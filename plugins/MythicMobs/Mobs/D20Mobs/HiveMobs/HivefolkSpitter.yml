@@ -1,7 +1,7 @@
 Hivefolk_Spitter:
   # Buzzard with greater damage and defensive capabilities. Can leap backwards on being damaged, and poison on a hit.
   Type: ZOMBIE
-  Health: 12
+  Health: 30
   Damage: 4
   Armor: 0
   DamageModifiers:

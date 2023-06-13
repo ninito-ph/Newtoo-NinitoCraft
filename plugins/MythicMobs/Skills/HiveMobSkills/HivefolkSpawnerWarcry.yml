@@ -3,7 +3,8 @@ Hivefolk_Spawner_Warcry:
   Cooldown: 15
   Skills:
     # Telegraphs spawner has cast warcry
-    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#ff0000} @self
+    - effect:particles{p=redDust;a=90;hs=0.5;ys=1;color=#ff0000} @MobsInRadius{r=8;types=ZOMBIE,SKELETON}
+    - effect:particles{p=redDust;a=90;hs=0.5;ys=1;color=#ff0000} @self
     - sound{s=entity.silverfish.death;p=0.3;v=1.5} @self
     - delay 30
     # Buffs children and self

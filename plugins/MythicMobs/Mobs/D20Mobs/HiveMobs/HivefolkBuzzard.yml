@@ -1,8 +1,8 @@
 Hivefolk_Buzzard:
   # Melee mob with ranged capabilities. Cannon Fodder.
   Type: ZOMBIE
-  Health: 5
-  Damage: 4
+  Health: 20
+  Damage: 2
   DamageModifiers:
     - FALL 0
   Armor: 0

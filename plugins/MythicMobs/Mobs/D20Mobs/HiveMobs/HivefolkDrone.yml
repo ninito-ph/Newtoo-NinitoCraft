@@ -1,8 +1,8 @@
 Hivefolk_Drone:
   # Standard melee mob, can be dangerous when buffed by a spawner. Cannon Fodder.
   Type: ZOMBIE
-  Health: 7.5
-  Damage: 4
+  Health: 30
+  Damage: 2
   Armor: 0
   Faction: Hivefolk
   Options:
