@@ -1,0 +1,436 @@
+Water_Barbarian:
+  # High damage fodder melee mob. Can heal himself and allies. Dangerous in tandem with other mobs.
+  Type: DROWNED
+  Health: 16
+  Damage: 4
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_axe:0
+  KillMessages:
+    - "<target.name> was viciously ravaged by a &aMerfolk Barbarian!"
+  Display: "&aMerfolk Barbarian"
+  Disguise: player <inherit> setSkin water_t1.png setDynamicName
+  Skills:
+    - skill{s=Barbarian_Splash} =50% 0.55s
+
+Water_Stormcaller:
+  # Defenseless support mob. Can make fights harder by empowering and healing allies.
+  Type: DROWNED
+  Health: 14
+  Damage: 3
+  Armor: 9
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_hoe:0
+  KillMessages:
+    - "<target.name> was sacrificed to the rain god by a &aMerfolk Stormcaller!"
+  Display: "&aMerfolk Stormcaller"
+  Disguise: player <inherit> setSkin water_t1.png setDynamicName
+  Skills:
+    - randomskill{s=Stormcaller_Enhance_Projectile, Stormcaller_Heal_Projectile} @EIR{r=10;limit=1;sort=LOWEST_HEALTH} ~onTimer:180 >0 0.6
+
+Water_Tidemaster:
+  # T1 Leader mob, high damage. Possesses a healing aura for allies. High-priority target. Can empower himself to fight back as health gets low.
+  Type: DROWNED
+  Health: 20
+  Damage: 5
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - trident:0
+  KillMessages:
+    - "<target.name> was sacrificed to the rain god by a &9Merfolk Tidemaster!"
+  Display: "&9Merfolk Tidemaster"
+  Disguise: player <inherit> setSkin water_tl1.png setDynamicName
+  Skills:
+    - message{m="&9Merfolk Tidemaster&f<&co> The deep ones ordain your death, <target.name>!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{s=Tidemaster_Followers_1, Tidemaster_Followers_2} ~onSpawn 1
+    - skill{s=Tidemaster_Regen_Pulse} ~onTimer:60 >0 1
+    - skill{s=Tidemaster_Empower} =50% 1
+
+Water_Swashbuckler:
+  # Melee mob with good offensive and defensive options, can hurt player at range if it can't get close enough. Dangerous in groups.
+  Type: DROWNED
+  Health: 19
+  Damage: 4
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name> was shot and slashed by a &9Sunken Swashbuckler!"
+  Display: "&9Sunken Swashbuckler"
+  Disguise: player <inherit> setSkin water_t2.png setDynamicName
+  Skills:
+    - skill{s=Pirate_Hype} ~onAttack >0 0.7
+    - skill{s=Pirate_Defense} ~onDamaged >0 0.7
+    - skill{s=Pirate_Shot} ~onTimer:120 >0 0.3
+
+Water_Cannoneer:
+  # Mostly defenseless ranged mob. High damage cannon shot ability, priority target during fights.
+  Type: DROWNED
+  Health: 16
+  Damage: 3
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.17
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - stick:0
+    - coal_block:5
+  KillMessages:
+    - "<target.name> was blown up to pieces by a &9Sunken Cannoneer!"
+  Display: "&9Sunken Cannoneer"
+  Disguise: player <inherit> setSkin water_t2.png setDynamicName
+  Skills:
+    - skill{s=Cannon_Shot} ~onTimer:60 >0 1
+    - randomskill{s=Cannoneer_Gunpowder_Surprise, Cannoneer_Flee} ~onDamaged <25% 0.75
+
+Water_Captain:
+  # T2 Leader mob, versatile skillset. High melee damage. Can use cannon shots and rapid fire to damage the player at range. Can make allies invulnerable as he dies.
+  Type: DROWNED
+  Health: 33
+  Damage: 6
+  Armor: 15
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name> was unable to steal a &5&lSunken Captain&f's treasure!"
+  Display: "&5&lSunken Captain"
+  Disguise: player <inherit> setSkin water_tl2.png setDynamicName
+  Skills:
+    - message{m="&5&lSunken Captain&f<&co> Ya hear that, crew? Some salty dog wants to dance on the plank!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{s=Captain_Crew_1, Captain_Crew_2} ~onSpawn
+    - randomskill{s=Pirate_Rapid_Fire, Cannon_Shot} ~onTimer:85 >0 1
+    - skill{s=Cannoneer_Gunpowder_Surprise} ~onDamaged <50% 1
+    - skill{s=Pirate_Supremacy} ~onTimer:30 <20% 1
+
+Water_Elemental:
+  # Healer mob with significant durability. Easy by himself, makes encounters significantly harder by constantly healing and empowering allies.
+  Type: ZOMBIE
+  Health: 45
+  DamageModifiers:
+    - FIRE 0
+  Damage: 0
+  Armor: 13
+  BossBar:
+    Enabled: true
+    Title: "&5&lWater Elemental"
+    Range: 50
+    Color: PINK
+    Style: SEGMENTED_6
+    Faction: Water
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.14
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 125 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body was broken by the waves of a &5&lWater Elemental!"
+    - "<target.name> drowned in the innards of a &5&lWater Elemental"
+    - "<target.name> couldn't stay dry against a &5&lWater Elemental!"
+  Display: "&5&lWater Elemental"
+  Disguise: player <inherit> setSkin water_ts.png setDynamicName
+  Skills:
+    - message{m="&5Water Elemental&f<&co> Grlgrlgrl..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    # Support Skills
+    - skill{s=Water_Elemental_Regeneration} ~onTimer:5 >0 1
+    - randomskill{s=Water_Elemental_Heal_Projectile, Water_Elemental_Enhance_Projectile} ~onTimer:300 >0 1
+    - skill{s=Water_Elemental_Empower} ~onTimer:200 >0 1
+    # Harass skills
+    - skill{s=Water_Elemental_Geyser} ~onTimer:60 >0 1
+    # Defense skills
+    - randomskill{s=Water_Elemental_Tidewash, Water_Elemental_Splash} ~onDamaged <75% 1
+
+Water_Siren:
+  # Deep World boss
+  Type: ZOMBIE
+  Health: 110
+  DamageModifiers:
+    - FIRE 0
+  Damage: 9
+  Armor: 14
+  BossBar:
+    Enabled: true
+    Title: "&4&lNaga Siren"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.22
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 1550 1
+  Equipment:
+    - stone_button:4
+    - gold_sword:0
+    - trident:5
+  KillMessages:
+    - "<target.name> was sung to death by a &4&lNaga Siren!"
+    - "<target.name> was seduced and drowned by a &4&lNaga Siren!"
+    - "<target.name><&sq>s eardrums (and the rest of his body) were defiled by a &4&lNaga Siren"
+  Display: "&4&lNaga Siren"
+  Disguise: player <inherit> setSkin water_wb.png setDynamicName
+  Skills:
+    # Spawning message
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - randomskill{s=Siren_Followers_1,Siren_Followers_2,Siren_Followers_3,Siren_Followers_4} ~onSpawn
+    # On enter combat
+    - message{m="&4&lNaga Siren&f<&co> Hear the waters sing your name, <target.name>! Come and join us in the lightless depths!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Naga_Siren_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Attack skills
+    - randomskill{s=Water_Siren_Geyser, Water_Siren_Smite, Water_Siren_Triple_Tidal_Slash} ~onTimer:60 >0 1
+    # Support Skills
+    - skill{s=Water_Siren_Empower_Song} ~onTimer:20 >50% 1
+    - skill{s=Water_Siren_Healing_Rain} =50% 1
+    - skill{s=Water_Siren_Elevate_Champion} ~onTimer:120 <50% 1
+    # Defense skills
+    - randomskill{s=Water_Elemental_Tidewash} ~onDamaged <25% 1
+    # Death
+    - weather{type=sunny;duration=600} ~onDeath
+
+Water_Corsair:
+  # Faster, higher damage version of Sunken Swashbuckler. Can shoot lifestealing bullets for higher endurance. Mythic Encounter mob.
+  Type: DROWNED
+  Health: 24
+  Damage: 7
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.31
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - gold_sword:0
+  KillMessages:
+    - "<target.name> was haunted to death by a &6Ghost Corsair!"
+  Display: "&6Ghost Corsair"
+  Disguise: player <inherit> setSkin water_tm.png setDynamicName
+  Skills:
+    - skill{s=Pirate_Hype} ~onAttack >0 0.7
+    - skill{s=Pirate_Defense} ~onDamaged >0 0.7
+    - skill{s=Ghost_Shot} ~onTimer:240 >0 0.3
+
+Water_Dragoon:
+  # More dangerous and durable version of Sunken Cannoneer. Fires two cannon shots instead of one, cannon shots break shield. Mythic Encounter mob.
+  Type: DROWNED
+  Health: 21
+  Damage: 6
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.22
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - blaze_rod:0
+    - coal_block:5
+  KillMessages:
+    - "<target.name> very soul was blasted by a &6Ghost Dragoon!"
+  Display: "&6Ghost Dragoon"
+  Disguise: player <inherit> setSkin water_tm.png setDynamicName
+  Skills:
+    - skill{s=Dragoon_Shot} ~onTimer:60 >0 1
+    - randomskill{s=Ghost_Implode, Ghost_Ethereal} ~onDamaged <25% 0.75
+
+Water_Admiral:
+  # More powerful version of a Sunken Captain. Can shoot lifestealing bullets for higher endurance. Mythic Encounter mob.
+  Type: DROWNED
+  Health: 46
+  Damage: 9
+  Armor: 15
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.35
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - gold_sword:0
+  KillMessages:
+    - "<target.name> was bested by a &b&lSunken Captain&f and his ghost ship!"
+  Display: "&b&lGhost Admiral"
+  Disguise: player <inherit> setSkin water_tml.png setDynamicName
+  Skills:
+    - message{m="&b&lGhost Admiral&f<&co> So, ye wants t' challenge us, blast ye? I shall warn ye, we've been sailin' these seas fer a good while..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{s=Admiral_Crew_1, Admiral_Crew_2} ~onSpawn
+    - randomskill{s=Ghost_Rapid_Fire, Dragoon_Shot} ~onTimer:85 >0 1
+    - skill{s=Ghost_Implode} ~onDamaged <50% 0.15
+    - skill{s=Pirate_Supremacy} ~onTimer:30 <20% 1

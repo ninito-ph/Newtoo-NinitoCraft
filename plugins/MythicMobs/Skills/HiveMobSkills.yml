@@ -1,0 +1,817 @@
+# HIVEFOLK BUZZARD #
+
+Hivefolk_Buzzard_Fly:
+# Makes mob float for a while, before firing three arrow at target.
+    Cooldown: 7
+    Skills:
+    - potion{type=LEVITATION;duration=55;level=1} @self
+    - delay 20
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 10
+    - skill{s=Hivefolk_Buzzard_Spit} @target
+    - delay 10
+    - skill{s=Hivefolk_Buzzard_Spit} @target
+    - delay 10
+    - skill{s=Hivefolk_Buzzard_Spit} @target
+
+
+Hivefolk_Buzzard_Spit:
+# Spits a poisonous projectile at player.
+    Skills:
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - projectile{onTick=Hivefolk_Buzzard_Spit_Tick;onHit=Hivefolk_Buzzard_Spit_Hit;onEnd=Hivefolk_Buzzard_Spit_Miss;v=9.5;i=1;hR=1;vR=1;syo=1.5}
+
+
+Hivefolk_Buzzard_Spit_Tick:
+# SFX for Matriarch Spit Tick
+    Skills:
+    - effect:particles{p=redDust;a=20;hs=0.25;vs=0.25;color=#996600} @origin
+
+
+Hivefolk_Buzzard_Spit_Hit:
+# SFX and functionality for Matriach Spit hit
+    Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.slime.hurt;v=1;p=1}
+    - effect:particles{p=block;m=slime;a=10;hs=0.25;vs=0.25;y=1}
+    # Applies poison
+    - damage{a=6}
+
+
+Hivefolk_Buzzard_Spit_Miss:
+# SFX for when spit projectile misses
+    Skills:
+    - effect:particles{p=block;m=slime;a=15;hs=0.25;vs=0.25;y=1} @origin
+
+
+# HIVEFOLK LARVA #
+
+Hivefolk_Larva_Evolve_Drone:
+# Deletes larva and creates a hivefolk drone in place.
+    Skills:
+    - summon{type=Hivefolk_Drone;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+
+Hivefolk_Larva_Evolve_Buzzard:
+# Deletes larva and creates a hivefolk buzzard in place.
+    Skills:
+    - summon{type=Hivefolk_Buzzard;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+
+Hivefolk_Larva_Evolve_Praetorian:
+# Deletes larva and creates a hivefolk praetorian in place.
+    Skills:
+    - summon{type=Hivefolk_Praetorian;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#ccff66} @self
+
+
+# HIVEFOLK ROYAL LARVA #
+
+
+Hivefolk_Royal_Larva_Evolve_Hopper:
+# Deletes royal larva and creates a hivefolk hopper in place.
+    Skills:
+    - summon{type=Hivefolk_Hopper;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#cc00ff} @self
+
+
+Hivefolk_Royal_Larva_Evolve_Spitter:
+# Deletes royal larva and creates a hivefolk spitter in place.
+    Skills:
+    - summon{type=Hivefolk_Spitter;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#cc00ff} @self
+
+
+Hivefolk_Royal_Larva_Evolve_Spawner:
+# Deletes royal larva and creates a hivefolk spawner in place.
+    Skills:
+    - summon{type=Hivefolk_Spawner;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#cc00ff} @self
+
+
+Hivefolk_Royal_Larva_Leap:
+# Makes royal larva leap and attack.
+    Cooldown: 6
+    Skills:
+    - leap{v=130} @target
+
+# HIVEFOLK SPAWNER #
+
+
+Hivefolk_Spawner_Followers_1:
+# Summons Hivefolk Spawner followers. Variant with three Drones and one Buzzard.
+    Skills:
+    - summon{type=Hivefolk_Drone;amount=3;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Buzzard;amount=1;radius=5} @SelfLocation
+
+
+Hivefolk_Spawner_Followers_2:
+# Summons Hivefolk Spawner followers. Variant with three Drones and one Buzzard.
+    Skills:
+    - summon{type=Hivefolk_Drone;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Buzzard;amount=2;radius=5} @SelfLocation
+
+
+Hivefolk_Spawner_Warcry:
+# Buffs children entities with speed for a short while.
+    Cooldown: 15
+    Skills:
+    # Telegraphs spawner has cast warcry
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.3;v=1.5} @self
+    - delay 30
+    # Buffs children and self
+    - potion{type=SPEED;duration=120;level=1} @self
+    - potion{type=SPEED;duration=120;level=1} @children
+    # Telegraphs child has been buffed
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @children
+    - sound{s=entity.silverfish.hurt} @children
+
+
+Hivefolk_Spawner_Spawn_Larva:
+# Spawns two hivefolk larva.
+    Cooldown: 15
+    Skills:
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    - sound{s=entity.silverfish.ambient;p=0.3;v=1.5} @self
+    - summon{type=Hivefolk_Larva;amount=2;radius=2} @SelfLocation
+
+
+# HIVEFOLK PRAETORIAN #
+
+
+Hivefolk_Praetorian_Enrage:
+# Engages Praetorian Beserk or Snipe
+    Skills:
+    # Telegraphs
+    - effect:particles{p=reddust;a=25;hs=1;ys=1;y=1;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.1} @self
+    - throw{v=4;vy=4} @PIR{r=5.5}
+    # Knocks player back and gives Praetorian buffs
+    - potion{type=INCREASE_DAMAGE;duration=3600;level=2} @self
+    - potion{type=SPEED;duration=3600;level=1} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=3600;level=1} @self
+    - equip{item=elytra:3}
+
+
+Hivefolk_Praetorian_Fly:
+# Makes mob float for a while, before firing three arrow at target.
+    Cooldown: 10
+    Skills:
+    - potion{type=LEVITATION;duration=40;level=1} @self
+    - delay 20
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 4
+    - skill{s=Hivefolk_Praetorian_Spit} @target
+    - delay 4
+    - skill{s=Hivefolk_Praetorian_Spit} @target
+    - delay 4
+    - skill{s=Hivefolk_Praetorian_Spit} @target
+
+Hivefolk_Praetorian_Spit:
+# Spits a poisonous projectile at player.
+    Skills:
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - projectile{onTick=Hivefolk_Praetorian_Spit_Tick;onHit=Hivefolk_Praetorian_Spit_Hit;onEnd=Hivefolk_Praetorian_Spit_Miss;v=9.5;i=1;hR=1;vR=1;syo=1.5}
+
+
+Hivefolk_Praetorian_Spit_Tick:
+# SFX for Matriarch Spit Tick
+    Skills:
+    - effect:particles{p=redDust;a=20;hs=0.25;vs=0.25;color=#ff0000} @origin
+
+
+Hivefolk_Praetorian_Spit_Hit:
+# SFX and functionality for Matriach Spit hit
+    Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.slime.hurt;v=1;p=1}
+    # Applies poison
+    - damage{a=7.5}
+
+
+Hivefolk_Praetorian_Spit_Miss:
+# SFX for when spit projectile misses
+    Skills:
+    - effect:particles{p=block;m=redstone;a=15;hs=0.25;vs=0.25;y=1} @origin
+
+
+# HIVEFOLK HOPPER #
+
+
+Hivefolk_Hopper_Leap:
+# Makes mob leap forward, while also poisoning its target with its next attack.
+    Conditions:
+    - incombat true
+    Cooldown: 10
+    Skills:
+    - effect:particles{p=reddust;a=15;hs=1;ys=1;y=1;color=#ff0000} @self
+    - effect:sound{s=entity.silverfish.hurt;p=0.6} @self
+    - delay 20
+    - leap{v=200} @target
+    - delay 7
+    - effect:particles{p=redDust;a=20;hs=1.75;ys=1.75;y=1;color=#99cc00} @self
+    - sound{s=entity.slime.hurt;p=0.5;v=1.5} @self
+    - potion{type=POISON;duration=80;level=1} @PIR{r=1.75}
+
+
+Hivefolk_Hopper_Dodge:
+# Makes mob jump backwards, also slowing any nearby players.
+    Cooldown: 10
+    Skills:
+    - effect:particles{particle=happyVillager;amount=10;hs=0.5;y=1} @self
+    - effect:sound{s=entity.silverfish.death;p=0.6} @self
+    - delay 30
+    - leap{v=200} @Forward{f=-5;y=1.25}
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @PIR{r=3.5}
+    - potion{type=SLOW;duration=80;level=1} @PIR{r=3.5}
+
+
+# HIVEFOLK SPITTER #
+
+
+Hivefolk_Spitter_Fly:
+# Makes mob float for a while, before firing three arrow at target.
+    Cooldown: 7
+    Skills:
+    # Telegraphs
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    # Begins regulard flight-spit
+    - potion{type=LEVITATION;duration=37;level=1} @self
+    - delay 17
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 7
+    - skill{s=Hivefolk_Spitter_Spit} @target
+    - delay 7
+    - skill{s=Hivefolk_Spitter_Spit} @target
+    - delay 7
+    - skill{s=Hivefolk_Spitter_Spit} @target
+
+
+Hivefolk_Spitter_Spit:
+# Spits a poisonous projectile at player.
+    Skills:
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Spitter_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=9.5;i=1;hR=1;vR=1;syo=1.5}
+
+
+Hivefolk_Spitter_Spit_Tick:
+# SFX for Matriarch Spit Tick
+    Skills:
+    - effect:particles{p=reddust;a=20;hs=0.25;vs=0.25;color=#99cc00} @origin
+
+
+Hivefolk_Spitter_Spit_Hit:
+# SFX and functionality for Matriach Spit hit
+    Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.slime.hurt;v=1;p=1}
+    # Applies poison
+    - damage{a=6}
+    - potion{type=POISON;duration=70;level=1}
+
+
+Hivefolk_Spitter_Spit_Miss:
+# SFX for when spit projectile misses
+    Skills:
+    - effect:particles{p=slime;a=15;hs=0.25;vs=0.25} @origin
+
+
+# HIVEFOLK JUGGERNAUT #
+
+
+Hivefolk_Juggernaut_Followers_1:
+# Summons Hivefolk Juggernaut followers. Variant with three Hoppers and one Spitter.
+    Skills:
+    - summon{type=Hivefolk_Hopper;amount=3;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Spitter;amount=1;radius=5} @SelfLocation
+
+
+Hivefolk_Juggernaut_Followers_2:
+# Summons Hivefolk Juggernaut followers. Variant with two Hoppers and two Spitters.
+    Skills:
+    - summon{type=Hivefolk_Hopper;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Spitter;amount=2;radius=5} @SelfLocation
+
+
+Hivefolk_Juggernaut_Enrage:
+# Knocks player back and gives protection, speed and strenght to the juggernaut
+    Cooldown: 10
+    Skills:
+    # Telegraph enrage
+    - effect:particles{p=reddust;a=25;hs=1;ys=1;y=1;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.1} @self
+    # Apply effects and throw player back
+    - potion{type=INCREASE_DAMAGE;duration=200;level=2} @self
+    - potion{type=SPEED;duration=200;level=1} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=200;level=1} @self
+    - effect:explosion @self
+    - throw{velocity=5;velocityY=4.5} @PIR{r=4}
+
+
+Hivefolk_Juggernaut_Stomp:
+# Jumps high towards the player, and lands dealing damage and knocking back.
+    Conditions:
+    - incombat true
+    Cooldown: 14
+    Skills:
+    # Telegraphs skill
+    - effect:particles{particle=happyVillager;amount=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.4} @self
+    - delay 20
+    - leap{v=90;noise=10} @target
+    - delay 10
+    - effect:explosion @self
+    - throw{velocity=2;velocityY=4} @PIR{r=3}
+    - damage{amount=6;pkb=true} @PIR{r=3}
+
+
+Hivefolk_Juggernaut_Warcry:
+# Buffs children entities with speed and strenght for a short while.
+    Cooldown: 15
+    Skills:
+    # Telegraphs spawner has cast warcry
+    - effect:particles{p=redDust;a=25;hs=0.5;y=1.5;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.05;v=1.5} @self
+    - delay 30
+    # Buffs children and self
+    - potion{type=SPEED;duration=180;level=1} @self
+    - potion{type=INCREASE_DAMAGE;duration=180;level=1} @children
+    - potion{type=SPEED;duration=180;level=1} @children
+    - potion{type=DAMAGE_RESISTANCE;duration=180;level=1} @children
+    # Telegraphs children have been buffed
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @children
+    - sound{s=entity.silverfish.hurt} @children
+
+
+Hivefolk_Juggernaut_Summon_Larva:
+# Periodically summons larvae.
+    Condition:
+    - incombat true
+    Cooldown: 15
+    Skills:
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    - sound{s=entity.silverfish.ambient;p=0.3;v=1.5} @self
+    - summon{type=Hivefolk_Larva;amount=1;radius=1} @SelfLocation
+
+
+# HIVEFOLK MATRIARCH #
+
+
+Hivefolk_Matriarch_Followers:
+# Summons Hivefolk Matriarch followers. Two Juggernauts and three praetorians
+    Skills:
+    - summon{type=Hivefolk_Juggernaut;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Praetorian;amount=3;radius=5} @SelfLocation
+
+
+Hivefolk_Matriarch_Spit:
+# Spits a poisonous projectile at player.
+    Conditions:
+    - incombat true
+    Skills:
+    # Telegraphs skill
+    - effect:particles{particle=happyVillager;amount=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5;v=2} @self
+    - delay 15
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+
+
+Hivefolk_Matriarch_Spit_Hit:
+# SFX and functionality for Matriach Spit hit
+    Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.slime.hurt;v=1;p=1}
+    # Applies poison
+    - damage{a=10}
+    - potion{type=POISON;duration=140;level=1}
+
+
+Hivefolk_Matriarch_Repulsion:
+# Sends a shockwave that poisons, slows and throws players away.
+    Cooldown: 35
+    Skills:
+    # Telegraphs skill to player
+    - effect:particles{particle=happyVillager;amount=20;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.05;v=2;repeat=3;repeatInterval=10} @self
+    - potion{type=SLOW;duration=50;level=1} @self
+    - delay 35
+    # Skill SFX
+    - jump{v=0.6} @self
+    - delay 14
+    - effect:explosion @self
+    - effect:sound{s=entity.slime.squish;v=2;p=0.3;repeat=3;repeatInterval=5} @Self
+    - effect:particlering{p=reddust;a=100;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=2;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=175;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=4;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=250;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=6;color=#99cc00} @Self
+    - effect:particles{p=slime;a=20;hs=1.75;ys=1.75;y=1} @PIR{r=6}
+    - effect:sound{s=entity.slime.hurt;v=1;p=1} @PIR{r=6}
+    # Skill functionality
+    - throw{velocity=6;velocityY=5} @PIR{r=6}
+    - potion{type=POISON;duration=240;level=1} @PIR{r=6}
+    - potion{type=SLOW;duration=240;level=1} @PIR{r=6}
+
+
+Hivefolk_Matriarch_Summon_Larva:
+# Spawns two hivefolk larva
+    Condition:
+    - incombat true
+    Cooldown: 15
+    Skills:
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    - sound{s=entity.silverfish.ambient;p=0.3;v=1.5} @self
+    - summon{type=Hivefolk_Larva;amount=2;radius=1} @SelfLocation
+
+
+Hivefolk_Matriarch_Chain_Leap:
+# Makes mob leap forward, while also poisoning its target with its next attack.
+    Conditions:
+    - incombat true
+    Cooldown: 20
+    Skills:
+    # Telegraphs skill
+    - effect:particles{p=happyVillager;a=15;hs=1;ys=1;y=1} @self
+    - effect:sound{s=entity.silverfish.hurt;p=0.6} @self
+    - delay 20
+    # First hop
+    - leap{v=200} @target
+    - delay 7
+    - effect:particles{p=redDust;a=20;hs=1.75;ys=1.75;y=1;color=#99cc00} @self
+    - sound{s=entity.slime.hurt;p=0.5;v=1.5} @self
+    - potion{type=POISON;duration=80;level=1} @PIR{r=1.75}
+    - delay 10
+    # Telegraph second hop
+    - effect:particles{p=reddust;a=15;hs=1;ys=1;y=1;color=#ff0000} @self
+    - effect:sound{s=entity.silverfish.hurt;p=0.6} @self
+    - delay 10
+    # Second hop
+    - leap{v=200} @target
+    - delay 7
+    - effect:particles{p=redDust;a=20;hs=1.75;ys=1.75;y=1;color=#99cc00} @self
+    - sound{s=entity.slime.hurt;p=0.5;v=1.5} @self
+    - potion{type=POISON;duration=80;level=1} @PIR{r=1.75}
+    - delay 10
+    # Telegraph third hop
+    - effect:particles{p=reddust;a=15;hs=1;ys=1;y=1;color=#ff0000} @self
+    - effect:sound{s=entity.silverfish.hurt;p=0.6} @self
+    - delay 10
+    # Third hop
+    - leap{v=200} @target
+    - delay 7
+    - effect:particles{p=redDust;a=20;hs=1.75;ys=1.75;y=1;color=#99cc00} @self
+    - sound{s=entity.slime.hurt;p=0.5;v=1.5} @self
+    - potion{type=POISON;duration=80;level=1} @PIR{r=1.75}
+
+
+Hivefolk_Matriarch_Summon_Royal_Larva:
+# Spawns two hivefolk royal larvae
+    Condition:
+    - incombat true
+    Cooldown: 15
+    Skills:
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#cc00ff} @self
+    - sound{s=entity.silverfish.ambient;p=0.3;v=1.5} @self
+    - summon{type=Hivefolk_Royal_Larva;amount=2;radius=1} @SelfLocation
+
+
+Hivefolk_Matriarch_Fly_Dive:
+# Identical to spitter flight, but shoots more projectiles, faster. Additionally, causes repulsion when the matriarch hits the ground.
+    Cooldown: 15
+    Skills:
+    # Telegraphs
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    # Begins regular flight-spit
+    - potion{type=LEVITATION;duration=45;level=1} @self
+    - delay 17
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    # Repulsion SFX
+    - delay 14
+    - effect:explosion @self
+    - effect:sound{s=entity.slime.squish;v=2;p=0.3;repeat=3;repeatInterval=5} @Self
+    - effect:particlering{p=reddust;a=100;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=2;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=175;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=4;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=250;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=6;color=#99cc00} @Self
+    - effect:particles{p=slime;a=20;hs=1.75;ys=1.75;y=1} @PIR{r=6}
+    - effect:sound{s=entity.slime.hurt;v=1;p=1} @PIR{r=6}
+    # Repulsion functionality
+    - throw{velocity=6;velocityY=5} @PIR{r=6}
+    - potion{type=POISON;duration=240;level=1} @PIR{r=6}
+    - potion{type=SLOW;duration=240;level=1} @PIR{r=6}
+
+
+Hivefolk_Matriarch_Poison_Cloud_Spit:
+# Spits a projectile that creates a poison cloud and imprisons a player if it hits.
+    Cooldown: 17
+    Conditions:
+    - incombat true
+    Skills:
+    # Telegraphs skill
+    - effect:particles{particle=happyVillager;amount=15;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.death;p=0.2;v=2} @self
+    - delay 25
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Matriarch_Poison_Cloud_Spit_Tick;onHit=Hivefolk_Matriarch_Poison_Cloud_Hit;onEnd=Hivefolk_Matriarch_Poison_Cloud;v=5.5;i=1;hR=1;vR=1;syo=1.5;sB=true} @target
+
+
+Hivefolk_Matriarch_Poison_Cloud_Spit_Tick:
+# Poison cloud spit tick effect.
+    Skills:
+    - effect:particles{p=slime;a=20;hs=0.25;vs=0.25;y=1} @origin
+
+Hivefolk_Matriarch_Poison_Cloud_Hit:
+# Poisons, damages and imprisons the target.
+    Skills:
+    # Skill SFX
+    - effect:particles{particle=slime;amount=15;hs=0.5;y=1} @target
+    - effect:sound{s=entity.slime.hurt;v=1;p=1.3} @target
+    # Skill Functionality
+    - prison{material=SLIME_BLOCK;duration=180;breakable=true} @target
+    - damage{a=10}
+    - potion{type=POISON;duration=180;level=1}
+    - potion{type=SLOw;duration=180;level=2}
+
+
+Hivefolk_Matriarch_Poison_Cloud:
+# Creates a lingering poison cloud that periodically slows and poisons player.
+    Skills:
+    # Initial SFX
+    - effect:sound{s=entity.slime.hurt;v=1;p=1}
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1}
+    # SFX and functionality
+    - effect:particles{p=redDust;a=250;hs=6;vs=2;y=0.5;color=#99cc00} @origin
+    - potion{type=POISON;duration=40;level=1} @PIR{r=6}
+    - delay 30
+    # SFX and functionality
+    - effect:particles{p=redDust;a=250;hs=6;vs=2;y=0.5;color=#99cc00} @origin
+    - potion{type=POISON;duration=40;level=1} @PIR{r=6}
+    - delay 30
+    # SFX and functionality
+    - effect:particles{p=redDust;a=250;hs=6;vs=2;y=0.5;color=#99cc00} @origin
+    - potion{type=POISON;duration=40;level=1} @PIR{r=6}
+    - delay 30
+    # SFX and functionality
+    - effect:particles{p=redDust;a=250;hs=6;vs=2;y=0.5;color=#99cc00} @origin
+    - potion{type=POISON;duration=40;level=1} @PIR{r=6}
+    - delay 30
+    # SFX and functionality
+    - effect:particles{p=redDust;a=250;hs=6;vs=2;y=0.5;color=#99cc00} @origin
+    - potion{type=POISON;duration=40;level=1} @PIR{r=6}
+    - delay 30
+    # SFX and functionality
+    - effect:particles{p=redDust;a=250;hs=6;vs=2;y=0.5;color=#99cc00} @origin
+    - potion{type=POISON;duration=40;level=1} @PIR{r=6}
+    - delay 30
+
+Elemental_Spawner_Followers_1:
+# Summons Hivefolk Spawner followers. Variant with three Drones and one Buzzard.
+    Skills:
+    - summon{type=Hivefolk_Fire_Drone;amount=3;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Fire_Buzzard;amount=1;radius=5} @SelfLocation
+
+
+Elemental_Spawner_Followers_2:
+# Summons Hivefolk Spawner followers. Variant with three Drones and one Buzzard.
+    Skills:
+    - summon{type=Hivefolk_Fire_Drone;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Fire_Buzzard;amount=2;radius=5} @SelfLocation
+
+Elemental_Fire_Drone_Explode:
+    Skills:
+    # Deals Damage
+    - damage{a=4.5} @PlayersNearOrigin{r=4}
+    - throw{velocity=8;velocityY=5} @PlayersNearOrigin{r=4}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=flame;radius=2;points=8;a=130;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=1.5;points=8;a=40;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=flame;radius=4;points=12;a=70;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=3;points=12;a=20;hs=0.3;vs=1.2} @origin
+    - delay 2
+
+Elemental_Fire_Drone_Torch:
+    Cooldown: 14
+    Skills:
+    # Telegraphs
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.silverfish.hurt;p=0.6} @self
+    - delay 20
+    # Shows SFX
+    - ignite{duration=80} @PlayersNearOrigin{r=2}
+    - effect:sound{s=entity.blaze.ambient} @origin
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:sound{s=entity.blaze.ambient} @origin
+    - ignite{duration=80} @PlayersNearOrigin{r=2}
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+
+Elemental_Firefly_Fly:
+# Makes mob float for a while, before firing three arrow at target.
+    Cooldown: 7
+    Skills:
+    # Telegraphs
+    - effect:particles{p=smoke_large;a=15;hs=0.5;y=1.5} @self
+    # Begins regulard flight-spit
+    - potion{type=LEVITATION;duration=37;level=1} @self
+    - delay 17
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 7
+    - skill{s=Elemental_Firefly_Spit} @target
+    - delay 7
+    - skill{s=Elemental_Firefly_Spit} @target
+    - delay 7
+    - skill{s=Elemental_Firefly_Spit} @target
+
+Elemental_Firefly_Spit:
+# Spits a poisonous projectile at player.
+    Skills:
+    - effect:sound{s=entity.blaze.shoot;v=1;p=1.3} @self
+    - effect:particles{p=flame;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Elemental_Firefly_Spit_Tick;onHit=Elemental_Firefly_Spit_Hit;onEnd=Elemental_Firefly_Spit_Miss;v=12;i=1;hR=1;vR=1;syo=1.5}
+
+Elemental_Firefly_Spit_Tick:
+# SFX for Matriarch Spit Tick
+    Skills:
+    - effect:particles{p=flame;a=5;hs=0.1;vs=0.1} @origin
+
+Elemental_Firefly_Spit_Hit:
+    Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=block.candle.extinguish;v=1;p=1}
+    # Applies fire damage
+    - damage{a=5}
+    - ignite{duration=140} @Target
+
+Elemental_Firefly_Spit_Miss:
+    Skills:
+    - effect:sound{s=block.candle.extinguish;v=3;p=1}
+    - effect:particles{p=smoke_large;a=15;hs=0.25;vs=0.25} @origin
+
+Elemental_Firefly_Explode:
+    Skills:
+    # Deals Damage
+    - damage{a=3} @PlayersNearOrigin{r=3}
+    - throw{velocity=5;velocityY=6} @PlayersNearOrigin{r=3}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=flame;radius=2;points=8;a=100;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=1;points=8;a=20;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=flame;radius=4;points=12;a=50;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=2;points=12;a=10;hs=0.3;vs=1.2} @origin
+    - delay 2
+
+Elemental_Larva_Evolve_Drone:
+# Deletes larva and creates a hivefolk drone in place.
+    Skills:
+    - summon{type=Hivefolk_Fire_Drone;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Elemental_Larva_Evolve_Buzzard:
+# Deletes larva and creates a hivefolk buzzard in place.
+    Skills:
+    - summon{type=Hivefolk_Fire_Buzzard;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Elemental_Larva_Evolve_Spawner:
+# Deletes larva and creates a hivefolk spawner in place.
+    Skills:
+    - summon{type=Hivefolk_Ice_Spawner;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Elemental_Spawner_Spawn_Larva:
+# Spawns two hivefolk larva.
+    Cooldown: 15
+    Skills:
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    - sound{s=entity.silverfish.ambient;p=0.3;v=1.5} @self
+    - summon{type=Hivefolk_Elemental_Larva;amount=2;radius=2} @SelfLocation
+
+Elemental_Spawner_Snow_Touch:
+    Skills:
+    - effect:particles{p=snowflake;a=15;hs=0.5;y=1.5} @Target
+    - potion{type=SLOW;duration=40;level=2} @Target
+
+Elemental_Spawner_Fly:
+# Makes mob float for a while, before firing three arrow at target.
+    Cooldown: 15
+    Skills:
+    # Telegraphs
+    - effect:particles{p=snowball;a=15;hs=0.5;y=1.5} @self
+    # Begins regulard flight-spit
+    - potion{type=LEVITATION;duration=77;level=1} @self
+    - delay 17
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 20
+    - skill{s=Elemental_Spawner_Spit} @target
+    - delay 20
+    - skill{s=Elemental_Spawner_Spit} @target
+    - delay 20
+    - skill{s=Elemental_Spawner_Spit} @target
+
+Elemental_Spawner_Spit:
+# Spits a poisonous projectile at player.
+    Skills:
+    - effect:sound{s=block.snow.break;v=1;p=1.3} @self
+    - effect:particles{p=snowball;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Elemental_Spawner_Spit_Tick;onHit=Elemental_Spawner_Spit_Hit;onEnd=Elemental_Spawner_Spit_Miss;v=6;i=1;hR=1;vR=1;syo=1.5;g=1}
+
+Elemental_Spawner_Spit_Tick:
+# SFX for Matriarch Spit Tick
+    Skills:
+    - effect:particles{p=snowflake;a=10;hs=0.12;vs=0.12} @origin
+
+Elemental_Spawner_Spit_Hit:
+    Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=block.candle.extinguish;v=1;p=1}
+    # Applies fire damage
+    - damage{a=2}
+    - prison{material=ICE;duration=130} @Target
+
+Elemental_Spawner_Spit_Miss:
+    Skills:
+    - effect:sound{s=block.glass.break;v=1;p=1}
+    - totem{onTick=Elemental_Spawner_Ice_Pool_Tick;md=160;int=20;yo=0.1} @origin
+
+Elemental_Spawner_Ice_Pool_Tick:
+    Skills:
+    - damage{a=4} @PIR{r=4}
+    - potion{type=SLOW;duration=20;level=2} @PIR{r=4}
+    - effect:particlering{p=snowflake;radius=1;points=8;a=10;hs=0.2;vs=0.1} @origin
+    - effect:particlering{p=snowflake;radius=2;points=12;a=15;hs=0.2;vs=0.1} @origin
+    - effect:particlering{p=snowflake;radius=4;points=16;a=20;hs=0.2;vs=0.1} @origin

@@ -1,0 +1,750 @@
+Barbarian_Splash:
+  Skills:
+    # Applies heal
+    - heal{a=2} @EIR{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.generic.splash} @self
+    - sound{s=entity.drowned.hurt} @EIR{r=6;targetPlayers=false}
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EIR{r=6;targetPlayers=false}
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=60;hs=0.2;vs=0.3} @origin
+
+Stormcaller_Enhance_Projectile:
+  Cooldown: 14
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1} @self
+    - projectile{onTick=Stormcaller_Enhance_Projectile_Tick;onEnd=Stormcaller_Enhance;v=10;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false} @EIR{r=10;limit=1;sort=LOWEST_HEALTH}
+
+Stormcaller_Enhance_Projectile_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=glow;a=40;hs=0.1;vs=0.05} @origin
+
+Stormcaller_Enhance:
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;level=1} @EntitiesNearOrigin{r=2;targetPlayers=false}
+    - potion{type=SPEED;level=1} @EntitiesNearOrigin{r=2;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.glow_squid.squirt} @origin
+    - effect:particles{p=happy_villager;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=2;targetPlayers=false}
+    - effect:particlering{p=glow;radius=1;points=8;a=10;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=2;points=12;a=10;hs=0.4;vs=0.7;color=#cb48ea} @origin
+
+Stormcaller_Heal:
+  Skills:
+    # Applies potion effects
+    - heal{a=8} @EIR{r=2;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.glow_squid.squirt} @origin
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=2;targetPlayers=false}
+    - effect:particlering{p=glow;radius=1;points=8;a=10;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=2;points=12;a=10;hs=0.4;vs=0.7;color=#cb48ea} @origin
+
+Stormcaller_Heal_Projectile:
+  Cooldown: 10
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1} @self
+    - projectile{onTick=Stormcaller_Enhance_Projectile_Tick;onEnd=Stormcaller_Heal;v=10;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false} @EIR{r=10;limit=1;sort=LOWEST_HEALTH}
+
+Tidemaster_Empower:
+  Cooldown: 120
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=2400;level=2} @Self
+    - potion{type=SPEED;duration=2400;level=1} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.4} @self
+    - delay 12
+    - lightning{d=0} @Self
+    - effect:particlering{p=glow;radius=0.5;points=8;a=20;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=35;hs=0.4;vs=0.7;color=#cb48ea} @origin
+
+Tidemaster_Regen_Pulse:
+  Skills:
+    # Applies heal
+    - heal{a=1} @EIR{r=10;targetPlayers=false}
+    - heal{a=1} @Self
+    # Shows SFX
+    - sound{s=entity.generic.splash} @self
+    - sound{s=entity.drowned.hurt} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EIR{r=10;targetPlayers=false}
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - effect:particlering{p=splash;radius=2;points=8;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=12;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=6;points=16;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=8;points=19;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=10;points=21;a=60;hs=0.2;vs=0.3} @origin
+
+Tidemaster_Followers_1:
+  # Spawns merfolk to follow Merfolk Tidemaster. Variant with two Stormcallers.
+  Skills:
+    - summon{type=Water_Stormcaller;amount=2;radius=5} @SelfLocation
+    - summon{type=Water_Barbarian;amount=3;radius=5} @SelfLocation
+
+Tidemaster_Followers_2:
+  # Spawns merfolk to follow Merfolk Tidemaster. Variant with one Stormcaller.
+  Skills:
+    - summon{type=Water_Stormcaller;amount=1;radius=5} @SelfLocation
+    - summon{type=Water_Barbarian;amount=4;radius=5} @SelfLocation
+
+Pirate_Hype:
+  Skills:
+    # Applies potion effects
+    - potion{type=SPEED;duration=60;level=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - potion{type=SPEED;duration=60;level=1} @Self
+    # Equips secondary sword
+    - equip{item=iron_sword:5} @Self
+    - equip{item=iron_sword:5} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=block.note_block.guitar;p=0.5;} @origin
+    - effect:particles{p=note;c=#760300;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particles{p=note;c=#760300;a=10;hs=0.5;y=1} @Self
+    # Unequips secondary sword
+    - delay 60
+    - equip{item=air:5} @Self
+    - equip{item=air:5} @EntitiesNearOrigin{r=6;targetPlayers=false}
+
+Pirate_Defense:
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=40;level=2} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - potion{type=DAMAGE_RESISTANCE;duration=40;level=2} @Self
+    # Equips shield
+    - equip{item=shield:5} @Self
+    - equip{item=shield:5} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=block.note_block.bell;p=0.5;} @origin
+    - effect:particles{p=note;c=#932641;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particles{p=note;c=#932641;a=10;hs=0.5;y=1} @Self
+    # Unequips shield
+    - delay 40
+    - equip{item=air:5} @Self
+    - equip{item=air:5} @EntitiesNearOrigin{r=6;targetPlayers=false}
+
+Pirate_Shot:
+  Cooldown: 12
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=60;level=1} @Self
+    # Equips gun
+    - equip{item=black_dye:5} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 60
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Pirate_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    # Unequips gun
+    - delay 40
+    - equip{item=air:5} @Self
+
+Pirate_Shot_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=smoke_normal;a=20;hs=0.1;vs=0.05} @origin
+
+Pirate_Shot_Hit:
+  Skills:
+    # Deals Damage
+    - damage{a=7} @Target
+    # Shows SFX
+    - effect:particles{p=flame;a=20;hs=0.1;vs=0.05} @origin
+
+Cannon_Shot:
+  Cooldown: 20
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=80;level=2} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=1} @self
+    - delay 20
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.75} @self
+    - delay 20
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 20
+    - effect:sound{s=entity.firework_rocket.large_blast;} @self
+    - effect:particles{particle=flame;amount=20;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Cannon_Shot_Tick;onEnd=Cannon_Shot_Hit;v=20;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.3;sE=false} @Target
+
+Cannon_Shot_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=smoke_normal;a=55;hs=0.2;vs=0.1} @origin
+
+Cannon_Shot_Hit:
+  Skills:
+    # Deals Damage
+    - damage{a=12} @PlayersNearOrigin{r=5}
+    - throw{velocity=10;velocityY=7} @PlayersNearOrigin{r=5}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=flame;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=flame;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - delay 2
+
+Cannoneer_Gunpowder_Surprise:
+  Cooldown: 15
+  Skills:
+    - effect:particles{particle=flame;amount=15;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 40
+    - skill{s=Cannon_Shot_Hit} @self
+
+Cannoneer_Flee:
+  Cooldown: 15
+  Skills:
+    # Applies potion effect and flees
+    - potion{type=SPEED;duration=60;level=4} @Self
+    - RunAIGoalSelector{goal=fleeplayers}
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+    - delay 20
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+    - delay 20
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+    - delay 20
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+
+Pirate_Rapid_Fire:
+  Cooldown: 18
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=60;level=1} @Self
+    # Equips gun
+    - equip{item=black_dye:5} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 15
+    # Spawns shot
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Pirate_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    - delay 15
+    # Spawns shot
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Pirate_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    - delay 15
+    # Spawns shot
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Pirate_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    - delay 15
+    # Unequips gun
+    - delay 10
+    - equip{item=air:5} @Self
+
+Pirate_Supremacy:
+  Skills:
+    # Heals
+    - potion{type=SPEED;duration=30;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=30;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=30;level=3} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows VFX
+    - sound{s=block.note_block.guitar;p=0.2;} @Self
+    - effect:particles{p=happy_villager;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particles{p=happy_villager;a=10;hs=0.5;y=1} @Self
+    # Note particle ring
+    - effect:particlering{p=note;c=#001EFF;radius=2;points=8;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=4;points=12;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=6;points=16;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=8;points=19;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=10;points=21;a=10;hs=1;vs=0.3;y=1.5} @self
+
+Captain_Crew_1:
+  # Spawns sunken to follow Sunken Captain. Variant with two Cannoneers.
+  Skills:
+    - summon{type=Water_Swashbuckler;amount=4;radius=5} @SelfLocation
+    - summon{type=Water_Cannoneer;amount=2;radius=5} @SelfLocation
+
+Captain_Crew_2:
+  # Spawns sunken to follow Sunken Captain. Variant with three Cannoneers.
+  Skills:
+    - summon{type=Water_Swashbuckler;amount=3;radius=5} @SelfLocation
+    - summon{type=Water_Cannoneer;amount=3;radius=5} @SelfLocation
+
+Water_Elemental_Geyser:
+  Cooldown: 16
+  Skills:
+    # Telegraphs
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.55} @self
+    - delay 30
+    # Applies effects
+    - effect:geyser{type=WATER;height=5;speed=0.5} @Target
+    - throw{velocity=0;velocityY=10} @Target
+    # SFX
+    - sound{s=entity.generic.splash} @self
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.2;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=60;hs=0.2;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=60;hs=0.2;vs=0.3} @Target
+
+Water_Elemental_Tidewash:
+  Cooldown: 26
+  Skills:
+    # Telegraphs
+    - potion{type=SLOW;duration=30;level=1} @Self
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 10
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.55} @self
+    - delay 10
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.35} @self
+    - delay 10
+    # Applies effects on self
+    - effect:geyser{type=WATER;height=5;speed=0.5} @Self
+    - throw{velocity=0;velocityY=7} @Self
+    # Applies effects on target
+    - throw{velocity=15;velocityY=9} @PIR{r=6}
+    - potion{type=WEAKNESS;duration=80;level=2} @PIR{r=6}
+    - potion{type=SLOW;duration=80;level=1} @PIR{r=6}
+    - shieldbreak{duration=80} @PIR{r=6}
+    # SFX
+    - sound{s=entity.generic.splash} @self
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.4;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=80;hs=0.4;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=100;hs=0.4;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=6;points=18;a=120;hs=0.4;vs=0.3} @Target
+
+Water_Elemental_Regeneration:
+  Skills:
+    # Telegraphs
+    - heal{amount=1} @Self
+    # SFX
+    - effect:particles{p=heart;a=1;hs=0.25;y=1} @Self
+    - effect:particlering{p=splash;radius=0.4;points=8;a=5;hs=0.2;vs=0.3} @Self
+
+Water_Elemental_Enhance:
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;level=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - potion{type=SPEED;level=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.glow_squid.squirt} @origin
+    - effect:particles{p=happy_villager;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particlering{p=glow;radius=1;points=8;a=20;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=2;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=4;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=6;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+
+Water_Elemental_Heal:
+  Skills:
+    # Applies potion effects
+    - heal{a=20} @EIR{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.glow_squid.squirt} @origin
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particlering{p=glow;radius=1;points=8;a=20;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=2;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=4;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=6;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+
+Water_Elemental_Heal_Projectile:
+  Cooldown: 10
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1} @self
+    - projectile{onTick=Stormcaller_Enhance_Projectile_Tick;onEnd=Water_Elemental_Heal;v=10;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false} @EIR{r=10;limit=1;sort=LOWEST_HEALTH}
+
+Water_Elemental_Enhance_Projectile:
+  Cooldown: 10
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1} @self
+    - projectile{onTick=Stormcaller_Enhance_Projectile_Tick;onEnd=Water_Elemental_Enhance;v=10;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false} @EIR{r=10;limit=1;sort=LOWEST_HEALTH}
+
+Water_Elemental_Splash:
+  Cooldown: 3
+  Skills:
+    # Applies effects
+    - throw{velocity=6;velocityY=4} @PIR{r=3}
+    # Applies VFX
+    - sound{s=entity.generic.splash} @self
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.4;vs=0.3} @Self
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=80;hs=0.4;vs=0.3} @Self
+    - delay 2
+
+Water_Elemental_Empower:
+  Cooldown: 25
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=240;level=2} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+    - potion{type=SPEED;duration=240;level=1} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+    # Shows SFX
+    - effect:particles{particle=happy_villager;amount=6;hs=0.5;y=1} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+    - effect:sound{s=entity.villager.death;p=0.4} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+    - lightning{d=0} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+    - effect:particlering{p=glow;radius=0.5;points=8;a=5;hs=0.4;vs=1;color=#cb48ea} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=5;hs=0.4;vs=0.7;color=#cb48ea} @EIR{r=10;limit=1;sort=LOWEST_HEALTH;targetPlayers=false}
+
+Water_Siren_Empower_Song:
+  Conditions:
+    - raining{} false
+  Skills:
+    # Applies heal
+    - potion{type=DAMAGE_RESISTANCE;duration=20;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=20;level=1} @EIR{r=35;targetPlayers=false}
+    - potion{type=INCREASE_DAMAGE;duration=20;level=1} @Self
+    - potion{type=INCREASE_DAMAGE;duration=20;level=1} @EIR{r=35;targetPlayers=false}
+    # Shows SFX
+    - sound{s=block.note_block.harp;p=1.1;} @Self
+    - effect:particles{p=happy_villager;a=3;hs=0.5;y=1} @EIR{r=35;targetPlayers=false}
+    # Note particle ring
+    - effect:particlering{p=note;c=#760300;radius=4;points=8;a=10;hs=1;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=8;points=12;a=10;hs=1;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=12;points=16;a=10;hs=1;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=16;points=19;a=20;hs=2;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=20;points=21;a=20;hs=2;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=24;points=21;a=20;hs=2;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=28;points=21;a=20;hs=3;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=32;points=21;a=20;hs=3;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=36;points=21;a=20;hs=3;vs=0.3;y=1} @self
+
+Water_Siren_Healing_Rain:
+  Conditions:
+    - raining{} false
+  Skills:
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - sound{s=entity.drowned.hurt;p=0.3} @Self
+    - delay 20
+    - lightning{d=0} @Self
+    - weather{type=rain;duration=600} ~onSpawn
+    # Applies Heal
+    - skill{s=Water_Siren_Elevate}
+    - skill{s=Water_Siren_Healing_Rain_Tick}
+
+Water_Siren_Healing_Rain_Tick:
+  Skills:
+    # Applies heal
+    - heal{a=2} @EIR{r=35;targetPlayers=false}
+    - heal{a=2} @Self
+    # Shows SFX
+    - effect:particles{p=heart;a=3;hs=0.5;y=1} @EIR{r=35;targetPlayers=false}
+    - effect:particles{p=heart;a=3;hs=0.5;y=1} @Self
+    - delay 20
+    - skill{s=Water_Siren_Healing_Rain_Tick}
+
+Water_Siren_Geyser:
+  Cooldown: 23
+  Skills:
+    # Telegraphs
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.drowned.hurt;p=0.4} @self
+    - delay 30
+    # Applies effects
+    - effect:geyser{type=WATER;height=5;speed=1} @Target
+    - throw{velocity=0;velocityY=13} @Target
+    # SFX
+    - sound{s=entity.generic.splash} @self
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.2;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=60;hs=0.2;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=60;hs=0.2;vs=0.3} @Target
+
+Water_Siren_Elevate:
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=1200;level=1} @Self
+    - potion{type=SPEED;duration=1200;level=2} @Self
+    # Shows SFX
+    - effect:particles{particle=happy_villager;amount=6;hs=0.5;y=1} @Self
+    - effect:particlering{p=glow;radius=0.5;points=8;a=5;hs=0.4;vs=1;color=#cb48ea} @Self
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=5;hs=0.4;vs=0.7;color=#cb48ea} @Self
+
+Water_Siren_Elevate_Champion:
+  Cooldown: 30
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=240;level=2} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - potion{type=SPEED;duration=240;level=1} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    # Shows SFX
+    - effect:particles{particle=happy_villager;amount=6;hs=0.5;y=1} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - effect:sound{s=entity.villager.death;p=0.4} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - lightning{d=0} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - effect:particlering{p=glow;radius=0.5;points=8;a=5;hs=0.4;vs=1;color=#cb48ea} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=5;hs=0.4;vs=0.7;color=#cb48ea} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+
+Water_Siren_Smite:
+  Conditions:
+    - raining{} true
+  Cooldown: 23
+  Skills:
+    - lightning{d=5} @Target
+
+Water_Siren_Triple_Tidal_Slash:
+  Cooldown: 23
+  Skills:
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - delay 20
+    - skill{s=Tidal_Slash} @Target
+    - delay 10
+    - skill{s=Tidal_Slash} @Target
+    - delay 10
+    - skill{s=Tidal_Slash} @Target
+
+Tidal_Slash:
+  Skills:
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 60
+    - effect:sound{s=entity.generic.splash;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Tidal_Slash_Tick;onHit=Tidal_Slash_Hit;v=11;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.1;sE=false} @Target
+
+Tidal_Slash_Hit:
+  Skills:
+    # Applies damage and knockback
+    - damage{a=7} @Target
+    - throw{velocity=5;velocityY=3} @Target
+    # Shows SFX
+    - effect:particles{p=splash;a=50;hs=1;vs=1} @origin
+
+Tidal_Slash_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=splash;a=45;hs=0.1;vs=0.05} @origin
+    - effect:particles{p=water_bubble;a=20;hs=0.1;vs=0.05} @origin
+
+Siren_Followers_1:
+  # Summons 2 captains and 1 tidemaster.
+  Skills:
+    - summon{type=Water_Tidemaster;amount=2;radius=5} @SelfLocation
+    - summon{type=Water_Captain;amount=1;radius=5} @SelfLocation
+
+Siren_Followers_2:
+  # Summons 2 captains.
+  Skills:
+    - summon{type=Water_Captain;amount=2;radius=5} @SelfLocation
+
+Siren_Followers_3:
+  # Summons 2 tidemasters.
+  Skills:
+    - summon{type=Water_Tidemaster;amount=2;radius=5} @SelfLocation
+
+Siren_Followers_4:
+  # Summons 1 tidemaster, 1 captain, 1 elemental.
+  Skills:
+    - summon{type=Water_Tidemaster;amount=1;radius=5} @SelfLocation
+    - summon{type=Water_Captain;amount=1;radius=5} @SelfLocation
+    - summon{type=Water_Elemental;amount=1;radius=5} @SelfLocation
+
+Dragoon_Shot:
+  Cooldown: 18
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=80;level=2} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=1} @self
+    - delay 20
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.75} @self
+    - delay 20
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 20
+    - effect:sound{s=entity.firework_rocket.large_blast;} @self
+    - effect:particles{particle=soul_fire_flame;amount=20;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Cannon_Shot_Tick;onEnd=Dragoon_Shot_Hit;v=20;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.3;sE=false} @Target
+    - delay 20
+    - projectile{onTick=Cannon_Shot_Tick;onEnd=Dragoon_Shot_Hit;v=20;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.3;sE=false} @Target
+
+Dragoon_Shot_Hit:
+  Skills:
+    # Deals Damage
+    - damage{a=12} @PlayersNearOrigin{r=5}
+    - shieldbreak{duration=40} @PlayersNearOrigin{r=5}
+    - throw{velocity=10;velocityY=7} @PlayersNearOrigin{r=5}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=soul_fire_flame;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=soul_fire_flame;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - delay 2
+
+Admiral_Crew_1:
+  # Spawns ghosts to follow Ghost Admiral. Variant with two Dragoons.
+  Skills:
+    - summon{type=Water_Corsair;amount=4;radius=5} @SelfLocation
+    - summon{type=Water_Dragoon;amount=2;radius=5} @SelfLocation
+
+Admiral_Crew_2:
+  # Spawns ghosts to follow Ghost Admiral. Variant with three Dragoons.
+  Skills:
+    - summon{type=Water_Corsair;amount=3;radius=5} @SelfLocation
+    - summon{type=Water_Dragoon;amount=3;radius=5} @SelfLocation
+
+Ghost_Ethereal:
+  Skills:
+    - potion{type=INVISIBILITY;duration=120;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=120;level=5} @Self
+    - RunAIGoalSelector{goal=fleeplayers} @Self
+    # Shows VFX
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=1} @origin
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+
+Ghost_Implode:
+  Skills:
+    - effect:particles{particle=soul_fire_flame;amount=15;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 40
+    - skill{s=Dragoon_Shot_Hit} @self
+    - potion{type=WEAKNESS;duration=120;level=1} @PlayersInRadius{r=6}
+    - potion{type=CONFUSION;duration=120;level=1} @PlayersInRadius{r=6}
+
+Ghost_Shot:
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=60;level=1} @Self
+    # Equips gun
+    - equip{item=black_dye:5} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 60
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=soul_fire_flame;amount=6;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Ghost_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    # Unequips gun
+    - delay 40
+    - equip{item=air:5} @Self
+
+Ghost_Shot_Hit:
+  Skills:
+    # Deals Damage
+    - damage{a=7} @Target
+    - heal{a=5} @Self
+    # Shows SFX
+    - effect:particles{p=soul_fire_flame;a=20;hs=0.1;vs=0.05} @origin
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+
+Ghost_Rapid_Fire:
+  Cooldown: 18
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=60;level=1} @Self
+    # Equips gun
+    - equip{item=black_dye:5} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 15
+    # Spawns shot
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=soul_fire_flame;amount=6;hs=0.5;y=1} @self
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Ghost_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    - delay 15
+    # Spawns shot
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=soul_fire_flame;amount=6;hs=0.5;y=1} @self
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Ghost_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    - delay 15
+    # Spawns shot
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=soul_fire_flame;amount=6;hs=0.5;y=1} @self
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Ghost_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    - delay 15
+    # Unequips gun
+    - delay 10
+    - equip{item=air:5} @Self
+
+Naga_Siren_WB_Despawn_Timer:
+  # Times the world boss encounter and despawns the world boss should the time exceed limit.
+  Skills:
+    - message{m="&lCombat with a &4&lWorld Boss&f&l has started!"} @EIW
+    - actionmessage{m="&l&c6<&co>30&f minutes remain!"} @PlayersInRadius{r=30}
+    - delay 3600
+    - actionmessage{m="&l&c3<&co>30&f minutes remain!"} @PlayersInRadius{r=30}
+    - delay 3000
+    - actionmessage{m="&l&c60&f seconds remain!"} @PlayersInRadius{r=30}
+    - delay 600
+    - actionmessage{m="&l&c30&f seconds remain!"} @PlayersInRadius{r=30}
+    - delay 400
+    - actionmessage{m="&l&c10&f seconds remain!"} @PlayersInRadius{r=30}
+    - delay 200
+    - actionmessage{m="&4&lWorld Boss&f&l encounter over!"} @PlayersInRadius{r=30}
+    - remove @self
