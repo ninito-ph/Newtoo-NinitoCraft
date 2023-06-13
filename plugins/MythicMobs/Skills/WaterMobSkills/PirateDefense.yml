@@ -1,0 +1,16 @@
+Pirate_Defense:
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=40;level=2} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - potion{type=DAMAGE_RESISTANCE;duration=40;level=2} @Self
+    # Equips shield
+    - equip{item=shield:5} @Self
+    - equip{item=shield:5} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=block.note_block.bell;p=0.5;} @origin
+    - effect:particles{p=note;c=#932641;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particles{p=note;c=#932641;a=10;hs=0.5;y=1} @Self
+    # Unequips shield
+    - delay 40
+    - equip{item=air:5} @Self
+    - equip{item=air:5} @EntitiesNearOrigin{r=6;targetPlayers=false}

@@ -1,0 +1,7 @@
+Ranger_Poison_Arrow:
+  TargetContitions:
+    - blocking cancel
+  Skills:
+    # Applies stat effects
+    - potion{type=POISON;duration=30;level=1} @target
+    - potion{type=BLINDNESS;duration=30;level=1} @target

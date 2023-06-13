@@ -1,0 +1,33 @@
+Cleric_Summon_Mastermind_Cast:
+  Skills:
+    - actionmessage{m="The &4&lAbyssal Cleric&f is summoning a &5&lMind Flayer&f! Stop him!"} @PlayersInRadius{r=30}
+    - effect:sound{s=entity.wither.spawn;v=2;p=2} @target
+    - setstance{s=Summoning} @Self
+    - skill{s=Cleric_Summon_Mastermind_Channel} @self
+
+Cleric_Summon_Mastermind_Tick:
+  Skills:
+    - effect:particles{p=spell_witch;amount=40;speed=0;hS=0.1;vS=0.1} @origin
+
+Cleric_Summon_Mastermind_Channel:
+  Conditions:
+    - stance Summoning required
+  Skills:
+    - effect:particles{p=portal;a=10;hs=0.5;y=1} @self
+    - orbital{onTick=Cleric_Summon_Mastermind_Tick;points=32;interval=1;duration=300;r=3;vy=1;oy=1;hnp=true;vr=2} @self
+    - delay 300
+    - skill{s=Cleric_Summon_Mastermind_Complete} @self
+
+Cleric_Summon_Mastermind_Complete:
+  Conditions:
+    - stance Summoning_Interrupted cancel
+  Skills:
+    # VFX
+    - effect:sound{s=block.portal.travel;v=0.6;p=1.5} @origin
+    - effect:particlesphere{particle=portal;amount=50;radius=2} @self
+    - delay 2
+    - effect:particlesphere{particle=portal;amount=100;radius=2} @self
+    - delay 2
+    - effect:particlesphere{particle=portal;amount=150;radius=3} @self
+    # Spawns the Mind Flayer
+    - summon{type=Deep_Mastermind;amount=1;radius=5} @SelfLocation

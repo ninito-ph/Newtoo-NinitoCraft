@@ -1,0 +1,11 @@
+Tidemaster_Followers_1:
+  # Spawns merfolk to follow Merfolk Tidemaster. Variant with two Stormcallers.
+  Skills:
+    - summon{type=Water_Stormcaller;amount=2;radius=5} @SelfLocation
+    - summon{type=Water_Barbarian;amount=3;radius=5} @SelfLocation
+
+Tidemaster_Followers_2:
+  # Spawns merfolk to follow Merfolk Tidemaster. Variant with one Stormcaller.
+  Skills:
+    - summon{type=Water_Stormcaller;amount=1;radius=5} @SelfLocation
+    - summon{type=Water_Barbarian;amount=4;radius=5} @SelfLocation

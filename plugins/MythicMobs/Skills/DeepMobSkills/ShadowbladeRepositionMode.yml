@@ -1,0 +1,10 @@
+Shadowblade_Reposition_Mode:
+  Skills:
+    - effect:smoke @self
+    - potion{type=INVISIBILITY;duration=50} @self
+    - jump{velocity=2;} @self
+    - leap{velocity=-500;noise=3} @target
+    - equip{item=air:0}
+    - delay 50
+    - effect:smoke @self
+    - equip{item=iron_sword:0} @self

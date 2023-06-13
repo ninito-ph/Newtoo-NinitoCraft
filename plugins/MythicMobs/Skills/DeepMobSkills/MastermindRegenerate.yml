@@ -1,0 +1,11 @@
+Mastermind_Regenerate:
+  Cooldown: 40
+  Skills:
+    - actionmessage{m="The &5&lMind Flayer&f is regenerating! Stop him!"} @PlayersInRadius{r=30}
+    - effect:sound{s=entity.enderman.scream;v=1.5;p=0.5} @self
+    - setstance{s=Regenerating} @Self
+    - skill{s=Mastermind_Heal} @self
+
+Mastermind_Regenerate_Tick:
+  Skills:
+    - effect:particles{p=reddust;amount=40;speed=0;hS=0.1;vS=0.1;color=#e8202e} @origin

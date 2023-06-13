@@ -1,0 +1,40 @@
+Cannon_Shot:
+  Cooldown: 20
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=80;level=2} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=1} @self
+    - delay 20
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.75} @self
+    - delay 20
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 20
+    - effect:sound{s=entity.firework_rocket.large_blast;} @self
+    - effect:particles{particle=flame;amount=20;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Cannon_Shot_Tick;onEnd=Cannon_Shot_Hit;v=20;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.3;sE=false} @Target
+
+Cannon_Shot_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=smoke_normal;a=55;hs=0.2;vs=0.1} @origin
+
+Cannon_Shot_Hit:
+  Skills:
+    # Deals Damage
+    - damage{a=12} @PlayersNearOrigin{r=5}
+    - throw{velocity=10;velocityY=7} @PlayersNearOrigin{r=5}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=flame;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=flame;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - delay 2

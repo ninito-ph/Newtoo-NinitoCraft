@@ -1,0 +1,7 @@
+Deep_Captain_Repel:
+  # Throws the player away
+  Skills:
+    # Throws player away
+    - effect:sound{s=entity.generic.explode;v=1;p=0.75} @self
+    - throw{velocity=4;velocityY=2} @PIR{r=5}
+    - effect:particlering{p=redDust;radius=1;points=8;a=20;hs=0.25;vs=0.25;color=#cb48ea} @self

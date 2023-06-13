@@ -1,0 +1,7 @@
+Bandit_Kingpin_Kick:
+  # Kicks any melee attacking player away.
+  Cooldown: 7
+  Skills:
+    - throw{velocity=5;velocityY=3} @target ~onDamaged
+    - damage{amount=4;pkb=true} @target ~onDamaged
+    - potion{t=SLOW;l=2;d=5} @self ~onDamaged

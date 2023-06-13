@@ -1,0 +1,12 @@
+Deep_Captain_Levitate_Casting:
+  # Makes mob float for a while, before firing three arrow at target.
+  Skills:
+    - look{headOnly=false} @target
+    - potion{type=LEVITATION;duration=50;level=1} @self
+    - delay 10
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.5} @self
+    - delay 15
+    - skill{s=Deep_Captain_Petrify_Projectile} @target
+    - delay 15
+    - skill{s=Deep_Captain_Petrify_Projectile} @target

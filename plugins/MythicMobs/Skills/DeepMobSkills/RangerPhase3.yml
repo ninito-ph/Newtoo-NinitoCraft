@@ -1,0 +1,25 @@
+Ranger_Phase_3:
+  Skills:
+    # Applies effects on self
+    - potion{type=LEVITATION;duration=100;level=1;p=false} @self
+    # Begins firing final volley of arrows
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.6} @self
+    - delay 20
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target
+    - delay 10
+    - skill{s=Ranger_Multi_Shot} @target

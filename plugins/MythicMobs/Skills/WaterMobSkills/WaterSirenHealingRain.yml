@@ -1,0 +1,24 @@
+Water_Siren_Healing_Rain:
+  Conditions:
+    - raining{} false
+  Skills:
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - sound{s=entity.drowned.hurt;p=0.3} @Self
+    - delay 20
+    - lightning{d=0} @Self
+    - weather{type=rain;duration=600} ~onSpawn
+    # Applies Heal
+    - skill{s=Water_Siren_Elevate}
+    - skill{s=Water_Siren_Healing_Rain_Tick}
+
+Water_Siren_Healing_Rain_Tick:
+  Skills:
+    # Applies heal
+    - heal{a=2} @EIR{r=35;targetPlayers=false}
+    - heal{a=2} @Self
+    # Shows SFX
+    - effect:particles{p=heart;a=3;hs=0.5;y=1} @EIR{r=35;targetPlayers=false}
+    - effect:particles{p=heart;a=3;hs=0.5;y=1} @Self
+    - delay 20
+    - skill{s=Water_Siren_Healing_Rain_Tick}

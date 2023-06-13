@@ -1,0 +1,30 @@
+Pirate_Shot:
+  Cooldown: 12
+  Skills:
+    # Applies potion effect
+    - potion{type=SLOW;duration=60;level=1} @Self
+    # Equips gun
+    - equip{item=black_dye:5} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 60
+    - effect:sound{s=entity.firework_rocket.blast;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Pirate_Shot_Tick;onHit=Pirate_Shot_Hit;v=30;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.2;sE=false} @Target
+    # Unequips gun
+    - delay 40
+    - equip{item=air:5} @Self
+
+Pirate_Shot_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=smoke_normal;a=20;hs=0.1;vs=0.05} @origin
+
+Pirate_Shot_Hit:
+  Skills:
+    # Deals Damage
+    - damage{a=7} @Target
+    # Shows SFX
+    - effect:particles{p=flame;a=20;hs=0.1;vs=0.05} @origin

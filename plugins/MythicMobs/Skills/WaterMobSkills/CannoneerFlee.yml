@@ -1,0 +1,25 @@
+Cannoneer_Flee:
+  Cooldown: 15
+  Skills:
+    # Applies potion effect and flees
+    - potion{type=SPEED;duration=60;level=4} @Self
+    - RunAIGoalSelector{goal=fleeplayers}
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+    - delay 20
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+    - delay 20
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self
+    - delay 20
+    # Applies heal
+    - heal{a=3} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - sound{s=entity.drowned.hurt} @Self

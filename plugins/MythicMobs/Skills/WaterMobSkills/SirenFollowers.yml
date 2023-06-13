@@ -1,0 +1,22 @@
+Siren_Followers_1:
+  # Summons 2 captains and 1 tidemaster.
+  Skills:
+    - summon{type=Water_Tidemaster;amount=2;radius=5} @SelfLocation
+    - summon{type=Water_Captain;amount=1;radius=5} @SelfLocation
+
+Siren_Followers_2:
+  # Summons 2 captains.
+  Skills:
+    - summon{type=Water_Captain;amount=2;radius=5} @SelfLocation
+
+Siren_Followers_3:
+  # Summons 2 tidemasters.
+  Skills:
+    - summon{type=Water_Tidemaster;amount=2;radius=5} @SelfLocation
+
+Siren_Followers_4:
+  # Summons 1 tidemaster, 1 captain, 1 elemental.
+  Skills:
+    - summon{type=Water_Tidemaster;amount=1;radius=5} @SelfLocation
+    - summon{type=Water_Captain;amount=1;radius=5} @SelfLocation
+    - summon{type=Water_Elemental;amount=1;radius=5} @SelfLocation

@@ -1,0 +1,4 @@
+Ranger_Multi_Shot:
+  Skills:
+    # Applies stat effects
+    - arrowvolley{a=2;s=90;v=30} @Target

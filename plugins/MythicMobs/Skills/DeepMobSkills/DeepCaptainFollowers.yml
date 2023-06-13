@@ -1,0 +1,5 @@
+Deep_Captain_Followers:
+  # Summons duergar. 3 miners and 2 stonebombers.
+  Skills:
+    - summon{type=Deep_Miner;amount=3;radius=5} @SelfLocation
+    - summon{type=Deep_Stonebomber;amount=2;radius=5} @SelfLocation

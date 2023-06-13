@@ -1,0 +1,13 @@
+Water_Siren_Elevate_Champion:
+  Cooldown: 30
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=240;level=2} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - potion{type=SPEED;duration=240;level=1} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    # Shows SFX
+    - effect:particles{particle=happy_villager;amount=6;hs=0.5;y=1} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - effect:sound{s=entity.villager.death;p=0.4} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - lightning{d=0} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - effect:particlering{p=glow;radius=0.5;points=8;a=5;hs=0.4;vs=1;color=#cb48ea} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=5;hs=0.4;vs=0.7;color=#cb48ea} @EIR{r=10;limit=3;sort=LOWEST_HEALTH;targetPlayers=false}

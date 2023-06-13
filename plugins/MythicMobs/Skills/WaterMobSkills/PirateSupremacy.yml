@@ -1,0 +1,20 @@
+Pirate_Supremacy:
+  Skills:
+    # Heals
+    - potion{type=SPEED;duration=30;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=30;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=30;level=3} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows VFX
+    - sound{s=block.note_block.guitar;p=0.2;} @Self
+    - effect:particles{p=happy_villager;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particles{p=happy_villager;a=10;hs=0.5;y=1} @Self
+    # Note particle ring
+    - effect:particlering{p=note;c=#001EFF;radius=2;points=8;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=4;points=12;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=6;points=16;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=8;points=19;a=10;hs=1;vs=0.3;y=1.5} @self
+    - delay 2
+    - effect:particlering{p=note;c=#001EFF;radius=10;points=21;a=10;hs=1;vs=0.3;y=1.5} @self

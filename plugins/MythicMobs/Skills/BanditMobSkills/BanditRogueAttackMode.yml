@@ -1,0 +1,12 @@
+Bandit_Rogue_Attack_Mode:
+  # Sets Rogue to attack mode and gives it a bow.
+  Skills:
+    - setstance{s=Attack_Mode} @self
+    - equip{item=Bandit_Longbow:0}
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=bowshoot}
+    - RunAIGoalSelector{goal=gotoparent}
+    - RunAIGoalSelector{goal=randomstroll}
+    - RunAITargetSelector{target=clear}
+    - RunAITargetSelector{target=attacker}
+    - RunAITargetSelector{target=players}

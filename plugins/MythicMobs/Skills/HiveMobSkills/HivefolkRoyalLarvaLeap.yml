@@ -1,0 +1,5 @@
+Hivefolk_Royal_Larva_Leap:
+  # Makes royal larva leap and attack.
+  Cooldown: 6
+  Skills:
+    - leap{v=130} @target

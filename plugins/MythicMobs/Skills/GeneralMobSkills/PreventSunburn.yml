@@ -1,0 +1,4 @@
+Prevent_Sunburn:
+  # Makes a mob immune to sunlight burning. Excessive usage may lead to lag. Try using a stone button as a helmet first.
+  Skills:
+    - ignite{ticks=1} @self ~onTimer:1

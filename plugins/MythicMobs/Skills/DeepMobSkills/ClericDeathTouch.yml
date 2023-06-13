@@ -1,0 +1,21 @@
+Cleric_Death_Touch:
+  Conditions:
+    - stance{s=Cloaked} required
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Telegraphs attack
+    - effect:particles{p=sweep_attack;a=1;hs=0.25;vs=0.25;y=1} @self
+    - effect:sound{s=entity.player.attack.sweep;v=1;p=0.05} @self
+    - delay 20
+    # Applies stat effects
+    - potion{type=WITHER;duration=140;level=1} @PlayersNearOrigin{r=4}
+    - potion{type=WEAKNESS;duration=140;level=1} @PlayersNearOrigin{r=4}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=redDust;radius=1;points=8;a=60;hs=0.2;vs=0.3;color=#1f1d1d} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=redDust;radius=2;points=12;a=60;hs=0.2;vs=0.3;color=#1f1d1d} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=redDust;radius=4;points=16;a=60;hs=0.2;vs=0.3;color=#1f1d1d} @origin

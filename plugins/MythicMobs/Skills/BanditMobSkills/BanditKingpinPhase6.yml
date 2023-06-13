@@ -1,0 +1,5 @@
+Bandit_Kingpin_Phase_6:
+  # Grants speed and resistance.
+  Skills:
+    - potion{t=SPEED;l=1;d=-1} @self
+    - potion{t=DAMAGE_RESISTANCE;l=1;d=-1} @self

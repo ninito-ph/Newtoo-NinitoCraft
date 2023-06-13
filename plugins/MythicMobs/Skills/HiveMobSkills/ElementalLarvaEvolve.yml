@@ -1,0 +1,23 @@
+Elemental_Larva_Evolve_Drone:
+  # Deletes larva and creates a hivefolk drone in place.
+  Skills:
+    - summon{type=Hivefolk_Fire_Drone;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Elemental_Larva_Evolve_Buzzard:
+  # Deletes larva and creates a hivefolk buzzard in place.
+  Skills:
+    - summon{type=Hivefolk_Fire_Buzzard;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Elemental_Larva_Evolve_Spawner:
+  # Deletes larva and creates a hivefolk spawner in place.
+  Skills:
+    - summon{type=Hivefolk_Ice_Spawner;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self

@@ -737,7 +737,7 @@ Elemental_Larva_Evolve_Drone:
     - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
 
 Elemental_Larva_Evolve_Buzzard:
-# Deletes larva and creates a hivefolk drone in place.
+# Deletes larva and creates a hivefolk buzzard in place.
     Skills:
     - summon{type=Hivefolk_Fire_Buzzard;amount=1;radius=1} @SelfLocation
     - remove @self
@@ -745,7 +745,7 @@ Elemental_Larva_Evolve_Buzzard:
     - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
 
 Elemental_Larva_Evolve_Spawner:
-# Deletes larva and creates a hivefolk drone in place.
+# Deletes larva and creates a hivefolk spawner in place.
     Skills:
     - summon{type=Hivefolk_Ice_Spawner;amount=1;radius=1} @SelfLocation
     - remove @self

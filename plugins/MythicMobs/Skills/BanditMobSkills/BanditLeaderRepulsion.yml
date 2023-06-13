@@ -1,0 +1,10 @@
+Bandit_Leader_Repulsion:
+  # Single use. Telegraphs use to player, throws player away.
+  Conditions:
+    - stance{s=Skill_Spent} false
+  Skills:
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death} @self
+    - message{m="&aBandit Leader&f<&co> I<&sq>ve had enough of this!"} @PlayersInRadius{r=30}
+    - throw{velocity=4;velocityY=3} @PIR{r=5}
+    - setstance{s=Skill_Spent} @Self

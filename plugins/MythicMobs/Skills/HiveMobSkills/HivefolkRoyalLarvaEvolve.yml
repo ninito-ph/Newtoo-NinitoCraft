@@ -1,0 +1,23 @@
+Hivefolk_Royal_Larva_Evolve_Hopper:
+  # Deletes royal larva and creates a hivefolk hopper in place.
+  Skills:
+    - summon{type=Hivefolk_Hopper;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#cc00ff} @self
+
+Hivefolk_Royal_Larva_Evolve_Spawner:
+  # Deletes royal larva and creates a hivefolk spawner in place.
+  Skills:
+    - summon{type=Hivefolk_Spawner;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#cc00ff} @self
+
+Hivefolk_Royal_Larva_Evolve_Spitter:
+  # Deletes royal larva and creates a hivefolk spitter in place.
+  Skills:
+    - summon{type=Hivefolk_Spitter;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#cc00ff} @self

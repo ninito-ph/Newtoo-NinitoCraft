@@ -1,0 +1,7 @@
+Shadowblade_Darken:
+  TargetConditions:
+    - blocking cancel
+  Skills:
+    - potion{type=BLINDNESS;duration=65;level=1} @target
+    - potion{type=SLOW;duration=50;level=1}
+    - skill{s=Shadowblade_Reposition_Mode}

@@ -1,0 +1,15 @@
+Elemental_Firefly_Explode:
+  Skills:
+    # Deals Damage
+    - damage{a=3} @PlayersNearOrigin{r=3}
+    - throw{velocity=5;velocityY=6} @PlayersNearOrigin{r=3}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=flame;radius=2;points=8;a=100;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=1;points=8;a=20;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=flame;radius=4;points=12;a=50;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=2;points=12;a=10;hs=0.3;vs=1.2} @origin
+    - delay 2

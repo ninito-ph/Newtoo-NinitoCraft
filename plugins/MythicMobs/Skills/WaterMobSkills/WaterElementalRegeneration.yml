@@ -1,0 +1,7 @@
+Water_Elemental_Regeneration:
+  Skills:
+    # Telegraphs
+    - heal{amount=1} @Self
+    # SFX
+    - effect:particles{p=heart;a=1;hs=0.25;y=1} @Self
+    - effect:particlering{p=splash;radius=0.4;points=8;a=5;hs=0.2;vs=0.3} @Self

@@ -1,0 +1,6 @@
+Cleric_Decoy_Spawn:
+  Skills:
+    - effect:particles{p=smoke_large;a=30;hs=0.15;vs=0.25;y=1} @self
+    - delay 140
+    - damage{a=100} @self
+    - effect:particles{p=smoke_large;a=30;hs=0.15;vs=0.25;y=1} @self

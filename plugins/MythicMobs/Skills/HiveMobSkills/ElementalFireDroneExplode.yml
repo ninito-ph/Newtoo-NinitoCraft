@@ -1,0 +1,14 @@
+Elemental_Fire_Drone_Explode:
+  Skills:
+    # Deals Damage
+    - damage{a=4.5} @PlayersNearOrigin{r=4}
+    - throw{velocity=8;velocityY=5} @PlayersNearOrigin{r=4}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:particlering{p=flame;radius=2;points=8;a=130;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=1.5;points=8;a=40;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlering{p=flame;radius=4;points=12;a=70;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=3;points=12;a=20;hs=0.3;vs=1.2} @origin

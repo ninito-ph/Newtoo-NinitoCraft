@@ -1,0 +1,5 @@
+Polyp_Initialize:
+  Skills:
+    # Applies effects on self
+    - setvariable{var=global.SummonCount;value=0} @self
+    - potion{type=SLOW_FALLING;duration=9999999;level=1;p=false} @self

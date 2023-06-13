@@ -1,0 +1,24 @@
+Tidal_Slash:
+  Skills:
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 60
+    - effect:sound{s=entity.generic.splash;} @self
+    - effect:particles{particle=flame;amount=6;hs=0.5;y=1} @self
+    # Spawns shot
+    - projectile{onTick=Tidal_Slash_Tick;onHit=Tidal_Slash_Hit;v=11;i=1;hR=1;vR=1;syo=1.5;md=10;g=0.1;sE=false} @Target
+
+Tidal_Slash_Hit:
+  Skills:
+    # Applies damage and knockback
+    - damage{a=7} @Target
+    - throw{velocity=5;velocityY=3} @Target
+    # Shows SFX
+    - effect:particles{p=splash;a=50;hs=1;vs=1} @origin
+
+Tidal_Slash_Tick:
+  Skills:
+    # Shows SFX
+    - effect:particles{p=splash;a=45;hs=0.1;vs=0.05} @origin
+    - effect:particles{p=water_bubble;a=20;hs=0.1;vs=0.05} @origin

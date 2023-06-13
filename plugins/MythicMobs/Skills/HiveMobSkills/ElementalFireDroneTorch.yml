@@ -1,0 +1,23 @@
+Elemental_Fire_Drone_Torch:
+  Cooldown: 14
+  Skills:
+    # Telegraphs
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.silverfish.hurt;p=0.6} @self
+    - delay 20
+    # Shows SFX
+    - ignite{duration=80} @PlayersNearOrigin{r=2}
+    - effect:sound{s=entity.blaze.ambient} @origin
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:sound{s=entity.blaze.ambient} @origin
+    - ignite{duration=80} @PlayersNearOrigin{r=2}
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self
+    - delay 10
+    - effect:particles{p=flame;a=30;hs=0.5;vs=0.5;y=1} @Self

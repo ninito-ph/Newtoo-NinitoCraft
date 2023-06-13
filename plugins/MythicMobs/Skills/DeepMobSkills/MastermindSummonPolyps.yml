@@ -1,0 +1,26 @@
+Mastermind_Summon_Polyps:
+  Cooldown: 180
+  Skills:
+    # Telegraphs attack
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.1} @self
+    - delay 30
+    # Shows SFX
+    - effect:sound{s=block.portal.travel;v=0.6;p=1.5} @origin
+    - effect:particlering{p=soul_fire_flame;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - effect:particlering{p=smoke_large;radius=2;points=8;a=80;hs=0.3;vs=1.5} @origin
+    - delay 2
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=0.75} @origin
+    - effect:particlering{p=soul_fire_flame;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - effect:particlering{p=smoke_large;radius=4;points=12;a=40;hs=0.3;vs=1.2} @origin
+    - delay 2
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=0.75} @origin
+    - effect:particlering{p=soul_fire_flame;radius=6;points=16;a=20;hs=0.3;vs=1} @origin
+    - effect:particlering{p=smoke_large;radius=6;points=16;a=20;hs=0.3;vs=1} @origin
+    - delay 2
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=0.75} @origin
+    - effect:particlering{p=soul_fire_flame;radius=8;points=32;a=10;hs=0.3;vs=0.6} @origin
+    - effect:particlering{p=smoke_large;radius=8;points=32;a=10;hs=0.3;vs=0.6} @origin
+    # Summons Polyps
+    - summon{type=Deep_Polyp;amount=3;r=4} @SelfLocation
+    - rally{types=Deep_Polyp;r=5} @self

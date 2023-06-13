@@ -1,0 +1,7 @@
+Cannoneer_Gunpowder_Surprise:
+  Cooldown: 15
+  Skills:
+    - effect:particles{particle=flame;amount=15;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 40
+    - skill{s=Cannon_Shot_Hit} @self

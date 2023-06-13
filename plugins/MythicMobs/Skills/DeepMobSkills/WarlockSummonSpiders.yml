@@ -1,0 +1,5 @@
+Warlock_Summon_Spiders:
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1.3} @target
+    - effect:particles{p=redDust;a=20;hs=0.25;vs=0.25;color=#cb48ea} @origin
+    - summon{type=SPIDER;amount=2;radius=4} @self

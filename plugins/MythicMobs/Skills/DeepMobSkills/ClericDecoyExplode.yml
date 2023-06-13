@@ -1,0 +1,20 @@
+Cleric_Decoy_Explode:
+  Skills:
+    # Waits
+    - delay 100
+    # Telegraphs attack
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.6} @self
+    - potion{type=LEVITATION;duration=40;level=1;p=false} @self
+    - delay 40
+    # Explodes
+    - effect:particles{particle=largeexplosion;amount=10} @self
+    - effect:sound{s=entity.generic.explode} @origin
+    - effect:particlesphere{particle=reddust;amount=50;radius=2} @self
+    - delay 2
+    - effect:particlesphere{particle=reddust;amount=100;radius=2} @self
+    - delay 2
+    - effect:particlesphere{particle=reddust;amount=150;radius=3} @self
+    # Damages Self and Player
+    - damage{a=15} @PIR{r=5}
+    - damage{a=100} @self

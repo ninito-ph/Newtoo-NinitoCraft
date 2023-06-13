@@ -1,0 +1,4 @@
+Mastermind_Armor_Orb_Tick:
+  Skills:
+    - effect:particles{p=enchantment_table;amount=40;speed=0;hS=0.2;vS=0.5;color=#ebc634} @origin
+    - shieldPercent{mS=0.33} @self

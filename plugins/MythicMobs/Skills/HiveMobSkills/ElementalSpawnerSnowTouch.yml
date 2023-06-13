@@ -1,0 +1,4 @@
+Elemental_Spawner_Snow_Touch:
+  Skills:
+    - effect:particles{p=snowflake;a=15;hs=0.5;y=1.5} @Target
+    - potion{type=SLOW;duration=40;level=2} @Target

@@ -1,0 +1,8 @@
+Cleric_Interrupt_Summon:
+  Conditions:
+    - stance Summoning required
+  Skills:
+    - setstance{s=Summoning_Interrupted} @Self
+    - effect:particles{p=enchantment_table;a=20;hs=1;y=1} @self
+    - effect:sound{s=entity.wither.hurt;v=1.5;p=0.5} @self
+    - actionmessage{m="The &4&lAbyssal Cleric<&sq>s&f summoning was interrupted!"} @PlayersInRadius{r=30}

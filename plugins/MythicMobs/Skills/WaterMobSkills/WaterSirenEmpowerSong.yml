@@ -1,0 +1,30 @@
+Water_Siren_Empower_Song:
+  Conditions:
+    - raining{} false
+  Skills:
+    # Applies heal
+    - potion{type=DAMAGE_RESISTANCE;duration=20;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=20;level=1} @EIR{r=35;targetPlayers=false}
+    - potion{type=INCREASE_DAMAGE;duration=20;level=1} @Self
+    - potion{type=INCREASE_DAMAGE;duration=20;level=1} @EIR{r=35;targetPlayers=false}
+    # Shows SFX
+    - sound{s=block.note_block.harp;p=1.1;} @Self
+    - effect:particles{p=happy_villager;a=3;hs=0.5;y=1} @EIR{r=35;targetPlayers=false}
+    # Note particle ring
+    - effect:particlering{p=note;c=#760300;radius=4;points=8;a=10;hs=1;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=8;points=12;a=10;hs=1;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=12;points=16;a=10;hs=1;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=16;points=19;a=20;hs=2;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=20;points=21;a=20;hs=2;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=24;points=21;a=20;hs=2;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=28;points=21;a=20;hs=3;vs=0.3;y=1} @self
+    - delay 2
+    - effect:particlering{p=note;c=#932641;radius=32;points=21;a=20;hs=3;vs=0.3;y=2} @self
+    - delay 2
+    - effect:particlering{p=note;c=#760300;radius=36;points=21;a=20;hs=3;vs=0.3;y=1} @self

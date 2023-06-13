@@ -1,0 +1,23 @@
+Hivefolk_Larva_Evolve_Buzzard:
+  # Deletes larva and creates a hivefolk buzzard in place.
+  Skills:
+    - summon{type=Hivefolk_Buzzard;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Hivefolk_Larva_Evolve_Drone:
+  # Deletes larva and creates a hivefolk drone in place.
+  Skills:
+    - summon{type=Hivefolk_Drone;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=10;hs=0.5;y=0.5;color=#ccff66} @self
+
+Hivefolk_Larva_Evolve_Praetorian:
+  # Deletes larva and creates a hivefolk praetorian in place.
+  Skills:
+    - summon{type=Hivefolk_Praetorian;amount=1;radius=1} @SelfLocation
+    - remove @self
+    - sound{s=entity.slime.squish;p=1.2} @self
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#ccff66} @self

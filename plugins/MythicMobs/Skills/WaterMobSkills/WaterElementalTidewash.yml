@@ -1,0 +1,31 @@
+Water_Elemental_Tidewash:
+  Cooldown: 26
+  Skills:
+    # Telegraphs
+    - potion{type=SLOW;duration=30;level=1} @Self
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.75} @self
+    - delay 10
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.55} @self
+    - delay 10
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.35} @self
+    - delay 10
+    # Applies effects on self
+    - effect:geyser{type=WATER;height=5;speed=0.5} @Self
+    - throw{velocity=0;velocityY=7} @Self
+    # Applies effects on target
+    - throw{velocity=15;velocityY=9} @PIR{r=6}
+    - potion{type=WEAKNESS;duration=80;level=2} @PIR{r=6}
+    - potion{type=SLOW;duration=80;level=1} @PIR{r=6}
+    - shieldbreak{duration=80} @PIR{r=6}
+    # SFX
+    - sound{s=entity.generic.splash} @self
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.4;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=80;hs=0.4;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=100;hs=0.4;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=6;points=18;a=120;hs=0.4;vs=0.3} @Target

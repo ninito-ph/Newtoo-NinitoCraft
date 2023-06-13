@@ -1,0 +1,5 @@
+Deep_Captain_Petrify_Projectile:
+  # Throws a projectile which slows down the player
+  Skills:
+    - effect:sound{s=block.gravel.place;v=1;p=0.2} @self
+    - projectile{onTick=Deep_Petrify_Tick;onHit=Deep_Petrify_Hit;onEnd=Deep_Slow_Miss;v=8;i=1;hR=1;vR=1;syo=1.5} @target

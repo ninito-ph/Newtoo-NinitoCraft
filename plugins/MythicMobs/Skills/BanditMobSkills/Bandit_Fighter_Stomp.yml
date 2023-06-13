@@ -1,0 +1,14 @@
+Bandit_Fighter_Stomp:
+    # Makes fighter leap at target and explode the ground, dealing damage.
+    Conditions:
+        - incombat true
+    Cooldown: 7
+    Skills:
+        - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+        - effect:sound{s=entity.villager.death} @self
+        - delay 12
+        - leap{v=130} @target
+        - delay 5
+        - effect:particles{particle=largeexplosion;amount=5} @self
+        - effect:sound{s=entity.generic.explode} @self
+        - throw{v=3;vy=3} @PIR{r=4}

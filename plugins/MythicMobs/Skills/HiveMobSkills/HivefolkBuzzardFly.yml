@@ -1,0 +1,14 @@
+Hivefolk_Buzzard_Fly:
+  # Makes mob float for a while, before firing three arrow at target.
+  Cooldown: 7
+  Skills:
+    - potion{type=LEVITATION;duration=55;level=1} @self
+    - delay 20
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 10
+    - skill{s=Hivefolk_Buzzard_Spit} @target
+    - delay 10
+    - skill{s=Hivefolk_Buzzard_Spit} @target
+    - delay 10
+    - skill{s=Hivefolk_Buzzard_Spit} @target

@@ -1,0 +1,9 @@
+Bandit_Kingpin_Bleeding_Arrow:
+  # Fires a bleeding(poisoned) arrow.
+  Cooldown: 10
+  Skills:
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death} @self
+    - delay 15
+    - effect:sound{s=entity.arrow.shoot} @self
+    - shoot{type=ARROW;velocity=5;damage=6;onhit=Bandit_Kingpin_Bleeding} @target
