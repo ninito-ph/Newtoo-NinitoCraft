@@ -45,6 +45,7 @@ EntityPose net.minecraft.world.entity.EntityPose
 EntityBat net.minecraft.world.entity.ambient.EntityBat
 EntityPanda net.minecraft.world.entity.animal.EntityPanda
 EntityEnderCrystal net.minecraft.world.entity.boss.enderdragon.EntityEnderCrystal
+CatVariant net.minecraft.world.entity.animal.CatVariant
 EntityMinecartHopper net.minecraft.world.entity.vehicle.EntityMinecartHopper
 EntitySilverfish net.minecraft.world.entity.monster.EntitySilverfish
 EntityEvokerFangs net.minecraft.world.entity.projectile.EntityEvokerFangs
@@ -72,6 +73,7 @@ EntityEnderman net.minecraft.world.entity.monster.EntityEnderman
 EntityRavager net.minecraft.world.entity.monster.EntityRavager
 EntityMinecartChest net.minecraft.world.entity.vehicle.EntityMinecartChest
 EntityCow net.minecraft.world.entity.animal.EntityCow
+PaintingVariant net.minecraft.world.entity.decoration.PaintingVariant
 EntityPig net.minecraft.world.entity.animal.EntityPig
 EntityLlamaTrader net.minecraft.world.entity.animal.horse.EntityLlamaTrader
 EntityAreaEffectCloud net.minecraft.world.entity.EntityAreaEffectCloud
@@ -98,3 +100,4 @@ EntityPainting net.minecraft.world.entity.decoration.EntityPainting
 EntitySnowman net.minecraft.world.entity.animal.EntitySnowman
 EntityIronGolem net.minecraft.world.entity.animal.EntityIronGolem
 EntityPiglin net.minecraft.world.entity.monster.piglin.EntityPiglin
+FrogVariant net.minecraft.world.entity.animal.FrogVariant

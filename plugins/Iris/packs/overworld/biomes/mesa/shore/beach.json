@@ -1,7 +1,7 @@
 {
     "name": "Mesa beach",
-    "rarity": 1,
     "color": "#F4AE2D",
+    "rarity": 1,
     "derivative": "DESERT",
     "vanillaDerivative": "DESERT",
     "generators": [{
@@ -9,6 +9,13 @@
         "max": 1,
         "generator": "plain"
     }],
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:red_sandstone"},
+            {"block": "minecraft:red_sand"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -21,13 +28,16 @@
             "palette": [{"block": "minecraft:red_sandstone"}]
         }
     ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:red_sandstone"},
-            {"block": "minecraft:red_sand"}
+    "objects": [{
+        "mode": "PAINT",
+        "density": 3,
+        "chance": 1,
+        "place": [
+            "trees/acacia/vexed1",
+            "trees/acacia/vexed2",
+            "trees/acacia/vexed3"
         ]
-    },
+    }],
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [
@@ -43,15 +53,5 @@
                 "block": "minecraft:air"
             }
         ]
-    },
-    "objects": [{
-        "mode": "FAST_MIN_HEIGHT",
-        "density": 3,
-        "chance": 1,
-        "place": [
-            "trees/acacia/vexed1",
-            "trees/acacia/vexed2",
-            "trees/acacia/vexed3"
-        ]
-    }]
+    }
 }

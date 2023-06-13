@@ -1,9 +1,29 @@
 {
     "name": "Frozen Spruce Hills",
-    "derivative": "SNOWY_TAIGA",
     "color": "#0B5475",
     "rarity": 1,
+    "derivative": "SNOWY_TAIGA",
     "vanillaDerivative": "SNOWY_TAIGA",
+    "customDerivitives": [{
+        "id": "frozen_spruce_hills",
+        "waterColor": "#216FC4",
+        "fogColor": "#A6D1FF",
+        "downfallType": "snow",
+        "temperature": -3,
+        "waterFogColor": "#216FC4",
+        "foliageColor": "#B8D0E1",
+        "grassColor": "#D0E1FF"
+    }],
+    "children": ["frozen/spruce-hills-extended"],
+    "generators": [{
+        "generator": "smooth-dunes",
+        "max": 20,
+        "min": 6
+    }],
+    "wall": {"palette": [
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:andesite"}
+    ]},
     "layers": [
         {
             "minHeight": 0,
@@ -31,51 +51,10 @@
             ]
         }
     ],
-    "customDerivitives": [{
-        "id": "frozen_spruce_hills",
-        "waterColor": "#216FC4",
-        "fogColor": "#A6D1FF",
-        "downfallType": "snow",
-        "temperature": -3,
-        "waterFogColor": "#216FC4",
-        "foliageColor": "#B8D0E1",
-        "grassColor": "#D0E1FF"
-    }],
-    "generators": [{
-        "generator": "smooth-dunes",
-        "max": 20,
-        "min": 6
-    }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "decorators": [{
-        "chance": 1,
-        "variance": {
-            "style": "IRIS",
-            "zoom": 0.23
-        },
-        "palette": [
-            {
-                "data": {"layers": 1},
-                "block": "minecraft:snow"
-            },
-            {"block": "minecraft:air"}
-        ]
-    }],
+
     "objects": [{
         "chance": 0.8,
+        "density": 3,
         "snow": 1,
         "rotation": {
             "yAxis": {
@@ -112,8 +91,18 @@
             "z": 0
         }
     }],
-    "wall": {"palette": [
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:andesite"}
-    ]}
+    "decorators": [{
+        "chance": 1,
+        "variance": {
+            "style": "NOWHERE",
+            "zoom": 0.23
+        },
+        "palette": [
+            {
+                "data": {"layers": 1},
+                "block": "minecraft:snow"
+            },
+            {"block": "minecraft:air"}
+        ]
+    }]
 }

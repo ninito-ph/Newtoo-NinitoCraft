@@ -1,10 +1,13 @@
 {
     "name": "Savanna Cliffs",
-    "derivative": "SAVANNA",
-    "rarity": 1,
     "color": "#C17D31",
+    "rarity": 1,
+    "derivative": "SAVANNA",
     "vanillaDerivative": "SAVANNA",
-    "children": ["savanna/acacia-denmyre"],
+    "biomeScatter": [
+        "SAVANNA",
+        "DESERT"
+    ],
     "customDerivitives": [{
         "category": "savanna",
         "id": "savanna_cliffs",
@@ -13,21 +16,25 @@
         "waterColor": "#33CB99",
         "downfallType": "none"
     }],
+    "children": [
+        "savanna/acacia-denmyre",
+        "savanna/cliff-extended"
+    ],
     "generators": [{
-        "min": 5,
-        "max": 15,
+        "min": 35,
+        "max": 65,
         "generator": "plain-cliffs"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "structure": "village-savanna",
-            "rarity": 1500
-        }
-    ],
+    "biomeZoom": 20,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -69,41 +76,7 @@
             ]
         }
     ],
-    "biomeSkyScatter": [
-        "DESERT",
-        "SAVANNA"
-    ],
-    "decorators": [
-        {
-            "chance": 0.001,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:dead_bush"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.001,
-            "variance": {"style": "STATIC"},
-            "stackMax": 2,
-            "style": {"style": "STATIC"},
-            "palette": [{"block": "minecraft:cactus"}],
-            "stackMin": 1
-        },
-        {
-            "chance": 0.3,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:grass"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:tall_grass"}],
-            "style": {"style": "STATIC"}
-        }
-    ],
+
     "objects": [
         {
             "chance": 0.07,
@@ -203,18 +176,39 @@
             ]
         }
     ],
-    "biomeZoom": 20,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "SAVANNA",
-        "DESERT"
+    "decorators": [
+        {
+            "chance": 0.001,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:dead_bush"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.001,
+            "variance": {"style": "STATIC"},
+            "stackMax": 2,
+            "style": {"style": "STATIC"},
+            "palette": [{"block": "minecraft:cactus"}],
+            "stackMin": 1
+        },
+        {
+            "chance": 0.3,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:grass"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:tall_grass"}],
+            "style": {"style": "STATIC"}
+        }
+    ],
+    "biomeSkyScatter": [
+        "DESERT",
+        "SAVANNA"
     ]
 }

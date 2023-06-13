@@ -1,14 +1,9 @@
 {
     "name": "Swamp Marsh Rotten",
-    "rarity": 1,
     "color": "#799511",
+    "rarity": 1,
     "derivative": "SWAMP",
     "vanillaDerivative": "SWAMP",
-    "generators": [{
-        "min": -5,
-        "max": 4,
-        "generator": "plain"
-    }],
     "customDerivitives": [{
         "category": "swamp",
         "id": "swamp_marsh_rotten",
@@ -17,9 +12,24 @@
         "spawnRarity": 20,
         "spawns": [{"type": "SLIME"}]
     }],
+    "generators": [{
+        "min": -5,
+        "max": 4,
+        "generator": "plain"
+    }],
+    "biomeZoom": 9,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
-            "style": {"style": "IRIS"},
+            "style": {"style": "NOWHERE"},
             "zoom": 0.5,
             "palette": [
                 {
@@ -27,7 +37,7 @@
                     "block": "minecraft:grass_block"
                 },
                 {"block": "minecraft:podzol"},
-                {"block": "minecraft:coarse_dirt"},
+                {"block": "minecraft:mud"},
                 {
                     "weight": 4,
                     "block": "minecraft:grass_block"
@@ -52,38 +62,6 @@
                 {"block": "minecraft:andesite"},
                 {"block": "minecraft:stone"}
             ]
-        }
-    ],
-    "decorators": [
-        {
-            "chance": 0.005,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.02,
-            "palette": [
-                {"block": "minecraft:brown_mushroom"},
-                {"block": "minecraft:red_mushroom"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.13,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.2,
-            "palette": [
-                {"block": "minecraft:large_fern"},
-                {"block": "minecraft:tall_grass"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.15,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {"block": "minecraft:dead_bush"},
-                {"block": "minecraft:fern"}
-            ],
-            "style": {"style": "STATIC"}
         }
     ],
     "objects": [
@@ -166,14 +144,36 @@
             }
         }
     ],
-    "biomeZoom": 9,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    }
+    "decorators": [
+        {
+            "chance": 0.005,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.02,
+            "palette": [
+                {"block": "minecraft:brown_mushroom"},
+                {"block": "minecraft:red_mushroom"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.13,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.2,
+            "palette": [
+                {"block": "minecraft:large_fern"},
+                {"block": "minecraft:tall_grass"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.15,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {"block": "minecraft:dead_bush"},
+                {"block": "minecraft:fern"}
+            ],
+            "style": {"style": "STATIC"}
+        }
+    ]
 }

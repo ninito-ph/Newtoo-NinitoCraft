@@ -1,14 +1,13 @@
 {
     "name": "Tundra Ether",
-    "derivative": "WINDSWEPT_HILLS",
     "color": "#87DCE5",
     "rarity": 13,
+    "derivative": "WINDSWEPT_HILLS",
     "vanillaDerivative": "OLD_GROWTH_SPRUCE_TAIGA",
-    "generators": [{
-        "generator": "smooth-dunes",
-        "max": 14,
-        "min": 8
-    }],
+    "biomeScatter": [
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS"
+    ],
     "customDerivitives": [{
         "grassColor": "#dcf5f1",
         "foliageColor": "#e6dcf5",
@@ -18,16 +17,22 @@
         "category": "forest",
         "fogColor": "#686090"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        }
-    ],
+    "children": ["tundra/taiga-extended"],
+    "generators": [{
+        "generator": "smooth-dunes",
+        "min": 52,
+        "max": 60
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -61,6 +66,7 @@
             ]
         }
     ],
+
     "objects": [
         {
             "place": [
@@ -79,7 +85,7 @@
                 "structures/woodhand3"
             ],
             "chance": 0.07,
-            "mode": "FAST_MIN_HEIGHT"
+            "mode": "MIN_STILT"
         },
         {
             "chance": 0.8,
@@ -137,8 +143,6 @@
             }
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.01,
@@ -183,17 +187,5 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "childShrinkFactor": 8,
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS"
-    ]
+    "childShrinkFactor": 2.4
 }

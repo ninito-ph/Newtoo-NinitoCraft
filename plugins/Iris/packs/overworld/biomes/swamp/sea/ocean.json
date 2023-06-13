@@ -1,13 +1,24 @@
 {
     "name": "Swamp Ocean",
+    "color": "#102540",
     "derivative": "SWAMP",
     "vanillaDerivative": "OCEAN",
-    "color": "#102540",
     "generators": [{
-        "min": -8,
-        "max": -3,
-        "generator": "river"
+        "min": -2,
+        "max": -1,
+        "generator": "mountain"
     }],
+    "wall": {
+        "style": {"style": "NOWHERE"},
+        "palette": [
+            {"block": "minecraft:clay"},
+            {
+                "weight": 2,
+                "block": "minecraft:smooth_sandstone"
+            },
+            {"block": "minecraft:sand"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 2,
@@ -36,77 +47,6 @@
                 },
                 {"block": "minecraft:coarse_dirt"}
             ]
-        }
-    ],
-    "decorators": [
-        {
-            "partOf": "SEA_SURFACE",
-            "chance": 0.025,
-            "variance": {"style": "STATIC"},
-            "zoom": 2.25,
-            "palette": [{"block": "minecraft:lily_pad"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.07,
-            "variance": {"style": "STATIC"},
-            "zoom": 20,
-            "palette": [{"block": "minecraft:seagrass"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 6.0E-4,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [
-                {"block": "minecraft:soul_sand"},
-                {"block": "minecraft:magma_block"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.0013,
-            "verticalZoom": 88,
-            "variance": {"style": "STATIC"},
-            "stackMax": 24,
-            "zoom": 1,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "style": {"style": "STATIC"},
-            "heightVariance": {"style": "IRIS"},
-            "stackMin": 2
-        },
-        {
-            "chance": 0.0095,
-            "verticalZoom": 20,
-            "variance": {"style": "STATIC"},
-            "stackMax": 9,
-            "zoom": 1,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "style": {"style": "STATIC"},
-            "heightVariance": {"style": "STATIC"},
-            "stackMin": 1
-        },
-        {
-            "chance": 0.004,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [
-                {
-                    "data": {
-                        "waterlogged": true,
-                        "pickles": 1
-                    },
-                    "block": "minecraft:sea_pickle"
-                },
-                {
-                    "data": {
-                        "waterlogged": true,
-                        "pickles": 2
-                    },
-                    "block": "minecraft:sea_pickle"
-                }
-            ],
-            "style": {"style": "STATIC"}
         }
     ],
     "objects": [
@@ -148,17 +88,77 @@
             }
         }
     ],
-    "wall": {
-        "style": {"style": "IRIS"},
-        "palette": [
-            {"block": "minecraft:clay"},
-            {
-                "weight": 2,
-                "block": "minecraft:smooth_sandstone"
-            },
-            {"block": "minecraft:sand"}
-        ]
-    },
+    "decorators": [
+        {
+            "partOf": "SEA_SURFACE",
+            "chance": 0.025,
+            "variance": {"style": "STATIC"},
+            "zoom": 2.25,
+            "palette": [{"block": "minecraft:lily_pad"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.07,
+            "variance": {"style": "STATIC"},
+            "zoom": 20,
+            "palette": [{"block": "minecraft:seagrass"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 6.0E-4,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [
+                {"block": "minecraft:soul_sand"},
+                {"block": "minecraft:magma_block"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.0013,
+            "verticalZoom": 88,
+            "variance": {"style": "STATIC"},
+            "stackMax": 24,
+            "zoom": 1,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "style": {"style": "STATIC"},
+            "heightVariance": {"style": "NOWHERE"},
+            "stackMin": 2
+        },
+        {
+            "chance": 0.0095,
+            "verticalZoom": 20,
+            "variance": {"style": "STATIC"},
+            "stackMax": 9,
+            "zoom": 1,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "style": {"style": "STATIC"},
+            "heightVariance": {"style": "STATIC"},
+            "stackMin": 1
+        },
+        {
+            "chance": 0.004,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [
+                {
+                    "data": {
+                        "waterlogged": true,
+                        "pickles": 1
+                    },
+                    "block": "minecraft:sea_pickle"
+                },
+                {
+                    "data": {
+                        "waterlogged": true,
+                        "pickles": 2
+                    },
+                    "block": "minecraft:sea_pickle"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        }
+    ],
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [

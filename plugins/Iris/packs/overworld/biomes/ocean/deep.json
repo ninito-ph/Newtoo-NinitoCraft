@@ -1,12 +1,13 @@
 {
     "name": "Ocean Deep",
-    "derivative": "DEEP_OCEAN",
     "color": "#5C4DEA",
+    "derivative": "DEEP_OCEAN",
     "vanillaDerivative": "DEEP_OCEAN",
+
     "generators": [{
         "generator": "smooth-dunes",
-        "max": -30,
-        "min": -50
+        "max": -40,
+        "min": -80
     }],
     "layers": [
         {
@@ -16,7 +17,7 @@
                 "minimumSlope": 0,
                 "maximumSlope": 3
             },
-            "style": {"style": "IRIS"},
+            "style": {"style": "NOWHERE"},
             "zoom": 0.6,
             "palette": [
                 {"block": "minecraft:sand"},
@@ -37,43 +38,12 @@
             "palette": [{"block": "minecraft:gravel"}]
         }
     ],
-    "decorators": [
-        {
-            "chance": 0.09,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "stackMin": 2,
-            "stackMax": 12,
-            "partOf": "SEA_FLOOR"
-        },
-        {
-            "chance": 0.2,
-            "palette": [{"block": "minecraft:seagrass"}]
-        },
-        {
-            "chance": 0.2,
-            "palette": [{
-                "block": "minecraft:tall_seagrass",
-                "data": {"half": "lower"}
-            }],
-            "topPalette": [{
-                "block": "minecraft:tall_seagrass",
-                "data": {"half": "upper"}
-            }],
-            "partOf": "SEA_FLOOR"
-        }
-    ],
-    "loot": {
-        "mode": "ADD",
-        "multiplier": 1,
-        "tables": ["tropical-dungeon"]
-    },
     "objects": [
         {
             "underwater": true,
             "waterloggable": true,
-            "chance": 0.008,
-            "mode": "FAST_MIN_HEIGHT",
-            "bottom": true,
+            "chance": 0.00003,
+            "mode": "PAINT",
             "rotation": {
                 "enabled": true,
                 "yAxis": {
@@ -95,12 +65,22 @@
                 "structures/shipgenericc",
                 "structures/shipgenericr",
                 "structures/shipgenericu",
-                "structures/shipgenericc"
+                "structures/shipgenericc",
+                "structures/BShip1",
+                "structures/BShip2",
+                "structures/BShip3",
+                "structures/BShip4",
+                "structures/BShip5",
+                "structures/BShip6",
+                "structures/kship1",
+                "structures/kship2",
+                "structures/kship3",
+                "structures/kship4"
             ],
             "chance": 0.001,
             "markers": [{
                 "mark": [{"block": "minecraft:spruce_planks"}],
-                "maximumMarkers": 5,
+                "maximumMarkers": 4,
                 "marker": "skelepirate"
             }],
             "onwater": true,
@@ -111,7 +91,7 @@
             "underwater": true,
             "waterloggable": true,
             "chance": 0.01,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "rotation": {
                 "enabled": true,
                 "yAxis": {
@@ -144,8 +124,35 @@
                 "structures/shipupsidedownbackhalfdegraded"
             ]
         },
-    {
-        "chance": 0.035,
+        {
+            "chance": 0.0035,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
+                "enabled": true
+            },
+            "underwater": true,
+            "place": [
+                "structures/oruins1",
+                "structures/oruins2",
+                "structures/oruins3"
+            ],
+            "mode": "PAINT",
+            "loot": [{"name": "structures/ocean-ruins"}],
+            "overrideGlobalLoot": true
+        },
+        {
+        "loot": ["structures/ocean-ruins"],
+        "overStilt": 0,
+        "chance": 0.0007,
+        "meld": false,
+        "density": 1,
+        "bottom": false,
+        "translateCenter": false,
         "rotation": {
             "yAxis": {
                 "min": 0,
@@ -153,22 +160,111 @@
                 "interval": 90,
                 "enabled": true
             },
+            "xAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 0,
+                "enabled": false
+            },
+            "zAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 0,
+                "enabled": false
+            },
             "enabled": true
         },
+        "boreExtendMinY": 0,
+        "smartBore": false,
+        "waterloggable": true,
+        "bore": false,
+        "translate": {
+            "yRandom": 0,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        },
+        "mode": "STILT",
+        "snow": 0,
         "underwater": true,
-        "place": [
-            "structures/oruins1",
-            "structures/oruins2",
-            "structures/oruins3"
-        ],
-        "mode": "PAINT",
-        "loot": [
+        "boreExtendMaxY": 0,
+        "onwater": false,
+
+        "warp": {
+            "multiplier": 1,
+            "style": "FLAT",
+            "zoom": 1,
+            "maxFractureAccuracy": false,
+            "exponent": 1
+        },
+        "place": ["jigsaw/ocean-monument/ocean_monument"],
+
+        "markers": [
             {
-                "name": "tropical-dungeon"
+                "marker": "guardian",
+                "exact": false,
+                "maximumMarkers": 4,
+                "mark": [
+                    {
+                        "block": "minecraft:dark_prismarine_slab"
+
+                    }
+
+                ]
+
+            },
+             {
+                "marker": "guardian",
+                "exact": false,
+                "maximumMarkers": 9,
+                "mark": [
+                    {
+                        "block": "minecraft:prismarine"
+
+                    }
+
+                ]
+
+            },
+            {
+                "marker": "elderguardian",
+                "exact": false,
+                "maximumMarkers": 3,
+                "mark": [
+                    {
+                        "block": "minecraft:sea_pickle"
+
+                    }
+
+                ]
+
             }
         ]
-
     }
+    ],
+    "decorators": [
+        {
+            "chance": 0.09,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "stackMin": 2,
+            "stackMax": 12,
+            "partOf": "SEA_FLOOR"
+        },
+        {
+            "chance": 0.2,
+            "palette": [{"block": "minecraft:seagrass"}]
+        },
+        {
+            "chance": 0.2,
+            "palette": [{
+                "block": "minecraft:tall_seagrass",
+                "data": {"half": "lower"}
+            }],
+            "topPalette": [{
+                "block": "minecraft:tall_seagrass",
+                "data": {"half": "upper"}
+            }],
+            "partOf": "SEA_FLOOR"
+        }
     ]
-
 }

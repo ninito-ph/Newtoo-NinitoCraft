@@ -27,22 +27,6 @@
             }
         ]
     }],
-    "caveCeilingLayers": [{
-        "style": {"style": "STATIC"},
-        "maxHeight": 2,
-        "minHeight": 2,
-        "palette": [
-            {
-                "block": "minecraft:stone",
-                "weight": 3
-            },
-            {"block": "minecraft:cobblestone"},
-            {
-                "block": "minecraft:andesite",
-                "weight": 3
-            }
-        ]
-    }],
     "decorators": [
         {
             "chance": 0.03,
@@ -78,5 +62,21 @@
                 {"block": "minecraft:andesite"}
             ]
         }
-    ]
+    ],
+    "caveCeilingLayers": [{
+        "style": {"style": "STATIC"},
+        "maxHeight": 2,
+        "minHeight": 2,
+        "palette": [
+            {
+                "block": "minecraft:stone",
+                "weight": 3
+            },
+            {"block": "minecraft:cobblestone"},
+            {
+                "block": "minecraft:andesite",
+                "weight": 3
+            }
+        ]
+    }]
 }

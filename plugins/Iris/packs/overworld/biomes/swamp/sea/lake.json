@@ -1,18 +1,28 @@
 {
     "name": "Swampy Marsh",
-    "rarity": 1,
     "color": "#6A9140",
+    "rarity": 1,
     "derivative": "SWAMP",
     "vanillaDerivative": "SWAMP",
     "children": ["swamp/marsh"],
     "generators": [{
-        "min": -8,
-        "max": -5,
-        "generator": "river"
+        "min": -32,
+        "max": -10,
+        "generator": "mountain"
     }],
+    "biomeZoom": 9,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
-            "style": {"style": "IRIS"},
+            "style": {"style": "NOWHERE"},
             "zoom": 0.5,
             "palette": [
                 {
@@ -46,6 +56,29 @@
             ]
         }
     ],
+    "objects": [{
+        "chance": 0.35,
+        "density": 2,
+        "rotation": {
+            "yAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 90,
+                "enabled": true
+            },
+            "enabled": true
+        },
+        "place": [
+            "clutter/oakclutt1",
+            "clutter/oakclutt2",
+            "clutter/oakclutt3"
+        ],
+        "translate": {
+            "x": 0,
+            "y": -2,
+            "z": 0
+        }
+    }],
     "decorators": [
         {
             "chance": 0.003,
@@ -77,38 +110,5 @@
             ],
             "style": {"style": "STATIC"}
         }
-    ],
-    "objects": [{
-        "chance": 0.35,
-        "density": 2,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "place": [
-            "clutter/oakclutt1",
-            "clutter/oakclutt2",
-            "clutter/oakclutt3"
-        ],
-        "translate": {
-            "x": 0,
-            "y": -2,
-            "z": 0
-        }
-    }],
-    "biomeZoom": 9,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    }
+    ]
 }

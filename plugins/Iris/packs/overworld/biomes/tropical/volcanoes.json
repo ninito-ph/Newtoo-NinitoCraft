@@ -1,9 +1,9 @@
 {
     "name": "Tropical Volcanoes",
+    "color": "#8C1E1E",
+    "rarity": 1,
     "derivative": "THE_VOID",
     "vanillaDerivative": "THE_VOID",
-    "rarity": 1,
-    "color": "#8C1E1E",
     "customDerivitives": [{
         "category": "jungle",
         "id": "tropical_volcano",
@@ -11,16 +11,6 @@
         "foliageColor": "#BDBF0B",
         "fogColor": "#DD793C",
         "downfallType": "none"
-    }],
-    "effects": [{
-        "particleAltX": 0.001,
-        "particleAltY": 0.13885,
-        "particleAltZ": 0.001,
-        "chance": 1,
-        "particleEffect": "CAMPFIRE_SIGNAL_SMOKE",
-        "particleOffset": 0,
-        "interval": 300,
-        "particleCount": 0
     }],
     "children": ["tropical/volcanoes-lava"],
     "generators": [{
@@ -63,6 +53,16 @@
             "palette": [{"block": "minecraft:tuff"}]
         }
     ],
+    "effects": [{
+        "particleAltX": 0.001,
+        "particleAltY": 0.13885,
+        "particleAltZ": 0.001,
+        "chance": 1,
+        "particleEffect": "CAMPFIRE_SIGNAL_SMOKE",
+        "particleOffset": 0,
+        "interval": 300,
+        "particleCount": 0
+    }],
     "childStyle": {
         "style": "GLOB",
         "zoom": 0.2,

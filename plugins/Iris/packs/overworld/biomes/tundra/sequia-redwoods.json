@@ -1,14 +1,9 @@
 {
     "name": "Tundra Sequoia Redwoods",
-    "derivative": "TAIGA",
-    "rarity": 1,
     "color": "#25C2D3",
+    "rarity": 1,
+    "derivative": "TAIGA",
     "vanillaDerivative": "WINDSWEPT_HILLS",
-    "generators": [{
-        "min": 17,
-        "max": 19,
-        "generator": "plain"
-    }],
     "customDerivitives": [{
         "category": "forest",
         "id": "tundra_sequoia_redwoods",
@@ -17,22 +12,22 @@
         "waterFogColor": "#80B4C6",
         "fogColor": "#FFE0AF"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        }
-    ],
+    "children": ["tundra/sequia-redwoods-extended"],
+    "generators": [{
+        "min": 17,
+        "max": 19,
+        "generator": "plain"
+    }],
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [{"block": "minecraft:coarse_dirt"}]
+    },
     "layers": [
         {
             "style": {
                 "style": "IRIS_DOUBLE",
                 "fracture": {
-                    "style": "IRIS",
+                    "style": "NOWHERE",
                     "zoom": 0.2
                 }
             },
@@ -67,96 +62,7 @@
             ]
         }
     ],
-    "decorators": [
-        {
-            "chance": 0.009,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {
-                    "data": {
-                        "face": "floor",
-                        "powered": false,
-                        "facing": "east"
-                    },
-                    "block": "minecraft:stone_button"
-                },
-                {
-                    "data": {
-                        "face": "floor",
-                        "powered": false,
-                        "facing": "south"
-                    },
-                    "block": "minecraft:stone_button"
-                }
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.003,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.02,
-            "palette": [
-                {"block": "minecraft:white_tulip"},
-                {"block": "minecraft:cornflower"},
-                {"block": "minecraft:blue_orchid"},
-                {"block": "minecraft:lily_of_the_valley"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.0445,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:fern"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.001,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {
-                    "data": {"age": 0},
-                    "block": "minecraft:sweet_berry_bush"
-                },
-                {
-                    "data": {"age": 1},
-                    "block": "minecraft:sweet_berry_bush"
-                },
-                {
-                    "data": {"age": 2},
-                    "block": "minecraft:sweet_berry_bush"
-                },
-                {
-                    "data": {"age": 3},
-                    "block": "minecraft:sweet_berry_bush"
-                }
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.015,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:orange_tulip"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:dead_bush"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:poppy"}],
-            "style": {"style": "STATIC"}
-        }
-    ],
+
     "objects": [
         {
             "place": [
@@ -182,7 +88,7 @@
             "place": ["clutter/camp1"]
         },
         {
-            "mode": "PAINT",
+            "mode": "FAST_STILT",
             "chance": 0.0025,
             "rotation": {
                 "yAxis": {
@@ -291,11 +197,11 @@
                 "clutter/stump5",
                 "clutter/stump6"
             ],
-            "mode": "FAST_MIN_HEIGHT"
+            "mode": "PAINT"
         },
         {
             "chance": 0.008,
-            "mode": "PAINT",
+            "mode": "FAST_STILT",
             "place": [
                 "clutter/pumpkins1",
                 "clutter/pumpkins2",
@@ -316,8 +222,95 @@
             "translate": {"y": 1}
         }
     ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [{"block": "minecraft:coarse_dirt"}]
-    }
+    "decorators": [
+        {
+            "chance": 0.009,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {
+                    "data": {
+                        "face": "floor",
+                        "powered": false,
+                        "facing": "east"
+                    },
+                    "block": "minecraft:stone_button"
+                },
+                {
+                    "data": {
+                        "face": "floor",
+                        "powered": false,
+                        "facing": "south"
+                    },
+                    "block": "minecraft:stone_button"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.003,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.02,
+            "palette": [
+                {"block": "minecraft:white_tulip"},
+                {"block": "minecraft:cornflower"},
+                {"block": "minecraft:blue_orchid"},
+                {"block": "minecraft:lily_of_the_valley"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.0445,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:fern"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.001,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {
+                    "data": {"age": 0},
+                    "block": "minecraft:sweet_berry_bush"
+                },
+                {
+                    "data": {"age": 1},
+                    "block": "minecraft:sweet_berry_bush"
+                },
+                {
+                    "data": {"age": 2},
+                    "block": "minecraft:sweet_berry_bush"
+                },
+                {
+                    "data": {"age": 3},
+                    "block": "minecraft:sweet_berry_bush"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.015,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:orange_tulip"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:dead_bush"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:poppy"}],
+            "style": {"style": "STATIC"}
+        }
+    ],
+    "childShrinkFactor": 2.4
 }

@@ -1,8 +1,8 @@
 {
     "name": "Temperate Beach",
-    "derivative": "BEACH",
-    "rarity": 1,
     "color": "#EDFF00",
+    "rarity": 1,
+    "derivative": "BEACH",
     "vanillaDerivative": "BEACH",
     "generators": [{
         "min": -5,
@@ -21,28 +21,50 @@
             "palette": [{"block": "minecraft:sandstone"}]
         }
     ],
+    "objects": [{
+        "mode": "PAINT",
+        "chance": 0.0025,
+        "rotation": {
+            "yAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 90,
+                "enabled": true
+            },
+            "enabled": true
+        },
+        "place": ["clutter/bincluster1"],
+        "translate": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    }],
     "decorators": [
-                        {
-                    "data": {
-                        "eggs": 1,
-                        "hatch": 0
-                    },
-                    "block": "minecraft:turtle_egg"
-                },
-                {
-                    "data": {
-                        "eggs": 2,
-                        "hatch": 0
-                    },
-                    "block": "minecraft:turtle_egg"
-                },
-                {
-                    "data": {
-                        "eggs": 3,
-                        "hatch": 0
-                    },
-                    "block": "minecraft:turtle_egg"
-                },
+        {
+            "data": {
+                "eggs": 1,
+                "hatch": 0
+            },
+            "chance": 0.009,
+            "block": "minecraft:turtle_egg"
+        },
+        {
+            "data": {
+                "eggs": 2,
+                "hatch": 0
+            },
+            "chance": 0.005,
+            "block": "minecraft:turtle_egg"
+        },
+        {
+            "data": {
+                "eggs": 3,
+                "hatch": 0
+            },
+            "chance": 0.002,
+            "block": "minecraft:turtle_egg"
+        },
         {
             "chance": 0.003,
             "variance": {"style": "STATIC"},
@@ -75,31 +97,12 @@
             "stackMax": 4,
             "palette": [{"block": "minecraft:sugar_cane"}],
             "style": {
-                "style": "IRIS",
+                "style": "NOWHERE",
                 "zoom": 0.65
             },
             "heightVariance": {"style": "STATIC"}
         }
     ],
-    "objects": [{
-        "mode": "PAINT",
-        "chance": 0.0025,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "place": ["clutter/bincluster1"],
-        "translate": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        }
-    }],
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [

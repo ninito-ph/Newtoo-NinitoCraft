@@ -4,6 +4,26 @@
     "rarity": 1,
     "derivative": "SNOWY_TAIGA",
     "vanillaDerivative": "SNOWY_TAIGA",
+    "customDerivitives": [{
+        "category": "icy",
+        "id": "frozen_pine_hills",
+        "downfallType": "snow",
+        "temperature": -3,
+        "waterColor": "#216FC4",
+        "fogColor": "#A6D1FF",
+        "waterFogColor": "#216FC4",
+        "foliageColor": "#B8D0E1",
+        "grassColor": "#D0E1FF"
+    }],
+    "generators": [{
+        "generator": "mountain",
+        "max": 40,
+        "min": 11
+    }],
+    "wall": {"palette": [
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:andesite"}
+    ]},
     "layers": [
         {
             "minHeight": 0,
@@ -31,54 +51,7 @@
             ]
         }
     ],
-    "customDerivitives": [{
-        "category": "icy",
-        "id": "frozen_pine_hills",
-        "downfallType": "snow",
-        "temperature": -3,
-        "waterColor": "#216FC4",
-        "fogColor": "#A6D1FF",
-        "waterFogColor": "#216FC4",
-        "foliageColor": "#B8D0E1",
-        "grassColor": "#D0E1FF"
-    }],
-    "generators": [{
-        "generator": "mountain",
-        "max": 20,
-        "min": 6
-    }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "decorators": [{
-        "chance": 1,
-        "variance": {
-            "style": "IRIS",
-            "zoom": 0.23
-        },
-        "palette": [
-            {
-                "data": {"layers": 1},
-                "block": "minecraft:snow"
-            },
-            {"block": "minecraft:air"}
-        ]
-    }],
-    "wall": {"palette": [
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:andesite"}
-    ]},
+
     "objects": [{
         "edit": [
             {
@@ -129,5 +102,19 @@
             "zoom": 0.4
         },
         "snow": 0.1
+    }],
+    "decorators": [{
+        "chance": 1,
+        "variance": {
+            "style": "NOWHERE",
+            "zoom": 0.23
+        },
+        "palette": [
+            {
+                "data": {"layers": 1},
+                "block": "minecraft:snow"
+            },
+            {"block": "minecraft:air"}
+        ]
     }]
 }

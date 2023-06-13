@@ -1,15 +1,10 @@
 {
     "name": "Tropical Bamboo Forest",
-    "derivative": "DESERT",
-    "rarity": 1,
     "color": "#7BF8C7",
+    "rarity": 1,
+    "derivative": "DESERT",
     "vanillaDerivative": "BAMBOO_JUNGLE",
-    "children": ["tropical/wilds"],
-    "generators": [{
-        "min": 5,
-        "max": 9,
-        "generator": "plain"
-    }],
+    "biomeScatter": ["BAMBOO_JUNGLE"],
     "customDerivitives": [{
         "id": "tropical_bamboo_forest",
         "foliageColor": "#20A52F",
@@ -18,20 +13,22 @@
         "waterFogColor": "#3AB2A2",
         "category": "jungle"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        },
-        {
-            "rarity": 1200,
-            "structure": "jungle-pyramid"
-        }
-    ],
+    "children": ["tropical/wilds"],
+    "generators": [{
+        "min": 5,
+        "max": 9,
+        "generator": "plain"
+    }],
+    "biomeZoom": 10,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {"palette": [{"block": "minecraft:grass_block"}]},
         {"palette": [{"block": "minecraft:dirt"}]},
@@ -54,7 +51,7 @@
             ]
         }
     ],
-    "biomeSkyScatter": ["BAMBOO_JUNGLE"],
+
     "objects": [
         {
             "chance": 0.5,
@@ -195,18 +192,6 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeZoom": 10,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "effects": [{
-        "particleAltX": 0.301,
-        "particleAltY": -0.33885,
-        "particleAltZ": 0.301,
-        "chance": 1,
-        "particleEffect": "TOTEM",
-        "particleOffset": 12,
-        "interval": 550,
-        "particleCount": 0
-    }],
     "decorators": [
         {
             "chance": 0.25,
@@ -338,13 +323,15 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": ["BAMBOO_JUNGLE"]
+    "biomeSkyScatter": ["BAMBOO_JUNGLE"],
+    "effects": [{
+        "particleAltX": 0.301,
+        "particleAltY": -0.33885,
+        "particleAltZ": 0.301,
+        "chance": 1,
+        "particleEffect": "TOTEM",
+        "particleOffset": 12,
+        "interval": 550,
+        "particleCount": 0
+    }]
 }

@@ -1,8 +1,14 @@
 {
     "name": "Frozen Peak",
-    "derivative": "SNOWY_TAIGA",
     "color": "#1177A3",
+    "derivative": "SNOWY_TAIGA",
     "vanillaDerivative": "SNOWY_TAIGA",
+    "biomeScatter": [
+        "SNOWY_TAIGA",
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS",
+        "ICE_SPIKES"
+    ],
     "customDerivitives": [{
         "category": "icy",
         "id": "frozen_peak",
@@ -14,6 +20,20 @@
         "foliageColor": "#B8D0E1",
         "grassColor": "#D0E1FF"
     }],
+    "generators": [
+        {
+            "min": 110,
+            "max": 270,
+            "generator": "mountain"
+        },
+        {
+            "generator": "mountain-aggro",
+            "max": 5,
+            "min": 1
+        }
+    ],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
     "layers": [
         {
             "minHeight": 1,
@@ -91,29 +111,10 @@
             ]
         }
     ],
-    "generators": [{
-        "min": 60,
-        "max": 180,
-        "generator": "mountain"
-    }],
-    "decorators": [{
-        "chance": 1,
-        "variance": {
-            "style": "IRIS",
-            "zoom": 0.23
-        },
-        "palette": [
-            {
-                "data": {"layers": 1},
-                "block": "minecraft:snow"
-            },
-            {"block": "minecraft:air"}
-        ]
-    }],
     "objects": [
         {
             "chance": 0.003,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "snow": 0.35,
             "rotation": {
@@ -144,7 +145,7 @@
         },
         {
             "chance": 0.05,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "snow": 0.35,
             "rotation": {
@@ -170,12 +171,18 @@
             ]
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "biomeScatter": [
-        "SNOWY_TAIGA",
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS",
-        "ICE_SPIKES"
-    ]
+    "decorators": [{
+        "chance": 1,
+        "variance": {
+            "style": "NOWHERE",
+            "zoom": 0.23
+        },
+        "palette": [
+            {
+                "data": {"layers": 1},
+                "block": "minecraft:snow"
+            },
+            {"block": "minecraft:air"}
+        ]
+    }]
 }

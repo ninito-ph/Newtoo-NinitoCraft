@@ -4,9 +4,11 @@
     "rarity": 1,
     "derivative": "FROZEN_PEAKS",
     "vanillaDerivative": "FROZEN_PEAKS",
-    "children": [
-        "frozen/peak",
-        "frozen/vander"
+    "biomeScatter": [
+        "SNOWY_TAIGA",
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS",
+        "ICE_SPIKES"
     ],
     "customDerivitives": [{
         "category": "icy",
@@ -19,6 +21,27 @@
         "foliageColor": "#B8D0E1",
         "grassColor": "#D0E1FF"
     }],
+    "children": [
+        "frozen/peak",
+        "frozen/vander"
+    ],
+    "generators": [{
+        "min": 10,
+        "max": 150,
+        "generator": "mountain"
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:andesite"},
+            {
+                "weight": 2,
+                "block": "minecraft:stone"
+            }
+        ]
+    },
     "layers": [
         {
             "minHeight": 2,
@@ -48,29 +71,11 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "generators": [{
-        "min": 10,
-        "max": 150,
-        "generator": "mountain"
-    }],
+
     "objects": [
         {
             "chance": 0.003,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "snow": 0.35,
             "rotation": {
@@ -96,7 +101,7 @@
         },
         {
             "chance": 0.5,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "rotation": {
                 "yAxis": {
@@ -154,7 +159,7 @@
         },
         {
             "chance": 0.05,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "snow": 0.35,
             "rotation": {
@@ -191,12 +196,10 @@
             ]
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [{
         "chance": 1,
         "variance": {
-            "style": "IRIS",
+            "style": "NOWHERE",
             "zoom": 0.23
         },
         "palette": [
@@ -207,21 +210,5 @@
             {"block": "minecraft:air"}
         ]
     }],
-    "childShrinkFactor": 25,
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:andesite"},
-            {
-                "weight": 2,
-                "block": "minecraft:stone"
-            }
-        ]
-    },
-    "biomeScatter": [
-        "SNOWY_TAIGA",
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS",
-        "ICE_SPIKES"
-    ]
+    "childShrinkFactor": 25
 }

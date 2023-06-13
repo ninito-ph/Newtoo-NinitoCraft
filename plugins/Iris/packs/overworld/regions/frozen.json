@@ -1,96 +1,39 @@
 {
     "name": "Frozen",
     "color": "#44C3D1",
+    "rarity": 1,
     "landBiomes": [
         "frozen/plains",
-        "frozen/pines",
-        "frozen/plains",
         "frozen/mountain",
-        "frozen/redwood-forest",
+        "frozen/mountain",
         "frozen/hills",
         "frozen/pine-plains",
-        "frozen/spruce-plains"
+        "frozen/redwood-forest",
+        "frozen/pines",
+        "frozen/vander"
     ],
-    "shoreBiomes": ["frozen/shore/beach"],
-    "seaBiomes": [
-        "frozen/sea/frozen-river-ice",
-        "frozen/sea/ocean"
-    ],
-    "riverBiomes": [
-        "frozen/sea/frozen-river-ice",
-        "frozen/sea/ocean"
+    "caveBiomes": [
+        "carving/rocky-cavebiome"
     ],
     "jigsawStructures": [{
-        "structure": "murky_stronghold",
-        "rarity": 250
-    }],
-    "spotBiomes": [{
-        "biome": "frozen/vander",
-        "scale": 25,
-        "type": "LAND",
-        "shuffle": 328,
-        "rarity": 3
-    }],
-    "riverStyle": {
-        "style": "VASCULAR",
-        "zoom": 4.77,
-        "fracture": {
-            "multiplier": 240,
-            "style": "NOWHERE",
-            "zoom": 5
-        }
-    },
-    "deposits": [
-        {
-            "minHeight": 8,
-            "maxPerChunk": 2,
-            "maxHeight": 20,
-            "minPerChunk": 1,
-            "minSize": 2,
-            "maxSize": 4,
-            "palette": [{"block": "minecraft:diamond_ore"}],
-            "varience": 4
+        "structure": "ruined-portal",
+        "rarity": 1200
         },
         {
-            "minHeight": 1,
-            "maxPerChunk": 2,
-            "maxHeight": 64,
-            "minPerChunk": 1,
-            "minSize": 3,
-            "maxSize": 8,
-            "palette": [{"block": "minecraft:copper_ore"}],
-            "varience": 8
+        "structure": "dungeon-skeleton",
+        "rarity": 800
+        },
+        {
+        "structure": "dungeon-spider",
+        "rarity": 800
+        },
+        {
+        "structure": "dungeon-zombie",
+        "rarity": 800
         }
-    ],
-    "riverRarity": 1,
-    "landBiomeZoom": 5,
-    "shoreHeightMin": 2.2,
-    "shoreHeightMax": 4.2,
-    "loot": {
-        "mode": "ADD",
-        "multiplier": 1,
-        "tables": [
-            "global-tools",
-            "frozen-clutter",
-            "frozen-food",
-            "snow-clutter",
-            "cold-treasure"
-        ]
-    },
-    "blockDrops": [{
-        "blocks": [{"block": "minecraft:stone"}],
-        "drops": [{
-            "rarity": 1,
-            "maxAmount": 2,
-            "minAmount": 1,
-            "type": "spruce_sapling"
-        }]
-    }],
-    "entitySpawners": [
-        "frozen/land-passive",
-        "frozen/land-hostile",
-        "frozen/land-cave"
-    ],
+        ],
+
+
     "objects": [
         {
             "heightmap": {
@@ -131,68 +74,78 @@
                 "yRandom": 10,
                 "y": 2
             }
+        }
+    ],
+    "shoreBiomes": ["frozen/shore/beach"],
+    "seaBiomeZoom": 1,
+    "seaBiomes": [
+        "frozen/sea/ocean",
+        "frozen/sea/frozen-river-ice"
+    ],
+    "deposits": [
+        {
+            "minHeight": 8,
+            "maxPerChunk": 5,
+            "maxHeight": 45,
+            "minPerChunk": 1,
+            "minSize": 2,
+            "maxSize": 4,
+            "palette": [{"block": "minecraft:diamond_ore"}],
+            "varience": 4
         },
         {
-            "name": "standard-surface-portals",
-            "chance": 0.001,
-            "place": [
-                "structures/giantportal1",
-                "structures/giantportal2",
-                "structures/giantportal3",
-                "structures/portal1",
-                "structures/portal2",
-                "structures/portal3",
-                "structures/portal4",
-                "structures/portal5",
-                "structures/portal6",
-                "structures/portal7",
-                "structures/portal8",
-                "structures/portal9",
-                "structures/portal10"
-            ],
-            "edit": [
-                {
-                    "find": [{"block": "minecraft:gold_block"}],
-                    "replace": {"palette": [{"block": "minecraft:air"}]},
-                    "chance": 0.1
-                },
-                {
-                    "find": [{"block": "minecraft:netherrack"}],
-                    "replace": {"palette": [{"block": "minecraft:magma_block"}]},
-                    "chance": 0.07
-                },
-                {
-                    "find": [{"block": "minecraft:obsidian"}],
-                    "replace": {"palette": [{"block": "minecraft:crying_obsidian"}]},
-                    "chance": 0.15
-                },
-                {
-                    "find": [{"block": "minecraft:lava"}],
-                    "replace": {"palette": [{"block": "minecraft:magma_block"}]},
-                    "chance": 0.2
-                }
-            ],
-            "mode": "FAST_MIN_HEIGHT",
-            "carvingSupport": "SURFACE_ONLY"
+            "minHeight": 1,
+            "maxPerChunk": 5,
+            "maxHeight": 84,
+            "minPerChunk": 1,
+            "minSize": 3,
+            "maxSize": 8,
+            "palette": [{"block": "minecraft:copper_ore"}],
+            "varience": 8
         }
+    ],
+    "riverRarity": 1,
+    "landBiomeZoom": 5,
+    "shoreHeightMin": 2.2,
+    "shoreHeightMax": 4.2,
+    "entitySpawners": [
+        "frozen/passive",
+        "frozen/hostile",
+        "frozen/cave",
+        "frozen/water"
     ],
     "carving": {
         "ravines": [{
             "rarity": 150,
             "ravine": "ice/main"
         }],
-        "caves": [{
-            "breakSurface": true,
-            "cave": "ice/main",
-            "rarity": 22,
-            "caveStartHeight": {
-                "max": 200,
-                "min": 15,
-                "style": {"style": "VASCULAR"}
+        "caves": [
+            {
+                "breakSurface": true,
+                "cave": "ice/main",
+                "rarity": 10,
+                "caveStartHeight": {
+                    "max": 400,
+                    "min": 15,
+                    "style": {"style": "VASCULAR"}
+                }
+            },
+            {
+                "breakSurface": true,
+                "cave": "rocky/main",
+                "rarity": 50,
+                "caveStartHeight": {
+                    "max": 400,
+                    "min": 15,
+                    "style": {"style": "STATIC"}
+                }
             }
-        }]
+        ]
     },
     "shoreHeightZoom": 1.14,
     "riverThickness": 0.006,
-    "rarity": 1
+    "loot": {
+        "mode": "REPLACE",
+        "tables": ["frozen/clutter", "frozen/food", "snow/clutter"]
+    }
 }

@@ -2,8 +2,8 @@
     "name": "Amethyst Cavern",
     "fill": {"block": "minecraft:cave_air"},
     "verticalRange": {
-        "max": 185,
-        "min": 7
+        "max": 400,
+        "min": 15
     },
     "customBiome": "carving/drip",
     "fork": {
@@ -24,25 +24,25 @@
     },
     "worm": {
         "girth": {
-            "max": 4,
+            "max": 9,
             "min": 2,
-            "style": {"style": "SIMPLEX"}
+            "style": {"style": "NOWHERE"}
         },
-        "maxDistance": 77,
+        "maxDistance": 100,
         "yStyle": {
             "min": -3,
             "max": 1,
             "generator": {
                 "zoom": 3,
-                "style": "PERLIN"
+                "style": "NOWHERE"
             }
         },
         "xStyle": {
-            "min": -9,
-            "max": 9,
+            "min": -15,
+            "max": 5,
             "generator": {
                 "zoom": 0.6,
-                "style": "IRIS"
+                "style": "NOWHERE"
             }
         },
         "zStyle": {
@@ -50,7 +50,7 @@
             "max": 9,
             "generator": {
                 "zoom": 0.6,
-                "style": "IRIS"
+                "style": "NOWHERE"
             }
         }
     }

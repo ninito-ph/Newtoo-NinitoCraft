@@ -1,15 +1,9 @@
 {
     "name": "Tundra Redwood Forest",
-    "derivative": "TAIGA",
-    "rarity": 1,
     "color": "#2BBBCB",
+    "rarity": 3,
+    "derivative": "TAIGA",
     "vanillaDerivative": "DARK_FOREST",
-    "children": ["tundra/redwood-cliffs"],
-    "generators": [{
-        "min": 4,
-        "max": 10,
-        "generator": "smooth-dunes"
-    }],
     "customDerivitives": [{
         "category": "forest",
         "id": "tundra_redwood_forest",
@@ -18,22 +12,34 @@
         "waterFogColor": "#80B4C6",
         "fogColor": "#8091C6"
     }],
-    "jigsawStructures": [
+       "jigsawStructures": [
         {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
+            "structure": "pillager-outpost",
+            "rarity": 800
         },
         {
-            "rarity": 1000,
-            "structure": "village-tundra"
+            "structure": "woodland-mansion",
+            "rarity": 1200
         }
     ],
+    "children": ["tundra/redwood-extended-cliffs"],
+    "generators": [{
+        "min": 4,
+        "max": 10,
+        "generator": "smooth-dunes"
+    }],
+    "wall": {"palette": [
+        {"block": "minecraft:coarse_dirt"},
+        {"block": "minecraft:dirt"},
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:dirt"}
+    ]},
     "layers": [
         {
             "style": {
                 "style": "SIMPLEX",
                 "fracture": {
-                    "style": "FRACTAL_WATER",
+                    "style": "NOWHERE",
                     "zoom": 0.39,
                     "multiplier": 23
                 }
@@ -63,78 +69,7 @@
             ]
         }
     ],
-    "wall": {"palette": [
-        {"block": "minecraft:coarse_dirt"},
-        {"block": "minecraft:dirt"},
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:dirt"}
-    ]},
-    "decorators": [
-        {
-            "chance": 0.003,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [
-                {"block": "minecraft:white_tulip"},
-                {"block": "minecraft:cornflower"},
-                {"block": "minecraft:blue_orchid"},
-                {"block": "minecraft:lily_of_the_valley"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.01,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {
-                    "data": {"age": 0},
-                    "block": "minecraft:sweet_berry_bush"
-                },
-                {
-                    "data": {"age": 1},
-                    "block": "minecraft:sweet_berry_bush"
-                },
-                {
-                    "data": {"age": 2},
-                    "block": "minecraft:sweet_berry_bush"
-                },
-                {
-                    "data": {"age": 3},
-                    "block": "minecraft:sweet_berry_bush"
-                }
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.06,
-            "palette": [{"block": "minecraft:tall_grass"}]
-        },
-        {
-            "chance": 0.25,
-            "palette": [{"block": "minecraft:grass"}]
-        },
-        {
-            "chance": 0.06,
-            "palette": [{"block": "minecraft:fern"}]
-        },
-        {
-            "chance": 0.06,
-            "palette": [{"block": "minecraft:brown_mushroom"}]
-        },
-        {
-            "chance": 0.06,
-            "palette": [{"block": "minecraft:red_mushroom"}]
-        },
-        {
-            "chance": 0.1,
-            "palette": [{"block": "minecraft:large_fern"}]
-        },
-        {
-            "chance": 0.05,
-            "palette": [{"block": "minecraft:cobblestone_slab"}]
-        }
-    ],
+
     "objects": [
         {
             "mode": "PAINT",
@@ -368,7 +303,74 @@
                     "replace": {"palette": [{"block": "minecraft:spruce_wood"}]}
                 }
             ],
-            "mode": "FAST_MIN_HEIGHT"
+            "mode": "PAINT"
         }
-    ]
+    ],
+    "decorators": [
+        {
+            "chance": 0.003,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [
+                {"block": "minecraft:white_tulip"},
+                {"block": "minecraft:cornflower"},
+                {"block": "minecraft:blue_orchid"},
+                {"block": "minecraft:lily_of_the_valley"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.01,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {
+                    "data": {"age": 0},
+                    "block": "minecraft:sweet_berry_bush"
+                },
+                {
+                    "data": {"age": 1},
+                    "block": "minecraft:sweet_berry_bush"
+                },
+                {
+                    "data": {"age": 2},
+                    "block": "minecraft:sweet_berry_bush"
+                },
+                {
+                    "data": {"age": 3},
+                    "block": "minecraft:sweet_berry_bush"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.06,
+            "palette": [{"block": "minecraft:tall_grass"}]
+        },
+        {
+            "chance": 0.25,
+            "palette": [{"block": "minecraft:grass"}]
+        },
+        {
+            "chance": 0.06,
+            "palette": [{"block": "minecraft:fern"}]
+        },
+        {
+            "chance": 0.06,
+            "palette": [{"block": "minecraft:brown_mushroom"}]
+        },
+        {
+            "chance": 0.06,
+            "palette": [{"block": "minecraft:red_mushroom"}]
+        },
+        {
+            "chance": 0.1,
+            "palette": [{"block": "minecraft:large_fern"}]
+        },
+        {
+            "chance": 0.05,
+            "palette": [{"block": "minecraft:cobblestone_slab"}]
+        }
+    ],
+    "childShrinkFactor": 2.4
 }

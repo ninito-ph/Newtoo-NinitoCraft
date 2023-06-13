@@ -1,12 +1,12 @@
 {
     "name": "Temperate Ocean Deep",
+    "color": "#416DFF",
     "derivative": "DEEP_OCEAN",
     "vanillaDerivative": "DEEP_OCEAN",
-    "color": "#416DFF",
     "generators": [{
-        "min": -52,
-        "max": -37,
-        "generator": "plain"
+        "min": -72,
+        "max": -40,
+        "generator": "mountain"
     }],
     "layers": [
         {
@@ -38,53 +38,6 @@
                 },
                 {"block": "minecraft:coarse_dirt"}
             ]
-        }
-    ],
-    "decorators": [
-        {
-            "chance": 6.0E-4,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [
-                {"block": "minecraft:soul_sand"},
-                {"block": "minecraft:magma_block"}
-            ],
-            "style": {"style": "STATIC"},
-            "partOf": "SEA_FLOOR"
-        },
-        {
-            "chance": 0.07,
-            "variance": {"style": "STATIC"},
-            "zoom": 5,
-            "palette": [{"block": "minecraft:seagrass"}],
-            "style": {"style": "STATIC"},
-            "partOf": "SEA_FLOOR"
-        },
-        {
-            "chance": 0.013,
-            "verticalZoom": 88,
-            "variance": {"style": "STATIC"},
-            "stackMax": 6,
-            "zoom": 1,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "style": {"style": "STATIC"},
-            "heightVariance": {"style": "IRIS"},
-            "stackMin": 2,
-            "partOf": "SEA_FLOOR"
-        },
-        {
-            "chance": 0.001,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [{
-                "data": {
-                    "waterlogged": true,
-                    "pickles": 1
-                },
-                "block": "minecraft:sea_pickle"
-            }],
-            "style": {"style": "STATIC"},
-            "partOf": "SEA_FLOOR"
         }
     ],
     "objects": [
@@ -157,8 +110,35 @@
                 "clutter/substat5"
             ]
         },
-    {
-        "chance": 0.035,
+        {
+            "chance": 0.0035,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
+                "enabled": true
+            },
+            "underwater": true,
+            "place": [
+                "structures/oruins1",
+                "structures/oruins2",
+                "structures/oruins3"
+            ],
+            "mode": "PAINT",
+            "loot": [{"name": "structures/ocean-ruins"}],
+            "overrideGlobalLoot": true
+        },
+         {
+        "loot": ["structures/ocean-ruins"],
+        "overStilt": 0,
+        "chance": 0.000025,
+        "meld": false,
+        "density": 1,
+        "bottom": false,
+        "translateCenter": false,
         "rotation": {
             "yAxis": {
                 "min": 0,
@@ -166,22 +146,134 @@
                 "interval": 90,
                 "enabled": true
             },
+            "xAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 0,
+                "enabled": false
+            },
+            "zAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 0,
+                "enabled": false
+            },
             "enabled": true
         },
+        "boreExtendMinY": 0,
+        "smartBore": false,
+        "waterloggable": true,
+        "bore": false,
+        "translate": {
+            "yRandom": 0,
+            "x": 0,
+            "y": -1,
+            "z": 0
+        },
+        "mode": "STILT",
+        "snow": 0,
         "underwater": true,
-        "place": [
-            "structures/oruins1",
-            "structures/oruins2",
-            "structures/oruins3"
-        ],
-        "mode": "PAINT",
-        "loot": [
+        "boreExtendMaxY": 0,
+        "onwater": false,
+
+        "warp": {
+            "multiplier": 1,
+            "style": "FLAT",
+            "zoom": 1,
+            "maxFractureAccuracy": false,
+            "exponent": 1
+        },
+        "place": ["jigsaw/ocean-monument/ocean_monument"],
+
+        "markers": [
             {
-                "name": "tropical-dungeon"
+                "marker": "guardian",
+                "exact": false,
+                "maximumMarkers": 4,
+                "mark": [
+                    {
+                        "block": "minecraft:dark_prismarine_slab"
+
+                    }
+
+                ]
+
+            },
+             {
+                "marker": "guardian",
+                "exact": false,
+                "maximumMarkers": 9,
+                "mark": [
+                    {
+                        "block": "minecraft:prismarine"
+
+                    }
+
+                ]
+
+            },
+            {
+                "marker": "elderguardian",
+                "exact": false,
+                "maximumMarkers": 3,
+                "mark": [
+                    {
+                        "block": "minecraft:sea_pickle"
+
+                    }
+
+                ]
+
             }
         ]
-
     }
+    ],
+    "decorators": [
+        {
+            "chance": 6.0E-4,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [
+                {"block": "minecraft:soul_sand"},
+                {"block": "minecraft:magma_block"}
+            ],
+            "style": {"style": "STATIC"},
+            "partOf": "SEA_FLOOR"
+        },
+        {
+            "chance": 0.07,
+            "variance": {"style": "STATIC"},
+            "zoom": 5,
+            "palette": [{"block": "minecraft:seagrass"}],
+            "style": {"style": "STATIC"},
+            "partOf": "SEA_FLOOR"
+        },
+        {
+            "chance": 0.013,
+            "verticalZoom": 88,
+            "variance": {"style": "STATIC"},
+            "stackMax": 6,
+            "zoom": 1,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "style": {"style": "STATIC"},
+            "heightVariance": {"style": "NOWHERE"},
+            "stackMin": 2,
+            "partOf": "SEA_FLOOR"
+        },
+        {
+            "chance": 0.001,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [{
+                "data": {
+                    "waterlogged": true,
+                    "pickles": 1
+                },
+                "block": "minecraft:sea_pickle"
+            }],
+            "style": {"style": "STATIC"},
+            "partOf": "SEA_FLOOR"
+        }
     ],
     "slab": {
         "style": {"style": "STATIC"},

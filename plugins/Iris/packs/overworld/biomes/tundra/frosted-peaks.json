@@ -1,5 +1,6 @@
 {
     "name": "Frosted Peaks",
+    "rarity": 5,
     "derivative": "OLD_GROWTH_SPRUCE_TAIGA",
     "vanillaDerivative": "OLD_GROWTH_SPRUCE_TAIGA",
     "customDerivitives": [{
@@ -7,13 +8,22 @@
         "grassColor": "#53AEB8",
         "category": "extreme_hills"
     }],
-    "biomeZoom": 0.73,
-    "rarity": 5,
+    "children": ["tundra/frosted-peaks-extended"],
     "generators": [{
         "generator": "mountain",
         "max": 200,
         "min": 90
     }],
+    "biomeZoom": 0.73,
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:gravel"},
+            {"block": "minecraft:basalt"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 1,
@@ -28,7 +38,7 @@
             "minHeight": 2,
             "maxHeight": 4,
             "style": {
-                "style": "FRACTAL_WATER",
+                "style": "NOWHERE",
                 "fracture": {
                     "style": "STATIC",
                     "multiplier": 15
@@ -90,6 +100,25 @@
             ]
         }
     ],
+    "decorators": [
+        {
+            "chance": 0.01,
+            "palette": [{"block": "minecraft:tall_grass"}]
+        },
+        {
+            "chance": 0.5,
+            "palette": [{"block": "minecraft:grass"}]
+        },
+        {
+            "chance": 0.15,
+            "palette": [{"block": "minecraft:fern"}]
+        },
+        {
+            "chance": 0.15,
+            "palette": [{"block": "minecraft:fern"}]
+        }
+    ],
+    "childShrinkFactor": 2.4,
     "slab": {
         "style": {"style": "STATIC"},
         "slopeCondition": {"minimumSlope": 2.3},
@@ -123,32 +152,5 @@
             "min": 80,
             "style": {"style": "STATIC"}
         }
-    }]},
-    "decorators": [
-        {
-            "chance": 0.01,
-            "palette": [{"block": "minecraft:tall_grass"}]
-        },
-        {
-            "chance": 0.5,
-            "palette": [{"block": "minecraft:grass"}]
-        },
-        {
-            "chance": 0.15,
-            "palette": [{"block": "minecraft:fern"}]
-        },
-        {
-            "chance": 0.15,
-            "palette": [{"block": "minecraft:fern"}]
-        }
-    ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:gravel"},
-            {"block": "minecraft:basalt"}
-        ]
-    }
+    }]}
 }

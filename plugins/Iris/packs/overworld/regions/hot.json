@@ -1,92 +1,46 @@
 {
     "name": "Hot",
     "color": "#D1CD44",
+    "rarity": 4,
+    "seaBiomeZoom": 3.5,
     "landBiomes": [
         "hot/desert-dunes",
+        "hot/small-valley",
         "hot/desert-dunes-red",
-        "savanna/forest",
         "savanna/savanna",
         "mesa/dark",
-        "savanna/forest",
         "savanna/plateau",
+        "savanna/forest",
         "savanna/acacia-denmyre",
         "mesa/plateau",
         "mesa/valleys",
         "mesa/plateau-high",
         "mesa/valleys",
-        "mesa/mesa",
-        "mesa/cliffs"
+        "mesa/mesa"
     ],
-    "shoreBiomes": ["hot/shore/beach"],
-    "seaBiomes": ["hot/sea/ocean"],
-    "entitySpawners": [
-        "hot/land-passive",
-        "hot/land-hostile",
-        "hot/land-cave"
+    "caveBiomes": [
+        "carving/rocky-cavebiome"
     ],
-    "riverStyle": {
-        "style": "VASCULAR",
-        "zoom": 4.77,
-        "fracture": {
-            "multiplier": 240,
-            "style": "NOWHERE",
-            "zoom": 5
-        }
-    },
-    "spotBiomes": [{
-        "biome": "hot/oasis",
-        "scale": 5,
-        "type": "SEA",
-        "shuffle": 328,
-        "rarity": 15
-    }],
-    "jigsawStructures": [{
-        "structure": "murky_stronghold",
-        "rarity": 250
-    }],
-    "deposits": [
+    "jigsawStructures": [
         {
-            "minHeight": 2,
-            "maxPerChunk": 10,
-            "maxHeight": 70,
-            "minPerChunk": 1,
-            "minSize": 3,
-            "maxSize": 8,
-            "palette": [{"block": "minecraft:gold_ore"}],
-            "varience": 5
+        "structure": "ruined-portal",
+        "rarity": 1200
         },
         {
-            "minHeight": 15,
-            "maxPerChunk": 2,
-            "maxHeight": 50,
-            "minPerChunk": 1,
-            "minSize": 3,
-            "maxSize": 8,
-            "palette": [{"block": "minecraft:lapis_ore"}],
-            "varience": 5
-        }
-    ],
-    "landBiomeZoom": 7,
-    "effects": [
-        {
-            "potionTicksMin": 87,
-            "potionEffect": "CONFUSION",
-            "chance": 1200,
-            "potionStrength": 0,
-            "potionTicksMax": 67,
-            "interval": 500
+        "structure": "dungeon-skeleton",
+        "rarity": 800
         },
         {
-            "particleAltX": 0.001,
-            "particleAltY": 0.00885,
-            "particleAltZ": 0.001,
-            "chance": 2,
-            "particleEffect": "CAMPFIRE_SIGNAL_SMOKE",
-            "particleOffset": 0,
-            "interval": 1350,
-            "particleCount": 0
+        "structure": "dungeon-spider",
+        "rarity": 800
+        },
+        {
+        "structure": "dungeon-zombie",
+        "rarity": 800
         }
+
     ],
+
     "objects": [
         {
             "heightmap": {
@@ -127,53 +81,60 @@
                 "yRandom": 10,
                 "y": 2
             }
-        },
-        {
-            "name": "standard-surface-portals",
-            "chance": 0.001,
-            "place": [
-                "clutter/swordnp2",
-                "clutter/swordnp1",
-                "structures/giantportal1",
-                "structures/giantportal2",
-                "structures/giantportal3",
-                "structures/portal1",
-                "structures/portal2",
-                "structures/portal3",
-                "structures/portal4",
-                "structures/portal5",
-                "structures/portal6",
-                "structures/portal7",
-                "structures/portal8",
-                "structures/portal9",
-                "structures/portal10"
-            ],
-            "edit": [
-                {
-                    "find": [{"block": "minecraft:gold_block"}],
-                    "replace": {"palette": [{"block": "minecraft:air"}]},
-                    "chance": 0.1
-                },
-                {
-                    "find": [{"block": "minecraft:netherrack"}],
-                    "replace": {"palette": [{"block": "minecraft:magma_block"}]},
-                    "chance": 0.07
-                },
-                {
-                    "find": [{"block": "minecraft:obsidian"}],
-                    "replace": {"palette": [{"block": "minecraft:crying_obsidian"}]},
-                    "chance": 0.15
-                },
-                {
-                    "find": [{"block": "minecraft:lava"}],
-                    "replace": {"palette": [{"block": "minecraft:magma_block"}]},
-                    "chance": 0.2
-                }
-            ],
-            "mode": "FAST_MIN_HEIGHT",
-            "carvingSupport": "SURFACE_ONLY"
         }
     ],
+    "shoreBiomes": ["hot/shore/beach"],
+    "seaBiomes": ["hot/sea/ocean"],
+    "entitySpawners": [
+        "hot/passive",
+        "hot/hostile",
+        "hot/cave",
+        "hot/water"
+    ],
+    "deposits": [
+        {
+            "minHeight": 2,
+            "maxPerChunk": 20,
+            "maxHeight": 100,
+            "minPerChunk": 1,
+            "minSize": 3,
+            "maxSize": 8,
+            "palette": [{"block": "minecraft:gold_ore"}],
+            "varience": 5
+        },
+        {
+            "minHeight": 15,
+            "maxPerChunk": 8,
+            "maxHeight": 70,
+            "minPerChunk": 1,
+            "minSize": 3,
+            "maxSize": 8,
+            "palette": [{"block": "minecraft:lapis_ore"}],
+            "varience": 5
+        }
+    ],
+    "landBiomeZoom": 7,
+    "effects": [
+        {
+            "potionTicksMin": 87,
+            "potionEffect": "CONFUSION",
+            "chance": 1200,
+            "potionStrength": 0,
+            "potionTicksMax": 67,
+            "interval": 500
+        },
+        {
+            "particleAltX": 0.001,
+            "particleAltY": 0.00885,
+            "particleAltZ": 0.001,
+            "chance": 2,
+            "particleEffect": "CAMPFIRE_SIGNAL_SMOKE",
+            "particleOffset": 0,
+            "interval": 1350,
+            "particleCount": 0
+        }
+    ],
+
     "carving": {
         "ravines": [
             {
@@ -195,8 +156,8 @@
                 "cave": "sandstone/main",
                 "rarity": 20,
                 "caveStartHeight": {
-                    "max": 100,
-                    "min": 29,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             },
@@ -205,8 +166,8 @@
                 "cave": "red-sandstone/main",
                 "rarity": 20,
                 "caveStartHeight": {
-                    "max": 100,
-                    "min": 29,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             },
@@ -215,8 +176,8 @@
                 "cave": "mixed-sandstone/main",
                 "rarity": 15,
                 "caveStartHeight": {
-                    "max": 100,
-                    "min": 29,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             },
@@ -225,18 +186,18 @@
                 "cave": "drip/main",
                 "rarity": 46,
                 "caveStartHeight": {
-                    "max": 120,
-                    "min": 69,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             },
             {
                 "breakSurface": true,
                 "cave": "rocky/main",
-                "rarity": 87,
+                "rarity": 50,
                 "caveStartHeight": {
-                    "max": 61,
-                    "min": 28,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             }
@@ -244,17 +205,9 @@
     },
     "shoreHeightMin": 3.2,
     "shoreHeightMax": 6.2,
-    "loot": {
-        "mode": "ADD",
-        "multiplier": 1,
-        "tables": [
-            "global-tools",
-            "global-treasure",
-            "hot-food",
-            "hot-treasure",
-            "cactus-clutter"
-        ]
-    },
     "shoreHeightZoom": 1.14,
-    "rarity": 1
+    "loot": {
+        "mode": "REPLACE",
+        "tables": ["hot/food", "hot/treasure"]
+    }
 }

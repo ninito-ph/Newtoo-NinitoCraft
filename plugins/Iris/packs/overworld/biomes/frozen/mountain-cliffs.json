@@ -1,9 +1,44 @@
 {
     "name": "Frozen Mountain Cliffs",
-    "derivative": "FROZEN_PEAKS",
-    "rarity": 3,
-    "vanillaDerivative": "FROZEN_PEAKS",
     "color": "#3090BB",
+    "rarity": 3,
+    "derivative": "FROZEN_PEAKS",
+    "vanillaDerivative": "FROZEN_PEAKS",
+    "biomeScatter": [
+        "ICE_SPIKES",
+        "FROZEN_OCEAN",
+        "FROZEN_RIVER"
+    ],
+    "customDerivitives": [{
+        "category": "extreme_hills",
+        "id": "frozen_mountaincliff",
+        "downfallType": "snow",
+        "temperature": -3,
+        "waterColor": "#216FC4",
+        "fogColor": "#B8D0E1",
+        "waterFogColor": "#216FC4",
+        "foliageColor": "#B8D0E1",
+        "grassColor": "#D0E1FF"
+    }],
+    "children": ["frozen/mountain-cliffs-extended"],
+    "generators": [
+        {
+            "min": 4,
+            "max": 30,
+            "generator": "plain-cliffs"
+        },
+        {
+            "min": 10,
+            "max": 40,
+            "generator": "mountain"
+        }
+    ],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "NOWHERE"},
+        "palette": [{"block": "minecraft:packed_ice"}]
+    },
     "layers": [
         {
             "minHeight": 0,
@@ -33,52 +68,11 @@
             ]
         }
     ],
-    "customDerivitives": [{
-        "category": "extreme_hills",
-        "id": "frozen_mountaincliff",
-        "downfallType": "snow",
-        "temperature": -3,
-        "waterColor": "#216FC4",
-        "fogColor": "#B8D0E1",
-        "waterFogColor": "#216FC4",
-        "foliageColor": "#B8D0E1",
-        "grassColor": "#D0E1FF"
-    }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "generators": [
-        {
-            "min": 4,
-            "max": 30,
-            "generator": "plain-cliffs"
-        },
-        {
-            "min": 10,
-            "max": 40,
-            "generator": "mountain"
-        }
-    ],
-    "biomeScatter": [
-        "ICE_SPIKES",
-        "FROZEN_OCEAN",
-        "FROZEN_RIVER"
-    ],
+
     "objects": [
         {
             "chance": 0.003,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "snow": 0.35,
             "rotation": {
@@ -105,7 +99,7 @@
         },
         {
             "chance": 0.5,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "rotation": {
                 "yAxis": {
@@ -159,7 +153,7 @@
         },
         {
             "chance": 0.01,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "rotation": {
                 "yAxis": {
@@ -197,7 +191,7 @@
         },
         {
             "chance": 0.05,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "snow": 0.35,
             "rotation": {
@@ -234,12 +228,10 @@
             ]
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [{
         "chance": 1,
         "variance": {
-            "style": "IRIS",
+            "style": "NOWHERE",
             "zoom": 0.5
         },
         "palette": [
@@ -265,9 +257,5 @@
                 "block": "minecraft:snow"
             }
         ]
-    }],
-    "wall": {
-        "style": {"style": "IRIS"},
-        "palette": [{"block": "minecraft:packed_ice"}]
-    }
+    }]
 }

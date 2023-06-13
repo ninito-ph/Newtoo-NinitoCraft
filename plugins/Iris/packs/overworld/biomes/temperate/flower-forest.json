@@ -1,20 +1,31 @@
 {
     "name": "Temperate Flower Forest",
-    "derivative": "FLOWER_FOREST",
-    "rarity": 3,
     "color": "#8BE565",
+    "rarity": 3,
+    "derivative": "FLOWER_FOREST",
     "vanillaDerivative": "FLOWER_FOREST",
-    "generators": [{
-        "min": 4,
-        "max": 7,
-        "generator": "plain"
-    }],
+    "biomeScatter": ["FLOWER_FOREST"],
     "customDerivitives": [{
         "id": "flower_forest",
         "foliageColor": "#64C329",
         "grassColor": "#48A620",
         "category": "forest"
     }],
+    "children": ["temperate/flower-forest-extended"],
+    "generators": [{
+        "min": 4,
+        "max": 7,
+        "generator": "plain"
+    }],
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -51,16 +62,7 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 750,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 500,
-            "structure": "village-temperate"
-        }
-    ],
+
     "objects": [
         {
             "chance": 0.07,
@@ -108,7 +110,7 @@
             "place": ["clutter/camp1"]
         },
         {
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "chance": 0.33,
             "addFeatures": [{
                 "rarity": 1,
@@ -366,7 +368,6 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.3,
@@ -474,14 +475,5 @@
             "zoom": 0.2,
             "palette": [{"block": "minecraft:cobblestone_slab"}]
         }
-    ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": ["FLOWER_FOREST"]
+    ]
 }

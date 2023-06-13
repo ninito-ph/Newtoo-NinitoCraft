@@ -1,8 +1,8 @@
 {
     "name": "Tropical Submerged Volcanic",
-    "derivative": "WARM_OCEAN",
-    "rarity": 1,
     "color": "#C60A0A",
+    "rarity": 1,
+    "derivative": "WARM_OCEAN",
     "vanillaDerivative": "WARM_OCEAN",
     "generators": [{
         "min": -24,

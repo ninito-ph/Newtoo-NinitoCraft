@@ -6,21 +6,6 @@
         "minHeight": 2,
         "palette": [{"block": "minecraft:dripstone_block"}]
     }],
-    "caveCeilingLayers": [{
-        "style": {"style": "IRIS"},
-        "maxHeight": 2,
-        "minHeight": 2,
-        "palette": [
-            {
-                "block": "minecraft:dripstone_block",
-                "weight": 15
-            },
-            {
-                "block": "minecraft:shroomlight",
-                "weight": 1
-            }
-        ]
-    }],
     "decorators": [
         {
             "chance": 0.03,
@@ -45,5 +30,20 @@
                 "data": {"vertical_direction": "down"}
             }]
         }
-    ]
+    ],
+    "caveCeilingLayers": [{
+        "style": {"style": "NOWHERE"},
+        "maxHeight": 2,
+        "minHeight": 2,
+        "palette": [
+            {
+                "block": "minecraft:dripstone_block",
+                "weight": 15
+            },
+            {
+                "block": "minecraft:shroomlight",
+                "weight": 1
+            }
+        ]
+    }]
 }
