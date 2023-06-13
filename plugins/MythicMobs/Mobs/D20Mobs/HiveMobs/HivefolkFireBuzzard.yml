@@ -1,8 +1,8 @@
 Hivefolk_Fire_Buzzard:
   # Upgraded buzzard with significantly higher damage. Deals fire damage on spit. Explodes on death. Mythic Encounter mob.
   Type: ZOMBIE
-  Health: 12
-  Damage: 4
+  Health: 35
+  Damage: 3
   Armor: 0
   DamageModifiers:
     - FALL 0

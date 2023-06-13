@@ -1,8 +1,8 @@
 Hivefolk_Ice_Spawner:
   # Upgraded spawner with higher versatility. Can fly and spit debuffing ice at the player. Spawns larvae frequently. Mythic Encounter mob.
   Type: ZOMBIE
-  Health: 20
-  Damage: 4
+  Health: 100
+  Damage: 5
   Armor: 0
   Faction: Hivefolk
   Options:

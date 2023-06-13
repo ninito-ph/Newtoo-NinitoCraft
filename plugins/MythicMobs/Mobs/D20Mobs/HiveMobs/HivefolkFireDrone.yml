@@ -1,14 +1,14 @@
 Hivefolk_Fire_Drone:
   # Upgraded drone with significantly higher damage and defensive capabilities. Deals fire damage on hits. Explodes on death. Mythic Encounter mob.
   Type: ZOMBIE
-  Health: 15
-  Damage: 7
+  Health: 45
+  Damage: 5
   Armor: 0
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true
     PreventRandomEquipment: true
-    MovementSpeed: 0.35
+    MovementSpeed: 0.33
   Modules:
     ThreatTable: true
   AIGoalSelectors:
