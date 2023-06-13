@@ -5,7 +5,7 @@ Deep_Repulsion:
     # Telegraphs shockwave
     - effect:sound{s=entity.enderman.scream;v=1;p=1.3} @self
     - effect:particles{p=reddust;a=16;hs=1;y=1.7;color=#cb48ea} @self
-    - delay 40
+    - delay 70
     # Throws player away and damages
     - effect:sound{s=entity.generic.explode;v=1;p=0.75} @self
     - throw{velocity=8;velocityY=3.5} @PIR{r=5}
