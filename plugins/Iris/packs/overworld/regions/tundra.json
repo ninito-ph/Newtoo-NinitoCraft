@@ -1,87 +1,121 @@
 {
     "name": "Tundra",
     "color": "#9CB0B9",
+    "rarity": 2,
     "landBiomes": [
         "tundra/taiga",
         "tundra/redwood-forest",
         "tundra/sequia-redwoods",
-        "tundra/magic-forest",
-        "tundra/autumn",
         "tundra/forest",
-        "tundra/spruce-denmyre",
         "tundra/mountains",
         "tundra/mountains",
-        "tundra/mountains-cliffs",
+        "tundra/mountains-extended-cliffs",
         "mountain/hills",
-        "mountain/forest-hills",
+        "mountain/forest-extended",
         "tundra/frosted-peaks",
         "mountain/forest",
         "mountain/plains",
         "mountain/cliffs",
+        "tundra/autumn",
         "mountain/mountain",
-        "tundra/ether"
+        "tundra/ether",
+        "tundra/magic-forest",
+        "tundra/tinyspruce",
+        "tundra/tinyspruce"
     ],
+    "caveBiomes": [
+        "carving/rocky-cavebiome"
+    ],
+    "jigsawStructures": [{
+        "structure": "ruined-portal",
+        "rarity": 1200
+    },
+    {
+        "structure": "dungeon-skeleton",
+        "rarity": 800
+        },
+        {
+        "structure": "dungeon-spider",
+        "rarity": 800
+        },
+        {
+        "structure": "dungeon-zombie",
+        "rarity": 800
+        }],
+
+    "objects": [{
+        "heightmap": {
+            "seed": 1337,
+            "style": {
+                "style": "SIMPLEX",
+                "multiplier": 10
+            },
+            "offsetY": 5
+        },
+        "chance": 0.05,
+        "bottom": true,
+        "density": 1,
+        "place": [
+            "structures/amethyst1",
+            "structures/amethyst2",
+            "structures/amethyst3",
+            "structures/amethyst4",
+            "structures/amethyst5",
+            "structures/amethyst6"
+        ],
+        "edit": [{
+            "find": [{"block": "minecraft:glass"}],
+            "replace": {"palette": [{"block": "minecraft:void_air"}]}
+        }],
+        "enabled": true,
+        "xAxis": {
+            "interval": 90,
+            "max": 360,
+            "min": 0
+        },
+        "yAxis": {
+            "interval": 90,
+            "max": 360,
+            "min": 0
+        },
+        "translate": {
+            "yRandom": 10,
+            "y": 2
+        }
+    }],
     "shoreBiomes": [
         "tundra/shore/beach",
         "tundra/shore/beach-stone"
     ],
+    "seaBiomeZoom": 4,
     "seaBiomes": ["mountain/sea/river"],
-    "jigsawStructures": [{
-        "structure": "murky_stronghold",
-        "rarity": 250
-    }],
     "entitySpawners": [
-        "tundra/land-passive",
-        "tundra/land-hostile",
-        "tundra/land-cave"
-    ],
-    "riverBiomes": [
-        "tundra/sea/river",
-        "tundra/sea/river-rocky",
-        "mountain/sea/river",
-        "mountain/sea/river-soft"
+        "tundra/passive",
+        "tundra/hostile",
+        "tundra/cave",
+        "tundra/water"
     ],
     "deposits": [{
         "minHeight": 20,
-        "maxPerChunk": 4,
-        "maxHeight": 49,
+        "maxPerChunk": 8,
+        "maxHeight": 102,
         "minPerChunk": 2,
         "minSize": 3,
         "maxSize": 8,
         "palette": [{"block": "minecraft:emerald_ore"}],
         "varience": 8
     }],
-    "riverRarity": 1,
     "landBiomeZoom": 4.5,
-    "riverStyle": {
-        "style": "VASCULAR",
-        "zoom": 4.77,
-        "fracture": {
-            "multiplier": 240,
-            "style": "NOWHERE",
-            "zoom": 5
-        }
-    },
     "shoreHeightMin": 2.2,
     "shoreHeightMax": 5.2,
-    "loot": {
-        "mode": "ADD",
-        "multiplier": 1,
-        "tables": [
-            "global-clutter",
-            "global-tools",
-            "cold-treasure",
-            "cold-food"
-        ]
-    },
     "carving": {
         "ravines": [
             {
-                "rarity": 421,
+                "rarity": 400,
                 "ravine": "calcite/main"
             },
             {
-                "rarity": 271,
+                "rarity": 250,
                 "ravine": "rocky/main"
             }
         ],
@@ -91,66 +125,27 @@
                 "cave": "calcite/main",
                 "rarity": 20,
                 "caveStartHeight": {
-                    "max": 220,
-                    "min": 13,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             },
             {
                 "breakSurface": true,
                 "cave": "rocky/main",
-                "rarity": 5,
+                "rarity": 10,
                 "caveStartHeight": {
-                    "max": 199,
-                    "min": 18,
+                    "max": 400,
+                    "min": 15,
                     "style": {"style": "STATIC"}
                 }
             }
         ]
     },
-    "objects": [
-        {
-            "heightmap": {
-                "seed": 1337,
-                "style": {
-                    "style": "SIMPLEX",
-                    "multiplier": 10
-                },
-                "offsetY": 5
-            },
-            "chance": 0.05,
-            "bottom": true,
-            "density": 1,
-            "place": [
-                "structures/amethyst1",
-                "structures/amethyst2",
-                "structures/amethyst3",
-                "structures/amethyst4",
-                "structures/amethyst5",
-                "structures/amethyst6"
-            ],
-            "edit": [{
-                "find": [{"block": "minecraft:glass"}],
-                "replace": {"palette": [{"block": "minecraft:void_air"}]}
-            }],
-            "enabled": true,
-            "xAxis": {
-                "interval": 90,
-                "max": 360,
-                "min": 0
-            },
-            "yAxis": {
-                "interval": 90,
-                "max": 360,
-                "min": 0
-            },
-            "translate": {
-                "yRandom": 10,
-                "y": 2
-            }
-        }
-    ],
     "shoreHeightZoom": 1.14,
     "riverThickness": 0.025,
-    "rarity": 2
+    "loot": {
+        "mode": "REPLACE",
+        "tables": ["cold/food","cold/treasure","snow/clutter"]
+    }
 }

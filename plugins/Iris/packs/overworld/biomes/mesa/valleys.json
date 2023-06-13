@@ -1,8 +1,8 @@
 {
     "name": "Mesa Valley",
-    "derivative": "SAVANNA",
-    "rarity": 1,
     "color": "#8C3A16",
+    "rarity": 1,
+    "derivative": "SAVANNA",
     "vanillaDerivative": "BADLANDS",
     "generators": [{
         "min": 5,
@@ -25,7 +25,7 @@
                 "maximumSlope": 2
             },
             "style": {
-                "style": "IRIS",
+                "style": "NOWHERE",
                 "fracture": {
                     "style": "STATIC",
                     "multiplier": 4,
@@ -110,43 +110,6 @@
             "minHeight": 1,
             "maxHeight": 1,
             "palette": [{"block": "minecraft:terracotta"}]
-        }
-    ],
-    "decorators": [
-        {
-            "chance": 0.189,
-            "variance": {
-                "style": "CELLULAR",
-                "zoom": 0.3,
-                "fracture": {
-                    "style": "SIMPLEX",
-                    "zoom": 0.2,
-                    "multiplier": 10
-                }
-            },
-            "style": {
-                "style": "SIMPLEX",
-                "zoom": 0.3,
-                "fracture": {
-                    "style": "STATIC",
-                    "multiplier": 8
-                }
-            },
-            "palette": [
-                {"block": "minecraft:white_tulip"},
-                {"block": "minecraft:red_tulip"},
-                {"block": "minecraft:orange_tulip"},
-                {"block": "minecraft:dandelion"},
-                {"block": "minecraft:poppy"}
-            ]
-        },
-        {
-            "chance": 0.01,
-            "palette": [{"block": "minecraft:tall_grass"}]
-        },
-        {
-            "chance": 0.5,
-            "palette": [{"block": "minecraft:grass"}]
         }
     ],
     "objects": [
@@ -266,6 +229,43 @@
                 "trees/acacia/savannas11",
                 "trees/acacia/savannas12"
             ]
+        }
+    ],
+    "decorators": [
+        {
+            "chance": 0.189,
+            "variance": {
+                "style": "CELLULAR",
+                "zoom": 0.3,
+                "fracture": {
+                    "style": "SIMPLEX",
+                    "zoom": 0.2,
+                    "multiplier": 10
+                }
+            },
+            "style": {
+                "style": "SIMPLEX",
+                "zoom": 0.3,
+                "fracture": {
+                    "style": "STATIC",
+                    "multiplier": 8
+                }
+            },
+            "palette": [
+                {"block": "minecraft:white_tulip"},
+                {"block": "minecraft:red_tulip"},
+                {"block": "minecraft:orange_tulip"},
+                {"block": "minecraft:dandelion"},
+                {"block": "minecraft:poppy"}
+            ]
+        },
+        {
+            "chance": 0.01,
+            "palette": [{"block": "minecraft:tall_grass"}]
+        },
+        {
+            "chance": 0.5,
+            "palette": [{"block": "minecraft:grass"}]
         }
     ]
 }

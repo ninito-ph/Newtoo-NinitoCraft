@@ -2,7 +2,7 @@
     "name": "Lush Cavern",
     "wall": {
         "style": {
-            "style": "IRIS",
+            "style": "NOWHERE",
             "zoom": 0.5
         },
         "palette": [
@@ -23,7 +23,7 @@
                     "weight": 2
                 },
                 {"block": "minecraft:clay"},
-                {"block": "minecraft:clay" },
+                {"block": "minecraft:clay"},
                 {"block": "minecraft:deepslate"},
                 {"block": "minecraft:grass_block"}
             ]
@@ -41,18 +41,6 @@
             ]
         }
     ],
-    "caveCeilingLayers": [{
-        "style": {"style": "IRIS"},
-        "maxHeight": 2,
-        "minHeight": 2,
-        "palette": [
-            {
-                "block": "minecraft:moss_block",
-                "weight": 2
-            },
-            {"block": "minecraft:deepslate"}
-        ]
-    }],
     "decorators": [
         {
             "chance": 0.01,
@@ -104,5 +92,17 @@
             "stackMax": 1,
             "palette": [{"block": "minecraft:glow_lichen"}]
         }
-    ]
+    ],
+    "caveCeilingLayers": [{
+        "style": {"style": "NOWHERE"},
+        "maxHeight": 2,
+        "minHeight": 2,
+        "palette": [
+            {
+                "block": "minecraft:moss_block",
+                "weight": 2
+            },
+            {"block": "minecraft:deepslate"}
+        ]
+    }]
 }

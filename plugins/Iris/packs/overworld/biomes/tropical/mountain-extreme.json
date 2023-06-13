@@ -1,15 +1,9 @@
 {
     "name": "Tropical Mountain Extreme",
-    "derivative": "SPARSE_JUNGLE",
-    "rarity": 1,
     "color": "#3EBC8B",
+    "rarity": 1,
+    "derivative": "SPARSE_JUNGLE",
     "vanillaDerivative": "JUNGLE",
-    "children": ["tropical/mountain-water"],
-    "generators": [{
-        "generator": "mountain",
-        "max": 190,
-        "min": 85
-    }],
     "customDerivitives": [{
         "id": "tropical_mountain_extreme",
         "foliageColor": "#478F04",
@@ -17,6 +11,12 @@
         "waterColor": "#3AB2A2",
         "waterFogColor": "#3FE727",
         "category": "jungle"
+    }],
+    "children": ["tropical/mountain-water"],
+    "generators": [{
+        "generator": "mountain",
+        "max": 200,
+        "min": 112
     }],
     "layers": [
         {
@@ -39,90 +39,6 @@
                 "maximumSlope": 4.5
             },
             "palette": [{"block": "minecraft:dirt"}]
-        }
-    ],
-    "childStyle": {
-        "style": "GLOB",
-        "zoom": 0.29,
-        "exponent": 7.6
-    },
-    "childShrinkFactor": 1,
-    "decorators": [
-        {
-            "chance": 0.7,
-            "palette": [
-                {
-                    "weight": 2,
-                    "block": "minecraft:grass"
-                },
-                {
-                    "weight": 1,
-                    "block": "minecraft:tall_grass"
-                }
-            ]
-        },
-        {
-            "chance": 0.2,
-            "variance": {
-                "style": "CELLULAR",
-                "zoom": 0.3,
-                "fracture": {
-                    "style": "SIMPLEX",
-                    "zoom": 0.2,
-                    "multiplier": 10
-                }
-            },
-            "style": {
-                "style": "TRIOCTAVE_SIMPLEX",
-                "zoom": 0.3,
-                "fracture": {
-                    "style": "STATIC",
-                    "multiplier": 8
-                }
-            },
-            "palette": [
-                {"block": "minecraft:dandelion"},
-                {"block": "minecraft:poppy"},
-                {"block": "minecraft:blue_orchid"},
-                {"block": "minecraft:allium"},
-                {"block": "minecraft:azure_bluet"},
-                {"block": "minecraft:red_tulip"},
-                {"block": "minecraft:orange_tulip"},
-                {"block": "minecraft:white_tulip"},
-                {"block": "minecraft:pink_tulip"},
-                {"block": "minecraft:oxeye_daisy"},
-                {"block": "minecraft:cornflower"},
-                {"block": "minecraft:lily_of_the_valley"}
-            ]
-        },
-        {
-            "chance": 0.45,
-            "variance": {"style": "IRIS"},
-            "zoom": 0.1,
-            "palette": [
-                {"block": "minecraft:jungle_leaves"},
-                {"block": "minecraft:tall_grass"},
-                {"block": "minecraft:grass"},
-                {"block": "minecraft:jungle_leaves"},
-                {"block": "minecraft:grass"},
-                {"block": "minecraft:jungle_leaves"}
-            ],
-            "style": {
-                "style": "FRACTAL_BILLOW_IRIS",
-                "fracture": {"style": "STATIC"}
-            }
-        },
-        {
-            "chance": 0.5,
-            "verticalZoom": 88,
-            "variance": {"style": "STATIC"},
-            "zoom": 10,
-            "palette": [
-                {"block": "minecraft:grass"},
-                {"block": "minecraft:tall_grass"}
-            ],
-            "style": {"style": "STATIC"},
-            "heightVariance": {"style": "STATIC"}
         }
     ],
     "objects": [
@@ -187,5 +103,89 @@
             },
             "translate": {"y": 1}
         }
-    ]
+    ],
+    "decorators": [
+        {
+            "chance": 0.7,
+            "palette": [
+                {
+                    "weight": 2,
+                    "block": "minecraft:grass"
+                },
+                {
+                    "weight": 1,
+                    "block": "minecraft:tall_grass"
+                }
+            ]
+        },
+        {
+            "chance": 0.2,
+            "variance": {
+                "style": "CELLULAR",
+                "zoom": 0.3,
+                "fracture": {
+                    "style": "SIMPLEX",
+                    "zoom": 0.2,
+                    "multiplier": 10
+                }
+            },
+            "style": {
+                "style": "TRIOCTAVE_SIMPLEX",
+                "zoom": 0.3,
+                "fracture": {
+                    "style": "STATIC",
+                    "multiplier": 8
+                }
+            },
+            "palette": [
+                {"block": "minecraft:dandelion"},
+                {"block": "minecraft:poppy"},
+                {"block": "minecraft:blue_orchid"},
+                {"block": "minecraft:allium"},
+                {"block": "minecraft:azure_bluet"},
+                {"block": "minecraft:red_tulip"},
+                {"block": "minecraft:orange_tulip"},
+                {"block": "minecraft:white_tulip"},
+                {"block": "minecraft:pink_tulip"},
+                {"block": "minecraft:oxeye_daisy"},
+                {"block": "minecraft:cornflower"},
+                {"block": "minecraft:lily_of_the_valley"}
+            ]
+        },
+        {
+            "chance": 0.45,
+            "variance": {"style": "NOWHERE"},
+            "zoom": 0.1,
+            "palette": [
+                {"block": "minecraft:jungle_leaves"},
+                {"block": "minecraft:tall_grass"},
+                {"block": "minecraft:grass"},
+                {"block": "minecraft:jungle_leaves"},
+                {"block": "minecraft:grass"},
+                {"block": "minecraft:jungle_leaves"}
+            ],
+            "style": {
+                "style": "FRACTAL_BILLOW_IRIS",
+                "fracture": {"style": "STATIC"}
+            }
+        },
+        {
+            "chance": 0.5,
+            "verticalZoom": 88,
+            "variance": {"style": "STATIC"},
+            "zoom": 10,
+            "palette": [
+                {"block": "minecraft:grass"},
+                {"block": "minecraft:tall_grass"}
+            ],
+            "style": {"style": "STATIC"},
+            "heightVariance": {"style": "STATIC"}
+        }
+    ],
+    "childStyle": {
+        "style": "GLOB",
+        "zoom": 0.29,
+        "exponent": 7.6
+    },
+    "childShrinkFactor": 1
 }

@@ -1,14 +1,15 @@
 {
     "name": "Tropical Beach Charred",
-    "derivative": "DESERT",
-    "rarity": 1,
     "color": "#64E8B4",
+    "rarity": 1,
+    "derivative": "DESERT",
     "vanillaDerivative": "BEACH",
     "generators": [{
         "min": -3,
         "max": 3,
         "generator": "plain"
     }],
+    "wall": {"palette": [{"block": "minecraft:smooth_sandstone"}]},
     "layers": [
         {
             "minHeight": 3,
@@ -21,44 +22,10 @@
             "palette": [{"block": "minecraft:dirt"}]
         }
     ],
-    "effects": [{
-        "particleAltX": 0.301,
-        "particleAltY": -0.33885,
-        "particleAltZ": 0.301,
-        "chance": 1,
-        "particleEffect": "SMOKE_LARGE",
-        "particleOffset": 0,
-        "interval": 550,
-        "particleCount": 0
-    }],
-    "decorators": [{
-        "chance": 0.01,
-        "variance": {"style": "STATIC"},
-        "zoom": 0.3,
-        "palette": [
-            {
-                "data": {
-                    "face": "floor",
-                    "powered": false,
-                    "facing": "east"
-                },
-                "block": "minecraft:jungle_button"
-            },
-            {"block": "minecraft:air"},
-            {
-                "data": {
-                    "face": "floor",
-                    "powered": false,
-                    "facing": "south"
-                },
-                "block": "minecraft:jungle_button"
-            }
-        ],
-        "style": {"style": "STATIC"}
-    }],
     "objects": [{
         "chance": 1,
         "edit": [{
+            "mode": "MIN_STILT",
             "find": [{"block": "minecraft:player_wall_head"}],
             "replace": {"palette": [{"block": "minecraft:air"}]}
         }],
@@ -86,7 +53,41 @@
             "z": 0
         }
     }],
-    "wall": {"palette": [{"block": "minecraft:smooth_sandstone"}]},
+    "decorators": [{
+        "chance": 0.01,
+        "variance": {"style": "STATIC"},
+        "zoom": 0.3,
+        "palette": [
+            {
+                "data": {
+                    "face": "floor",
+                    "powered": false,
+                    "facing": "east"
+                },
+                "block": "minecraft:jungle_button"
+            },
+            {"block": "minecraft:air"},
+            {
+                "data": {
+                    "face": "floor",
+                    "powered": false,
+                    "facing": "south"
+                },
+                "block": "minecraft:jungle_button"
+            }
+        ],
+        "style": {"style": "STATIC"}
+    }],
+    "effects": [{
+        "particleAltX": 0.301,
+        "particleAltY": -0.33885,
+        "particleAltZ": 0.301,
+        "chance": 1,
+        "particleEffect": "SMOKE_LARGE",
+        "particleOffset": 0,
+        "interval": 550,
+        "particleCount": 0
+    }],
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [

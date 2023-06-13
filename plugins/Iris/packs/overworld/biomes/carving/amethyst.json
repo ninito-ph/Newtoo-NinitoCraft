@@ -1,19 +1,5 @@
 {
     "name": "Amethyst Cavern",
-    "layers": [
-        {
-            "palette": [
-                {
-                    "block": "minecraft:amethyst_block",
-                    "weight": 6
-                },
-                {"block": "minecraft:budding_amethyst"}
-            ],
-            "maxHeight": 2,
-            "minHeight": 2
-        },
-        {"palette": [{"block": "minecraft:deepslate"}]}
-    ],
     "wall": {"palette": [
         {
             "block": "minecraft:amethyst_block",
@@ -21,7 +7,7 @@
         },
         {"block": "minecraft:budding_amethyst"}
     ]},
-    "caveCeilingLayers": [
+    "layers": [
         {
             "palette": [
                 {
@@ -79,5 +65,19 @@
                 }
             ]
         }
+    ],
+    "caveCeilingLayers": [
+        {
+            "palette": [
+                {
+                    "block": "minecraft:amethyst_block",
+                    "weight": 6
+                },
+                {"block": "minecraft:budding_amethyst"}
+            ],
+            "maxHeight": 2,
+            "minHeight": 2
+        },
+        {"palette": [{"block": "minecraft:deepslate"}]}
     ]
 }

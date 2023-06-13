@@ -1,14 +1,25 @@
 {
     "name": "Hot Desert Dunes",
-    "derivative": "DESERT",
-    "rarity": 1,
     "color": "#B9B03D",
+    "rarity": 1,
+    "derivative": "DESERT",
     "vanillaDerivative": "DESERT",
     "generators": [{
         "generator": "smooth-dunes",
-        "max": 23,
-        "min": 10
+        "max": 51,
+        "min": 28
     }],
+    "jigsawStructures": [
+        {
+            "structure": "village-desert",
+            "rarity": 1200
+        },
+        {
+            "structure": "pyramid-desert",
+            "rarity": 1500
+
+        }
+    ],
     "layers": [
         {
             "minHeight": 3,
@@ -29,20 +40,6 @@
             }]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-hot"
-        },
-        {
-            "rarity": 1900,
-            "structure": "desert-pyramid"
-        }
-    ],
     "objects": [
         {
             "chance": 0.001,
@@ -54,8 +51,25 @@
             ]
         },
         {
+            "mode": "MIN_HEIGHT",
+            "place": [
+                "structures/ruins-desert-1",
+                "structures/ruins-desert-2"
+            ],
+            "chance": 0.005,
+            "rotation": {
+                "enabled": true,
+                "yAxis": {
+                    "enabled": true,
+                    "interval": 90,
+                    "min": -360,
+                    "max": 360
+                }
+            }
+        },
+        {
             "chance": 0.0018,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "MIN_HEIGHT",
             "rotation": {
                 "yAxis": {
                     "min": 0,
@@ -89,8 +103,8 @@
             },
             "place": [
                 "jigsaw/pyramid/pyramid-extreme",
-                "jigsaw/pyramid/pyramid",
-                "jigsaw/pyramid/pyramid45"
+                "jigsaw/pyramid/pyramid_1",
+                "jigsaw/pyramid/pyramid_2"
             ],
             "translate": {
                 "x": 0,
@@ -107,7 +121,7 @@
             "stackMax": 5,
             "style": {"style": "STATIC"},
             "palette": [{"block": "minecraft:cactus"}],
-            "heightVariance": {"style": "IRIS"},
+            "heightVariance": {"style": "NOWHERE"},
             "stackMin": 1
         },
         {

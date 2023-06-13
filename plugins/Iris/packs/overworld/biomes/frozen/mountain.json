@@ -1,13 +1,13 @@
 {
     "name": "Frozen Mountains",
-    "derivative": "FROZEN_PEAKS",
     "color": "#1E83AF",
     "rarity": 1,
+    "derivative": "FROZEN_PEAKS",
     "vanillaDerivative": "FROZEN_PEAKS",
-    "children": [
-        "frozen/mountain-middle",
-        "frozen/peak",
-        "frozen/mountain-cliffs"
+    "biomeScatter": [
+        "PLAINS",
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS"
     ],
     "customDerivitives": [{
         "category": "extreme_hills",
@@ -20,6 +20,26 @@
         "foliageColor": "#B8D0E1",
         "grassColor": "#D0E1FF"
     }],
+    "children": [
+        "frozen/mountain-extended",
+        "frozen/peak",
+        "frozen/mountain-cliffs"
+    ],
+    "generators": [{
+        "min": 90,
+        "max": 160,
+        "generator": "plain"
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {
+        "style": "NOWHERE",
+        "zoom": 0.7,
+        "exponent": 4
+    },
+    "wall": {"palette": [
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:andesite"}
+    ]},
     "layers": [
         {
             "minHeight": 1,
@@ -64,29 +84,11 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "generators": [{
-        "min": 70,
-        "max": 140,
-        "generator": "plain"
-    }],
+
     "decorators": [{
         "chance": 1,
         "variance": {
-            "style": "IRIS",
+            "style": "NOWHERE",
             "zoom": 0.23
         },
         "palette": [
@@ -96,20 +98,5 @@
             },
             {"block": "minecraft:air"}
         ]
-    }],
-    "biomeZoom": 30,
-    "biomeStyle": {
-        "style": "IRIS",
-        "zoom": 0.7,
-        "exponent": 4
-    },
-    "biomeScatter": [
-        "PLAINS",
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS"
-    ],
-    "wall": {"palette": [
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:andesite"}
-    ]}
+    }]
 }

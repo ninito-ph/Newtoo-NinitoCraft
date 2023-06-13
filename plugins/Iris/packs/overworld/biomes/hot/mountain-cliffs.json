@@ -1,14 +1,20 @@
 {
     "name": "Hot Mountain Cliffs",
-    "derivative": "DESERT",
-    "rarity": 3,
     "color": "#E7C34B",
+    "rarity": 3,
+    "derivative": "DESERT",
     "vanillaDerivative": "DESERT",
     "generators": [{
-        "min": 23,
-        "max": 84,
+        "min": 59,
+        "max": 123,
         "generator": "cracked-cliffs"
     }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [{"block": "minecraft:gray_terracotta"}]
+    },
     "layers": [
         {
             "minHeight": 1,
@@ -43,25 +49,5 @@
                 {"block": "minecraft:stone"}
             ]
         }
-    ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-hot"
-        },
-        {
-            "rarity": 1900,
-            "structure": "desert-pyramid"
-        }
-    ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [{"block": "minecraft:gray_terracotta"}]
-    }
+    ]
 }

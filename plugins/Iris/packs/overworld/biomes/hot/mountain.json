@@ -1,28 +1,24 @@
 {
     "name": "Hot Mountains",
-    "derivative": "DESERT",
-    "rarity": 1,
     "color": "#C3A02A",
+    "rarity": 1,
+    "derivative": "DESERT",
     "vanillaDerivative": "DESERT",
     "generators": [{
-        "min": 90,
-        "max": 140,
+        "min": 120,
+        "max": 214,
         "generator": "mountain"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-hot"
-        },
-        {
-            "rarity": 1900,
-            "structure": "desert-pyramid"
-        }
-    ],
+    "biomeZoom": 30,
+    "biomeStyle": {
+        "style": "NOWHERE",
+        "zoom": 0.7,
+        "exponent": 4
+    },
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [{"block": "minecraft:gray_terracotta"}]
+    },
     "layers": [
         {
             "minHeight": 1,
@@ -57,15 +53,5 @@
                 {"block": "minecraft:stone"}
             ]
         }
-    ],
-    "biomeZoom": 30,
-    "biomeStyle": {
-        "style": "IRIS",
-        "zoom": 0.7,
-        "exponent": 4
-    },
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [{"block": "minecraft:gray_terracotta"}]
-    }
+    ]
 }

@@ -1,14 +1,19 @@
 {
     "name": "Tundra Magic Forest",
-    "derivative": "WINDSWEPT_HILLS",
     "color": "#49AEB9",
     "rarity": 7,
+    "derivative": "WINDSWEPT_HILLS",
     "vanillaDerivative": "OLD_GROWTH_SPRUCE_TAIGA",
-    "generators": [{
-        "generator": "smooth-dunes",
-        "max": 14,
-        "min": 8
-    }],
+    "biomeScatter": [
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS"
+    ],
+    "jigsawStructures": [
+        {
+            "structure": "pillager-outpost",
+            "rarity": 800
+        }
+    ],
     "customDerivitives": [{
         "grassColor": "#4E83CF",
         "foliageColor": "#2F99DC",
@@ -18,16 +23,22 @@
         "category": "forest",
         "fogColor": "#686090"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        }
-    ],
+    "children": ["tundra/magic-forest-extended"],
+    "generators": [{
+        "generator": "smooth-dunes",
+        "max": 34,
+        "min": 22
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -61,6 +72,7 @@
             ]
         }
     ],
+
     "objects": [
         {
             "place": [
@@ -128,8 +140,6 @@
             }
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.01,
@@ -174,17 +184,5 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "childShrinkFactor": 8,
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS"
-    ]
+    "childShrinkFactor": 2.4
 }

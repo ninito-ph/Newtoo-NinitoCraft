@@ -1,8 +1,8 @@
 {
     "name": "Tundra Stone Beach",
-    "derivative": "BEACH",
-    "rarity": 1,
     "color": "#728183",
+    "rarity": 1,
+    "derivative": "BEACH",
     "vanillaDerivative": "BEACH",
     "generators": [{
         "min": -5,
@@ -28,8 +28,8 @@
         "name": "standard-surface-portals",
         "chance": 0.00505,
         "place": [
-            "clutter/swordnp2",
-            "clutter/swordnp1",
+            "structures/swordnp2",
+            "structures/swordnp1",
             "structures/giantportal1",
             "structures/giantportal2",
             "structures/giantportal3",
@@ -66,7 +66,7 @@
                 "chance": 0.2
             }
         ],
-        "mode": "FAST_MIN_HEIGHT",
+        "mode": "PAINT",
         "carvingSupport": "SURFACE_ONLY"
     }],
     "slab": {

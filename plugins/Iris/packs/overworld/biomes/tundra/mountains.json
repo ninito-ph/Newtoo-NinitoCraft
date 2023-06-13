@@ -1,24 +1,14 @@
 {
     "name": "Tundra Mountains",
-    "derivative": "WINDSWEPT_HILLS",
-    "rarity": 1,
     "color": "#36B2BF",
+    "rarity": 1,
+    "derivative": "WINDSWEPT_HILLS",
     "vanillaDerivative": "OLD_GROWTH_SPRUCE_TAIGA",
-    "children": ["tundra/mountains-cliffs"],
-    "generators": [{
-        "min": 66,
-        "max": 89,
-        "generator": "mountain"
-    }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        }
+    "biomeScatter": [
+        "PLAINS",
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS",
+        "SWAMP"
     ],
     "customDerivitives": [{
         "category": "forest",
@@ -28,6 +18,22 @@
         "waterFogColor": "#80B4C6",
         "fogColor": "#8091C6"
     }],
+    "children": ["tundra/mountains-extended-cliffs"],
+    "generators": [{
+        "min": 66,
+        "max": 89,
+        "generator": "mountain"
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -61,10 +67,7 @@
             ]
         }
     ],
-    "biomeSkyScatter": [
-        "SNOWY_TAIGA",
-        "FROZEN_PEAKS"
-    ],
+
     "objects": [
         {
             "place": [
@@ -169,8 +172,6 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.01,
@@ -215,19 +216,9 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "childShrinkFactor": 8,
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "PLAINS",
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS",
-        "SWAMP"
-    ]
+    "biomeSkyScatter": [
+        "SNOWY_TAIGA",
+        "FROZEN_PEAKS"
+    ],
+    "childShrinkFactor": 8
 }

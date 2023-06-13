@@ -17,14 +17,6 @@
             {"block": "minecraft:podzol"}
         ]
     }],
-    "caveCeilingLayers": [{
-        "maxHeight": 2,
-        "minHeight": 2,
-        "palette": [
-            {"block": "minecraft:rooted_dirt"},
-            {"block": "minecraft:coarse_dirt"}
-        ]
-    }],
     "decorators": [
         {
             "chance": 0.15,
@@ -42,5 +34,13 @@
                 {"block": "minecraft:red_mushroom"}
             ]
         }
-    ]
+    ],
+    "caveCeilingLayers": [{
+        "maxHeight": 2,
+        "minHeight": 2,
+        "palette": [
+            {"block": "minecraft:rooted_dirt"},
+            {"block": "minecraft:coarse_dirt"}
+        ]
+    }]
 }

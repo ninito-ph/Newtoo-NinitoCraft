@@ -9,14 +9,6 @@
             {"block": "minecraft:diorite"}
         ]
     }],
-    "caveCeilingLayers": [{
-        "maxHeight": 1,
-        "minHeight": 1,
-        "palette": [
-            {"block": "minecraft:calcite"},
-            {"block": "minecraft:diorite"}
-        ]
-    }],
     "decorators": [{
         "chance": 0.001,
         "style": {"style": "STATIC"},
@@ -24,5 +16,13 @@
         "stackMax": 5,
         "stackMin": 1,
         "palette": [{"block": "minecraft:calcite"}]
+    }],
+    "caveCeilingLayers": [{
+        "maxHeight": 1,
+        "minHeight": 1,
+        "palette": [
+            {"block": "minecraft:calcite"},
+            {"block": "minecraft:diorite"}
+        ]
     }]
 }

@@ -1,7 +1,7 @@
 {
     "name": "Deepened Ravine",
     "wall": {
-        "style": {"style": "IRIS"},
+        "style": {"style": "NOWHERE"},
         "palette": [
             {
                 "block": "minecraft:stone",
@@ -25,6 +25,23 @@
             }
         ]
     }],
+    "decorators": [
+        {
+            "partOf": "CEILING",
+            "chance": 0.03,
+            "palette": [{"block": "minecraft:hanging_roots"}]
+        },
+        {
+            "partOf": "CEILING",
+            "chance": 0.05,
+            "scaleStack": true,
+            "stackMin": 20,
+            "stackMax": 70,
+            "absoluteMaxStack": 10,
+            "heightVariance": {"style": "STATIC"},
+            "palette": [{"block": "minecraft:stone"}]
+        }
+    ],
     "caveCeilingLayers": [{
         "maxHeight": 1,
         "minHeight": 1,
@@ -43,22 +60,5 @@
     "childStyle": {
         "style": "STATIC",
         "zoom": 2
-    },
-    "decorators": [
-        {
-            "partOf": "CEILING",
-            "chance": 0.03,
-            "palette": [{"block": "minecraft:hanging_roots"}]
-        },
-        {
-            "partOf": "CEILING",
-            "chance": 0.05,
-            "scaleStack": true,
-            "stackMin": 20,
-            "stackMax": 70,
-            "absoluteMaxStack": 10,
-            "heightVariance": {"style": "STATIC"},
-            "palette": [{"block": "minecraft:stone"}]
-        }
-    ]
+    }
 }

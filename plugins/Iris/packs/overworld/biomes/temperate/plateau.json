@@ -1,9 +1,10 @@
 {
     "name": "Temperate Plateau",
-    "derivative": "DEEP_LUKEWARM_OCEAN",
-    "rarity": 4,
     "color": "#3C9D11",
+    "rarity": 4,
+    "derivative": "DEEP_LUKEWARM_OCEAN",
     "vanillaDerivative": "FOREST",
+    "biomeScatter": ["FOREST"],
     "customDerivitives": [{
         "id": "plateau",
         "foliageColor": "#44A528",
@@ -11,21 +12,21 @@
         "grassColor": "#21BF4C",
         "category": "forest"
     }],
+    "children": ["temperate/plateau-extended"],
     "generators": [{
         "min": 25,
         "max": 37,
         "generator": "small-cliffs"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-temperate"
-        }
-    ],
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -51,26 +52,21 @@
             ]
         }
     ],
+
     "objects": [
         {
             "name": "standard-surface-portals",
             "chance": 0.005,
             "place": [
-                "clutter/swordnp2",
-                "clutter/swordnp1",
+                "structures/swordnp2",
+                "structures/swordnp1",
+                "structures/swordnpstr2",
+                "structures/swordnpstr1",
                 "structures/giantportal1",
                 "structures/giantportal2",
                 "structures/giantportal3",
-                "structures/portal1",
-                "structures/portal2",
-                "structures/portal3",
-                "structures/portal4",
-                "structures/portal5",
-                "structures/portal6",
-                "structures/portal7",
-                "structures/portal8",
-                "structures/portal9",
-                "structures/portal10"
+                "structures/megaportal1",
+                "structures/megaportal2"
             ],
             "edit": [
                 {
@@ -94,7 +90,7 @@
                     "chance": 0.2
                 }
             ],
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "carvingSupport": "SURFACE_ONLY"
         },
         {
@@ -144,7 +140,7 @@
         },
         {
             "chance": 1,
-            "mode": "MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 2,
             "rotation": {
                 "yAxis": {
@@ -198,7 +194,7 @@
                 },
                 "enabled": true
             },
-            "mode": "MIN_HEIGHT",
+            "mode": "PAINT",
             "place": [
                 "trees/oak/thoakgeneric1",
                 "trees/oak/thoakgeneric2",
@@ -210,7 +206,7 @@
         },
         {
             "chance": 0.001,
-            "mode": "MIN_HEIGHT",
+            "mode": "PAINT",
             "rotation": {
                 "yAxis": {
                     "min": 0,
@@ -232,7 +228,7 @@
         },
         {
             "chance": 0.001,
-            "mode": "MIN_HEIGHT",
+            "mode": "PAINT",
             "rotation": {
                 "yAxis": {
                     "min": 0,
@@ -250,7 +246,6 @@
             ]
         }
     ],
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.5,
@@ -300,14 +295,5 @@
                 }
             ]
         }
-    ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": ["FOREST"]
+    ]
 }

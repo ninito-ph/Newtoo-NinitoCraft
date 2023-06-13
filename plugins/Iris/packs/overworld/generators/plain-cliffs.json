@@ -15,13 +15,13 @@
     }],
     "interpolator": {
         "function": "BILINEAR_STARCAST_9",
-        "horizontalScale": 30
+        "horizontalScale": 26
     },
     "seed": 7246661,
     "cliffHeightMax": 80,
     "cliffHeightMin": 45,
     "cliffHeightGenerator": {
-        "style": {"style": "IRIS"},
+        "style": {"style": "NOWHERE"},
         "sinCentered": false,
         "seed": 50056,
         "parametric": false,

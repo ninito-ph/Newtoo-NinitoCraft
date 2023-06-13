@@ -1,10 +1,10 @@
 {
     "name": "Tropical River Soft",
-    "derivative": "WARM_OCEAN",
     "color": "#101B40",
+    "derivative": "WARM_OCEAN",
     "vanillaDerivative": "WARM_OCEAN",
     "generators": [{
-        "min": -51,
+        "min": -71,
         "max": -37,
         "generator": "plain"
     }],
@@ -26,51 +26,6 @@
             }
         ]
     }],
-    "carving": {
-        "ravines": [{
-            "rarity": 442,
-            "ravine": "volcanic/main"
-        }],
-        "caves": [{
-            "breakSurface": true,
-            "cave": "volcanic/main",
-            "rarity": 228,
-            "caveStartHeight": {
-                "max": 120,
-                "min": 69,
-                "style": {"style": "STATIC"}
-            }
-        }]
-    },
-    "decorators": [
-        {
-            "chance": 0.02,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "stackMin": 2,
-            "stackMax": 6
-        },
-        {
-            "chance": 0.05,
-            "palette": [{"block": "minecraft:seagrass"}]
-        },
-        {
-            "chance": 0.03,
-            "palette": [{"block": "minecraft:sea_pickle"}]
-        },
-        {
-            "chance": 0.05,
-            "minHeight": -5,
-            "maxHeight": -3,
-            "palette": [{
-                "block": "minecraft:tall_seagrass",
-                "data": {"half": "lower"}
-            }],
-            "topPalette": [{
-                "block": "minecraft:tall_seagrass",
-                "data": {"half": "upper"}
-            }]
-        }
-    ],
     "objects": [
         {
             "place": [
@@ -151,7 +106,7 @@
                 "structures/landstone5"
             ],
             "chance": 1,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "underwater": true,
             "waterloggable": true,
             "edit": [
@@ -177,11 +132,21 @@
                 "structures/shipgenericc",
                 "structures/shipgenericr",
                 "structures/shipgenericu",
-                "structures/shipgenericc"
+                "structures/shipgenericc",
+                "structures/BShip1",
+                "structures/BShip2",
+                "structures/BShip3",
+                "structures/BShip4",
+                "structures/BShip5",
+                "structures/BShip6",
+                "structures/kship1",
+                "structures/kship2",
+                "structures/kship3",
+                "structures/kship4"
             ],
             "markers": [{
                 "mark": [{"block": "minecraft:spruce_planks"}],
-                "maximumMarkers": 5,
+                "maximumMarkers": 4,
                 "marker": "skelepirate"
             }],
             "chance": 0.003,
@@ -189,5 +154,50 @@
             "translate": {"y": -1},
             "waterloggable": true
         }
-    ]
+    ],
+    "decorators": [
+        {
+            "chance": 0.02,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "stackMin": 2,
+            "stackMax": 6
+        },
+        {
+            "chance": 0.05,
+            "palette": [{"block": "minecraft:seagrass"}]
+        },
+        {
+            "chance": 0.03,
+            "palette": [{"block": "minecraft:sea_pickle"}]
+        },
+        {
+            "chance": 0.05,
+            "minHeight": -5,
+            "maxHeight": -3,
+            "palette": [{
+                "block": "minecraft:tall_seagrass",
+                "data": {"half": "lower"}
+            }],
+            "topPalette": [{
+                "block": "minecraft:tall_seagrass",
+                "data": {"half": "upper"}
+            }]
+        }
+    ],
+    "carving": {
+        "ravines": [{
+            "rarity": 442,
+            "ravine": "volcanic/main"
+        }],
+        "caves": [{
+            "breakSurface": true,
+            "cave": "volcanic/main",
+            "rarity": 228,
+            "caveStartHeight": {
+                "max": 120,
+                "min": 69,
+                "style": {"style": "STATIC"}
+            }
+        }]
+    }
 }

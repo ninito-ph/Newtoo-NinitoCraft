@@ -1,9 +1,13 @@
 {
     "name": "Savanna Forest",
-    "rarity": 1,
     "color": "#B06F27",
+    "rarity": 3,
     "derivative": "SAVANNA",
     "vanillaDerivative": "SAVANNA",
+    "biomeScatter": [
+        "SAVANNA",
+        "DESERT"
+    ],
     "customDerivitives": [{
         "category": "savanna",
         "id": "savanna_forest",
@@ -17,6 +21,16 @@
         "max": 10,
         "generator": "plain"
     }],
+    "biomeZoom": 20,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -54,82 +68,7 @@
             ]
         }
     ],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "structure": "village-savanna",
-            "rarity": 1500
-        }
-    ],
-    "biomeSkyScatter": ["DESERT"],
-    "decorators": [
-        {
-            "chance": 0.00435,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {
-                    "data": {
-                        "face": "floor",
-                        "powered": false,
-                        "facing": "east"
-                    },
-                    "block": "minecraft:stone_button"
-                },
-                {
-                    "data": {
-                        "face": "floor",
-                        "powered": false,
-                        "facing": "south"
-                    },
-                    "block": "minecraft:stone_button"
-                }
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.092,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:dead_bush"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.1,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.5,
-            "palette": [
-                {"block": "minecraft:grass"},
-                {"block": "minecraft:tall_grass"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 1.0E-6,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {
-                    "weight": 8,
-                    "block": "minecraft:air"
-                },
-                {"block": "minecraft:pumpkin"},
-                {
-                    "weight": 4,
-                    "block": "minecraft:air"
-                },
-                {"block": "minecraft:carved_pumpkin"},
-                {
-                    "weight": 8,
-                    "block": "minecraft:air"
-                }
-            ],
-            "style": {"style": "STATIC"}
-        }
-    ],
+
     "objects": [
         {
             "mode": "PAINT",
@@ -238,18 +177,70 @@
             ]
         }
     ],
-    "biomeZoom": 20,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "SAVANNA",
-        "DESERT"
-    ]
+    "decorators": [
+        {
+            "chance": 0.00435,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {
+                    "data": {
+                        "face": "floor",
+                        "powered": false,
+                        "facing": "east"
+                    },
+                    "block": "minecraft:stone_button"
+                },
+                {
+                    "data": {
+                        "face": "floor",
+                        "powered": false,
+                        "facing": "south"
+                    },
+                    "block": "minecraft:stone_button"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.092,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:dead_bush"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.1,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.5,
+            "palette": [
+                {"block": "minecraft:grass"},
+                {"block": "minecraft:tall_grass"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 1.0E-6,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {
+                    "weight": 8,
+                    "block": "minecraft:air"
+                },
+                {"block": "minecraft:pumpkin"},
+                {
+                    "weight": 4,
+                    "block": "minecraft:air"
+                },
+                {"block": "minecraft:carved_pumpkin"},
+                {
+                    "weight": 8,
+                    "block": "minecraft:air"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        }
+    ],
+    "biomeSkyScatter": ["DESERT"]
 }
