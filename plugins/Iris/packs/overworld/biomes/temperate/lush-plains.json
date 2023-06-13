@@ -1,33 +1,26 @@
 {
     "name": "Lush Plains",
+    "color": "#61CA34",
+    "rarity": 2,
     "derivative": "FLOWER_FOREST",
     "vanillaDerivative": "FLOWER_FOREST",
-    "color": "#61CA34",
+    "children": [
+        "temperate/lush-plains-yellow",
+        "temperate/lush-plains-red",
+        "temperate/overflowed"
+    ],
     "generators": [{
         "min": 4,
         "max": 7,
         "generator": "plain"
-    }],
-    "rarity": 2,
+    }
+    ],
     "biomeZoom": 30,
-    "children": [
-        "temperate/lush-plains-yellow",
-        "temperate/lush-plains-red"
-    ],
-    "childStyle": {
-        "style": "CELLULAR_IRIS_THICK",
-        "zoom": 20
-    },
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-temperate"
-        }
-    ],
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {"palette": [
+        {"block": "minecraft:stone"},
+        {"block": "minecraft:andesite"}
+    ]},
     "layers": [
         {"palette": [{"block": "minecraft:grass_block"}]},
         {
@@ -53,60 +46,10 @@
             ]
         }
     ],
-    "decorators": [
-        {
-            "chance": 0.05,
-            "variance": {"style": "STATIC"},
-            "style": {"style": "STATIC"},
-            "palette": [
-                {"block": "minecraft:orange_tulip"},
-                {"block": "minecraft:white_tulip"},
-                {"block": "minecraft:dandelion"},
-                {"block": "minecraft:poppy"},
-                {"block": "minecraft:blue_orchid"},
-                {"block": "minecraft:azure_bluet"},
-                {"block": "minecraft:red_tulip"},
-                {"block": "minecraft:allium"},
-                {"block": "minecraft:pink_tulip"},
-                {"block": "minecraft:oxeye_daisy"},
-                {"block": "minecraft:cornflower"},
-                {"block": "minecraft:lily_of_the_valley"},
-                {"block": "minecraft:rose_bush"},
-                {"block": "minecraft:lilac"}
-            ]
-        },
-        {
-            "chance": 0.01,
-            "palette": [{"block": "minecraft:tall_grass"}]
-        },
-        {
-            "chance": 0.5,
-            "palette": [
-                {
-                    "block": "minecraft:grass",
-                    "weight": 15
-                },
-                {
-                    "block": "minecraft:fern",
-                    "weight": 1
-                }
-            ]
-        },
-        {
-            "chance": 0.05,
-            "palette": [{
-                "block": "minecraft:oak_leaves",
-                "data": {"persistent": true}
-            }],
-            "style": {
-                "style": "STATIC",
-                "zoom": 0.8
-            }
-        }
-    ],
+
     "objects": [
         {
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "chance": 0.009,
             "rotation": {
                 "yAxis": {
@@ -162,20 +105,7 @@
                 "trees/oak/generic6"
             ]
         },
-        {
-            "chance": 1.0E-4,
-            "mode": "FAST_MIN_HEIGHT",
-            "rotation": {
-                "yAxis": {
-                    "min": 0,
-                    "max": 360,
-                    "interval": 90,
-                    "enabled": true
-                },
-                "enabled": true
-            },
-            "place": ["structures/ruin1"]
-        },
+
         {
             "chance": 0.004,
             "rotation": {
@@ -237,9 +167,59 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {"palette": [
-        {"block": "minecraft:stone"},
-        {"block": "minecraft:andesite"}
-    ]}
+    "decorators": [
+        {
+            "chance": 0.05,
+            "variance": {"style": "STATIC"},
+            "style": {"style": "STATIC"},
+            "palette": [
+                {"block": "minecraft:orange_tulip"},
+                {"block": "minecraft:white_tulip"},
+                {"block": "minecraft:dandelion"},
+                {"block": "minecraft:poppy"},
+                {"block": "minecraft:blue_orchid"},
+                {"block": "minecraft:azure_bluet"},
+                {"block": "minecraft:red_tulip"},
+                {"block": "minecraft:allium"},
+                {"block": "minecraft:pink_tulip"},
+                {"block": "minecraft:oxeye_daisy"},
+                {"block": "minecraft:cornflower"},
+                {"block": "minecraft:lily_of_the_valley"},
+                {"block": "minecraft:rose_bush"},
+                {"block": "minecraft:lilac"}
+            ]
+        },
+        {
+            "chance": 0.01,
+            "palette": [{"block": "minecraft:tall_grass"}]
+        },
+        {
+            "chance": 0.5,
+            "palette": [
+                {
+                    "block": "minecraft:grass",
+                    "weight": 15
+                },
+                {
+                    "block": "minecraft:fern",
+                    "weight": 1
+                }
+            ]
+        },
+        {
+            "chance": 0.05,
+            "palette": [{
+                "block": "minecraft:oak_leaves",
+                "data": {"persistent": true}
+            }],
+            "style": {
+                "style": "STATIC",
+                "zoom": 0.8
+            }
+        }
+    ],
+    "childStyle": {
+        "style": "CELLULAR_IRIS_THICK",
+        "zoom": 20
+    }
 }

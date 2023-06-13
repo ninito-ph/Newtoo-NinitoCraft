@@ -1,14 +1,28 @@
 {
     "name": "Temperate Oak Beach",
-    "rarity": 1,
     "color": "#8D8F70",
+    "rarity": 1,
     "derivative": "DEEP_LUKEWARM_OCEAN",
     "vanillaDerivative": "FOREST",
+    "biomeScatter": [
+        "FOREST",
+        "PLAINS"
+    ],
     "generators": [{
         "min": 0,
         "max": 0,
         "generator": "plain"
     }],
+    "biomeZoom": 60,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -37,11 +51,11 @@
     "jigsawStructures": [
         {
             "rarity": 1700,
-            "structure": "pillager_outpost"
+            "structure": "pillager-outpost"
         },
         {
             "rarity": 1500,
-            "structure": "village-temperate"
+            "structure": "village-plains"
         }
     ],
     "objects": [
@@ -85,8 +99,6 @@
             ]
         }
     ],
-    "biomeZoom": 60,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.01,
@@ -104,17 +116,5 @@
             "palette": [{"block": "minecraft:grass"}],
             "style": {"style": "STATIC"}
         }
-    ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "FOREST",
-        "PLAINS"
     ]
 }

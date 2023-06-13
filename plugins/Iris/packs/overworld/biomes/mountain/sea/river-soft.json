@@ -1,12 +1,12 @@
 {
     "name": "Mountain River Soft",
+    "color": "#4196FF",
     "derivative": "RIVER",
     "vanillaDerivative": "RIVER",
-    "color": "#4196FF",
     "generators": [{
-        "generator": "river",
-        "max": -4,
-        "min": -15
+        "min": -32,
+        "max": -10,
+        "generator": "mountain"
     }],
     "layers": [
         {
@@ -40,26 +40,6 @@
             {"block": "minecraft:stone"}
         ]}
     ],
-    "decorators": [
-        {
-            "chance": 0.07,
-            "variance": {"style": "STATIC"},
-            "zoom": 5,
-            "palette": [{"block": "minecraft:seagrass"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.013,
-            "verticalZoom": 88,
-            "variance": {"style": "STATIC"},
-            "stackMax": 6,
-            "zoom": 1,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "style": {"style": "STATIC"},
-            "heightVariance": {"style": "IRIS"},
-            "stackMin": 2
-        }
-    ],
     "objects": [{
         "chance": 0.001,
         "rotation": {
@@ -85,5 +65,25 @@
             "y": 0,
             "z": 0
         }
-    }]
+    }],
+    "decorators": [
+        {
+            "chance": 0.07,
+            "variance": {"style": "STATIC"},
+            "zoom": 5,
+            "palette": [{"block": "minecraft:seagrass"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.013,
+            "verticalZoom": 88,
+            "variance": {"style": "STATIC"},
+            "stackMax": 6,
+            "zoom": 1,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "style": {"style": "STATIC"},
+            "heightVariance": {"style": "NOWHERE"},
+            "stackMin": 2
+        }
+    ]
 }

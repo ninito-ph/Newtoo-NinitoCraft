@@ -1,25 +1,23 @@
 {
     "name": "Mountain",
-    "derivative": "WINDSWEPT_HILLS",
-    "rarity": 1,
     "color": "#6E7D85",
+    "rarity": 1,
+    "derivative": "WINDSWEPT_HILLS",
     "vanillaDerivative": "WINDSWEPT_HILLS",
-    "children": ["mountain/middle"],
+    "children": ["mountain/mountain-extended"],
     "generators": [{
         "min": 73,
         "max": 145,
         "generator": "mountain"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        }
-    ],
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 1,
@@ -59,29 +57,7 @@
             ]
         }
     ],
-    "slab": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {
-                "data": {
-                    "waterlogged": false,
-                    "type": "bottom"
-                },
-                "block": "minecraft:stone_slab"
-            },
-            {
-                "data": {
-                    "waterlogged": false,
-                    "type": "bottom"
-                },
-                "block": "minecraft:cobblestone_slab"
-            },
-            {
-                "weight": 2,
-                "block": "minecraft:air"
-            }
-        ]
-    },
+
     "decorators": [
         {
             "chance": 0.2,
@@ -126,12 +102,27 @@
             "palette": [{"block": "minecraft:grass"}]
         }
     ],
-    "wall": {
+    "slab": {
         "style": {"style": "STATIC"},
         "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
+            {
+                "data": {
+                    "waterlogged": false,
+                    "type": "bottom"
+                },
+                "block": "minecraft:stone_slab"
+            },
+            {
+                "data": {
+                    "waterlogged": false,
+                    "type": "bottom"
+                },
+                "block": "minecraft:cobblestone_slab"
+            },
+            {
+                "weight": 2,
+                "block": "minecraft:air"
+            }
         ]
     }
 }

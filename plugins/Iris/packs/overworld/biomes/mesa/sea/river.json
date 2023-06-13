@@ -1,16 +1,16 @@
 {
     "name": "Mesa River",
-    "vanillaDerivative": "DESERT",
-    "derivative": "DESERT",
     "color": "#41C3FF",
+    "derivative": "DESERT",
+    "vanillaDerivative": "DESERT",
     "generators": [{
-        "generator": "plain",
-        "max": -4,
-        "min": -15
+        "min": -32,
+        "max": -10,
+        "generator": "mountain"
     }],
     "layers": [
         {
-            "style": {"style": "FRACTAL_WATER"},
+            "style": {"style": "NOWHERE"},
             "zoom": 0.7,
             "palette": [
                 {"block": "minecraft:red_sand"},

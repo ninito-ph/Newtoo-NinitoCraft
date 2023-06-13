@@ -1,13 +1,25 @@
 {
     "name": "Hot Ocean Cliffs",
+    "color": "#184960",
     "derivative": "OCEAN",
     "vanillaDerivative": "OCEAN",
-    "color": "#184960",
     "generators": [{
-        "min": -31,
-        "max": -7,
-        "generator": "plain-cliffs"
+        "min": -42,
+        "max": -10,
+        "generator": "mountain"
     }],
+    "wall": {
+        "style": {"style": "NOWHERE"},
+        "palette": [
+            {"block": "minecraft:clay"},
+            {"block": "minecraft:smooth_sandstone"},
+            {"block": "minecraft:red_sand"},
+            {"block": "minecraft:smooth_red_sandstone"},
+            {"block": "minecraft:smooth_sandstone"},
+            {"block": "minecraft:sand"},
+            {"block": "minecraft:smooth_red_sandstone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 2,
@@ -44,6 +56,56 @@
                 },
                 {"block": "minecraft:coarse_dirt"}
             ]
+        }
+    ],
+    "objects": [
+        {
+            "chance": 0.01,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
+                "enabled": true
+            },
+            "underwater": true,
+            "place": [
+                "structures/swreck1",
+                "structures/usdship1",
+                "structures/usdship2"
+            ],
+            "edit": [{
+                "find": [{"block": "minecraft:oak_stairs"}],
+                "replace": {"palette": [{"block": "minecraft:oak_planks"}]}
+            }],
+            "translate": {
+                "x": 0,
+                "y": -4,
+                "z": 0
+            }
+        },
+        {
+            "chance": 0.0035,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
+                "enabled": true
+            },
+            "underwater": true,
+            "place": [
+                "structures/oruins1",
+                "structures/oruins2",
+                "structures/oruins3"
+            ],
+            "mode": "PAINT",
+            "loot": [{"name": "structures/ocean-ruins"}],
+            "overrideGlobalLoot": true
         }
     ],
     "decorators": [
@@ -103,75 +165,6 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "objects": [{
-        "chance": 0.01,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "underwater": true,
-        "place": [
-            "structures/swreck1",
-            "structures/usdship1",
-            "structures/usdship2"
-        ],
-        "edit": [{
-            "find": [{"block": "minecraft:oak_stairs"}],
-            "replace": {"palette": [{"block": "minecraft:oak_planks"}]}
-        }],
-        "translate": {
-            "x": 0,
-            "y": -4,
-            "z": 0
-        }
-    },
-    {
-        "chance": 0.035,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "underwater": true,
-        "place": [
-            "structures/oruins1",
-            "structures/oruins2",
-            "structures/oruins3"
-        ],
-        "mode": "PAINT",
-        "loot": [
-            {
-                "name": "tropical-dungeon"
-            }
-        ]
-
-    }],
-    "loot": {
-        "mode": "ADD",
-        "multiplier": 1,
-        "tables": ["tropical-dungeon"]
-    },
-    "wall": {
-        "style": {"style": "IRIS"},
-        "palette": [
-            {"block": "minecraft:clay"},
-            {"block": "minecraft:smooth_sandstone"},
-            {"block": "minecraft:red_sand"},
-            {"block": "minecraft:smooth_red_sandstone"},
-            {"block": "minecraft:smooth_sandstone"},
-            {"block": "minecraft:sand"},
-            {"block": "minecraft:smooth_red_sandstone"}
-        ]
-    },
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [

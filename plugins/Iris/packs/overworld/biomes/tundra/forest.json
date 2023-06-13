@@ -1,15 +1,13 @@
 {
     "name": "Tundra Forest",
-    "derivative": "WINDSWEPT_HILLS",
-    "rarity": 1,
     "color": "#61B2BB",
+    "rarity": 1,
+    "derivative": "WINDSWEPT_HILLS",
     "vanillaDerivative": "OLD_GROWTH_SPRUCE_TAIGA",
-    "children": ["tundra/forest-cliffs"],
-    "generators": [{
-        "generator": "smooth-dunes",
-        "max": 14,
-        "min": 8
-    }],
+    "biomeScatter": [
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS"
+    ],
     "customDerivitives": [{
         "category": "forest",
         "id": "tundra_forest",
@@ -18,16 +16,22 @@
         "waterFogColor": "#80B4C6",
         "fogColor": "#8091C6"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        }
-    ],
+    "children": ["tundra/forest-extended-cliffs"],
+    "generators": [{
+        "generator": "smooth-dunes",
+        "min": 37,
+        "max": 56
+    }],
+    "biomeZoom": 30,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 3,
@@ -59,6 +63,112 @@
                 {"block": "minecraft:andesite"},
                 {"block": "minecraft:stone"}
             ]
+        }
+    ],
+
+    "objects": [
+        {
+            "place": [
+                "clutter/gravelsplotch1",
+                "clutter/gravelsplotch2",
+                "clutter/gravelsplotch3",
+                "clutter/gravelsplotch4"
+            ],
+            "chance": 0.75,
+            "mode": "PAINT"
+        },
+        {
+            "chance": 0.8,
+            "density": 1,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
+                "enabled": true
+            },
+            "place": [
+                "trees/spruce/levergreen1",
+                "trees/spruce/levergreen2",
+                "trees/spruce/levergreen1",
+                "trees/spruce/levergreen2",
+                "trees/spruce/levergreen1",
+                "trees/spruce/levergreen2",
+                "trees/spruce/levergreen3",
+                "trees/spruce/levergreen4",
+                "trees/spruce/levergreen5",
+                "trees/spruce/levergreen6",
+                "trees/spruce/mevergreen1",
+                "trees/spruce/mevergreen2",
+                "trees/spruce/mevergreen3"
+            ],
+            "translate": {
+                "x": 0,
+                "y": -2,
+                "z": 0
+            }
+        },
+        {
+            "chance": 0.01,
+            "rotation": {
+                "yAxis": {
+                    "min": 0,
+                    "max": 0,
+                    "interval": 90,
+                    "enabled": true
+                },
+                "enabled": true
+            },
+            "place": [
+                "clutter/obelisk1",
+                "clutter/obelisk2",
+                "clutter/obelisk3",
+                "clutter/obelisk4",
+                "clutter/obelisk5",
+                "clutter/obelisk6",
+                "clutter/obelisk7"
+            ]
+        },
+        {
+            "chance": 0.35,
+            "place": [
+                "trees/spruce/pine1",
+                "trees/spruce/pine2",
+                "trees/spruce/pine3",
+                "trees/spruce/pine4",
+                "trees/spruce/pine5",
+                "trees/spruce/pine6",
+                "trees/spruce/pine7",
+                "trees/spruce/pine8",
+                "trees/spruce/pine9",
+                "trees/spruce/pine10",
+                "trees/spruce/pine11",
+                "trees/spruce/pine12"
+            ]
+        },
+        {
+            "chance": 0.008,
+            "mode": "PAINT",
+            "place": [
+                "clutter/pumpkins1",
+                "clutter/pumpkins2",
+                "clutter/pumpkins3",
+                "clutter/pumpkins4",
+                "clutter/pumpkins5",
+                "clutter/pumpkins6"
+            ],
+            "rotation": {
+                "enabled": true,
+                "yAxis": {
+                    "enabled": true,
+                    "max": 360,
+                    "min": 0,
+                    "interval": 90
+                }
+            },
+            "translate": {"y": 1}
         }
     ],
     "decorators": [
@@ -105,123 +215,5 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "objects": [
-        {
-            "place": [
-                "clutter/gravelsplotch1",
-                "clutter/gravelsplotch2",
-                "clutter/gravelsplotch3",
-                "clutter/gravelsplotch4"
-            ],
-            "chance": 0.75,
-            "mode": "PAINT"
-        },
-        {
-            "chance": 0.8,
-            "rotation": {
-                "yAxis": {
-                    "min": 0,
-                    "max": 0,
-                    "interval": 90,
-                    "enabled": true
-                },
-                "enabled": true
-            },
-            "place": [
-                "trees/spruce/levergreen1",
-                "trees/spruce/levergreen2",
-                "trees/spruce/levergreen1",
-                "trees/spruce/levergreen2",
-                "trees/spruce/levergreen1",
-                "trees/spruce/levergreen2",
-                "trees/spruce/levergreen3",
-                "trees/spruce/levergreen4",
-                "trees/spruce/levergreen5",
-                "trees/spruce/levergreen6",
-                "trees/spruce/mevergreen1",
-                "trees/spruce/mevergreen2",
-                "trees/spruce/mevergreen3"
-            ],
-            "translate": {
-                "x": 0,
-                "y": -2,
-                "z": 0
-            }
-        },
-        {
-            "chance": 0.005,
-            "rotation": {
-                "yAxis": {
-                    "min": 0,
-                    "max": 0,
-                    "interval": 90,
-                    "enabled": true
-                },
-                "enabled": true
-            },
-            "place": [
-                "clutter/obelisk1",
-                "clutter/obelisk2",
-                "clutter/obelisk3",
-                "clutter/obelisk4",
-                "clutter/obelisk5",
-                "clutter/obelisk6",
-                "clutter/obelisk7"
-            ]
-        },
-        {
-            "chance": 0.25,
-            "place": [
-                "trees/spruce/pine1",
-                "trees/spruce/pine2",
-                "trees/spruce/pine3",
-                "trees/spruce/pine4",
-                "trees/spruce/pine5",
-                "trees/spruce/pine6",
-                "trees/spruce/pine7",
-                "trees/spruce/pine8",
-                "trees/spruce/pine9",
-                "trees/spruce/pine10",
-                "trees/spruce/pine11",
-                "trees/spruce/pine12"
-            ]
-        },
-        {
-            "chance": 0.008,
-            "mode": "PAINT",
-            "place": [
-                "clutter/pumpkins1",
-                "clutter/pumpkins2",
-                "clutter/pumpkins3",
-                "clutter/pumpkins4",
-                "clutter/pumpkins5",
-                "clutter/pumpkins6"
-            ],
-            "rotation": {
-                "enabled": true,
-                "yAxis": {
-                    "enabled": true,
-                    "max": 360,
-                    "min": 0,
-                    "interval": 90
-                }
-            },
-            "translate": {"y": 1}
-        }
-    ],
-    "biomeZoom": 30,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "childShrinkFactor": 8,
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": [
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS"
-    ]
+    "childShrinkFactor": 2.4
 }

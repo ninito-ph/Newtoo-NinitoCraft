@@ -1,8 +1,8 @@
 {
     "name": "Mesa Yellow",
-    "derivative": "WINDSWEPT_SAVANNA",
-    "rarity": 1,
     "color": "#83300B",
+    "rarity": 1,
+    "derivative": "WINDSWEPT_SAVANNA",
     "vanillaDerivative": "BADLANDS",
     "children": ["mesa/dark"],
     "generators": [
@@ -12,11 +12,19 @@
             "generator": "highplains"
         },
         {
-            "min": 40,
-            "max": 71,
+            "min": 70,
+            "max": 110,
             "generator": "mountain"
         }
     ],
+    "wall": {
+        "style": {"style": "NOWHERE"},
+        "palette": [
+            {"block": "minecraft:red_terracotta"},
+            {"block": "minecraft:gray_terracotta"},
+            {"block": "minecraft:yellow_terracotta"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 2,
@@ -100,27 +108,5 @@
             "style": {"style": "STATIC"}
         }
     ],
-    "objects": [{
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "chance": 0.1,
-        "translate": {"y": -2},
-        "place": ["clutter/tntower1"]
-    }],
-    "lockLayers": true,
-    "wall": {
-        "style": {"style": "IRIS"},
-        "palette": [
-            {"block": "minecraft:red_terracotta"},
-            {"block": "minecraft:gray_terracotta"},
-            {"block": "minecraft:yellow_terracotta"}
-        ]
-    }
+    "lockLayers": true
 }

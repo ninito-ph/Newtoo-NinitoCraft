@@ -1,13 +1,22 @@
 {
     "name": "Tundra River Rocky",
-    "derivative": "LUKEWARM_OCEAN",
     "color": "#4939DF",
+    "derivative": "LUKEWARM_OCEAN",
     "vanillaDerivative": "LUKEWARM_OCEAN",
     "generators": [{
-        "min": -31,
+        "min": -41,
         "max": -7,
         "generator": "plain"
     }],
+    "wall": {
+        "style": {"style": "NOWHERE"},
+        "palette": [
+            {"block": "minecraft:clay"},
+            {"block": "minecraft:cobblestone"},
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"}
+        ]
+    },
     "layers": [
         {
             "minHeight": 2,
@@ -36,49 +45,6 @@
                 },
                 {"block": "minecraft:coarse_dirt"}
             ]
-        }
-    ],
-    "decorators": [
-        {
-            "chance": 6.0E-4,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [
-                {"block": "minecraft:soul_sand"},
-                {"block": "minecraft:magma_block"}
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.07,
-            "variance": {"style": "STATIC"},
-            "zoom": 5,
-            "palette": [{"block": "minecraft:seagrass"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.055,
-            "verticalZoom": 20,
-            "variance": {"style": "STATIC"},
-            "stackMax": 9,
-            "zoom": 1,
-            "palette": [{"block": "minecraft:kelp_plant"}],
-            "style": {"style": "STATIC"},
-            "heightVariance": {"style": "STATIC"},
-            "stackMin": 1
-        },
-        {
-            "chance": 0.001,
-            "variance": {"style": "STATIC"},
-            "zoom": 1,
-            "palette": [{
-                "data": {
-                    "waterlogged": true,
-                    "pickles": 1
-                },
-                "block": "minecraft:sea_pickle"
-            }],
-            "style": {"style": "STATIC"}
         }
     ],
     "objects": [
@@ -145,15 +111,49 @@
             }
         }
     ],
-    "wall": {
-        "style": {"style": "IRIS"},
-        "palette": [
-            {"block": "minecraft:clay"},
-            {"block": "minecraft:cobblestone"},
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"}
-        ]
-    },
+    "decorators": [
+        {
+            "chance": 6.0E-4,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [
+                {"block": "minecraft:soul_sand"},
+                {"block": "minecraft:magma_block"}
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.07,
+            "variance": {"style": "STATIC"},
+            "zoom": 5,
+            "palette": [{"block": "minecraft:seagrass"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.055,
+            "verticalZoom": 20,
+            "variance": {"style": "STATIC"},
+            "stackMax": 9,
+            "zoom": 1,
+            "palette": [{"block": "minecraft:kelp_plant"}],
+            "style": {"style": "STATIC"},
+            "heightVariance": {"style": "STATIC"},
+            "stackMin": 1
+        },
+        {
+            "chance": 0.001,
+            "variance": {"style": "STATIC"},
+            "zoom": 1,
+            "palette": [{
+                "data": {
+                    "waterlogged": true,
+                    "pickles": 1
+                },
+                "block": "minecraft:sea_pickle"
+            }],
+            "style": {"style": "STATIC"}
+        }
+    ],
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [

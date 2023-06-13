@@ -24,7 +24,8 @@
         "asyncTickIntervalMS": 700,
         "targetSpawnEntitiesPerChunk": 0.95,
         "markerEntitySpawningSystem": true,
-        "effectSystem": true
+        "effectSystem": true,
+        "worldEditWandCUI": true
     },
     "gui": {
         "useServerLaunchedGuis": true,

@@ -14,14 +14,6 @@
         "style": {"style": "STATIC"},
         "palette": [{"block": "minecraft:grass_block"}]
     }],
-    "caveCeilingLayers": [{
-        "maxHeight": 2,
-        "minHeight": 2,
-        "palette": [
-            {"block": "minecraft:rooted_dirt"},
-            {"block": "minecraft:coarse_dirt"}
-        ]
-    }],
     "decorators": [
         {
             "chance": 5.0E-4,
@@ -75,5 +67,13 @@
             "stackMin": 1,
             "palette": [{"block": "minecraft:jungle_wood"}]
         }
-    ]
+    ],
+    "caveCeilingLayers": [{
+        "maxHeight": 2,
+        "minHeight": 2,
+        "palette": [
+            {"block": "minecraft:rooted_dirt"},
+            {"block": "minecraft:coarse_dirt"}
+        ]
+    }]
 }

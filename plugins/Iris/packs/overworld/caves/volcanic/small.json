@@ -1,8 +1,8 @@
 {
     "fill": {"block": "minecraft:cave_air"},
     "verticalRange": {
-        "max": 185,
-        "min": 7
+        "max": 400,
+        "min": 15
     },
     "customBiome": "carving/volcanic",
     "fork": {"elipsoids": [{
@@ -18,7 +18,7 @@
         "girth": {
             "max": 4,
             "min": 2,
-            "style": {"style": "SIMPLEX"}
+            "style": {"style": "NOWHERE"}
         },
         "maxDistance": 35,
         "yStyle": {

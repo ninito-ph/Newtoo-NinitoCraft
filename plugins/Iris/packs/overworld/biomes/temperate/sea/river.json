@@ -1,12 +1,12 @@
 {
     "name": "Temperate River",
+    "color": "#3152BF",
     "derivative": "RIVER",
     "vanillaDerivative": "RIVER",
-    "color": "#3152BF",
     "generators": [{
-        "generator": "river",
-        "max": -7,
-        "min": -12
+        "min": -32,
+        "max": -10,
+        "generator": "mountain"
     }],
     "layers": [
         {
@@ -45,6 +45,32 @@
             ]
         }
     ],
+    "objects": [{
+        "chance": 0.001,
+        "rotation": {
+            "yAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 90,
+                "enabled": true
+            },
+            "enabled": true
+        },
+        "place": [
+            "clutter/obelisk1",
+            "clutter/obelisk2",
+            "clutter/obelisk3",
+            "clutter/obelisk4",
+            "clutter/obelisk5",
+            "clutter/obelisk6",
+            "clutter/obelisk7"
+        ],
+        "translate": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    }],
     "decorators": [
         {
             "chance": 6.0E-4,
@@ -73,7 +99,7 @@
             "zoom": 1,
             "palette": [{"block": "minecraft:kelp_plant"}],
             "style": {"style": "STATIC"},
-            "heightVariance": {"style": "IRIS"},
+            "heightVariance": {"style": "NOWHERE"},
             "stackMin": 2,
             "partOf": "SEA_FLOOR"
         },
@@ -91,31 +117,5 @@
             "style": {"style": "STATIC"},
             "partOf": "SEA_FLOOR"
         }
-    ],
-    "objects": [{
-        "chance": 0.001,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "place": [
-            "clutter/obelisk1",
-            "clutter/obelisk2",
-            "clutter/obelisk3",
-            "clutter/obelisk4",
-            "clutter/obelisk5",
-            "clutter/obelisk6",
-            "clutter/obelisk7"
-        ],
-        "translate": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        }
-    }]
+    ]
 }

@@ -1,14 +1,9 @@
 {
     "name": "Mushroom Warped Forest",
-    "rarity": 2,
     "color": "#A55CA5",
+    "rarity": 2,
     "derivative": "WARPED_FOREST",
     "vanillaDerivative": "MUSHROOM_FIELDS",
-    "generators": [{
-        "min": 6,
-        "max": 25,
-        "generator": "plain-cliffs"
-    }],
     "customDerivitives": [{
         "category": "mushroom",
         "id": "mushroom_warped_forest",
@@ -18,10 +13,20 @@
         "grassColor": "#5BCCB3",
         "fogColor": "#CACDFF"
     }],
+    "children": ["mushroom/warped-forest-extended"],
+    "generators": [{
+        "min": 6,
+        "max": 25,
+        "generator": "plain-cliffs"
+    }],
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [{"block": "minecraft:warped_hyphae"}]
+    },
     "layers": [
         {
             "zoom": 0.5,
-            "style": {"style": "IRIS"},
+            "style": {"style": "NOWHERE"},
             "palette": [{"block": "minecraft:warped_nylium"}]
         },
         {
@@ -37,55 +42,6 @@
             "maxHeight": 65,
             "style": {"style": "STATIC"},
             "palette": [{"block": "minecraft:blackstone"}]
-        }
-    ],
-    "decorators": [
-        {
-            "chance": 0.009,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [
-                {
-                    "data": {
-                        "face": "floor",
-                        "powered": false,
-                        "facing": "east"
-                    },
-                    "block": "minecraft:polished_blackstone_button"
-                },
-                {
-                    "data": {
-                        "face": "floor",
-                        "powered": false,
-                        "facing": "south"
-                    },
-                    "block": "minecraft:warped_button"
-                }
-            ],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.05,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:warped_fungus"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.11,
-            "variance": {"style": "STATIC"},
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:warped_roots"}],
-            "style": {"style": "STATIC"}
-        },
-        {
-            "chance": 0.03,
-            "variance": {"style": "STATIC"},
-            "stackMax": 7,
-            "zoom": 0.3,
-            "palette": [{"block": "minecraft:twisting_vines_plant"}],
-            "style": {"style": "STATIC"},
-            "stackMin": 3
         }
     ],
     "objects": [
@@ -348,10 +304,56 @@
             }
         }
     ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [{"block": "minecraft:warped_hyphae"}]
-    },
+    "decorators": [
+        {
+            "chance": 0.009,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [
+                {
+                    "data": {
+                        "face": "floor",
+                        "powered": false,
+                        "facing": "east"
+                    },
+                    "block": "minecraft:polished_blackstone_button"
+                },
+                {
+                    "data": {
+                        "face": "floor",
+                        "powered": false,
+                        "facing": "south"
+                    },
+                    "block": "minecraft:warped_button"
+                }
+            ],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.05,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:warped_fungus"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.11,
+            "variance": {"style": "STATIC"},
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:warped_roots"}],
+            "style": {"style": "STATIC"}
+        },
+        {
+            "chance": 0.03,
+            "variance": {"style": "STATIC"},
+            "stackMax": 7,
+            "zoom": 0.3,
+            "palette": [{"block": "minecraft:twisting_vines_plant"}],
+            "style": {"style": "STATIC"},
+            "stackMin": 3
+        }
+    ],
+    "childShrinkFactor": 2.4,
     "slab": {
         "style": {"style": "STATIC"},
         "palette": [

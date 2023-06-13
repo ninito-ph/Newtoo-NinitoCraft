@@ -1,9 +1,41 @@
 {
     "name": "Frozen Vander",
-    "derivative": "FROZEN_PEAKS",
     "color": "#688D9E",
     "rarity": 4,
+    "derivative": "FROZEN_PEAKS",
     "vanillaDerivative": "FROZEN_PEAKS",
+    "biomeScatter": [
+        "SNOWY_TAIGA",
+        "OLD_GROWTH_PINE_TAIGA",
+        "WINDSWEPT_HILLS",
+        "ICE_SPIKES"
+    ],
+    "customDerivitives": [{
+        "category": "icy",
+        "id": "frozen_vander",
+        "waterColor": "#216FC4",
+        "fogColor": "#A6D1FF",
+        "waterFogColor": "#216FC4",
+        "downfallType": "snow",
+        "temperature": -3,
+        "foliageColor": "#B8D0E1",
+        "grassColor": "#D0E1FF"
+    }],
+    "generators": [{
+        "min": 15,
+        "max": 64,
+        "generator": "mountain"
+    }],
+    "biomeZoom": 50,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "maxHeight": 3,
@@ -30,53 +62,6 @@
             ]
         }
     ],
-    "customDerivitives": [{
-        "category": "icy",
-        "id": "frozen_vander",
-        "waterColor": "#216FC4",
-        "fogColor": "#A6D1FF",
-        "waterFogColor": "#216FC4",
-        "downfallType": "snow",
-        "temperature": -3,
-        "foliageColor": "#B8D0E1",
-        "grassColor": "#D0E1FF"
-    }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "igloo"
-        },
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1500,
-            "structure": "village-snowy"
-        }
-    ],
-    "decorators": [{
-        "chance": 0.5,
-        "minHeight": 1,
-        "maxHeight": 1,
-        "style": {
-            "style": "IRIS",
-            "zoom": 0.7
-        },
-        "zoom": 0.6,
-        "palette": [
-            {
-                "data": {"layers": 1},
-                "block": "minecraft:snow"
-            },
-            {"block": "minecraft:air"}
-        ]
-    }],
-    "generators": [{
-        "min": 15,
-        "max": 64,
-        "generator": "mountain"
-    }],
     "objects": [
         {
             "chance": 0.02,
@@ -110,7 +95,7 @@
         },
         {
             "chance": 0.1,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "PAINT",
             "density": 3,
             "rotation": {
                 "yAxis": {
@@ -140,7 +125,7 @@
         },
         {
             "chance": 0.45,
-            "density": 3,
+            "density": 2,
             "edit": [
                 {
                     "find": [{"block": "minecraft:spruce_planks"}],
@@ -198,8 +183,8 @@
         },
         {
             "chance": 0.1,
-            "mode": "FAST_MIN_HEIGHT",
-            "density": 3,
+            "mode": "PAINT",
+            "density": 1,
             "snow": 0.35,
             "rotation": {
                 "yAxis": {
@@ -224,21 +209,22 @@
             ]
         }
     ],
-    "biomeZoom": 50,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "childShrinkFactor": 20,
-    "wall": {
-        "style": {"style": "STATIC"},
+    "decorators": [{
+        "chance": 0.5,
+        "minHeight": 1,
+        "maxHeight": 1,
+        "style": {
+            "style": "NOWHERE",
+            "zoom": 0.7
+        },
+        "zoom": 0.6,
         "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
+            {
+                "data": {"layers": 1},
+                "block": "minecraft:snow"
+            },
+            {"block": "minecraft:air"}
         ]
-    },
-    "biomeScatter": [
-        "SNOWY_TAIGA",
-        "OLD_GROWTH_PINE_TAIGA",
-        "WINDSWEPT_HILLS",
-        "ICE_SPIKES"
-    ]
+    }],
+    "childShrinkFactor": 20
 }

@@ -1,14 +1,9 @@
 {
     "name": "Tropical Highlands",
+    "color": "#4FD8A2",
+    "rarity": 1,
     "derivative": "JUNGLE",
     "vanillaDerivative": "PLAINS",
-    "rarity": 1,
-    "color": "#4FD8A2",
-    "generators": [{
-        "min": 42,
-        "max": 64,
-        "generator": "mountain"
-    }],
     "customDerivitives": [{
         "id": "tropical_highlands",
         "foliageColor": "#478F04",
@@ -17,20 +12,21 @@
         "waterFogColor": "#3AB2A2",
         "category": "jungle"
     }],
-    "jigsawStructures": [
-        {
-            "rarity": 1700,
-            "structure": "pillager_outpost"
-        },
-        {
-            "rarity": 1000,
-            "structure": "village-tundra"
-        },
-        {
-            "rarity": 1200,
-            "structure": "jungle-pyramid"
-        }
-    ],
+    "generators": [{
+        "min": 99,
+        "max": 164,
+        "generator": "mountain"
+    }],
+    "biomeZoom": 9,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -67,6 +63,37 @@
             ]
         }
     ],
+
+    "objects": [{
+        "chance": 0.35,
+        "density": 2,
+        "rotation": {
+            "yAxis": {
+                "min": 0,
+                "max": 0,
+                "interval": 90,
+                "enabled": true
+            },
+            "enabled": true
+        },
+        "place": [
+            "clutter/oakclutt1",
+            "clutter/oakclutt2",
+            "clutter/oakclutt3",
+            "clutter/oakclutt4",
+            "clutter/oakclutt5",
+            "clutter/birchclutt1",
+            "clutter/birchclutt2",
+            "clutter/birchclutt3",
+            "clutter/birchclutt4",
+            "clutter/birchclutt5"
+        ],
+        "translate": {
+            "x": 0,
+            "y": 0,
+            "z": 0
+        }
+    }],
     "decorators": [
         {
             "chance": 0.003,
@@ -112,45 +139,5 @@
             ],
             "style": {"style": "STATIC"}
         }
-    ],
-    "objects": [{
-        "chance": 0.35,
-        "density": 2,
-        "rotation": {
-            "yAxis": {
-                "min": 0,
-                "max": 0,
-                "interval": 90,
-                "enabled": true
-            },
-            "enabled": true
-        },
-        "place": [
-            "clutter/oakclutt1",
-            "clutter/oakclutt2",
-            "clutter/oakclutt3",
-            "clutter/oakclutt4",
-            "clutter/oakclutt5",
-            "clutter/birchclutt1",
-            "clutter/birchclutt2",
-            "clutter/birchclutt3",
-            "clutter/birchclutt4",
-            "clutter/birchclutt5"
-        ],
-        "translate": {
-            "x": 0,
-            "y": 0,
-            "z": 0
-        }
-    }],
-    "biomeZoom": 9,
-    "biomeStyle": {"style": "SIMPLEX"},
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    }
+    ]
 }

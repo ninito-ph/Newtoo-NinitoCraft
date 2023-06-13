@@ -1,9 +1,10 @@
 {
     "name": "Osaka Violet Forest",
-    "derivative": "FLOWER_FOREST",
-    "rarity": 4,
     "color": "#47B019",
+    "rarity": 4,
+    "derivative": "FLOWER_FOREST",
     "vanillaDerivative": "FOREST",
+    "biomeScatter": ["FOREST"],
     "customDerivitives": [
         {
             "id": "sakura_pink",
@@ -25,6 +26,16 @@
         "max": 7,
         "generator": "plain"
     }],
+    "biomeZoom": 60,
+    "biomeStyle": {"style": "SIMPLEX"},
+    "wall": {
+        "style": {"style": "STATIC"},
+        "palette": [
+            {"block": "minecraft:stone"},
+            {"block": "minecraft:andesite"},
+            {"block": "minecraft:stone"}
+        ]
+    },
     "layers": [
         {
             "style": {"style": "STATIC"},
@@ -100,7 +111,7 @@
             ]
         },
         {
-            "mode": "PAINT",
+            "mode": "MIN_HEIGHT",
             "chance": 0.008,
             "rotation": {
                 "yAxis": {
@@ -120,7 +131,7 @@
         },
         {
             "chance": 0.7,
-            "mode": "FAST_MIN_HEIGHT",
+            "mode": "MIN_HEIGHT",
             "density": 2,
             "rotation": {
                 "yAxis": {
@@ -178,6 +189,7 @@
         },
         {
             "chance": 0.001,
+            "mode": "PAINT",
             "rotation": {
                 "yAxis": {
                     "min": 0,
@@ -217,8 +229,6 @@
             "translate": {"y": 1}
         }
     ],
-    "biomeZoom": 60,
-    "biomeStyle": {"style": "SIMPLEX"},
     "decorators": [
         {
             "chance": 0.6,
@@ -261,14 +271,5 @@
             "zoom": 0.2,
             "palette": [{"block": "minecraft:cobblestone_slab"}]
         }
-    ],
-    "wall": {
-        "style": {"style": "STATIC"},
-        "palette": [
-            {"block": "minecraft:stone"},
-            {"block": "minecraft:andesite"},
-            {"block": "minecraft:stone"}
-        ]
-    },
-    "biomeScatter": ["FOREST"]
+    ]
 }
