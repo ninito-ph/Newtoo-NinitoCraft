@@ -1,0 +1,28 @@
+Hivefolk_Elemental_Larva:
+  # Faster, tankier larva. Can become a Firefly or Firedrone on a hit. Becomes a Snowspawner on killing a player. Mythic Encounter mob.
+  Type: SILVERFISH
+  Health: 10
+  Damage: 1
+  Armor: 2
+  Faction: Hivefolk
+  Options:
+    MovementSpeed: 0.37
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for an &6Elemental Larva&f!"
+    - "<target.name><&sq>s body will serve as shelter for an &6Elemental Larva&f!"
+    - "An &6Elemental Larva&f has consumed <target.name>!"
+  Display: "&6Elemental Larva"
+  Disguise: silverfish setDynamicName
+  Skills:
+    - randomskill{skills=Elemental_Larva_Evolve_Drone, Elemental_Larva_Evolve_Buzzard} ~onAttack >0 0.33
+    - skill{s=Elemental_Larva_Evolve_Spawner} ~onKillPlayer >0 1
