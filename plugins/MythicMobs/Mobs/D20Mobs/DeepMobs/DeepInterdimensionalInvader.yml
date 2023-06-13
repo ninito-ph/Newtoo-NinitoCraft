@@ -1,0 +1,13 @@
+Deep_Interdimensional_Invader:
+  # Summoned by polyps. Easily killed, explodes on death. Comes in large swarms.
+  Type: ZOMBIE
+  Health: 4
+  KillMessages:
+    - "<target.name><&sq>s matter was consumed by an &9Interdimensional Invader"
+  Display: "&9Interdimensional Invader"
+  Disguise: player <inherit> setSkin deep_tsa2.png setDynamicName
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+  Skills:
+    - skill{s=Interdimensional_Invader_Explode} ~onDeath

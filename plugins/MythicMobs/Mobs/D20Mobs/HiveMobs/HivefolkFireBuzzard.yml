@@ -1,0 +1,37 @@
+Hivefolk_Fire_Buzzard:
+  # Upgraded buzzard with significantly higher damage. Deals fire damage on spit. Explodes on death. Mythic Encounter mob.
+  Type: ZOMBIE
+  Health: 12
+  Damage: 4
+  Armor: 7
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name><&sq>s body is getting flown back to the sun by &6Elemental Firefly&f!"
+  Display: "&6Elemental Firefly"
+  Disguise: player <inherit> setSkin hiveman_tm.png setDynamicName
+  Skills:
+    - skill{s=Elemental_Firefly_Fly} ~onDamaged >0 1
+    - skill{s=Elemental_Firefly_Fly} ~onTimer:100 >0 1
+    - skill{s=Elemental_Firefly_Explode} ~onDeath

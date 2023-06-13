@@ -1,0 +1,38 @@
+Deep_Polyp:
+  # Minion mob summoned by the Deep Mastermind. Can damage the player and summon further minions.
+  Type: ZOMBIE
+  Health: 10
+  DamageModifiers:
+    - PROJECTILE 0.3
+  Damage: 0
+  Armor: 13
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 30 1
+  Equipment:
+  KillMessages:
+    - "<target.name><&sq>s was warped out of existence by a &9Flying Polyp"
+  Display: "&9Flying Polyp"
+  Disguise: glow_squid
+  Skills:
+    # Initial skills
+    - skill{s=Polyp_Initialize} ~onSpawn >0 1
+    # Constant skills
+    - skill{s=Mastermind_Fly} ~onTimer:55 >0 0.65
+    - randomskill{s=Polyp_Laser_Cast,Polyp_Smite} @target ~onTimer:300 >0 1
+    - skill{s=Polyp_Summon_Projectile} @target ~onTimer:120 >0 1

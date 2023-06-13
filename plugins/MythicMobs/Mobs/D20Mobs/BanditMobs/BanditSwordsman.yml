@@ -1,0 +1,34 @@
+Bandit_Swordsman:
+  # Run-of-the-mill melee mob. Canon Fodder.
+  Type: ZOMBIE
+  Health: 7
+  Damage: 1
+  Armor: 8
+  Faction: Outlaw
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier1
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name><&sq>s life was stolen by a &aBandit Swordsman!"
+    - "<target.name> was robbed and slain by a &aBandit Swordsman!"
+    - "<target.name> was slashed to death by a &aBandit Swordsman!"
+  Display: "&aBandit Swordsman"
+  Disguise: player <inherit> setSkin bandit_t1.png setDynamicName

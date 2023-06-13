@@ -1,0 +1,33 @@
+Water_Stormcaller:
+  # Defenseless support mob. Can make fights harder by empowering and healing allies.
+  Type: DROWNED
+  Health: 14
+  Damage: 3
+  Armor: 9
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_hoe:0
+  KillMessages:
+    - "<target.name> was sacrificed to the rain god by a &aMerfolk Stormcaller!"
+  Display: "&aMerfolk Stormcaller"
+  Disguise: player <inherit> setSkin water_t1.png setDynamicName
+  Skills:
+    - randomskill{s=Stormcaller_Enhance_Projectile, Stormcaller_Heal_Projectile} @EIR{r=10;limit=1;sort=LOWEST_HEALTH} ~onTimer:180 >0 0.6

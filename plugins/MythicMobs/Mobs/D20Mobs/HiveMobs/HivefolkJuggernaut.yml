@@ -1,0 +1,45 @@
+Hivefolk_Juggernaut:
+  # T2 Leader mob. Slow and tanky, deals a lot of melee damage. Enraged on low health, spawns larvae periodically and on death.
+  Type: ZOMBIE
+  Health: 18
+  Damage: 4.5
+  Armor: 7
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    KnockbackResistance: 0.35
+    PreventRandomEquipment: true
+    MovementSpeed: 0.25
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 35 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> was stomped to death by a &5&lHivefolk Juggernaut&f!"
+    - "<target.name> was smashed down to a fine paste by a &5&lHivefolk Juggernaut&f!"
+    - "<target.name> was no match for a &5&lHivefolk Juggernaut<&sq>s&f unstoppable strenght!"
+  Display: "&5&lHivefolk Juggernaut"
+  Disguise: player <inherit> setSkin skin13 setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Juggernaut_Followers_1,Hivefolk_Juggernaut_Followers_2} ~onSpawn
+    - message{m="&5&lHivefolk Juggernaut&f<&co> Hwwwrrrlll!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Hivefolk_Juggernaut_Enrage} ~onDamaged >0 0.33
+    - skill{s=Hivefolk_Juggernaut_Stomp} ~onTimer:280 >0 1
+    - skill{s=Hivefolk_Juggernaut_Warcry} ~onDamaged <33% 0.33
+    - skill{s=Hivefolk_Juggernaut_Summon_Larva} ~onTimer:300 >0 1
+    # Summon wave of Larva on death
+    - summon{type=Hivefolk_Larva;amount=5;radius=1.5} ~onDeath @SelfLocation
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#ccff66} ~onDeath @self

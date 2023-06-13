@@ -1,0 +1,35 @@
+Water_Dragoon:
+  # More dangerous and durable version of Sunken Cannoneer. Fires two cannon shots instead of one, cannon shots break shield. Mythic Encounter mob.
+  Type: DROWNED
+  Health: 21
+  Damage: 6
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.22
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - blaze_rod:0
+    - coal_block:5
+  KillMessages:
+    - "<target.name> very soul was blasted by a &6Ghost Dragoon!"
+  Display: "&6Ghost Dragoon"
+  Disguise: player <inherit> setSkin water_tm.png setDynamicName
+  Skills:
+    - skill{s=Dragoon_Shot} ~onTimer:60 >0 1
+    - randomskill{s=Ghost_Implode, Ghost_Ethereal} ~onDamaged <25% 0.75

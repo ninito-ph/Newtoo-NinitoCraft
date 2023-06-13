@@ -1,0 +1,53 @@
+Deep_Mastermind:
+  # Powerful ranged caster mob. Wide range of defensive and offensive abilities at his disposal. Must be fought in a group or in a highly organized manner.
+  Type: ZOMBIE
+  Health: 45
+  DamageModifiers:
+    - PROJECTILE 0.3
+  Damage: 0
+  Armor: 13
+  BossBar:
+    Enabled: true
+    Title: "&5&lMind Flayer"
+    Range: 50
+    Color: PINK
+    Style: SEGMENTED_6
+    Faction: Deep
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 125 1
+  Equipment:
+  KillMessages:
+    - "<target.name><&sq>s brains were devoured by a &5&lMind Flayer!"
+    - "<target.name> mind<&sq> was shattered by a &5&lMind Flayer"
+    - "<target.name> was easy work for the psionic muscles of a &5&lMind Flayer!"
+  Display: "&5&lMind Flayer"
+  Disguise: player <inherit> setSkin deep_tsa.png setDynamicName
+  Skills:
+    # Initial skills
+    - message{m="&5Mind Flayer&f<&co> Ae mg<&sq>yng<&sq>ct<&sq>. Fhr<&sq>lehshht<&sq>. Tag<&sq>ht<&sq>aeng<&sq>c yeh<&sq>liui fhlir<&sq>l vr<&sq>lyng<&sq>gl ytag<&sq> tag<&sq>li mg<&sq>eh...."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Mastermind_Phase_1} ~onSpawn >0 1
+    # Constant skills
+    - skill{s=Mastermind_Fly} ~onTimer:55 >0 0.65
+    - randomskill{skills=Mastermind_Armor,Mastermind_Repel,Mastermind_Cloak} ~onDamaged >0 0.35
+    - randomskill{s=Mastermind_Bombard_Cast,Mastermind_Missile_Cast,Mastermind_Necrosis_Missile_Cast,Mastermind_Incinerate} ~onTimer:200 >0 1
+    # Regen Skills
+    - skill{s=Mastermind_Regenerate} ~onTimer:200 <60% 1
+    - skill{s=Mastermind_Interrupt_Regeneration} ~onDamaged 1
+    # Summon Skills
+    - skill{s=Mastermind_Summon_Polyps} =35% 1

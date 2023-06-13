@@ -1,0 +1,36 @@
+Bandit_Rogue:
+  # More mobile bowman. Flees and becomes invisible on being hit. Uses higher knockback bow.
+  Type: SKELETON
+  Health: 7
+  Damage: 1
+  Armor: 8
+  Faction: Outlaw
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 bowshoot
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier2
+    - exp 20 1
+  Equipment:
+    - Bandit_Longbow:0
+  KillMessages:
+    - "<target.name> was outmaneuvered by a &9Bandit Rogue!"
+    - "<target.name> was too slow to fight a &9Bandit Rogue!"
+    - "<target.name> was shot to death by a &9Bandit Rogue!"
+  Display: "&9Bandit Rogue"
+  Disguise: player <inherit> setSkin bandit_t2.png setDynamicName
+  Skills:
+    - skill{s=Bandit_Rogue_Reposition} ~onDamaged
+    - skill{s=Prevent_Sunburn} @self ~onTimer:1

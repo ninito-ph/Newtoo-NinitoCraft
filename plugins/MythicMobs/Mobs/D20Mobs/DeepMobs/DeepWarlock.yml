@@ -1,0 +1,35 @@
+Deep_Warlock:
+  # Denfenseless ranged mob. Has difficult-to-evade skills, debuffs and summon abilities. Priority target.
+  Type: ZOMBIE
+  Health: 16
+  Damage: 4
+  Armor: 9
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.19
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 30 1
+  Equipment:
+    - iron_hoe:0
+  KillMessages:
+    - "<target.name> was never seen again after an encounter with a &9Drow Warlock!"
+  Display: "&9Drow Warlock"
+  Disguise: player <inherit> setSkin deep_t2.png setDynamicName
+  Skills:
+    - skill{s=Warlock_Summon_Spiders} ~onTimer:1000
+    - skill{s=Magic_Missile} ~onTimer:270 @target
+    - skill{s=Warlock_Enfeeble_Cast} ~onTimer:600 @target
+    - skill{s=Deep_Captain_Repel} ~onDamaged <50% 0.75

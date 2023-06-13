@@ -1,0 +1,59 @@
+Water_Siren:
+  # Deep World boss
+  Type: ZOMBIE
+  Health: 110
+  DamageModifiers:
+    - FIRE 0
+  Damage: 9
+  Armor: 14
+  BossBar:
+    Enabled: true
+    Title: "&4&lNaga Siren"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.22
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 1550 1
+  Equipment:
+    - stone_button:4
+    - gold_sword:0
+    - trident:5
+  KillMessages:
+    - "<target.name> was sung to death by a &4&lNaga Siren!"
+    - "<target.name> was seduced and drowned by a &4&lNaga Siren!"
+    - "<target.name><&sq>s eardrums (and the rest of his body) were defiled by a &4&lNaga Siren"
+  Display: "&4&lNaga Siren"
+  Disguise: player <inherit> setSkin water_wb.png setDynamicName
+  Skills:
+    # Spawning message
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - randomskill{s=Siren_Followers_1,Siren_Followers_2,Siren_Followers_3,Siren_Followers_4} ~onSpawn
+    # On enter combat
+    - message{m="&4&lNaga Siren&f<&co> Hear the waters sing your name, <target.name>! Come and join us in the lightless depths!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Naga_Siren_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Attack skills
+    - randomskill{s=Water_Siren_Geyser, Water_Siren_Smite, Water_Siren_Triple_Tidal_Slash} ~onTimer:60 >0 1
+    # Support Skills
+    - skill{s=Water_Siren_Empower_Song} ~onTimer:20 >50% 1
+    - skill{s=Water_Siren_Healing_Rain} =50% 1
+    - skill{s=Water_Siren_Elevate_Champion} ~onTimer:120 <50% 1
+    # Defense skills
+    - randomskill{s=Water_Elemental_Tidewash} ~onDamaged <25% 1
+    # Death
+    - weather{type=sunny;duration=600} ~onDeath

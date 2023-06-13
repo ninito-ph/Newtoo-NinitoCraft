@@ -1,0 +1,41 @@
+Deep_Ranger:
+  # High-damage, mobile ranged mob. Has a wide disposal of debuffs and high damage output. Extremely aggressive.
+  Type: SKELETON
+  Health: 35
+  Damage: 1
+  Armor: 13
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.4
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 bowshoot
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 55 1
+  Equipment:
+    - bow:0
+  KillMessages:
+    - "<target.name> was no match for a &5&lDrow Ranger<&sq>s dexterity!"
+    - "<target.name> was swept away by a &5&lDrow Ranger<&sq>s volley of arrows!"
+    - "<target.name> was quickly disposed of by a &5&lDrow Ranger!"
+  Display: "&5&lDrow Ranger"
+  Disguise: player <inherit> setSkin deep_tl2.png setDynamicName
+  Skills:
+    - message{m="&5Drow Ranger&f<&co> These arrows may make you feel a little drowsy..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{skills=Ranger_Followers_1,Ranger_Followers_2} ~onSpawn
+    - skill{s=Ranger_Poison_Arrow} ~onAttack >50% 0.4
+    - skill{s=Ranger_Multi_Shot} ~onShoot >50% 1
+    - message{m="&5Drow Ranger&f<&co> I can sense you<&sq>re weakening... Shadows, engulf us!"} @PlayersInRadius{r=30} =50% 1
+    - skill{s=Ranger_Phase_2} =50% 1
+    - message{m="&5Drow Ranger&f<&co> DIE! DIE! DIE!"} @PlayersInRadius{r=30} =20% 1
+    - skill{s=Ranger_Phase_3} =20% 1

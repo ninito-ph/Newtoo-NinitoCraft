@@ -1,0 +1,39 @@
+Hivefolk_Ice_Spawner:
+  # Upgraded spawner with higher versatility. Can fly and spit debuffing ice at the player. Spawns larvae frequently. Mythic Encounter mob.
+  Type: ZOMBIE
+  Health: 20
+  Damage: 4
+  Armor: 9
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &b&lElemental Snowspawner<&sq>s&f Larva!"
+    - "<target.name><&sq>s efforts could not pierce a &b&lElemental Snowspawner<&sq>&f exoskeleton!"
+    - "<target.name> was devoured voraciously by a &b&lElemental Snowspawner&f!"
+  Display: "&b&lElemental Snowspawner"
+  Disguise: player <inherit> setSkin hiveman_tlm.png setDynamicName
+  Skills:
+    - randomskill{skills=Elemental_Spawner_Followers_1,Elemental_Spawner_Followers_2} ~onSpawn
+    - skill{s=Elemental_Spawner_Fly} ~onTimer:120 >0 1
+    - skill{s=Elemental_Spawner_Snow_Touch} ~onAttack >0 1
+    - skill{s=Hivefolk_Spawner_Warcry} ~onDamaged <75% 0.33
+    - skill{s=Elemental_Spawner_Spawn_Larva} ~onTimer:120 >0 1

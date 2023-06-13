@@ -1,0 +1,29 @@
+Hivefolk_Royal_Larva:
+  # Upgraded version of a regular Larva. Evolves into hoppers or spitters instead. Priority target.
+  Type: SILVERFISH
+  Health: 6
+  Damage: 1
+  Armor: 4
+  Faction: Hivefolk
+  Options:
+    MovementSpeed: 0.37
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &9Hivefolk Royal Larva&f!"
+    - "<target.name><&sq>s body will serve as shelter for a &9Hivefolk Royal Larva&f!"
+    - "A &9Hivefolk Larva&f has consumed <target.name>!"
+  Display: "&9Hivefolk Royal Larva"
+  Disguise: silverfish setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Royal_Larva_Evolve_Hopper,Hivefolk_Royal_Larva_Evolve_Spitter} ~onAttack >0 0.25
+    - skill{s=Hivefolk_Royal_Larva_Evolve_Spawner} ~onKillPlayer >0 1
+    - skill{s=Hivefolk_Royal_Larva_Leap} ~onTimer:120 >0 1

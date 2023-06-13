@@ -1,0 +1,33 @@
+Deep_Stonebomber:
+  # Ranged mob. Hassles the player by imprisoning them in stone and throwing out shockwaves to repel them.
+  Type: SKELETON
+  Health: 15
+  Damage: 4
+  Armor: 7
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 bowshoot
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - bow:0
+  KillMessages:
+    - "<target.name> was petrified by a &aDuergar Stonebomber!"
+  Display: "&aDuergar Stonebomber"
+  Disguise: player <inherit> setSkin deep_t1.png setDynamicName
+  Skills:
+    - skill{s=Deep_Prison} ~onAttack >0 0.15 @target
+    - skill{s=Deep_Repulsion} ~onDamaged @target

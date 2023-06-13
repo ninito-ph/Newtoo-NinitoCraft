@@ -1,0 +1,38 @@
+Bandit_Fighter:
+  # Stronger, tougher swordsman. Can leap at target to deal damage.
+  Type: ZOMBIE
+  Health: 12
+  Damage: 1
+  Armor: 10
+  Faction: Outlaw
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier2
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+    - Bandit_Shield:5
+  KillMessages:
+    - "<target.name> was bashed and slashed to death by a &9Bandit Fighter!"
+    - "<target.name> was outfought by a &9Bandit Fighter!"
+    - "<target.name> was beaten to a pulp by a &9Bandit Fighter!"
+  Display: "&9Bandit Fighter"
+  Disguise: player <inherit> setSkin bandit_t2.png setDynamicName
+  Skills:
+    - message{m="&9Bandit Fighter&f<&co> You ain<&sq>t walking away from this one!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Bandit_Fighter_Stomp} ~onTimer:140

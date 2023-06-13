@@ -1,0 +1,35 @@
+Water_Swashbuckler:
+  # Melee mob with good offensive and defensive options, can hurt player at range if it can't get close enough. Dangerous in groups.
+  Type: DROWNED
+  Health: 19
+  Damage: 4
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name> was shot and slashed by a &9Sunken Swashbuckler!"
+  Display: "&9Sunken Swashbuckler"
+  Disguise: player <inherit> setSkin water_t2.png setDynamicName
+  Skills:
+    - skill{s=Pirate_Hype} ~onAttack >0 0.7
+    - skill{s=Pirate_Defense} ~onDamaged >0 0.7
+    - skill{s=Pirate_Shot} ~onTimer:120 >0 0.3

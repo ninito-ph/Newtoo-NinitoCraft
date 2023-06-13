@@ -1,0 +1,33 @@
+Water_Barbarian:
+  # High damage fodder melee mob. Can heal himself and allies. Dangerous in tandem with other mobs.
+  Type: DROWNED
+  Health: 16
+  Damage: 4
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_axe:0
+  KillMessages:
+    - "<target.name> was viciously ravaged by a &aMerfolk Barbarian!"
+  Display: "&aMerfolk Barbarian"
+  Disguise: player <inherit> setSkin water_t1.png setDynamicName
+  Skills:
+    - skill{s=Barbarian_Splash} =50% 0.55s

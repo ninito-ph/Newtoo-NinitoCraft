@@ -1,0 +1,41 @@
+Deep_Captain:
+  # Stronger Miner. Becomes a mage at half health. Can repel the player and imprison them in stone. 
+  Type: SKELETON
+  Health: 60
+  Damage: 9
+  Armor: 15
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.33
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier2
+    - exp 40 1
+  Equipment:
+    - stone_axe:0
+    - stone_axe:5
+  KillMessages:
+    - "<target.name> was transformed into a ridiculous stone effigy by a &9Duergar Captain!"
+    - "<target.name><&sq>s life was mined away by a &9Duergar Captain!"
+    - "<target.name><&sq>s was excavated to death by a &9Duergar Captain!"
+  Display: "&9Duergar Captain"
+  Disguise: player <inherit> setSkin deep_tl1.png setDynamicName
+  Skills:
+    - message{m="&9Duergar Captain&f<&co> You<&sq>ve delved too deep, <&sq>!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Deep_Captain_Followers} ~onSpawn 1
+    - skill{s=Deep_Captain_Repel} ~onDamaged >50% 0.5
+    # Enables mage phase of captain
+    - skill{s=Deep_Captain_Phase_2} =50% 1
+    - skill{s=Deep_Repulsion} ~onDamaged <50%
+    - skill{s=Deep_Captain_Levitate_Casting} ~onTimer:120 <50% @target
