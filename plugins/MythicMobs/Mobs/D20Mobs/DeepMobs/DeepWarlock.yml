@@ -1,8 +1,8 @@
 Deep_Warlock:
   # Denfenseless ranged mob. Has difficult-to-evade skills, debuffs and summon abilities. Priority target.
   Type: ZOMBIE
-  Health: 16
-  Damage: 4
+  Health: 20
+  Damage: 1
   Armor: 0
   Faction: Deep
   Options:

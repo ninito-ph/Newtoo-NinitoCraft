@@ -1,8 +1,8 @@
 Deep_Shadowblade:
   # Fast melee mob that can hit the player, blind them, and quickly back away.
   Type: ZOMBIE
-  Health: 20
-  Damage: 4
+  Health: 30
+  Damage: 3
   Armor: 0
   Faction: Deep
   Options:

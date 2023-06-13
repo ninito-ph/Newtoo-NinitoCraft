@@ -1,7 +1,7 @@
 Deep_Ranger:
   # High-damage, mobile ranged mob. Has a wide disposal of debuffs and high damage output. Extremely aggressive.
   Type: SKELETON
-  Health: 35
+  Health: 65
   Damage: 1
   Armor: 0
   Faction: Deep

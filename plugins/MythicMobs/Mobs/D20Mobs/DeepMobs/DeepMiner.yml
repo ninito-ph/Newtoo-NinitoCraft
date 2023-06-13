@@ -1,8 +1,8 @@
 Deep_Miner:
   # Tanky meelee mob. Hits hard, and can throw projectiles that slow down its target.
   Type: ZOMBIE
-  Health: 20
-  Damage: 4
+  Health: 30
+  Damage: 2
   Armor: 0
   Faction: Deep
   Options:

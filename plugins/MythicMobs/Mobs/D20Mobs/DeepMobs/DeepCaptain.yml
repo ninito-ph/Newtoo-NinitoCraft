@@ -1,8 +1,8 @@
 Deep_Captain:
   # Stronger Miner. Becomes a mage at half health. Can repel the player and imprison them in stone. 
   Type: SKELETON
-  Health: 60
-  Damage: 9
+  Health: 50
+  Damage: 4
   Armor: 0
   Faction: Deep
   Options:

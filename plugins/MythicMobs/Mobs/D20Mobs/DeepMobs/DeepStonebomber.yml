@@ -1,8 +1,8 @@
 Deep_Stonebomber:
   # Ranged mob. Hassles the player by imprisoning them in stone and throwing out shockwaves to repel them.
   Type: SKELETON
-  Health: 15
-  Damage: 4
+  Health: 20
+  Damage: 1
   Armor: 0
   Faction: Deep
   Options:
