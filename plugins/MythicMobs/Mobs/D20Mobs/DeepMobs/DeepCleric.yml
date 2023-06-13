@@ -1,0 +1,59 @@
+Deep_Cleric:
+  # Deep World boss
+  Type: ZOMBIE
+  Health: 110
+  DamageModifiers:
+    - FIRE 0
+  Damage: 0
+  Armor: 14
+  BossBar:
+    Enabled: true
+    Title: "&4&lAbyssal Cleric"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 1550 1
+  Equipment:
+  KillMessages:
+    - "<target.name> was eaten alive by the darkness of an &4&lAbyssal Cleric!"
+    - "<target.name> was overshadowed by an &4&lAbyssal Cleric!"
+    - "<target.name><&sq>s life was put out like a flame in the dark by an &4&lAbyssal Cleric"
+  Display: "&4&lAbyssal Cleric"
+  Disguise: player <inherit> setSkin deep_wba.png setDynamicName
+  Skills:
+    # Spawning message
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - randomskill{s=Cleric_Followers_1,Cleric_Followers_2,Cleric_Followers_3} ~onSpawn
+    # Initial skills
+    - message{m="&4&lAbyssal Cleric&f<&co> A misguided soul has wandered onto us, my followers. Let us feast."} @PlayersInRadius{r=50} ~onEnterCombat >0 1
+    - skill{s=Bandit_Kingpin_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Constant Skills
+    - skill{s=Cleric_Relocate} ~onDamaged >70% 1
+    - skill{s=Cleric_Relocate_Decoy} ~onDamaged =30-50% 1
+    - skill{s=Cleric_Relocate_Decoy_Caster} ~onDamaged <30% 1
+    - skill{s=Cleric_Darkstrike} ~onAttack >0 1
+    - randomskill{s=Cleric_Doom_Missile_Cast,Cleric_Bombard_Cast,Cleric_Shadowbolt_Cast,Cleric_Healing_Prison_Cast} ~onTimer:450 >0 1
+    # Shadow Phase
+    - skill{s=Cleric_Cloak} =50% 1
+    - message{m="&4&lAbyssal Cleric&f<&co> Be careful, <target.name>. The darkness hides many hideous things."} @PlayersInRadius{r=50} =50% 1
+    - skill{s=Cleric_Death_Touch} ~onAttack >0 1
+    # Summon Phase
+    - skill{s=Cleric_Summon_Mastermind_Cast} =30% 1
+    - skill{s=Cleric_Interrupt_Summon} ~onDamaged <15% 1

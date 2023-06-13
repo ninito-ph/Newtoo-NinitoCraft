@@ -1,0 +1,12 @@
+Hivefolk_Praetorian_Enrage:
+  # Engages Praetorian Beserk or Snipe
+  Skills:
+    # Telegraphs
+    - effect:particles{p=reddust;a=25;hs=1;ys=1;y=1;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.1} @self
+    - throw{v=4;vy=4} @PIR{r=5.5}
+    # Knocks player back and gives Praetorian buffs
+    - potion{type=INCREASE_DAMAGE;duration=3600;level=2} @self
+    - potion{type=SPEED;duration=3600;level=1} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=3600;level=1} @self
+    - equip{item=elytra:3}

@@ -1,0 +1,11 @@
+Bandit_Lieutenant_Followers_1:
+  # Spawns bandits to follow Bandit Lieutenant. Variant with two fighters.
+  Skills:
+    - summon{type=Bandit_Fighter;amount=2;radius=5} @SelfLocation
+    - summon{type=Bandit_Rogue;amount=1;radius=5} @SelfLocation
+
+Bandit_Lieutenant_Followers_2:
+  # Spawns bandits to follow Bandit Lieutenant. Variant with two rogues.
+  Skills:
+    - summon{type=Bandit_Fighter;amount=1;radius=5} @SelfLocation
+    - summon{type=Bandit_Rogue;amount=2;radius=5} @SelfLocation

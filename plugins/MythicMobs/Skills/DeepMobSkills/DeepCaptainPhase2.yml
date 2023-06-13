@@ -1,0 +1,6 @@
+Deep_Captain_Phase_2:
+  # Increases armor and gives a magical staff to the captain.
+  Skills:
+    - equip{item=stone_hoe:0}
+    - equip{item=air:5}
+    - potion{type=PROTECTION;duration=10000;level=2} @target

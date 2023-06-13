@@ -1,0 +1,16 @@
+Hivefolk_Juggernaut_Warcry:
+  # Buffs children entities with speed and strenght for a short while.
+  Cooldown: 15
+  Skills:
+    # Telegraphs spawner has cast warcry
+    - effect:particles{p=redDust;a=25;hs=0.5;y=1.5;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.05;v=1.5} @self
+    - delay 30
+    # Buffs children and self
+    - potion{type=SPEED;duration=180;level=1} @self
+    - potion{type=INCREASE_DAMAGE;duration=180;level=1} @children
+    - potion{type=SPEED;duration=180;level=1} @children
+    - potion{type=DAMAGE_RESISTANCE;duration=180;level=1} @children
+    # Telegraphs children have been buffed
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @children
+    - sound{s=entity.silverfish.hurt} @children

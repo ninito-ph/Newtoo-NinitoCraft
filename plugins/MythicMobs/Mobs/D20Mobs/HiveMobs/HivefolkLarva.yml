@@ -1,0 +1,28 @@
+Hivefolk_Larva:
+  # Low-health, low-damage mob that can become a buzzard or drone when attacking. Priority target.
+  Type: SILVERFISH
+  Health: 6
+  Damage: 1
+  Armor: 2
+  Faction: Hivefolk
+  Options:
+    MovementSpeed: 0.37
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  KillMessages:
+    - "<target.name><&sq>s body will serve as food for a &aHivefolk Larva&f!"
+    - "<target.name><&sq>s body will serve as shelter for a &aHivefolk Larva&f!"
+    - "A &aHivefolk Larva&f has consumed <target.name>!"
+  Display: "&aHivefolk Larva"
+  Disguise: silverfish setDynamicName
+  Skills:
+    - randomskill{skills=Hivefolk_Larva_Evolve_Drone,Hivefolk_Larva_Evolve_Buzzard} ~onAttack >0 0.25
+    - skill{s=Hivefolk_Larva_Evolve_Praetorian} ~onKillPlayer >0 1

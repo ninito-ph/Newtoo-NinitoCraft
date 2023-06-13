@@ -1,0 +1,29 @@
+Mastermind_Repel:
+  Conditions:
+    - stance{s=Regenerating} false
+  Cooldown: 20
+  Skills:
+    # Applies effects on players
+    - potion{type=SLOW;duration=400;level=3;p=false} @PIR{r=12}
+    - potion{type=CONFUSION;duration=400;level=1;p=false} @PIR{r=12}
+    - potion{type=SLOW_FALLING;duration=400;level=1;p=false} @PIR{r=12}
+    - throw{velocity=12;velocityY=10} @PIR{r=12}
+    # Shows SFX
+    - effect:sound{s=block.portal.travel;v=0.6;p=1.5} @origin
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=spell_witch;radius=2;points=16;a=40;hs=0.5;vs=1;color=#cb48ea} @origin
+    - delay 4
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=spell_witch;radius=4;points=32;a=40;hs=0.5;vs=0.8;color=#cb48ea} @origin
+    - delay 4
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=spell_witch;radius=6;points=32;a=40;hs=0.5;vs=0.6;color=#cb48ea} @origin
+    - delay 4
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=spell_witch;radius=8;points=32;a=40;hs=0.5;vs=0.4;color=#cb48ea} @origin
+    - delay 4
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=spell_witch;radius=10;points=32;a=40;hs=0.5;vs=0.2;color=#cb48ea} @origin
+    - delay 4
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=spell_witch;radius=12;points=32;a=40;hs=0.5;vs=0.1;color=#cb48ea} @origin

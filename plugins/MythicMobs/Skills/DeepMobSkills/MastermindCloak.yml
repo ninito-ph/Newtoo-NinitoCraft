@@ -1,0 +1,25 @@
+Mastermind_Cloak:
+  Conditions:
+    - stance{s=Regenerating} false
+  Cooldown: 20
+  Skills:
+    # Applies effects on self
+    - potion{type=INVISIBILITY;duration=250;level=1;p=false} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=250;level=5;p=false} @self
+    # Applies effects on players
+    - potion{type=BLINDNESS;duration=200;level=1;} @PIR{r=12}
+    - potion{type=SLOW_FALLING;duration=200;level=1;} @PIR{r=12}
+    - throw{velocity=6;velocityY=2} @PIR{r=12}
+    # Shows SFX
+    - effect:sound{s=entity.wither.ambient;v=1.5;p=0.5} @self
+    - effect:particlering{p=redDust;radius=2;points=8;a=120;hs=1;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=4;points=12;a=120;hs=1;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=6;points=16;a=120;hs=1;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=8;points=32;a=120;hs=1;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=10;points=32;a=120;hs=1;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=12;points=32;a=120;hs=1;vs=1;color=#1f1d1d} @origin

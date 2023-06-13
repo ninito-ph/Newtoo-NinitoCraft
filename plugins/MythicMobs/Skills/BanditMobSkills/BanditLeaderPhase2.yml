@@ -1,0 +1,7 @@
+Bandit_Leader_Phase_2:
+  # Changes AI to be archer and gives bow.
+  Skills:
+    - equip{item=bow:0}
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=bowshoot}
+    - RunAIGoalSelector{goal=randomstroll}

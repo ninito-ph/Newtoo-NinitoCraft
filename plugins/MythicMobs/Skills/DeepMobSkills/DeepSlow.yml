@@ -1,0 +1,26 @@
+Deep_Slow:
+  # Throws a projectile which slows down the player
+  Cooldown: 7
+  Skills:
+    - effect:sound{s=block.gravel.place;v=1;p=1.3} @self
+    - projectile{onTick=Deep_Slow_Tick;onHit=Deep_Slow_Hit;onEnd=Deep_Slow_Miss;v=9.5;i=1;hR=1;vR=1;syo=1.5}
+
+Deep_Slow_Hit:
+  # SFX and functionality for Matriach Spit hit
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=block.gravel.break;v=1;p=1}
+    - effect:particles{p=block;m=gravel;a=10;hs=0.25;vs=0.25;y=1}
+    # Applies slow
+    - potion{type=SLOW;duration=55;level=1}
+    - damage{a=0.1}
+
+Deep_Slow_Miss:
+  # SFX for when spit projectile misses
+  Skills:
+    - effect:particles{p=block;m=gravel;a=15;hs=0.25;vs=0.25;y=1} @origin
+
+Deep_Slow_Tick:
+  # SFX for Matriarch Spit Tick
+  Skills:
+    - effect:particles{p=redDust;a=20;hs=0.2;vs=0.2;color=#466589} @origin

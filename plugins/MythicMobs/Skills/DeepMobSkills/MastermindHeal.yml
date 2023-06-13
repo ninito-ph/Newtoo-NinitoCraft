@@ -1,0 +1,10 @@
+Mastermind_Heal:
+  Conditions:
+    - stance Regenerating
+  Skills:
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @self
+    - orbital{onTick=Mastermind_Regenerate_Tick;points=32;interval=1;duration=60;r=3;vy=1;oy=1;hnp=true;vr=2} @self
+    - sound{s=entity.enderman.scream;p=1.7} @self
+    - healpercent{m=0.05} @self
+    - delay 60
+    - skill{s=Mastermind_Heal} @self

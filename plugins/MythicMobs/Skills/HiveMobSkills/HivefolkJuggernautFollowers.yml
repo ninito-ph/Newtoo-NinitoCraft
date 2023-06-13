@@ -1,0 +1,12 @@
+Hivefolk_Juggernaut_Followers_1:
+  # Summons Hivefolk Juggernaut followers. Variant with three Hoppers and one Spitter.
+  Skills:
+    - summon{type=Hivefolk_Hopper;amount=3;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Spitter;amount=1;radius=5} @SelfLocation
+
+
+Hivefolk_Juggernaut_Followers_2:
+  # Summons Hivefolk Juggernaut followers. Variant with two Hoppers and two Spitters.
+  Skills:
+    - summon{type=Hivefolk_Hopper;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Spitter;amount=2;radius=5} @SelfLocation

@@ -1,0 +1,5 @@
+Bandit_Kingpin_Bleeding:
+  # Causes a sweep effect and poisons target.
+  Skills:
+    - potion{t=POISON;l=1} @target
+    - effect:particles{p=sweepAttack;a=1} @target

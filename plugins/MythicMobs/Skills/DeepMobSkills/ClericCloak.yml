@@ -1,0 +1,27 @@
+Cleric_Cloak:
+  Skills:
+    # Applies effects on self
+    - setstance{s=Cloaked} @self
+    - potion{type=INVISIBILITY;duration=1200;level=1;p=false} @self
+    - potion{type=SPEED;duration=1200;level=3;p=false} @self
+    # Applies effects on players
+    - potion{type=BLINDNESS;duration=1200;level=1;} @PIR{r=25}
+    # Shows SFX
+    - effect:sound{s=entity.wither.ambient;v=2;p=0.1} @self
+    - effect:particlering{p=redDust;radius=3;points=8;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=6;points=12;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=9;points=16;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=12;points=32;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=15;points=32;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=18;points=32;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=21;points=32;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 4
+    - effect:particlering{p=redDust;radius=25;points=32;a=120;hs=2;vs=1;color=#1f1d1d} @origin
+    - delay 1172
+    - setstance{s=Normal} @self

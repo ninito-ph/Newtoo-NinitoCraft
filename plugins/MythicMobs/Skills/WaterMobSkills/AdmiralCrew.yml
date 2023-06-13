@@ -1,0 +1,11 @@
+Admiral_Crew_1:
+  # Spawns ghosts to follow Ghost Admiral. Variant with two Dragoons.
+  Skills:
+    - summon{type=Water_Corsair;amount=4;radius=5} @SelfLocation
+    - summon{type=Water_Dragoon;amount=2;radius=5} @SelfLocation
+
+Admiral_Crew_2:
+  # Spawns ghosts to follow Ghost Admiral. Variant with three Dragoons.
+  Skills:
+    - summon{type=Water_Corsair;amount=3;radius=5} @SelfLocation
+    - summon{type=Water_Dragoon;amount=3;radius=5} @SelfLocation

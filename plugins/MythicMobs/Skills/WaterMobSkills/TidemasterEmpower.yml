@@ -1,0 +1,14 @@
+Tidemaster_Empower:
+  Cooldown: 120
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=2400;level=2} @Self
+    - potion{type=SPEED;duration=2400;level=1} @Self
+    # Shows SFX
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death;p=0.4} @self
+    - delay 12
+    - lightning{d=0} @Self
+    - effect:particlering{p=glow;radius=0.5;points=8;a=20;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=35;hs=0.4;vs=0.7;color=#cb48ea} @origin

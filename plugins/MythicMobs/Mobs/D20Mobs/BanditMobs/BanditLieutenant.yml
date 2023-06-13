@@ -1,0 +1,43 @@
+Bandit_Lieutenant:
+  # Fighter-rogue hybrid. Stronger, faster and tougher. Can summon bandits mid-fight.
+  Type: SKELETON
+  Health: 18
+  Damage: 2
+  Armor: 10
+  Faction: Outlaw
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.34
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier2
+    - exp 35 1
+  Equipment:
+    - iron_sword:0
+    - Bandit_Shield:5
+  KillMessages:
+    - "<target.name> couldn<&sq>t match a &5&lBandit Lieutenant<&sq>s power!"
+    - "<target.name> was slain mercilessly by a &5&lBandit Lieutenant!"
+    - "<target.name> was gruesomely outfought by a &5&lBandit Lieutenant!"
+  Display: "&5&lBandit Lieutenant"
+  Disguise: player <inherit> setSkin bandit_t2.png setDynamicName
+  Skills:
+    - message{m="&5Bandit Lieutenant&f<&co> You ain<&sq>t walking away from this one!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{skills=Bandit_Lieutenant_Followers_1,Bandit_Lieutenant_Followers_2} ~onSpawn
+    - skill{s=Bandit_Fighter_Stomp} ~onTimer:140 >50% 1
+    - skill{s=Bandit_Lieutenant_Phase_2} =50% 1
+    - skill{s=Bandit_Lieutenant_Reposition} @self ~onDamaged <50% 1
+    - skill{s=Bandit_Lieutenant_Call_Start} @self ~onDamaged =30% 1
+    - skill{s=Bandit_Lieutenant_Call_Failure} @self ~onDamaged <27% 1
+    - skill{s=Prevent_Sunburn} @self ~onTimer:1

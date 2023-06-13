@@ -1,0 +1,11 @@
+Captain_Crew_1:
+  # Spawns sunken to follow Sunken Captain. Variant with two Cannoneers.
+  Skills:
+    - summon{type=Water_Swashbuckler;amount=4;radius=5} @SelfLocation
+    - summon{type=Water_Cannoneer;amount=2;radius=5} @SelfLocation
+
+Captain_Crew_2:
+  # Spawns sunken to follow Sunken Captain. Variant with three Cannoneers.
+  Skills:
+    - summon{type=Water_Swashbuckler;amount=3;radius=5} @SelfLocation
+    - summon{type=Water_Cannoneer;amount=3;radius=5} @SelfLocation

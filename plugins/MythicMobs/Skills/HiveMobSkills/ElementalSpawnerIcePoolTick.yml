@@ -1,0 +1,7 @@
+Elemental_Spawner_Ice_Pool_Tick:
+  Skills:
+    - damage{a=4} @PIR{r=4}
+    - potion{type=SLOW;duration=20;level=2} @PIR{r=4}
+    - effect:particlering{p=snowflake;radius=1;points=8;a=10;hs=0.2;vs=0.1} @origin
+    - effect:particlering{p=snowflake;radius=2;points=12;a=15;hs=0.2;vs=0.1} @origin
+    - effect:particlering{p=snowflake;radius=4;points=16;a=20;hs=0.2;vs=0.1} @origin

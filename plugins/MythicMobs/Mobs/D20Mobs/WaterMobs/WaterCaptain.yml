@@ -1,0 +1,37 @@
+Water_Captain:
+  # T2 Leader mob, versatile skillset. High melee damage. Can use cannon shots and rapid fire to damage the player at range. Can make allies invulnerable as he dies.
+  Type: DROWNED
+  Health: 33
+  Damage: 6
+  Armor: 15
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name> was unable to steal a &5&lSunken Captain&f's treasure!"
+  Display: "&5&lSunken Captain"
+  Disguise: player <inherit> setSkin water_tl2.png setDynamicName
+  Skills:
+    - message{m="&5&lSunken Captain&f<&co> Ya hear that, crew? Some salty dog wants to dance on the plank!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{s=Captain_Crew_1, Captain_Crew_2} ~onSpawn
+    - randomskill{s=Pirate_Rapid_Fire, Cannon_Shot} ~onTimer:85 >0 1
+    - skill{s=Cannoneer_Gunpowder_Surprise} ~onDamaged <50% 1
+    - skill{s=Pirate_Supremacy} ~onTimer:30 <20% 1

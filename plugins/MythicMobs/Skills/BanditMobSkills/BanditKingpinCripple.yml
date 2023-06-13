@@ -1,0 +1,10 @@
+Bandit_Kingpin_Cripple_Aura:
+  # Creates large slow and weakness aura.
+  Skills:
+    - aura{AuraName=Cripple_Aura;oT=Bandit_Kingpin_Cripple;i=100} @PIR{r=15}
+
+Bandit_Kingpin_Cripple:
+  # Slows and weakens the target.
+  Skills:
+    - potion{t=SLOW;l=1;d=200}
+    - potion{t=WEAKNESS;l=1;d=200}

@@ -1,0 +1,36 @@
+Water_Tidemaster:
+  # T1 Leader mob, high damage. Possesses a healing aura for allies. High-priority target. Can empower himself to fight back as health gets low.
+  Type: DROWNED
+  Health: 20
+  Damage: 5
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - trident:0
+  KillMessages:
+    - "<target.name> was sacrificed to the rain god by a &9Merfolk Tidemaster!"
+  Display: "&9Merfolk Tidemaster"
+  Disguise: player <inherit> setSkin water_tl1.png setDynamicName
+  Skills:
+    - message{m="&9Merfolk Tidemaster&f<&co> The deep ones ordain your death, <target.name>!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{s=Tidemaster_Followers_1, Tidemaster_Followers_2} ~onSpawn 1
+    - skill{s=Tidemaster_Regen_Pulse} ~onTimer:60 >0 1
+    - skill{s=Tidemaster_Empower} =50% 1

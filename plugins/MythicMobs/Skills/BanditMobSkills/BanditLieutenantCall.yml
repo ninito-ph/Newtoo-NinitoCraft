@@ -1,0 +1,60 @@
+Bandit_Lieutenant_Call_Start:
+  # Makes mob stand still and telegraphs the reinforcement call.
+  Skills:
+    # Clears invisibility and speed, if he had any.
+    - potion{type=INVISIBILITY;duration=1} @Self
+    - potion{type=SPEED;duration=1} @self
+    - setstance{s=Calling_Reinforcements} @Self
+    - actionmessage{m="The &5&lBandit Lieutenant&f is attempting to call reinforcements! Stop him!"} @PlayersInRadius{r=30}
+    - RunAIGoalSelector{goal=clear}
+    - RunAITargetSelector{target=clear}
+    - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+    - effect:sound{s=block.note.harp} @self
+    - delay 17
+    - skill{s=Bandit_Lieutenant_Call_Step2}
+
+Bandit_Lieutenant_Call_Step2:
+  # Makes mob continue calling for reinforcement, if he has not been damaged.
+  Conditions:
+    - stance{s=Call_Failed} false
+  Skills:
+    - RunAIGoalSelector{goal=clear}
+    - RunAITargetSelector{target=clear}
+    - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+    - effect:sound{s=block.note.harp} @self
+    - delay 17
+    - skill{s=Bandit_Lieutenant_Call_Finalize}
+
+Bandit_Lieutenant_Call_Finalize:
+  # Makes mob continue calling for reinforcement, if he has not been damaged.
+  Conditions:
+    - stance{s=Call_Failed} false
+  Skills:
+    # If channeling completes, summons two minions
+    - summon{type=Bandit_Fighter;amount=1;radius=5} @SelfLocation
+    - summon{type=Bandit_Rogue;amount=1;radius=5} @SelfLocation
+    # Returns ai to combat mode
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=bowshoot}
+    - RunAIGoalSelector{goal=gotoparent}
+    - RunAIGoalSelector{goal=randomstroll}
+    - RunAITargetSelector{target=clear}
+    - RunAITargetSelector{target=attacker}
+    - RunAITargetSelector{target=players}
+    - setstance{s=Attack_Mode} @self
+
+Bandit_Lieutenant_Call_Failure:
+  Conditions:
+    - stance{s=Calling_Reinforcements} true
+  # Cancels reinforcement call
+  Skills:
+    - setstance{s=Call_Failed} @self ~onDamaged
+    # Returns ai to combat mode
+    - message{m="The reinforcements call has been stopped!"} @PIR{r=30} ~onEnterCombat >0 1
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=bowshoot}
+    - RunAIGoalSelector{goal=gotoparent}
+    - RunAIGoalSelector{goal=randomstroll}
+    - RunAITargetSelector{target=clear}
+    - RunAITargetSelector{target=attacker}
+    - RunAITargetSelector{target=players}

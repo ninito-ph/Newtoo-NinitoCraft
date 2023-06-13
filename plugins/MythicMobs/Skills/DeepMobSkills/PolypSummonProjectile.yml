@@ -1,0 +1,26 @@
+Polyp_Summon_Projectile:
+  Conditions:
+    - variableInRange{var=global.SummonCount;value=<60} required
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1} @self
+    - projectile{onTick=Polyp_Summon_Tick;onEnd=Polyp_Summon_End;v=10;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false}
+    - variableadd{var=global.SummonCount;amount=2} @self
+
+Polyp_Summon_Tick:
+  # SFX for Matriarch Spit Tick
+  Skills:
+    - effect:particles{p=glow;a=40;hs=0.1;vs=0.05} @origin
+
+Polyp_Summon_End:
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.enderman.scream;v=1;p=0.6} @PlayersNearOrigin{r=4}
+    # Shows SFX
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=0.75} @origin
+    - effect:particlering{p=glow;radius=1;points=8;a=40;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=0.75} @origin
+    - effect:particlering{p=glow;radius=2;points=12;a=40;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - summon{type=Deep_Interdimensional_Invader;amount=2;r=2} @origin
+    - rally{types=Deep_Interdimensional_Invader;r=3} @origin

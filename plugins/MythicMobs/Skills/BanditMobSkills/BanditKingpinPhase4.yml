@@ -1,0 +1,30 @@
+Bandit_Kingpin_Phase_4:
+  # Summons two lieutenants and three bandit horsemen to follow the bandit kingpin. Gives the bandit kingpin an enchanted bow.
+  Skills:
+    # Telegraphs summon and makes bandit kingpin stay still.
+    - actionmessage{m="The &4&lBandit Kingpin&f is calling reinforcements!"} @PlayersInRadius{r=30}
+    - RunAIGoalSelector{goal=clear}
+    - RunAITargetSelector{target=clear}
+    - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+    - effect:sound{s=block.note.harp} @self
+    - delay 30
+    # Telegraphs summon.
+    - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+    - effect:sound{s=block.note.harp} @self
+    - delay 30
+    # Telegraphs summon.
+    - effect:particles{particle=note;amount=5;hs=0.5;y=1} @self
+    - effect:sound{s=block.note.harp} @self
+    # Summons two bandit lieutenants and three bandit horsemen.
+    - summon{type=Bandit_Lieutenant;amount=2;radius=5} @SelfLocation
+    - summon{type=Bandit_Horseman;amount=3;radius=5} @SelfLocation
+    # Equips legendary bow and sets ai to combat mode.
+    - equip{item=Manslasher_Bow:0}
+    - equip{item=air:5}
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=bowshoot}
+    - RunAIGoalSelector{goal=gotoparent}
+    - RunAIGoalSelector{goal=randomstroll}
+    - RunAITargetSelector{target=clear}
+    - RunAITargetSelector{target=attacker}
+    - RunAITargetSelector{target=players}

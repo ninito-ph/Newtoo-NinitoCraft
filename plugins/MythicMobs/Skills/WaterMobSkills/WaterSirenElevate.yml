@@ -1,0 +1,10 @@
+Water_Siren_Elevate:
+  Skills:
+    # Applies potion effects
+    - potion{type=DAMAGE_RESISTANCE;duration=1200;level=1} @Self
+    - potion{type=SPEED;duration=1200;level=2} @Self
+    # Shows SFX
+    - effect:particles{particle=happy_villager;amount=6;hs=0.5;y=1} @Self
+    - effect:particlering{p=glow;radius=0.5;points=8;a=5;hs=0.4;vs=1;color=#cb48ea} @Self
+    - delay 2
+    - effect:particlering{p=glow;radius=1;points=12;a=5;hs=0.4;vs=0.7;color=#cb48ea} @Self

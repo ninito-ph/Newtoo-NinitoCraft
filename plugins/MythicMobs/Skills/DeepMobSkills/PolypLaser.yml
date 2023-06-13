@@ -1,0 +1,29 @@
+Polyp_Laser_Cast:
+  Conditions:
+    - targetinlineofsight required
+  TargetConditions:
+    - distance{d=1to30} required
+  Cooldown: 20
+  Skills:
+    # Telegraphs attack
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.1} @self
+    - delay 30
+    - skill{s=Polyp_Laser} @target
+
+Polyp_Laser:
+  Conditions:
+    - targetinlineofsight required
+  TargetConditions:
+    - distance{d=1to30} required
+  Skills:
+    # SFX
+    - sound{s=entity.enderman.teleport;p=1.8} @target
+    - effect:enderbeam{d=20;y=1.2} @target
+    # Applies effects to target
+    - damage{a=2.5} @target
+    - potion{type=SLOW;duration=20;level=1;p=false} @target
+    - potion{type=WEAKNESS;duration=20;level=1;p=false} @target
+    # Casts again
+    - delay 20
+    - skill{s=Polyp_Laser} @target

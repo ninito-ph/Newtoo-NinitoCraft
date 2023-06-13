@@ -1,0 +1,8 @@
+Interdimensional_Invader_Explode:
+  # SFX and functionality for magic missle hit
+  Skills:
+    - effect:particles{particle=largeexplosion;amount=5;hs=1;vs=1} @self
+    - effect:sound{s=entity.generic.explode} @self
+    - throw{v=3;vy=3} @EIR{r=3;t=Deep_Interdimensional_Invader}
+    - damage{a=10} @EIR{r=3;t=Deep_Interdimensional_Invader}
+    - variablesubtract{var=global.SummonCount;amount=1} @self

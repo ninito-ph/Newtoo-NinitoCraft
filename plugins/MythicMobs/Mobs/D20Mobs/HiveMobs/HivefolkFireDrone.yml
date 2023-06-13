@@ -1,0 +1,35 @@
+Hivefolk_Fire_Drone:
+  # Upgraded drone with significantly higher damage and defensive capabilities. Deals fire damage on hits. Explodes on death. Mythic Encounter mob.
+  Type: ZOMBIE
+  Health: 15
+  Damage: 7
+  Armor: 7
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.35
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body was burned to a crisp by an &6Elemental Firedrone&f!"
+    - "<target.name><&sq>s carrion is being barbecued by an &6Elemental Firedrone&f!"
+  Display: "&6Elemental Firedrone"
+  Disguise: player <inherit> setSkin hiveman_tm.png setDynamicName
+  Skills:
+    - ignite{duration=100} @target ~onAttack >0 1
+    - skill{s=Elemental_Fire_Drone_Torch} ~onDamaged >0 0.5
+    - skill{s=Elemental_Fire_Drone_Explode} ~onDeath

@@ -1,0 +1,16 @@
+Pirate_Hype:
+  Skills:
+    # Applies potion effects
+    - potion{type=SPEED;duration=60;level=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - potion{type=SPEED;duration=60;level=1} @Self
+    # Equips secondary sword
+    - equip{item=iron_sword:5} @Self
+    - equip{item=iron_sword:5} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=block.note_block.guitar;p=0.5;} @origin
+    - effect:particles{p=note;c=#760300;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particles{p=note;c=#760300;a=10;hs=0.5;y=1} @Self
+    # Unequips secondary sword
+    - delay 60
+    - equip{item=air:5} @Self
+    - equip{item=air:5} @EntitiesNearOrigin{r=6;targetPlayers=false}

@@ -1,0 +1,15 @@
+Cleric_Followers_1:
+  # Summons 3 deep captains.
+  Skills:
+    - summon{type=Deep_Captain;amount=3;radius=5} @SelfLocation
+
+Cleric_Followers_2:
+  # Summons 2 deep rangers.
+  Skills:
+    - summon{type=Deep_Ranger;amount=2;radius=5} @SelfLocation
+
+Cleric_Followers_3:
+  # Summons 2 deep captains, 1 deep ranger.
+  Skills:
+    - summon{type=Deep_Captain;amount=2;radius=5} @SelfLocation
+    - summon{type=Deep_Ranger;amount=1;radius=5} @SelfLocation

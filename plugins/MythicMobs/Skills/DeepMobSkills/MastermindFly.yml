@@ -1,0 +1,4 @@
+Mastermind_Fly:
+  Skills:
+    # Applies effects on self
+    - potion{type=LEVITATION;duration=50;level=1;p=false} @self

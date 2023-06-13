@@ -1,0 +1,37 @@
+Bandit_Horseman:
+  # Regular swordsman, but mounted on a horse. Significantly faster.
+  Type: ZOMBIE
+  Health: 10
+  Damage: 1
+  Armor: 8
+  Faction: Outlaw
+  Mount: Bandit_Horse
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier1
+    - exp 15 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name><&sq>s life was stolen by a &aBandit Horseman!"
+    - "<target.name> was robbed and slain by a &aBandit Horseman!"
+    - "<target.name> was slashed to death by a &aBandit Horseman!"
+  Display: "&aBandit Horseman"
+  Disguise: player <inherit> setSkin bandit_t1.png setDynamicName
+  Skills:
+    - remove @Mount ~onDeath

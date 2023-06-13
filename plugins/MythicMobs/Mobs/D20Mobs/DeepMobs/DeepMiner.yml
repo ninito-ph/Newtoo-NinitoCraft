@@ -1,0 +1,32 @@
+Deep_Miner:
+  # Tanky meelee mob. Hits hard, and can throw projectiles that slow down its target.
+  Type: ZOMBIE
+  Health: 20
+  Damage: 4
+  Armor: 12
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.27
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_pickaxe:0
+  KillMessages:
+    - "<target.name> was crushed by a &aDuergar Miner!"
+  Display: "&aDuergar Miner"
+  Disguise: player <inherit> setSkin deep_t1.png setDynamicName
+  Skills:
+    - skill{s=Deep_Slow} ~onTimer:140 @target

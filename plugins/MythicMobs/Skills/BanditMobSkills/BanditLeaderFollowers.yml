@@ -1,0 +1,5 @@
+Bandit_Leader_Followers:
+  # Spawns bandits to follow Bandit Leader
+  Skills:
+    - summon{type=Bandit_Swordsman;amount=2;radius=5} @SelfLocation
+    - summon{type=Bandit_Bowman;amount=1;radius=5} @SelfLocation

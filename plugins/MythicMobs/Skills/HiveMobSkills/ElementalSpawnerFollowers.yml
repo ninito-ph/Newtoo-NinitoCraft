@@ -1,0 +1,12 @@
+Elemental_Spawner_Followers_1:
+  # Summons Hivefolk Spawner followers. Variant with three Drones and one Buzzard.
+  Skills:
+    - summon{type=Hivefolk_Fire_Drone;amount=3;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Fire_Buzzard;amount=1;radius=5} @SelfLocation
+
+
+Elemental_Spawner_Followers_2:
+  # Summons Hivefolk Spawner followers. Variant with three Drones and one Buzzard.
+  Skills:
+    - summon{type=Hivefolk_Fire_Drone;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Fire_Buzzard;amount=2;radius=5} @SelfLocation

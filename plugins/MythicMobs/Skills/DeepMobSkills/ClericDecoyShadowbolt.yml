@@ -1,0 +1,8 @@
+Cleric_Decoy_Shadowbolt:
+  Skills:
+    - effect:particles{p=smoke_large;a=30;hs=0.15;vs=0.25;y=1} @self
+    - delay 70
+    - skill{s=Cleric_Shadowbolt_Projectile} @target
+    - delay 70
+    - damage{a=100} @self
+    - effect:particles{p=smoke_large;a=30;hs=0.15;vs=0.25;y=1} @self

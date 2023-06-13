@@ -1,0 +1,21 @@
+Magic_Missile:
+  # Throws a projectile which slows down the player
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=0.3} @self
+    - missile{onTick=Deep_Petrify_Tick;onHit=Magic_Missile_Hit;onEnd=Deep_Slow_Miss;in=15;v=6;i=1;hR=1;vR=1;syo=1.5;md=120;hnp=false}
+
+Magic_Missile_Hit:
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.enderman.teleport;v=1;p=2} @target
+    - effect:particles{p=block;m=amethyst;a=10;hs=0.25;vs=0.25;y=1} @target
+    # Damages
+    - damage{a=5}
+
+Magic_Missile_Miss:
+  # SFX and functionality for magic missile miss
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.enderman.teleport;v=1;p=2} @origin
+    - effect:particles{p=block;m=amethyst;a=10;hs=0.25;vs=0.25;y=1} @origin

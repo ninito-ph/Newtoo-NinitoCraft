@@ -1,0 +1,17 @@
+Bandit_Horse:
+  # Auxiliary horse for bandits.
+  Type: HORSE
+  Health: 25
+  Faction: Outlaw
+  Options:
+    Saddled: true
+    KnockbackResistance: 0.5
+    MovementSpeed: 0.45
+  AIGoalSelectors:
+    - 0 clear
+    - 1 movetowardstarget
+    - 2 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players

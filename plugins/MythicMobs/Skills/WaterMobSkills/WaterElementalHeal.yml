@@ -1,0 +1,20 @@
+Water_Elemental_Heal_Projectile:
+  Cooldown: 10
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1} @self
+    - projectile{onTick=Stormcaller_Enhance_Projectile_Tick;onEnd=Water_Elemental_Heal;v=10;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false} @EIR{r=10;limit=1;sort=LOWEST_HEALTH}
+
+Water_Elemental_Heal:
+  Skills:
+    # Applies potion effects
+    - heal{a=20} @EIR{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.glow_squid.squirt} @origin
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EntitiesNearOrigin{r=6;targetPlayers=false}
+    - effect:particlering{p=glow;radius=1;points=8;a=20;hs=0.4;vs=1;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=2;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=4;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin
+    - delay 2
+    - effect:particlering{p=glow;radius=6;points=12;a=20;hs=0.4;vs=0.7;color=#cb48ea} @origin

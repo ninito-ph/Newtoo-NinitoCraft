@@ -1,0 +1,10 @@
+Hivefolk_Hopper_Dodge:
+  # Makes mob jump backwards, also slowing any nearby players.
+  Cooldown: 10
+  Skills:
+    - effect:particles{particle=happyVillager;amount=10;hs=0.5;y=1} @self
+    - effect:sound{s=entity.silverfish.death;p=0.6} @self
+    - delay 30
+    - leap{v=200} @Forward{f=-5;y=1.25}
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @PIR{r=3.5}
+    - potion{type=SLOW;duration=80;level=1} @PIR{r=3.5}

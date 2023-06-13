@@ -1,0 +1,4 @@
+Deep_Petrify_Tick:
+  # SFX for Deep Captain Petrify Spell
+  Skills:
+    - effect:particles{p=redDust;a=20;hs=0.15;vs=0.15;color=#cb48ea} @origin

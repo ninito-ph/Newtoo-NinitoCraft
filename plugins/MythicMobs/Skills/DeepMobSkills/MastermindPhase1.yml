@@ -1,0 +1,5 @@
+Mastermind_Phase_1:
+  Skills:
+    # Applies effects on self
+    - setstance{s=Clear} @self
+    - potion{type=SLOW_FALLING;duration=9999999;level=1;p=false} @self

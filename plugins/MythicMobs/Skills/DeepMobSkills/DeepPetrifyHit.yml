@@ -1,0 +1,9 @@
+Deep_Petrify_Hit:
+  # SFX and functionality for Matriach Spit hit
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.enderman.teleport;v=1;p=1.3} @target
+    # Applies slow and petrify
+    - potion{type=SLOW;duration=100;level=2} @target
+    - prison{material=STONE;duration=40;breakable=true} @target
+    - damage{a=8} @target

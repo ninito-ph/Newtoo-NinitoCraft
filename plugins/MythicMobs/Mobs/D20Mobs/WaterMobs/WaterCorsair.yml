@@ -1,0 +1,35 @@
+Water_Corsair:
+  # Faster, higher damage version of Sunken Swashbuckler. Can shoot lifestealing bullets for higher endurance. Mythic Encounter mob.
+  Type: DROWNED
+  Health: 24
+  Damage: 7
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.31
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - gold_sword:0
+  KillMessages:
+    - "<target.name> was haunted to death by a &6Ghost Corsair!"
+  Display: "&6Ghost Corsair"
+  Disguise: player <inherit> setSkin water_tm.png setDynamicName
+  Skills:
+    - skill{s=Pirate_Hype} ~onAttack >0 0.7
+    - skill{s=Pirate_Defense} ~onDamaged >0 0.7
+    - skill{s=Ghost_Shot} ~onTimer:240 >0 0.3

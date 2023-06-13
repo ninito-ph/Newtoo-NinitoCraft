@@ -1,0 +1,11 @@
+Ranger_Followers_1:
+  # Spawns bandits to follow Bandit Lieutenant. Variant with two fighters.
+  Skills:
+    - summon{type=Deep_Shadowblade;amount=3;radius=5} @SelfLocation
+    - summon{type=Deep_Warlock;amount=1;radius=5} @SelfLocation
+
+Ranger_Followers_2:
+  # Spawns bandits to follow Bandit Lieutenant. Variant with two rogues.
+  Skills:
+    - summon{type=Deep_Shadowblade;amount=2;radius=5} @SelfLocation
+    - summon{type=Deep_Warlock;amount=2;radius=5} @SelfLocation

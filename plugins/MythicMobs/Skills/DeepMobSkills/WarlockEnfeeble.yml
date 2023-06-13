@@ -1,0 +1,38 @@
+Warlock_Enfeeble_Cast:
+  # Makes mob float for a while, before firing a debuff at the target.
+  Skills:
+    - potion{type=LEVITATION;duration=50;level=1} @self
+    - delay 10
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.6} @self
+    - delay 30
+    - skill{s=Warlock_Enfeeble_Projectile} @target
+
+Warlock_Enfeeble_Projectile:
+  # Throws a projectile which slows down the player
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=0.1} @self
+    - projectile{onTick=Warlock_Enfeeble_Tick;onEnd=Warlock_Enfeeble_End;v=15;i=1;hR=1;vR=1;syo=1.5;md=120;g=0.5;sE=false}
+
+Warlock_Enfeeble_Tick:
+  # SFX for Matriarch Spit Tick
+  Skills:
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25;color=#1f1d1d} @origin
+
+Warlock_Enfeeble_End:
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.enderman.teleport;v=1;p=0.1} @PlayersNearOrigin{r=4}
+    # Applies stat effects
+    - potion{type=SLOW;duration=140;level=2} @PlayersNearOrigin{r=4}
+    - potion{type=WEAKNESS;duration=140;level=1} @PlayersNearOrigin{r=4}
+    # Shows SFX
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=redDust;radius=1;points=8;a=20;hs=0.2;vs=0.1;color=#1f1d1d} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=redDust;radius=2;points=12;a=20;hs=0.2;vs=0.1;color=#1f1d1d} @origin
+    - delay 2
+    - effect:sound{s=entity.generic.explode;v=0.75;p=0.75} @origin
+    - effect:particlering{p=redDust;radius=4;points=16;a=20;hs=0.2;vs=0.1;color=#1f1d1d} @origin

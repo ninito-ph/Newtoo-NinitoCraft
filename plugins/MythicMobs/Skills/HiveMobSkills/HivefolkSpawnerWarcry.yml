@@ -1,0 +1,14 @@
+Hivefolk_Spawner_Warcry:
+  # Buffs children entities with speed for a short while.
+  Cooldown: 15
+  Skills:
+    # Telegraphs spawner has cast warcry
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.3;v=1.5} @self
+    - delay 30
+    # Buffs children and self
+    - potion{type=SPEED;duration=120;level=1} @self
+    - potion{type=SPEED;duration=120;level=1} @children
+    # Telegraphs child has been buffed
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @children
+    - sound{s=entity.silverfish.hurt} @children

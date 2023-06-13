@@ -1,0 +1,8 @@
+Mastermind_Interrupt_Regeneration:
+  Conditions:
+    - stance Regenerating required
+  Skills:
+    - setstance{s=Regeneration_Interrupted} @Self
+    - effect:particles{p=damageIndicator;a=20;hs=1;y=1} @self
+    - sound{s=entity.enderman.death;p=0.1} @self
+    - actionmessage{m="The &5&lMind Flayer<&sq>s&f regeneration was interrupted!"} @PlayersInRadius{r=30}

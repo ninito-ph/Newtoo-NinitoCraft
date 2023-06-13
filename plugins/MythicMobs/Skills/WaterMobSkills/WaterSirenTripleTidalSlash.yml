@@ -1,0 +1,10 @@
+Water_Siren_Triple_Tidal_Slash:
+  Cooldown: 23
+  Skills:
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - delay 20
+    - skill{s=Tidal_Slash} @Target
+    - delay 10
+    - skill{s=Tidal_Slash} @Target
+    - delay 10
+    - skill{s=Tidal_Slash} @Target

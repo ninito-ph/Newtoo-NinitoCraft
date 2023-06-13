@@ -1,0 +1,7 @@
+Shadowblade_Rush:
+  Cooldown: 7
+  Skills:
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.enderman.scream;v=1;p=1.65} @target
+    - delay 15
+    - potion{type=SPEED;duration=40;level=1} @self

@@ -1,0 +1,13 @@
+Barbarian_Splash:
+  Skills:
+    # Applies heal
+    - heal{a=2} @EIR{r=6;targetPlayers=false}
+    # Shows SFX
+    - sound{s=entity.generic.splash} @self
+    - sound{s=entity.drowned.hurt} @EIR{r=6;targetPlayers=false}
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EIR{r=6;targetPlayers=false}
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=60;hs=0.2;vs=0.3} @origin

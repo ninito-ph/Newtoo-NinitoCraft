@@ -1,0 +1,9 @@
+Cleric_Darkstrike:
+  Conditions:
+    - stance{s=Cloaked} cancel
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Applies stat effects
+    - potion{type=WITHER;duration=80;level=1} @target
+    - potion{type=WEAKNESS;duration=80;level=1} @target
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25;color=#1f1d1d} @target

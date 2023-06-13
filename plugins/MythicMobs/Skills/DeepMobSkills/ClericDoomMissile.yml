@@ -1,0 +1,73 @@
+Cleric_Doom_Missile_Cast:
+  Conditions:
+    - stance{s=Cloaked} cancel
+  Cooldown: 120
+  Skills:
+    # Telegraphs attack
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.wither.ambient;v=2;p=0.6} @self
+    - actionmessage{m="The &4&lAbyssal Cleric&f is casting a &cDoom Bolt&f! Run!"} @PlayersInRadius{r=30}
+    - potion{type=LEVITATION;duration=60;level=1} @self
+    - delay 60
+    - potion{type=SLOW_FALLING;duration=60;level=1} @self
+    # Fires projectiles
+    - skill{s=Cleric_Doom_Missile} @target
+
+Cleric_Doom_Missile:
+  # Throws a projectile which slows down the player
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=2;p=0.3} @self
+    - missile{onTick=Cleric_Doom_Missile_Tick;onHit=Cleric_Doom_Missile_Hit;onEnd=Cleric_Doom_Missile_Miss;v=6;i=1;hR=1;vR=1;syo=1.5;hnp=false} @target
+
+Cleric_Doom_Missile_Tick:
+  # SFX for Matriarch Spit Tick
+  Skills:
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25;color=#1f1d1d} @origin
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25} @origin
+
+Cleric_Doom_Missile_Hit:
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Telegraphs player has been hit
+    - actionmessage{m="You were hit by the &cDoom Bolt&f! Inevitable death approaches..."} @target
+    - effect:particles{particle=largeexplosion;amount=10} @target
+    - effect:sound{s=entity.wither.spawn;v=1;p=0.1} @target
+    - damage{a=0.1} @target
+    # Applies initial effects
+    - weather{type=storm;duration=215}
+    - potion{type=BLINDNESS;duration=285;level=1;} @target
+    - delay 80
+    # Telegraphs approaching death
+    - actionmessage{m="&4&l&kDOOM COMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lD&kOOM COMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDO&kOM COMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOO&kM COMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOOM&k COMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOOM C&kOMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOOM CO&kMES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOOM COM&kES"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOOM COME&kS"} @target
+    - delay 15
+    - actionmessage{m="&4&lDOOM COMES"} @target
+    # Kills player
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25;color=#1f1d1d} @target
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25} @target
+    - effect:sound{s=entity.wither.spawn;v=0.25;p=0.5} @target
+    - damage{a=9999} @target
+
+Cleric_Doom_Missile_Miss:
+  # SFX and functionality for magic missile miss
+  Skills:
+    # Telegraphs player has been hit
+    - actionmessage{m="The &cDoom Bolt&f missed! You<&sq>re safe!"} @PlayersNearOrigin{r=30}
+    - effect:sound{s=entity.enderman.teleport;v=1;p=0.45} @origin
+    - effect:particles{particle=largeexplosion;amount=10} @origin
+    - effect:sound{s=entity.generic.explode} @origin

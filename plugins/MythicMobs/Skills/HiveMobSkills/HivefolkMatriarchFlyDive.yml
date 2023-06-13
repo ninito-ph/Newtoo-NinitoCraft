@@ -1,0 +1,51 @@
+Hivefolk_Matriarch_Fly_Dive:
+  # Identical to spitter flight, but shoots more projectiles, faster. Additionally, causes repulsion when the matriarch hits the ground.
+  Cooldown: 15
+  Skills:
+    # Telegraphs
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#99cc00} @self
+    # Begins regular flight-spit
+    - potion{type=LEVITATION;duration=45;level=1} @self
+    - delay 17
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    - delay 5
+    # Fires projectile
+    - effect:sound{s=entity.slime.squish;v=1;p=1.3} @self
+    - effect:particles{p=slime;a=10;hs=0.25;vs=0.25;y=1} @self
+    - projectile{onTick=Hivefolk_Spitter_Spit_Tick;onHit=Hivefolk_Matriarch_Spit_Hit;onEnd=Hivefolk_Spitter_Spit_Miss;v=7;i=1;hR=1;vR=1;syo=1.5}
+    # Repulsion SFX
+    - delay 14
+    - effect:explosion @self
+    - effect:sound{s=entity.slime.squish;v=2;p=0.3;repeat=3;repeatInterval=5} @Self
+    - effect:particlering{p=reddust;a=100;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=2;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=175;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=4;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=250;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=6;color=#99cc00} @Self
+    - effect:particles{p=slime;a=20;hs=1.75;ys=1.75;y=1} @PIR{r=6}
+    - effect:sound{s=entity.slime.hurt;v=1;p=1} @PIR{r=6}
+    # Repulsion functionality
+    - throw{velocity=6;velocityY=5} @PIR{r=6}
+    - potion{type=POISON;duration=240;level=1} @PIR{r=6}
+    - potion{type=SLOW;duration=240;level=1} @PIR{r=6}

@@ -1,0 +1,6 @@
+Water_Siren_Smite:
+  Conditions:
+    - raining{} true
+  Cooldown: 23
+  Skills:
+    - lightning{d=5} @Target

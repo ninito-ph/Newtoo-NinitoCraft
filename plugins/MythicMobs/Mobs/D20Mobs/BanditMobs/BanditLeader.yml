@@ -1,0 +1,37 @@
+Bandit_Leader:
+  # Stronger hybrid between a swordsman and a bowman. Starts as swordsman, on half health switches to bowman mode.
+  Type: SKELETON
+  Health: 10
+  Damage: 2
+  Armor: 8
+  Faction: Outlaw
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Drops_Tier2
+    - exp 20 1
+  Equipment:
+    - stone_button:4
+    - iron_sword:0
+  KillMessages:
+    - "<target.name><&sq>s life was stolen by a &9Bandit Leader!"
+    - "<target.name> was robbed and slain by a &9Bandit Leader!"
+  Display: "&9Bandit Leader"
+  Disguise: player <inherit> setSkin bandit_t1.png setDynamicName
+  Skills:
+    - message{m="&9Bandit Leader&f<&co> Let<&sq>s get him boys!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Bandit_Leader_Followers} ~onSpawn 1
+    - skill{s=Bandit_Leader_Repulsion} <50% 1
+    - skill{s=Bandit_Leader_Phase_2} <50% 1

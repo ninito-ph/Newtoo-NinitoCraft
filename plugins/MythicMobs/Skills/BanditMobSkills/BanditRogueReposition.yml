@@ -1,0 +1,19 @@
+Bandit_Rogue_Reposition:
+  # Makes Rogue invisible and makes it run from player for 1.5 seconds, then sets it to attack mode.
+  Conditions:
+    - stance{s=Reposition_Mode} false
+  Skills:
+    - effect:smoke @self
+    - potion{type=INVISIBILITY;duration=30} @self
+    - potion{type=SPEED;duration=30} @self
+    - setstance{s=Reposition_Mode} @self
+    - equip{item=air:0}
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=fleeplayers}
+    - RunAIGoalSelector{goal=gotoparent}
+    - RunAIGoalSelector{goal=randomstroll}
+    - RunAITargetSelector{target=clear}
+    - delay 30
+    - effect:smoke @self
+    - delay 5
+    - skill{s=Bandit_Rogue_Attack_Mode} ~onTimer:35

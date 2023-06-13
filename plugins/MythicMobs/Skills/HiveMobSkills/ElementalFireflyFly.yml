@@ -1,0 +1,17 @@
+Elemental_Firefly_Fly:
+  # Makes mob float for a while, before firing three arrow at target.
+  Cooldown: 7
+  Skills:
+    # Telegraphs
+    - effect:particles{p=smoke_large;a=15;hs=0.5;y=1.5} @self
+    # Begins regulard flight-spit
+    - potion{type=LEVITATION;duration=37;level=1} @self
+    - delay 17
+    - effect:particles{p=happyVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.5} @self
+    - delay 7
+    - skill{s=Elemental_Firefly_Spit} @target
+    - delay 7
+    - skill{s=Elemental_Firefly_Spit} @target
+    - delay 7
+    - skill{s=Elemental_Firefly_Spit} @target

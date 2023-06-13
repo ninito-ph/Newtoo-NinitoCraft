@@ -1,0 +1,15 @@
+Polyp_Smite:
+  Conditions:
+    - targetinlineofsight required
+  TargetConditions:
+    - distance{d=1to15} required
+  Cooldown: 20
+  Skills:
+    # Telegraphs attack
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.1} @self
+    - delay 30
+    # Applies effects to target
+    - effect:lightning @target
+    - ignite{ticks=100} @target
+    - damage{a=9} @target

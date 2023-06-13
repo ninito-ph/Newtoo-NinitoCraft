@@ -1,0 +1,51 @@
+Water_Elemental:
+  # Healer mob with significant durability. Easy by himself, makes encounters significantly harder by constantly healing and empowering allies.
+  Type: ZOMBIE
+  Health: 45
+  DamageModifiers:
+    - FIRE 0
+  Damage: 0
+  Armor: 13
+  BossBar:
+    Enabled: true
+    Title: "&5&lWater Elemental"
+    Range: 50
+    Color: PINK
+    Style: SEGMENTED_6
+    Faction: Water
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.14
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 125 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body was broken by the waves of a &5&lWater Elemental!"
+    - "<target.name> drowned in the innards of a &5&lWater Elemental"
+    - "<target.name> couldn't stay dry against a &5&lWater Elemental!"
+  Display: "&5&lWater Elemental"
+  Disguise: player <inherit> setSkin water_ts.png setDynamicName
+  Skills:
+    - message{m="&5Water Elemental&f<&co> Grlgrlgrl..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    # Support Skills
+    - skill{s=Water_Elemental_Regeneration} ~onTimer:5 >0 1
+    - randomskill{s=Water_Elemental_Heal_Projectile, Water_Elemental_Enhance_Projectile} ~onTimer:300 >0 1
+    - skill{s=Water_Elemental_Empower} ~onTimer:200 >0 1
+    # Harass skills
+    - skill{s=Water_Elemental_Geyser} ~onTimer:60 >0 1
+    # Defense skills
+    - randomskill{s=Water_Elemental_Tidewash, Water_Elemental_Splash} ~onDamaged <75% 1

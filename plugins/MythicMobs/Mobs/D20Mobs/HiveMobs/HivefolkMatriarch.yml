@@ -1,0 +1,65 @@
+Hivefolk_Matriarch:
+  # Hivefolk World Boss.
+  Type: SKELETON
+  Health: 85
+  Damage: 6
+  Armor: 14
+  DamageModifiers:
+    - FALL 0
+    - SUFFOCATION 0
+  BossBar:
+    Enabled: true
+    Title: "&4&lHivefolk Matriarch"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+    KnockbackResistance: 0.5
+    FollowRange: 40
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - World_Boss_Common_Drops
+    - exp 675 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> disturbed a &4&lHivefolk Matriarch&f and regreted it deeply!"
+    - "<target.name> was feasted upon by a &4&lHivefolk Matriarch&f!"
+    - "<target.name><&sq>s combat skills could not outmatch a &4&lHivefolk Matriarch&f and its spawn!"
+  Display: "&4&lHivefolk Matriarch"
+  Disguise: player <inherit> setSkin hiveman_wb.png setDynamicName
+  Skills:
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - skill{s=Bandit_Kingpin_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Phase 1 - Two Hivefolk juggernauts and three praetorians assisting
+    - message{m="&4&lHivefolk Matriarch&f<&co> Xwwwwssskch... Xwwwwwwsssssssskch!"} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - skill{s=Hivefolk_Matriarch_Summon_Larva} ~onTimer:300 =50%-100%
+    - potion{type=POISON;duration=50;level=1} @target ~onAttack >0 1
+    - skill{s=Hivefolk_Matriarch_Followers} ~onSpawn >0 1
+    # Phase 2 - Venomous attacks
+    - skill{s=Hivefolk_Matriarch_Spit} @target ~onTimer:120 <83% 1
+    - skill{s=Hivefolk_Matriarch_Repulsion} @self ~onDamaged =50%-83% 1
+    # Phase 3 - Venomous attacks 2
+    - skill{s=Hivefolk_Matriarch_Chain_Leap} ~onTimer:400 =50%-67%
+    # Phase 4 - Reinforcements and royal larvae
+    - skill{s=Hivefolk_Matriarch_Followers} =50% 1
+    - skill{s=Hivefolk_Matriarch_Summon_Royal_Larva} ~onTimer:300 <50% 1
+    # Phase 5 - Fly attack
+    - equip{item=elytra:3} =34% 1
+    - skill{s=Hivefolk_Matriarch_Fly_Dive} ~onDamaged <34% 1
+    # Phase 6 - Poison Cloud Spit
+    - skill{s=Hivefolk_Matriarch_Poison_Cloud_Spit} @target ~onTimer:340 <17% 1

@@ -1,0 +1,34 @@
+Cleric_Shadowbolt_Cast:
+  Conditions:
+    - stance{s=Cloaked} cancel
+  Cooldown: 40
+  Skills:
+    # Telegraphs attack
+    - effect:particles{p=angryVillager;a=10;hs=0.5;y=1} @self
+    - sound{s=entity.enderman.scream;p=0.6} @self
+    - potion{type=LEVITATION;duration=40;level=1} @self
+    - delay 40
+    - potion{type=SLOW_FALLING;duration=50;level=1} @self
+    # Fires projectiles
+    - skill{s=Cleric_Shadowbolt_Projectile} @PIR{r=18;}
+
+Cleric_Shadowbolt_Projectile:
+  # Throws a projectile which slows down the player
+  Skills:
+    - effect:sound{s=entity.enderman.teleport;v=1;p=0.8} @self
+    - missile{onTick=Cleric_Shadowbolt_Tick;onHit=Cleric_Shadowbolt_Hit;onEnd=Deep_Slow_Miss;v=8;i=4;hR=1;vR=1;syo=1.5;hnp=false} @target
+
+Cleric_Shadowbolt_Tick:
+  # SFX for Matriarch Spit Tick
+  Skills:
+    - effect:particles{p=reddust;a=40;hs=0.15;vs=0.15;color=#1f1d1d} @origin
+
+Cleric_Shadowbolt_Hit:
+  # SFX and functionality for magic missle hit
+  Skills:
+    # Telegraphs player has been hit
+    - effect:sound{s=entity.wither.ambient;v=0.25;p=1.7} @target
+    - effect:particles{p=redDust;a=40;hs=0.25;vs=0.25;color=#1f1d1d} @target
+    # Applies effects
+    - potion{type=BLINDNESS;duration=300;level=1;} @target
+    - potion{type=SLOW;duration=300;level=2;} @target

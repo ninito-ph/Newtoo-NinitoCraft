@@ -1,0 +1,5 @@
+Bandit_Kingpin_Followers:
+  # Spawns two bandit lieutenants and three bandit horsemen to follow the Bandit Kingpin.
+  Skills:
+    - summon{type=Bandit_Lieutenant;amount=2;radius=5} @SelfLocation
+    - summon{type=Bandit_Horseman;amount=3;radius=5} @SelfLocation

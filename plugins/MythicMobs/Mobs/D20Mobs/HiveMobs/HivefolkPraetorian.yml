@@ -1,0 +1,41 @@
+Hivefolk_Praetorian:
+  # Strong drone-buzzard hybrid. High damage and speed. Dangerous even alone. Spawns if a Larva kills a player.
+  Type: ZOMBIE
+  Health: 11
+  Damage: 5.5
+  Armor: 6.5
+  DamageModifiers:
+    - FALL 0
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    # PLACEHOLDER DROPS
+    # - Bandit_Drops_Tier1
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name> was brutalized by a bloodthirsty &aHivefolk Praetorian&f!"
+    - "<target.name><&sq>s throat was ripped apart by a &aHivefolk Praetorian&f!"
+    - "<target.name> was no match for a &aHivefolk Praetorian<&sq>s&f ferocity!"
+  Display: "&9Hivefolk Praetorian"
+  Disguise: player <inherit> setSkin hiveman_ts.png setDynamicName
+  Skills:
+    - skill{s=Hivefolk_Praetorian_Enrage} =50% 1
+    - skill{s=Hivefolk_Praetorian_Fly} ~onDamaged <50% 1
+    # Spawns Larva on death
+    - summon{type=Hivefolk_Larva;amount=1;radius=1} ~onDeath @SelfLocation
+    - effect:particles{p=reddust;a=16;hs=1;y=0.7;color=#ccff66} ~onDeath @self

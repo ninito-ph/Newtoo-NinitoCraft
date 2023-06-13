@@ -1,0 +1,8 @@
+Ghost_Implode:
+  Skills:
+    - effect:particles{particle=soul_fire_flame;amount=15;hs=0.5;y=1} @self
+    - effect:sound{s=entity.creeper.primed;p=0.5} @self
+    - delay 40
+    - skill{s=Dragoon_Shot_Hit} @self
+    - potion{type=WEAKNESS;duration=120;level=1} @PlayersInRadius{r=6}
+    - potion{type=CONFUSION;duration=120;level=1} @PlayersInRadius{r=6}

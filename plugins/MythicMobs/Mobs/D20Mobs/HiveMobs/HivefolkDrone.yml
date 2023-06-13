@@ -1,0 +1,34 @@
+Hivefolk_Drone:
+  # Standard melee mob, can be dangerous when buffed by a spawner. Cannon Fodder.
+  Type: ZOMBIE
+  Health: 7.5
+  Damage: 4
+  Armor: 5
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    # PLACEHOLDER DROPS
+    # - Bandit_Drops_Tier1
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+  KillMessages:
+    - "<target.name><&sq>s body was consumed by a hungry &aHivefolk Drone&f!"
+    - "<target.name><&sq>s carrion is being eaten by a &aHivefolk Drone&f!"
+    - "<target.name> was ripped apart to death by a &aHivefolk Drone&f!"
+  Display: "&aHivefolk Drone"
+  Disguise: player <inherit> setSkin hiveman_t1.png setDynamicName

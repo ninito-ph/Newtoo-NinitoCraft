@@ -1,0 +1,17 @@
+Water_Siren_Geyser:
+  Cooldown: 23
+  Skills:
+    # Telegraphs
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.drowned.hurt;p=0.4} @self
+    - delay 30
+    # Applies effects
+    - effect:geyser{type=WATER;height=5;speed=1} @Target
+    - throw{velocity=0;velocityY=13} @Target
+    # SFX
+    - sound{s=entity.generic.splash} @self
+    - effect:particlering{p=splash;radius=1;points=8;a=60;hs=0.2;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=2;points=12;a=60;hs=0.2;vs=0.3} @Target
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=16;a=60;hs=0.2;vs=0.3} @Target

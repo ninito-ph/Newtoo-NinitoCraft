@@ -1,0 +1,10 @@
+Bandit_Lieutenant_Phase_2:
+  # Changes AI to be archer and gives bow.
+  Skills:
+    - message{m="&5&lBandit Lieutenant&f<&co> Now you pissed me off!"} @PIR{r=30} ~onEnterCombat >0 1
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death} @self
+    - equip{item=Bandit_Longbow:0}
+    - RunAIGoalSelector{goal=clear}
+    - RunAIGoalSelector{goal=bowshoot}
+    - RunAIGoalSelector{goal=randomstroll}

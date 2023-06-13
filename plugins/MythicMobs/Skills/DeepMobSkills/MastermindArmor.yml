@@ -1,0 +1,9 @@
+Mastermind_Armor:
+  Conditions:
+    - stance{s=Regenerating} false
+  Cooldown: 20
+  Skills:
+    - effect:sound{s=entity.wither.hurt;v=1.5;p=0.5} @self
+    - orbital{onTick=Mastermind_Armor_Orb_Tick;onHit=Mastermind_Armor_Orb_Hit;points=16;interval=1;duration=250;charges=3;r=2;vy=1;oy=1;hnp=true;vr=2} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=250;level=2;p=true} @self
+    - potion{type=FIRE_RESISTANCE;duration=250;level=1;p=true} @self

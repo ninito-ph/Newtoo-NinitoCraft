@@ -1,0 +1,35 @@
+Water_Cannoneer:
+  # Mostly defenseless ranged mob. High damage cannon shot ability, priority target during fights.
+  Type: DROWNED
+  Health: 16
+  Damage: 3
+  Armor: 11
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.17
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - stick:0
+    - coal_block:5
+  KillMessages:
+    - "<target.name> was blown up to pieces by a &9Sunken Cannoneer!"
+  Display: "&9Sunken Cannoneer"
+  Disguise: player <inherit> setSkin water_t2.png setDynamicName
+  Skills:
+    - skill{s=Cannon_Shot} ~onTimer:60 >0 1
+    - randomskill{s=Cannoneer_Gunpowder_Surprise, Cannoneer_Flee} ~onDamaged <25% 0.75

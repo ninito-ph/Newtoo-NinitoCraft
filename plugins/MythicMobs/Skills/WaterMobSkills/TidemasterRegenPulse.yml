@@ -1,0 +1,19 @@
+Tidemaster_Regen_Pulse:
+  Skills:
+    # Applies heal
+    - heal{a=1} @EIR{r=10;targetPlayers=false}
+    - heal{a=1} @Self
+    # Shows SFX
+    - sound{s=entity.generic.splash} @self
+    - sound{s=entity.drowned.hurt} @Self
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @EIR{r=10;targetPlayers=false}
+    - effect:particles{p=heart;a=10;hs=0.5;y=1} @Self
+    - effect:particlering{p=splash;radius=2;points=8;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=4;points=12;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=6;points=16;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=8;points=19;a=60;hs=0.2;vs=0.3} @origin
+    - delay 2
+    - effect:particlering{p=splash;radius=10;points=21;a=60;hs=0.2;vs=0.3} @origin

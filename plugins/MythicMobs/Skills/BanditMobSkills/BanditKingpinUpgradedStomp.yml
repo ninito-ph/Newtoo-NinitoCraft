@@ -1,0 +1,15 @@
+Bandit_Kingpin_Upgraded_Stomp:
+  # Makes fighter leap at target and explode the ground, dealing damage.
+  Conditions:
+    - incombat true
+  Cooldown: 7
+  Skills:
+    - effect:particles{particle=angryVillager;amount=6;hs=0.5;y=1} @self
+    - effect:sound{s=entity.villager.death} @self
+    - delay 12
+    - leap{v=200} @target
+    - delay 5
+    - effect:particles{particle=largeexplosion;amount=10} @self
+    - effect:sound{s=entity.generic.explode} @self
+    - throw{v=4;vy=4} @PIR{r=4}
+    - damage{amount=4;pkb=true} @PIR{r=4}

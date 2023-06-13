@@ -1,0 +1,37 @@
+Hivefolk_Buzzard:
+  # Melee mob with ranged capabilities. Cannon Fodder.
+  Type: ZOMBIE
+  Health: 5
+  Damage: 4
+  DamageModifiers:
+    - FALL 0
+  Armor: 5
+  Faction: Hivefolk
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 10 1
+  Equipment:
+    - stone_button:4
+    - elytra:3
+  KillMessages:
+    - "<target.name><&sq>s body was consumed by a hungry &aHivefolk Buzzard&f!"
+    - "<target.name><&sq>s carrion is being eaten by a &aHivefolk Buzzard&f!"
+    - "<target.name><&sq>s body is getting flown back to the hive by &aHivefolk Buzzard&f!"
+  Display: "&aHivefolk Buzzard"
+  Disguise: player <inherit> setSkin hiveman_t1.png setDynamicName
+  Skills:
+    - skill{s=Hivefolk_Buzzard_Fly} ~onDamaged >0 1

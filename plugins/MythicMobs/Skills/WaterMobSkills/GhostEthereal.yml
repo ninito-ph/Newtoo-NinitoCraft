@@ -1,0 +1,20 @@
+Ghost_Ethereal:
+  Skills:
+    - potion{type=INVISIBILITY;duration=120;level=1} @Self
+    - potion{type=DAMAGE_RESISTANCE;duration=120;level=5} @Self
+    - RunAIGoalSelector{goal=fleeplayers} @Self
+    # Shows VFX
+    - effect:sound{s=entity.enderman.teleport;v=0.75;p=1} @origin
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self
+    - delay 20
+    - effect:particles{p=soul_fire_flame;a=10;hs=0.5;y=1} @Self

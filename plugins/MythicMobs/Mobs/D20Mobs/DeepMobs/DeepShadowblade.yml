@@ -1,0 +1,33 @@
+Deep_Shadowblade:
+  # Fast melee mob that can hit the player, blind them, and quickly back away.
+  Type: ZOMBIE
+  Health: 20
+  Damage: 4
+  Armor: 9
+  Faction: Deep
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.3
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 30 1
+  Equipment:
+    - iron_sword:0
+  KillMessages:
+    - "<target.name> was pushed into the dark by a &9Drow Shadowblade!"
+  Display: "&9Drow Shadowblade"
+  Disguise: player <inherit> setSkin deep_t2.png setDynamicName
+  Skills:
+    - skill{s=Shadowblade_Rush} ~onTimer:140 @target
+    - skill{s=Shadowblade_Darken} ~onAttack >0 0.75

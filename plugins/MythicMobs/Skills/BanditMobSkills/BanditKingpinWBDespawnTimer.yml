@@ -1,0 +1,16 @@
+Bandit_Kingpin_WB_Despawn_Timer:
+  # Times the world boss encounter and despawns the world boss should the time exceed limit.
+  Skills:
+    - message{m="&lCombat with a &4&lWorld Boss&f&l has started!"} @EIW
+    - actionmessage{m="&l&c4<&co>30&f minutes remain!"} @PlayersInRadius{r=30}
+    - delay 2700
+    - actionmessage{m="&l&c2<&co>15&f minutes remain!"} @PlayersInRadius{r=30}
+    - delay 1200
+    - actionmessage{m="&l&c60&f seconds remain!"} @PlayersInRadius{r=30}
+    - delay 600
+    - actionmessage{m="&l&c30&f seconds remain!"} @PlayersInRadius{r=30}
+    - delay 400
+    - actionmessage{m="&l&c10&f seconds remain!"} @PlayersInRadius{r=30}
+    - delay 200
+    - actionmessage{m="&4&lWorld Boss&f&l encounter over!"} @PlayersInRadius{r=30}
+    - remove @self
