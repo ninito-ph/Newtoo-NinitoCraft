@@ -44,3 +44,4 @@ libraries
 # OS Files
 .DS_Store
 Thumbs.db
+plugins/LibsDisguises/internal.yml
