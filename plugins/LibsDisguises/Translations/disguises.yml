@@ -538,3 +538,15 @@
 
 # Name for the TEXT_DISPLAY disguise
 "Text Display": "Text Display"
+
+# Name for the ChestBoat EntityType, this is used in radius commands
+"ChestBoat": "ChestBoat"
+
+# Name for the BlockDisplay EntityType, this is used in radius commands
+"BlockDisplay": "BlockDisplay"
+
+# Name for the ItemDisplay EntityType, this is used in radius commands
+"ItemDisplay": "ItemDisplay"
+
+# Name for the TextDisplay EntityType, this is used in radius commands
+"TextDisplay": "TextDisplay"
