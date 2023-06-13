@@ -33,10 +33,12 @@ kits:
       color:yellow,orange fade:red shape:ball effect:trail color:red,purple fade:pink
       shape:star effect:trail power:1
   ironknight:
-    delay: 600
+    delay: 100
     items:
     - iron_sword 1
-    - cooked_beef 12
+    - cooked_beef 64
+    - bow 1
+    - arrow 64
     - iron_boots 1
     - iron_leggings 1
     - iron_chestplate 1
@@ -85,3 +87,13 @@ kits:
     - diamond_leggings 1 protection_environmental:4 durability:3
     - diamond_chestplate 1 protection_environmental:4 thorns:3 durability:3
     - diamond_helmet 1 protection_environmental:4 durability:3
+  woodenknight:
+    delay: 100
+    items:
+    - wooden_sword 1
+    - cooked_beef 64
+    - shield 1 basecolor:16383998
+    - leather_helmet 1 color:10511680
+    - leather_chestplate 1 color:10511680
+    - leather_leggings 1 color:10511680
+    - leather_boots 1 color:10511680
