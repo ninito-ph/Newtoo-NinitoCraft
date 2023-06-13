@@ -1,0 +1,25 @@
+Hivefolk_Matriarch_Repulsion:
+  # Sends a shockwave that poisons, slows and throws players away.
+  Cooldown: 35
+  Skills:
+    # Telegraphs skill to player
+    - effect:particles{particle=happyVillager;amount=20;hs=0.5;y=1} @self
+    - sound{s=entity.silverfish.hurt;p=0.05;v=2;repeat=3;repeatInterval=10} @self
+    - potion{type=SLOW;duration=50;level=1} @self
+    - delay 35
+    # Skill SFX
+    - jump{v=0.6} @self
+    - delay 14
+    - effect:explosion @self
+    - effect:sound{s=entity.slime.squish;v=2;p=0.3;repeat=3;repeatInterval=5} @Self
+    - effect:particlering{p=reddust;a=100;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=2;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=175;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=4;color=#99cc00} @Self
+    - delay 5
+    - effect:particlering{p=reddust;a=250;vs=0.2;hs=0.5;s=0;y=0.3;points=20;radius=6;color=#99cc00} @Self
+    - effect:particles{p=slime;a=20;hs=1.75;ys=1.75;y=1} @PIR{r=6}
+    - effect:sound{s=entity.slime.hurt;v=1;p=1} @PIR{r=6}
+    # Skill functionality
+    - throw{velocity=6;velocityY=5} @PIR{r=6}
+    - potion{type=POISON;duration=240;level=1} @PIR{r=6}
+    - potion{type=SLOW;duration=240;level=1} @PIR{r=6}

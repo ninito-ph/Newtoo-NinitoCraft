@@ -1,0 +1,9 @@
+Hivefolk_Matriarch_Summon_Royal_Larva:
+  # Spawns two hivefolk royal larvae
+  Condition:
+    - incombat true
+  Cooldown: 15
+  Skills:
+    - effect:particles{p=redDust;a=15;hs=0.5;y=1.5;color=#cc00ff} @self
+    - sound{s=entity.silverfish.ambient;p=0.3;v=1.5} @self
+    - summon{type=Hivefolk_Royal_Larva;amount=2;radius=1} @SelfLocation

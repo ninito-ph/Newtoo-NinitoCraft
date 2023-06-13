@@ -1,0 +1,5 @@
+Hivefolk_Matriarch_Followers:
+  # Summons Hivefolk Matriarch followers. Two Juggernauts and three praetorians
+  Skills:
+    - summon{type=Hivefolk_Juggernaut;amount=2;radius=5} @SelfLocation
+    - summon{type=Hivefolk_Praetorian;amount=3;radius=5} @SelfLocation
