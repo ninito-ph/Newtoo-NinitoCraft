@@ -1,0 +1,14 @@
+Deep_Cleric_Decoy_Caster:
+  # Decoy for Deep Cleric capable of casting spells.
+  Type: ZOMBIE
+  Health: 5
+  Damage: 0
+  Armor: 14
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.2
+  Display: "&4&lAbyssal Cleric"
+  Disguise: player <inherit> setSkin deep_wba.png setDynamicName
+  Skills:
+    - randomskill{s=Cleric_Decoy_Explode,Cleric_Decoy_Shadowbolt} ~onSpawn >0 1

@@ -1,0 +1,66 @@
+Bandit_Kingpin:
+  # Bandit World boss
+  Type: SKELETON
+  Health: 60
+  Damage: 2
+  Armor: 14
+  BossBar:
+    Enabled: true
+    Title: "&4&lBandit Kingpin"
+    Range: 50
+    Color: RED
+    Style: SEGMENTED_6
+    Faction: Outlaw
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.34
+    KnockbackResistance: 0.7
+    FollowRange: 40
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - Bandit_Kingpin_Drops
+    - World_Boss_Common_Drops
+    - exp 550 1
+  Equipment:
+    - Bandit_Banner:4
+    - iron_axe:0
+    - iron_axe:5
+  KillMessages:
+    - "<target.name> was no match for a &4&lBandit Kingpin!"
+    - "<target.name> was broken in combat by a &4&lBandit Kingpin!"
+    - "<target.name><&sq>s attempts to kill a &4&lBandit Kingpin&f have failed miserably!"
+  Display: "&4&lBandit Kingpin"
+  Disguise: player <inherit> setSkin bandit_wb.png setDynamicName
+  Skills:
+    - message{m="&lA &4&lWorld Boss&f&l has wandered into the region! Slay it for great treasure!"} @PlayersInRadius{r=200} ~onSpawn
+    - skill{s=Bandit_Kingpin_WB_Despawn_Timer} ~onEnterCombat =100% 1
+    # Phase 1 - Two lieutenants and three horses assisting.
+    - message{m="&4&lBandit Kingpin&f<&co> You picked a bad time to get lost, friend."} @PlayersInRadius{r=50} ~onEnterCombat >0 1
+    - skill{s=Bandit_Kingpin_Followers} ~onSpawn
+    # Phase 2 - Kingpin with upgraded fighter stomp.
+    - message{m="&4&lBandit Kingpin&f<&co> You think you can fight me, <target.name>? Then show me you<&sq>re capable!"} @PlayersInRadius{r=50} =83% 1
+    - skill{s=Bandit_Kingpin_Upgraded_Stomp} ~onTimer:140 =69%-83% 1
+    # Phase 3 - Kingpin with slow aura and melee weakness.
+    - message{m="&4&lBandit Kingpin&f<&co> Getting tired? We<&sq>ve just begun, <target.name>!"} @PlayersInRadius{r=50} =67% 1
+    - skill{s=Bandit_Kingpin_Cripple_Aura} @self =50%-67% 1
+    # Phase 4 - Kingpin with legendary bow and reinforcements.
+    - message{m="&4&lBandit Kingpin&f<&co> <target.name>, let me introduce you to some of my friends..."} @PlayersInRadius{r=50} =50% 1
+    - skill{s=Bandit_Kingpin_Phase_4} =50% 1
+    # Phase 5 - Kingpin with legendary bow, kick and bleeding(poison) arrow skills.
+    - message{m="&4&lBandit Kingpin&f<&co> Alright <target.name>, you<&sq>re starting to get on my nerves..."} @PlayersInRadius{r=50} =33% 1
+    - skill{s=Bandit_Kingpin_Kick} <34% 1
+    - skill{s=Bandit_Kingpin_Bleeding_Arrow} <34% 1
+    # Phase 6 - Kingpin summons three Bandit Leaders.
+    - message{m="&4&lBandit Kingpin&f<&co> WATCH ME PUT YOU DOWN LIKE THE SICK DOG YOU ARE, <target.name>!"} @PlayersInRadius{r=50} =17% 1
+    - skill{s=Bandit_Kingpin_Phase_6} =17% 1

@@ -1,0 +1,37 @@
+Water_Admiral:
+  # More powerful version of a Sunken Captain. Can shoot lifestealing bullets for higher endurance. Mythic Encounter mob.
+  Type: DROWNED
+  Health: 46
+  Damage: 9
+  Armor: 15
+  Faction: Water
+  Options:
+    PreventOtherDrops: true
+    PreventRandomEquipment: true
+    MovementSpeed: 0.35
+  Modules:
+    ThreatTable: true
+  AIGoalSelectors:
+    - 0 clear
+    - 1 meleeattack
+    - 2 gotoparent
+    - 3 randomstroll
+  AITargetSelectors:
+    - 0 clear
+    - 1 attacker
+    - 2 players
+  Drops:
+    - exp 25 1
+  Equipment:
+    - stone_button:4
+    - gold_sword:0
+  KillMessages:
+    - "<target.name> was bested by a &b&lSunken Captain&f and his ghost ship!"
+  Display: "&b&lGhost Admiral"
+  Disguise: player <inherit> setSkin water_tml.png setDynamicName
+  Skills:
+    - message{m="&b&lGhost Admiral&f<&co> So, ye wants t' challenge us, blast ye? I shall warn ye, we've been sailin' these seas fer a good while..."} @PlayersInRadius{r=30} ~onEnterCombat >0 1
+    - randomskill{s=Admiral_Crew_1, Admiral_Crew_2} ~onSpawn
+    - randomskill{s=Ghost_Rapid_Fire, Dragoon_Shot} ~onTimer:85 >0 1
+    - skill{s=Ghost_Implode} ~onDamaged <50% 0.15
+    - skill{s=Pirate_Supremacy} ~onTimer:30 <20% 1
