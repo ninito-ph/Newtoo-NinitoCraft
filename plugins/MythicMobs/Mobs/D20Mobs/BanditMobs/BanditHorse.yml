@@ -1,7 +1,7 @@
 Bandit_Horse:
   # Auxiliary horse for bandits.
   Type: HORSE
-  Health: 25
+  Health: 20
   Faction: Outlaw
   Options:
     Saddled: true

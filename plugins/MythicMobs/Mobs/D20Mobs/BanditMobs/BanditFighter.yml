@@ -1,7 +1,7 @@
 Bandit_Fighter:
   # Stronger, tougher swordsman. Can leap at target to deal damage.
   Type: ZOMBIE
-  Health: 12
+  Health: 30
   Damage: 1
   Armor: 0
   Faction: Outlaw

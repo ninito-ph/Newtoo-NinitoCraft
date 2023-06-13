@@ -1,7 +1,7 @@
 Bandit_Leader:
   # Stronger hybrid between a swordsman and a bowman. Starts as swordsman, on half health switches to bowman mode.
   Type: SKELETON
-  Health: 10
+  Health: 35
   Damage: 2
   Armor: 0
   Faction: Outlaw

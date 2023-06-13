@@ -1,7 +1,7 @@
 Bandit_Swordsman:
   # Run-of-the-mill melee mob. Canon Fodder.
   Type: ZOMBIE
-  Health: 7
+  Health: 25
   Damage: 1
   Armor: 0
   Faction: Outlaw

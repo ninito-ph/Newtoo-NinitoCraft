@@ -1,7 +1,7 @@
 Bandit_Rogue:
   # More mobile bowman. Flees and becomes invisible on being hit. Uses higher knockback bow.
   Type: SKELETON
-  Health: 7
+  Health: 15
   Damage: 1
   Armor: 0
   Faction: Outlaw

@@ -1,8 +1,8 @@
 Bandit_Bowman:
   # Run-of-the-mill ranged mob. Canon Fodder.
   Type: SKELETON
-  Health: 3.5
-  Damage: 1
+  Health: 15
+  Damage: 0.5
   Armor: 0
   Faction: Outlaw
   Options:

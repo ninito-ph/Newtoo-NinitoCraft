@@ -1,7 +1,7 @@
 Bandit_Lieutenant:
   # Fighter-rogue hybrid. Stronger, faster and tougher. Can summon bandits mid-fight.
   Type: SKELETON
-  Health: 18
+  Health: 45
   Damage: 2
   Armor: 0
   Faction: Outlaw

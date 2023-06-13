@@ -1,7 +1,7 @@
 Bandit_Kingpin:
   # Bandit World boss
   Type: SKELETON
-  Health: 60
+  Health: 175
   Damage: 2
   Armor: 0
   BossBar:

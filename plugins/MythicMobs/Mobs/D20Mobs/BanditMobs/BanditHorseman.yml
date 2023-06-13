@@ -1,7 +1,7 @@
 Bandit_Horseman:
   # Regular swordsman, but mounted on a horse. Significantly faster.
   Type: ZOMBIE
-  Health: 10
+  Health: 20
   Damage: 1
   Armor: 0
   Faction: Outlaw
