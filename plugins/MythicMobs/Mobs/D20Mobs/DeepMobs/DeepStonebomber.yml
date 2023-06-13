@@ -3,7 +3,7 @@ Deep_Stonebomber:
   Type: SKELETON
   Health: 15
   Damage: 4
-  Armor: 7
+  Armor: 0
   Faction: Deep
   Options:
     PreventOtherDrops: true

@@ -3,7 +3,7 @@ Hivefolk_Matriarch:
   Type: SKELETON
   Health: 85
   Damage: 6
-  Armor: 14
+  Armor: 0
   DamageModifiers:
     - FALL 0
     - SUFFOCATION 0

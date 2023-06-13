@@ -5,7 +5,7 @@ Deep_Polyp:
   DamageModifiers:
     - PROJECTILE 0.3
   Damage: 0
-  Armor: 13
+  Armor: 0
   Faction: Deep
   Options:
     PreventOtherDrops: true

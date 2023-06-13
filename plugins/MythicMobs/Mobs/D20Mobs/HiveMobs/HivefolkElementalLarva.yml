@@ -3,7 +3,7 @@ Hivefolk_Elemental_Larva:
   Type: SILVERFISH
   Health: 10
   Damage: 1
-  Armor: 2
+  Armor: 0
   Faction: Hivefolk
   Options:
     MovementSpeed: 0.37

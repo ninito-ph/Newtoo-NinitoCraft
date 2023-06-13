@@ -3,7 +3,7 @@ Deep_Ranger:
   Type: SKELETON
   Health: 35
   Damage: 1
-  Armor: 13
+  Armor: 0
   Faction: Deep
   Options:
     PreventOtherDrops: true

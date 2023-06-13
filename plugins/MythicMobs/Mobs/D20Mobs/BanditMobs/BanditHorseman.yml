@@ -3,7 +3,7 @@ Bandit_Horseman:
   Type: ZOMBIE
   Health: 10
   Damage: 1
-  Armor: 8
+  Armor: 0
   Faction: Outlaw
   Mount: Bandit_Horse
   Options:

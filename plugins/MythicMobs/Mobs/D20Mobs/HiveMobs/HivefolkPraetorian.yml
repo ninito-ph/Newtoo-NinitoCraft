@@ -3,7 +3,7 @@ Hivefolk_Praetorian:
   Type: ZOMBIE
   Health: 11
   Damage: 5.5
-  Armor: 6.5
+  Armor: 0.5
   DamageModifiers:
     - FALL 0
   Faction: Hivefolk

@@ -5,7 +5,7 @@ Deep_Mastermind:
   DamageModifiers:
     - PROJECTILE 0.3
   Damage: 0
-  Armor: 13
+  Armor: 0
   BossBar:
     Enabled: true
     Title: "&5&lMind Flayer"

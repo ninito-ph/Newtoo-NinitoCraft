@@ -3,7 +3,7 @@ Hivefolk_Hopper:
   Type: ZOMBIE
   Health: 7
   Damage: 4
-  Armor: 4.5
+  Armor: 0.5
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true

@@ -5,7 +5,7 @@ Hivefolk_Buzzard:
   Damage: 4
   DamageModifiers:
     - FALL 0
-  Armor: 5
+  Armor: 0
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true

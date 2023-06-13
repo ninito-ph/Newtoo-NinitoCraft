@@ -3,7 +3,7 @@ Water_Cannoneer:
   Type: DROWNED
   Health: 16
   Damage: 3
-  Armor: 11
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

@@ -3,7 +3,7 @@ Hivefolk_Spawner:
   Type: ZOMBIE
   Health: 11
   Damage: 4
-  Armor: 6.5
+  Armor: 0.5
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true

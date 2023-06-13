@@ -3,7 +3,7 @@ Hivefolk_Fire_Drone:
   Type: ZOMBIE
   Health: 15
   Damage: 7
-  Armor: 7
+  Armor: 0
   Faction: Hivefolk
   Options:
     PreventOtherDrops: true

@@ -3,7 +3,7 @@ Water_Tidemaster:
   Type: DROWNED
   Health: 20
   Damage: 5
-  Armor: 11
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

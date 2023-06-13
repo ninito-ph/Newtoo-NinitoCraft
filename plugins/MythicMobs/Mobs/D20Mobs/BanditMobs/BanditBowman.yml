@@ -3,7 +3,7 @@ Bandit_Bowman:
   Type: SKELETON
   Health: 3.5
   Damage: 1
-  Armor: 5
+  Armor: 0
   Faction: Outlaw
   Options:
     PreventOtherDrops: true

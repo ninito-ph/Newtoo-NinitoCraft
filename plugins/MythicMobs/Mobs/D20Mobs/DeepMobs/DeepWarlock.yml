@@ -3,7 +3,7 @@ Deep_Warlock:
   Type: ZOMBIE
   Health: 16
   Damage: 4
-  Armor: 9
+  Armor: 0
   Faction: Deep
   Options:
     PreventOtherDrops: true

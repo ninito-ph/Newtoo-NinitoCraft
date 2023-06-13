@@ -3,7 +3,7 @@ Water_Dragoon:
   Type: DROWNED
   Health: 21
   Damage: 6
-  Armor: 11
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

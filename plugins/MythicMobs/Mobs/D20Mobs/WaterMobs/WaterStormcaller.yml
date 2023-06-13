@@ -3,7 +3,7 @@ Water_Stormcaller:
   Type: DROWNED
   Health: 14
   Damage: 3
-  Armor: 9
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

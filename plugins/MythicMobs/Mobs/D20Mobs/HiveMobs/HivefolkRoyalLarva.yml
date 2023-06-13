@@ -3,7 +3,7 @@ Hivefolk_Royal_Larva:
   Type: SILVERFISH
   Health: 6
   Damage: 1
-  Armor: 4
+  Armor: 0
   Faction: Hivefolk
   Options:
     MovementSpeed: 0.37

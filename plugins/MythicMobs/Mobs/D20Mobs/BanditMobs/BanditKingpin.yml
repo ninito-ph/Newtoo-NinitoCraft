@@ -3,7 +3,7 @@ Bandit_Kingpin:
   Type: SKELETON
   Health: 60
   Damage: 2
-  Armor: 14
+  Armor: 0
   BossBar:
     Enabled: true
     Title: "&4&lBandit Kingpin"

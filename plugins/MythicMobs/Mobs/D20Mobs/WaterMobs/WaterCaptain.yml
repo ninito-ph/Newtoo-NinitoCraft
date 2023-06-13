@@ -3,7 +3,7 @@ Water_Captain:
   Type: DROWNED
   Health: 33
   Damage: 6
-  Armor: 15
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

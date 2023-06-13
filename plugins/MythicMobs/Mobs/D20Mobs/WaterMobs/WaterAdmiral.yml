@@ -3,7 +3,7 @@ Water_Admiral:
   Type: DROWNED
   Health: 46
   Damage: 9
-  Armor: 15
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

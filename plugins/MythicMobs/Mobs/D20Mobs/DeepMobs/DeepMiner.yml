@@ -3,7 +3,7 @@ Deep_Miner:
   Type: ZOMBIE
   Health: 20
   Damage: 4
-  Armor: 12
+  Armor: 0
   Faction: Deep
   Options:
     PreventOtherDrops: true

@@ -3,7 +3,7 @@ Water_Corsair:
   Type: DROWNED
   Health: 24
   Damage: 7
-  Armor: 11
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

@@ -3,7 +3,7 @@ Hivefolk_Fire_Buzzard:
   Type: ZOMBIE
   Health: 12
   Damage: 4
-  Armor: 7
+  Armor: 0
   DamageModifiers:
     - FALL 0
   Faction: Hivefolk

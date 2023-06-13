@@ -3,7 +3,7 @@ Deep_Cleric_Decoy:
   Type: ZOMBIE
   Health: 5
   Damage: 0
-  Armor: 14
+  Armor: 0
   Options:
     PreventOtherDrops: true
     PreventRandomEquipment: true

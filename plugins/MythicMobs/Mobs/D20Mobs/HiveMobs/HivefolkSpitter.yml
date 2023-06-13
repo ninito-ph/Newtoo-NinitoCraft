@@ -3,7 +3,7 @@ Hivefolk_Spitter:
   Type: ZOMBIE
   Health: 12
   Damage: 4
-  Armor: 5
+  Armor: 0
   DamageModifiers:
     - FALL 0
   Faction: Hivefolk

@@ -5,7 +5,7 @@ Water_Siren:
   DamageModifiers:
     - FIRE 0
   Damage: 9
-  Armor: 14
+  Armor: 0
   BossBar:
     Enabled: true
     Title: "&4&lNaga Siren"

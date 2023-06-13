@@ -5,7 +5,7 @@ Water_Elemental:
   DamageModifiers:
     - FIRE 0
   Damage: 0
-  Armor: 13
+  Armor: 0
   BossBar:
     Enabled: true
     Title: "&5&lWater Elemental"

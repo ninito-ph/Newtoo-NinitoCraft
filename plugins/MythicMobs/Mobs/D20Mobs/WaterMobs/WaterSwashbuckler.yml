@@ -3,7 +3,7 @@ Water_Swashbuckler:
   Type: DROWNED
   Health: 19
   Damage: 4
-  Armor: 11
+  Armor: 0
   Faction: Water
   Options:
     PreventOtherDrops: true

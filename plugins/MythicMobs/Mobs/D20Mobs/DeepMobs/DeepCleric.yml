@@ -5,7 +5,7 @@ Deep_Cleric:
   DamageModifiers:
     - FIRE 0
   Damage: 0
-  Armor: 14
+  Armor: 0
   BossBar:
     Enabled: true
     Title: "&4&lAbyssal Cleric"

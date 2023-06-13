@@ -3,7 +3,7 @@ Bandit_Lieutenant:
   Type: SKELETON
   Health: 18
   Damage: 2
-  Armor: 10
+  Armor: 0
   Faction: Outlaw
   Options:
     PreventOtherDrops: true
