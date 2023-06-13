@@ -1,0 +1,13 @@
+Hivefolk_Juggernaut_Enrage:
+  # Knocks player back and gives protection, speed and strenght to the juggernaut
+  Cooldown: 10
+  Skills:
+    # Telegraph enrage
+    - effect:particles{p=reddust;a=25;hs=1;ys=1;y=1;color=#ff0000} @self
+    - sound{s=entity.silverfish.death;p=0.1} @self
+    # Apply effects and throw player back
+    - potion{type=INCREASE_DAMAGE;duration=200;level=2} @self
+    - potion{type=SPEED;duration=200;level=1} @self
+    - potion{type=DAMAGE_RESISTANCE;duration=200;level=1} @self
+    - effect:explosion @self
+    - throw{velocity=5;velocityY=4.5} @PIR{r=4}
