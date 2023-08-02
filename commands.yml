@@ -25,3 +25,11 @@ aliases:
   
   s:
   - mm m spawn $1
+
+  rs:
+  - heal
+  - mm m killall
+  - killall mobs
+  - repair all
+  - mm r
+  - mm m spawn $1
